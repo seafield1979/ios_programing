@@ -35,6 +35,11 @@ void dispDictionary(NSString *title, NSDictionary *dictionary1)
 	[self test_selector];
 }
 
+-(void)dealloc
+{
+	NSLog(@"dealloc in oc_test1");
+}
+
 
 // NSObject
 -(void)test_nsobject

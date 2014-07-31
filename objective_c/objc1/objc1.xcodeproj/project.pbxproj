@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07537D53198A9E5B00B966B0 /* UserDefaultTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07537D52198A9E5B00B966B0 /* UserDefaultTest.m */; };
 		582BBD1517D4519B00222679 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 582BBD1417D4519B00222679 /* UIKit.framework */; };
 		582BBD1717D4519B00222679 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 582BBD1617D4519B00222679 /* Foundation.framework */; };
 		582BBD1917D4519B00222679 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 582BBD1817D4519B00222679 /* CoreGraphics.framework */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07537D51198A9E5B00B966B0 /* UserDefaultTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultTest.h; sourceTree = "<group>"; };
+		07537D52198A9E5B00B966B0 /* UserDefaultTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultTest.m; sourceTree = "<group>"; };
 		582BBD1117D4519B00222679 /* objc1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = objc1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		582BBD1417D4519B00222679 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		582BBD1617D4519B00222679 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,6 +101,8 @@
 				582BBD2C17D4519C00222679 /* ViewController.h */,
 				582BBD2D17D4519C00222679 /* ViewController.m */,
 				582BBD2F17D4519C00222679 /* ViewController.xib */,
+				07537D51198A9E5B00B966B0 /* UserDefaultTest.h */,
+				07537D52198A9E5B00B966B0 /* UserDefaultTest.m */,
 				582BBD1B17D4519B00222679 /* Supporting Files */,
 			);
 			path = objc1;
@@ -185,6 +190,7 @@
 			files = (
 				582BBD3C17D456A900222679 /* oc_test2.m in Sources */,
 				582BBD3B17D456A400222679 /* oc_test1.m in Sources */,
+				07537D53198A9E5B00B966B0 /* UserDefaultTest.m in Sources */,
 				582BBD2117D4519B00222679 /* main.m in Sources */,
 				582BBD2517D4519B00222679 /* AppDelegate.m in Sources */,
 				582BBD2E17D4519C00222679 /* ViewController.m in Sources */,

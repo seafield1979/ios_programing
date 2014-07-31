@@ -15,20 +15,24 @@
 
 }
 
+
 -(void)save1
 {
 	NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];  // 取得
 	NSMutableDictionary *defaults = [NSMutableDictionary dictionary];
-	[defaults setObject:@"99" forKey:@"KEY_I"];  // をKEY_Iというキーの初期値は99
-	[defaults setObject:@"99.99" forKey:@"KEY_F"];  // をKEY_Fというキーの初期値は99.99
-	[defaults setObject:@"88.88" forKey:@"KEY_D"];  // をKEY_Dというキーの初期値は88.88
-	[defaults setObject:@"YES" forKey:@"KEY_B"];  // をKEY_Bというキーの初期値はYES
-	[defaults setObject:@"hoge" forKey:@"KEY_S"];  // をKEY_Sというキーの初期値はhoge
+//	[defaults setObject:@"99" forKey:@"KEY_I"];  // をKEY_Iというキーの初期値は99
+//	[defaults setObject:@"99.99" forKey:@"KEY_F"];  // をKEY_Fというキーの初期値は99.99
+//	[defaults setObject:@"88.88" forKey:@"KEY_D"];  // をKEY_Dというキーの初期値は88.88
+//	[defaults setObject:@"YES" forKey:@"KEY_B"];  // をKEY_Bというキーの初期値はYES
+//	[defaults setObject:@"hoge" forKey:@"KEY_S"];  // をKEY_Sというキーの初期値はhoge
+	[ud setInteger:100 forKey:@"KEY_I"];
+
 	[ud registerDefaults:defaults];
 }
 
 -(void)load1
 {
+	NSLog(@"userDefaultTest::load1");
 	NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];  // 取得
 	int i = (int)[ud integerForKey:@"KEY_I"];  // KEY_Iの内容をint型として取得
 	float f = [ud floatForKey:@"KEY_F"];  // KEY_Fの内容をfloat型として取得
@@ -37,6 +41,12 @@
 	NSString *s = [ud stringForKey:@"KEY_S"];  // KEY_Sの内容をNSString型として取得
 
 	NSLog(@"%d %f %f %d %@", i, f, d, b, s);
+}
+
+-(void)test1
+{
+//	[self save1];
+	[self load1];
 }
 
 @end

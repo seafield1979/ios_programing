@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "oc_test1.h"
 #import "oc_test2.h"
-
+#import "UserDefaultTest.h"
 
 @interface ViewController ()
 
@@ -28,19 +28,6 @@
         // Custom initialization
     }
 	
-	// oc_test1
-	if (true)
-	{
-		oc_test1 *test1 = [[oc_test1 alloc]init];
-		[test1 test01];
-
-	}
-	// oc_test2
-	if (true)
-	{
-		oc_test2 *test2 = [[oc_test2 alloc]init];
-		[test2 test01];
-	}
     return self;
 }
 
@@ -56,4 +43,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
+#pragma mark ButtonFunc
+
+
+- (IBAction)pushButton1:(id)sender {
+//	UserDefaultTest *udt = [[UserDefaultTest alloc]init];
+//	[udt save1];
+}
+
+- (IBAction)pushButton2:(id)sender {
+	UserDefaultTest *udt = [[UserDefaultTest alloc]init];
+	[udt load1];
+}
+
+- (IBAction)pushButton3:(id)sender {
+}
+
+- (IBAction)pushButton4:(id)sender {
+}
 @end

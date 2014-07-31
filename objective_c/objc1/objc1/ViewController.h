@@ -10,4 +10,15 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIButton *button1;
+@property (strong, nonatomic) IBOutlet UIButton *button2;
+@property (strong, nonatomic) IBOutlet UIButton *button3;
+@property (strong, nonatomic) IBOutlet UIButton *button4;
+
+- (IBAction)pushButton1:(id)sender;
+- (IBAction)pushButton2:(id)sender;
+- (IBAction)pushButton3:(id)sender;
+- (IBAction)pushButton4:(id)sender;
+
+
 @end

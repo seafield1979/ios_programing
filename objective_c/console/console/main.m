@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Initializer.h"
 #import "sharedObject.h"
+#import "userDefaultTest.h"
 
 
 void testSharedObject();
@@ -25,6 +26,9 @@ int main(int argc, const char * argv[])
 
 		testSharedObject();
 		testNSData();
+
+		userDefaultTest *udt = [[userDefaultTest alloc]init];
+		[udt test1];
 
 	}
     return 0;

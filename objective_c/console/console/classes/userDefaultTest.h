@@ -16,4 +16,5 @@
 - (void)init1;
 - (void)save1;
 - (void)load1;
+- (void)test1;
 @end

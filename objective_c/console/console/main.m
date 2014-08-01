@@ -20,15 +20,48 @@ int main(int argc, const char * argv[])
 {
 
 	@autoreleasepool {
-	    
+
 	    // insert code here...
-	    NSLog(@"Hello, World!");
+	    printf("please input command\ninit/save/load/delete/exit\n");
 
-		testSharedObject();
-		testNSData();
-
+		// userDefaultTestのテスト
 		userDefaultTest *udt = [[userDefaultTest alloc]init];
-		[udt test1];
+
+		char cmd_buf[32] = {"\0"}, *pos1;
+		while(1){
+			printf(">");
+			fgets(cmd_buf, sizeof(cmd_buf) - 1, stdin);
+			//最後の改行を削除
+			pos1 = strstr(cmd_buf, "\n");
+			if(pos1){
+				*pos1 = '\0';
+			}
+
+			NSLog(@"%s", cmd_buf);
+			if(0 == strcmp((const char*)cmd_buf, "init")){
+				[udt setDefault];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "save")){
+				[udt save1];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "load")){
+				[udt load1];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "delete")){
+				[udt delete1];
+			}
+			else{
+				NSLog(@"exit");
+				break;
+			}
+
+		}
+
+//		testSharedObject();
+//		testNSData();
+//
+//		userDefaultTest *udt = [[userDefaultTest alloc]init];
+//		[udt test1];
 
 	}
     return 0;

@@ -12,13 +12,16 @@
 #import "UserDefaultTest.h"
 
 @interface ViewController ()
-
+{
+	UserDefaultTest *_udt;
+}
 @end
 
 @implementation ViewController
 
 - (id)init{
 	self = [super init];
+	_udt = [[UserDefaultTest alloc]init];
 	return self;
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -26,6 +29,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+		_udt = [[UserDefaultTest alloc]init];
     }
 	
     return self;
@@ -49,18 +53,18 @@
 
 
 - (IBAction)pushButton1:(id)sender {
-//	UserDefaultTest *udt = [[UserDefaultTest alloc]init];
-//	[udt save1];
+	[_udt setDefault];
 }
 
 - (IBAction)pushButton2:(id)sender {
-	UserDefaultTest *udt = [[UserDefaultTest alloc]init];
-	[udt load1];
+	[_udt save1];
 }
 
 - (IBAction)pushButton3:(id)sender {
+	[_udt load1];
 }
 
 - (IBAction)pushButton4:(id)sender {
+	[self->_udt delete1];
 }
 @end

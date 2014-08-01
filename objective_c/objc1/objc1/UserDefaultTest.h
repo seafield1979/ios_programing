@@ -11,8 +11,9 @@
 @interface UserDefaultTest : NSObject
 
 - (void)init1;
+- (void)setDefault;
 - (void)save1;
 - (void)load1;
 - (void)test1;
-
+- (void)delete1;
 @end

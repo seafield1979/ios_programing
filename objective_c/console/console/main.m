@@ -12,7 +12,7 @@
 #import "userDefaultTest.h"
 #import "classTest.h"
 #import "arrayTest.h"
-
+#import "dictionaryTest.h"
 
 void testSharedObject();
 void testNSData();
@@ -81,6 +81,10 @@ int main(int argc, const char * argv[])
 			else if(0 == strcmp((const char*)cmd_buf, "array1")){
 				arrayTest *arr = [[arrayTest alloc]init];
 				[arr test1];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "dic1")){
+				dictionaryTest *dic = [[dictionaryTest alloc]init];
+				[dic test1];
 			}
 			else{
 				NSLog(@"exit");

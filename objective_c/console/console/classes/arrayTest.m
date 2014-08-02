@@ -69,6 +69,7 @@
 
 	// 追加
 	[_marr1 addObject:@"777"];
+	[_marr1 insertObject:@"422" atIndex:1];
 	NSLog(@"1: %@", self);
 
 	// 削除
@@ -99,10 +100,10 @@
 	NSMutableString *ret_str = [[NSMutableString alloc]init];
 
 	for(NSString *str in _arr1){
-		[ret_str appendString:str];
+		[ret_str appendString:[NSString stringWithFormat:@"%@ ", str]];
 	}
 	for(NSString *str in _marr1){
-		[ret_str appendString:str];
+		[ret_str appendString:[NSString stringWithFormat:@"%@ ", str]];
 	}
 	return ret_str;
 }

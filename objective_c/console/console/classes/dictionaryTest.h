@@ -10,4 +10,6 @@
 
 @interface dictionaryTest : NSObject
 
+-(void)test1;
+
 @end

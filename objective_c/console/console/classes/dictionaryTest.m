@@ -9,5 +9,42 @@
 #import "dictionaryTest.h"
 
 @implementation dictionaryTest
+{
+	NSDictionary *dic1;
+	NSMutableDictionary *mdic1;
+}
+
+- (void)test1
+{
+	// 生成
+	dic1 = [[NSDictionary alloc]initWithObjectsAndKeys:
+				@"val1", @"key1",
+				@"val2", @"key2",
+				@"val3", @"key3", nil];
+	mdic1 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:
+				@"val4", @"key4",
+				@"val5", @"key5",
+				@"val6", @"key6", nil];
+	NSDictionary *dic2 = @{@"key7": @"val7", @"key8" : @"val8", @"key9": @"val9"};
+	// 参照
+	NSString *str1 = [dic1 objectForKey:@"key1"];
+	NSString *str2 = [dic2 objectForKey:@"key7"];
+	NSString *str3 = [mdic1 objectForKey:@"key5"];
+	NSLog(@"str1:%@ str2:%@ str3:%@", str1, str2, str3);
+
+	// 追加
+	[mdic1 setObject:@"val10" forKey:@"key10"];
+	NSLog(@"mdic1: %@", mdic1);
+
+	// 削除
+	[mdic1 removeObjectForKey:@"key5"];
+	NSLog(@"mdic1: %@", mdic1);
+
+	// 全部参照
+	for(NSString *key in [dic1 allKeys]){
+		NSLog(@"dic1 %@ : %@", key, [dic1 objectForKey:key]);
+	}
+
+}
 
 @end

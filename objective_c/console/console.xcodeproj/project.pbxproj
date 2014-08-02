@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072068C1198D1E7600A2C829 /* blockTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 072068C0198D1E7600A2C829 /* blockTest.m */; };
 		07537D411987EA3300B966B0 /* stringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07537D401987EA3300B966B0 /* stringTest.m */; };
 		07537D441987EA6A00B966B0 /* arrayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07537D431987EA6A00B966B0 /* arrayTest.m */; };
 		07537D471987EABB00B966B0 /* dictionaryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07537D461987EABB00B966B0 /* dictionaryTest.m */; };
@@ -40,6 +41,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		072068BF198D1E7600A2C829 /* blockTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = blockTest.h; path = console/classes/blockTest.h; sourceTree = "<group>"; };
+		072068C0198D1E7600A2C829 /* blockTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = blockTest.m; path = console/classes/blockTest.m; sourceTree = "<group>"; };
 		07537D3F1987EA3300B966B0 /* stringTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stringTest.h; path = console/classes/stringTest.h; sourceTree = "<group>"; };
 		07537D401987EA3300B966B0 /* stringTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = stringTest.m; path = console/classes/stringTest.m; sourceTree = "<group>"; };
 		07537D421987EA6A00B966B0 /* arrayTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = arrayTest.h; path = console/classes/arrayTest.h; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 				07537D431987EA6A00B966B0 /* arrayTest.m */,
 				07537D54198C74BC00B966B0 /* classTest.h */,
 				07537D55198C74BC00B966B0 /* classTest.m */,
+				072068BF198D1E7600A2C829 /* blockTest.h */,
+				072068C0198D1E7600A2C829 /* blockTest.m */,
 				07537D451987EABB00B966B0 /* dictionaryTest.h */,
 				07537D461987EABB00B966B0 /* dictionaryTest.m */,
 				07537D481987F05000B966B0 /* dateTest.h */,
@@ -229,6 +234,7 @@
 				07537D4D1987F06500B966B0 /* dataTest.m in Sources */,
 				07537D5C198C755900B966B0 /* interfaceTest.m in Sources */,
 				07537D59198C753E00B966B0 /* protocolTest.m in Sources */,
+				072068C1198D1E7600A2C829 /* blockTest.m in Sources */,
 				07D166F018C1E50C000E2D0A /* Initializer.m in Sources */,
 				07D166F618C1F8BE000E2D0A /* NSData+custom.m in Sources */,
 				07537D411987EA3300B966B0 /* stringTest.m in Sources */,

@@ -13,6 +13,7 @@
 #import "classTest.h"
 #import "arrayTest.h"
 #import "dictionaryTest.h"
+#import "blockTest.h"
 
 void testSharedObject();
 void testNSData();
@@ -85,6 +86,10 @@ int main(int argc, const char * argv[])
 			else if(0 == strcmp((const char*)cmd_buf, "dic1")){
 				dictionaryTest *dic = [[dictionaryTest alloc]init];
 				[dic test1];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "block1")){
+				blockTest *bt = [[blockTest alloc]init];
+				[bt test1];
 			}
 			else{
 				NSLog(@"exit");

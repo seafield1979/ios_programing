@@ -11,6 +11,7 @@
 #import "sharedObject.h"
 #import "userDefaultTest.h"
 #import "classTest.h"
+#import "arrayTest.h"
 
 
 void testSharedObject();
@@ -73,6 +74,14 @@ int main(int argc, const char * argv[])
 				[cinit3 print];
 
 			}
+			else if(0 == strcmp((const char*)cmd_buf, "crelease")){
+				releaseTest *crel = [[releaseTest alloc]init];
+				[crel print];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "array1")){
+				arrayTest *arr = [[arrayTest alloc]init];
+				[arr test1];
+			}
 			else{
 				NSLog(@"exit");
 				break;
@@ -132,6 +141,6 @@ void testNSData()
 
 	// データ長
 	NSUInteger len = [data length];
-	NSLog(@"NSData(length) %lu", len ) ;
+	NSLog(@"NSData(length) %lu", len );
 }
 

@@ -26,6 +26,7 @@
 /* Begin PBXFileReference section */
 		07537D51198A9E5B00B966B0 /* UserDefaultTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultTest.h; sourceTree = "<group>"; };
 		07537D52198A9E5B00B966B0 /* UserDefaultTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultTest.m; sourceTree = "<group>"; };
+		07537D5D198CCDF700B966B0 /* switch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = switch.h; sourceTree = "<group>"; };
 		582BBD1117D4519B00222679 /* objc1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = objc1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		582BBD1417D4519B00222679 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		582BBD1617D4519B00222679 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -104,6 +105,7 @@
 				07537D51198A9E5B00B966B0 /* UserDefaultTest.h */,
 				07537D52198A9E5B00B966B0 /* UserDefaultTest.m */,
 				582BBD1B17D4519B00222679 /* Supporting Files */,
+				07537D5D198CCDF700B966B0 /* switch.h */,
 			);
 			path = objc1;
 			sourceTree = "<group>";

@@ -10,4 +10,9 @@
 
 @interface arrayTest : NSObject
 
+@property (nonatomic, strong) NSArray *arr1;
+@property (nonatomic, strong) NSMutableArray *marr1;
+
+-(void)test1;
+
 @end

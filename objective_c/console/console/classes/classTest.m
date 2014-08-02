@@ -82,4 +82,35 @@
 
 @end
 
+@implementation releaseTest
+
+- (id) init
+{
+	self = [super init];
+	if(self){
+		self->marr1 = [[NSMutableArray alloc]initWithObjects:@"aaa",@"bbb", @"ccc", nil];
+		buf1 = malloc(100);
+		strcpy(buf1, "aaaaaaaaaaabbbbbbbbbbbbccccccccccc");
+	}
+	return self;
+}
+- (void) print
+{
+	NSLog(@"releaseTest::print");
+	for(NSString *str in marr1){
+		NSLog(@"%@", str);
+	}
+	NSLog(@"buf1 %s", buf1);
+}
+
+// メモリ解放のタイミングで呼ばれる
+// 自前で確保したメモリでARCが解放してくれないものを解放する
+-(void)dealloc
+{
+	if(buf1){
+		free(buf1); buf1 = nil;
+	}
+}
+
+@end
 

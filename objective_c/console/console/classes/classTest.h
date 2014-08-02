@@ -74,3 +74,16 @@
 - (id) init;
 - (void)print;
 @end
+
+/**
+ * デストラクタ
+ */
+@interface releaseTest : NSObject
+{
+	NSMutableArray *marr1;
+	char *buf1;
+}
+- (id) init;
+- (void)print;
+
+@end

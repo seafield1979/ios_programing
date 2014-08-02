@@ -13,6 +13,9 @@
 		07537D4A1987F05000B966B0 /* dateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07537D491987F05000B966B0 /* dateTest.m */; };
 		07537D4D1987F06500B966B0 /* dataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07537D4C1987F06500B966B0 /* dataTest.m */; };
 		07537D501987FDEC00B966B0 /* userDefaultTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07537D4F1987FDEC00B966B0 /* userDefaultTest.m */; };
+		07537D56198C74BC00B966B0 /* classTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07537D55198C74BC00B966B0 /* classTest.m */; };
+		07537D59198C753E00B966B0 /* protocolTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07537D58198C753E00B966B0 /* protocolTest.m */; };
+		07537D5C198C755900B966B0 /* interfaceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07537D5B198C755900B966B0 /* interfaceTest.m */; };
 		07D166DD18C1E269000E2D0A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D166DC18C1E269000E2D0A /* Foundation.framework */; };
 		07D166E018C1E269000E2D0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D166DF18C1E269000E2D0A /* main.m */; };
 		07D166E418C1E269000E2D0A /* console.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07D166E318C1E269000E2D0A /* console.1 */; };
@@ -49,6 +52,12 @@
 		07537D4C1987F06500B966B0 /* dataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = dataTest.m; path = console/classes/dataTest.m; sourceTree = "<group>"; };
 		07537D4E1987FDEC00B966B0 /* userDefaultTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = userDefaultTest.h; path = console/classes/userDefaultTest.h; sourceTree = "<group>"; };
 		07537D4F1987FDEC00B966B0 /* userDefaultTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = userDefaultTest.m; path = console/classes/userDefaultTest.m; sourceTree = "<group>"; };
+		07537D54198C74BC00B966B0 /* classTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = classTest.h; path = console/classes/classTest.h; sourceTree = "<group>"; };
+		07537D55198C74BC00B966B0 /* classTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = classTest.m; path = console/classes/classTest.m; sourceTree = "<group>"; };
+		07537D57198C753E00B966B0 /* protocolTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = protocolTest.h; path = console/classes/protocolTest.h; sourceTree = "<group>"; };
+		07537D58198C753E00B966B0 /* protocolTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = protocolTest.m; path = console/classes/protocolTest.m; sourceTree = "<group>"; };
+		07537D5A198C755900B966B0 /* interfaceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = interfaceTest.h; path = console/classes/interfaceTest.h; sourceTree = "<group>"; };
+		07537D5B198C755900B966B0 /* interfaceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = interfaceTest.m; path = console/classes/interfaceTest.m; sourceTree = "<group>"; };
 		07D166D918C1E269000E2D0A /* console */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = console; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D166DC18C1E269000E2D0A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		07D166DF18C1E269000E2D0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -123,6 +132,12 @@
 		07D166EA18C1E4D6000E2D0A /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				07537D54198C74BC00B966B0 /* classTest.h */,
+				07537D55198C74BC00B966B0 /* classTest.m */,
+				07537D57198C753E00B966B0 /* protocolTest.h */,
+				07537D58198C753E00B966B0 /* protocolTest.m */,
+				07537D5A198C755900B966B0 /* interfaceTest.h */,
+				07537D5B198C755900B966B0 /* interfaceTest.m */,
 				07D166EB18C1E4F9000E2D0A /* sharedObject.h */,
 				07D166EC18C1E4F9000E2D0A /* sharedObject.m */,
 				07D166EE18C1E50C000E2D0A /* Initializer.h */,
@@ -207,10 +222,13 @@
 			files = (
 				07D166E018C1E269000E2D0A /* main.m in Sources */,
 				07537D441987EA6A00B966B0 /* arrayTest.m in Sources */,
+				07537D56198C74BC00B966B0 /* classTest.m in Sources */,
 				07D166ED18C1E4F9000E2D0A /* sharedObject.m in Sources */,
 				07537D4A1987F05000B966B0 /* dateTest.m in Sources */,
 				07537D501987FDEC00B966B0 /* userDefaultTest.m in Sources */,
 				07537D4D1987F06500B966B0 /* dataTest.m in Sources */,
+				07537D5C198C755900B966B0 /* interfaceTest.m in Sources */,
+				07537D59198C753E00B966B0 /* protocolTest.m in Sources */,
 				07D166F018C1E50C000E2D0A /* Initializer.m in Sources */,
 				07D166F618C1F8BE000E2D0A /* NSData+custom.m in Sources */,
 				07537D411987EA3300B966B0 /* stringTest.m in Sources */,

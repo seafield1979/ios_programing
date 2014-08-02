@@ -16,7 +16,9 @@
 - (void)init1;
 - (void)setDefault;
 - (void)save1;
+- (void)save2;
 - (void)load1;
+- (void)load2;
 - (void)test1;
 - (void)delete1;
 @end

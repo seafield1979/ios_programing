@@ -57,7 +57,17 @@
 {
 	NSLog(@"userDefaultTesst::save2");
 	NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];  // 取得
+#if 0
 	NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"value1", @"key1", @"value2", @"key2", nil];
+#else
+	NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+	[dic setObject:@"value1" forKey:@"key1"];
+	[dic setObject:@"value2" forKey:@"key2"];
+	[dic setObject:@"value3" forKey:@"key3"];
+
+	NSMutableDictionary *dic2 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"value1",@"key1",@"value2",@"key2", nil];
+	[dic2 removeObjectForKey:@"key1"];
+#endif
 	[ud setObject:dic forKey:@"dictionary1"];
 	[ud synchronize];
 }

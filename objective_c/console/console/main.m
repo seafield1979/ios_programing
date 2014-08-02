@@ -10,6 +10,7 @@
 #import "Initializer.h"
 #import "sharedObject.h"
 #import "userDefaultTest.h"
+#import "classTest.h"
 
 
 void testSharedObject();
@@ -44,11 +45,33 @@ int main(int argc, const char * argv[])
 			else if(0 == strcmp((const char*)cmd_buf, "save")){
 				[udt save1];
 			}
+			else if(0 == strcmp((const char*)cmd_buf, "save2")){
+				[udt save2];
+			}
 			else if(0 == strcmp((const char*)cmd_buf, "load")){
 				[udt load1];
 			}
+			else if(0 == strcmp((const char*)cmd_buf, "load2")){
+				[udt load2];
+			}
 			else if(0 == strcmp((const char*)cmd_buf, "delete")){
 				[udt delete1];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "class")){
+				classTest *cl1 = [[classTest alloc]init];
+				classTest2 *cl2 = [[classTest2 alloc]init];
+				[cl1 print];
+				[cl1 print:100 val2:@"hello"];
+				[cl2 print];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "cinit")){
+				initTest *cinit1 = [[initTest alloc]init];
+				[cinit1 print];
+				initTest *cinit2 = [[initTest alloc]initWithValue1:100];
+				[cinit2 print];
+				initTest *cinit3 = [[initTest alloc]initWithAllParams:100 val2:200 val3:300];
+				[cinit3 print];
+
 			}
 			else{
 				NSLog(@"exit");

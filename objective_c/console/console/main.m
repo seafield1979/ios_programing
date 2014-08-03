@@ -17,6 +17,7 @@
 #import "dataTest.h"
 #import "dateTest.h"
 #import "categoryTest.h"
+#import "protocolTest.h"
 
 void testSharedObject();
 void testNSData();
@@ -109,6 +110,10 @@ int main(int argc, const char * argv[])
 			else if(0 == strcmp((const char*)cmd_buf, "category1")){
 				categoryTest *ct = [[categoryTest alloc]init];
 				[ct test1];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "protocol")){
+				protocolTest *pt = [[protocolTest alloc]init];
+				[pt test1];
 			}
 			else{
 				NSLog(@"exit");

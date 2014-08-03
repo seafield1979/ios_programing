@@ -15,6 +15,8 @@
 #import "dictionaryTest.h"
 #import "blockTest.h"
 #import "dataTest.h"
+#import "dateTest.h"
+#import "categoryTest.h"
 
 void testSharedObject();
 void testNSData();
@@ -99,6 +101,14 @@ int main(int argc, const char * argv[])
 			else if(0 == strcmp((const char*)cmd_buf, "data2")){
 				dataTest *dt = [[dataTest alloc]init];
 				[dt test2];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "date1")){
+				dateTest *dt = [[dateTest alloc]init];
+				[dt test1];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "category1")){
+				categoryTest *ct = [[categoryTest alloc]init];
+				[ct test1];
 			}
 			else{
 				NSLog(@"exit");

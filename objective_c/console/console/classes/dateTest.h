@@ -10,4 +10,5 @@
 
 @interface dateTest : NSObject
 
+- (void) test1;
 @end

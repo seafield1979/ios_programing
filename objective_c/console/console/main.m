@@ -13,6 +13,13 @@
 #import "classTest.h"
 #import "arrayTest.h"
 #import "dictionaryTest.h"
+#import "blockTest.h"
+#import "dataTest.h"
+#import "dateTest.h"
+#import "categoryTest.h"
+#import "protocolTest.h"
+#import "urlTest.h"
+#import "stringTest.h"
 
 void testSharedObject();
 void testNSData();
@@ -28,7 +35,7 @@ int main(int argc, const char * argv[])
 
 		// userDefaultTestのテスト
 		userDefaultTest *udt = [[userDefaultTest alloc]init];
-
+		
 		char cmd_buf[32] = {"\0"}, *pos1;
 		while(1){
 			printf(">");
@@ -42,6 +49,14 @@ int main(int argc, const char * argv[])
 			NSLog(@"%s", cmd_buf);
 			if(0 == strcmp((const char*)cmd_buf, "init")){
 				[udt setDefault];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "string1")){
+				stringTest *st = [[stringTest alloc]init];
+				[st test1];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "string2")){
+				stringTest *st = [[stringTest alloc]init];
+				[st test2];
 			}
 			else if(0 == strcmp((const char*)cmd_buf, "save")){
 				[udt save1];
@@ -86,19 +101,48 @@ int main(int argc, const char * argv[])
 				dictionaryTest *dic = [[dictionaryTest alloc]init];
 				[dic test1];
 			}
+			else if(0 == strcmp((const char*)cmd_buf, "block1")){
+				blockTest *bt = [[blockTest alloc]init];
+				[bt test1];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "data1")){
+				dataTest *dt = [[dataTest alloc]init];
+				[dt test1];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "data2")){
+				dataTest *dt = [[dataTest alloc]init];
+				[dt test2];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "date1")){
+				dateTest *dt = [[dateTest alloc]init];
+				[dt test1];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "category1")){
+				categoryTest *ct = [[categoryTest alloc]init];
+				[ct test1];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "protocol")){
+				protocolTest *pt = [[protocolTest alloc]init];
+				[pt test1];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "url1")){
+				urlTest *ut = [[urlTest alloc]init];
+				[ut test1];
+			}
+			// コンソールだとNSTimerが動作しない
+//			else if(0 == strcmp((const char*)cmd_buf, "timer1")){
+//				timerTest *tt = [[timerTest alloc]init];
+//				[tt test1];
+//			}
+			else if(0 == strcmp((const char*)cmd_buf, "singleton")){
+				testSharedObject();
+			}
 			else{
 				NSLog(@"exit");
 				break;
 			}
 
 		}
-
-//		testSharedObject();
-//		testNSData();
-//
-//		userDefaultTest *udt = [[userDefaultTest alloc]init];
-//		[udt test1];
-
 	}
     return 0;
 }
@@ -114,37 +158,5 @@ void testSharedObject()
 	sharedObject *so2 = [sharedObject getNewObj];
 	NSLog(@"sharedObject %@", so2);
 
-}
-
-/**
- * NSDataのテスト
- */
-void testNSData()
-{
-	NSString *homeDir = NSHomeDirectory();
-	NSLog(@"%@", homeDir);
-
-	// ファイルからNSDataを作成
-	// 事前準備として プロジェクトの[Build Phases] - [Copy Files] に
-	// Destination - Absolute Path
-	// Path - $(Home)
-	// を設定する。こうすることでホームディレクトリにCopy Filesのファイルがコピーされる
-	NSString *path = [NSString stringWithFormat:@"%@/test1.txt", homeDir];
-	NSData *data = [[NSData alloc]initWithContentsOfFile:path];
-
-	// ファイルにNSDataを書き出す
-	NSData *data2  = [[NSData alloc]initWithBytes:[@"syutaro" UTF8String] length:[@"syutaro" length]];
-	NSString *writePath = [NSString stringWithFormat:@"%@/test2.txt", homeDir];
-	[data2 writeToFile:writePath atomically:YES];
-
-	// 表示(16進数)
-	NSLog(@"NSData %@", [data description]);
-
-	// 文字列で表示
-	NSLog(@"NSData(str) %@", [data description2]);
-
-	// データ長
-	NSUInteger len = [data length];
-	NSLog(@"NSData(length) %lu", len );
 }
 

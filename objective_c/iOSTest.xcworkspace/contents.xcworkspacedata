@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:ResponderTest/ResponderTest.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ControlTest/ControlTest.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ScrollViewTest/ScrollViewTest.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:objc1/objc1.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ViewControllerTest/ViewControllerTest.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ViewTest/ViewTest.xcodeproj">
+   </FileRef>
+</Workspace>

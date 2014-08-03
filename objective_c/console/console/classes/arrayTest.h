@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSArray *arr1;
 @property (nonatomic, strong) NSMutableArray *marr1;
 
--(void)test1;
+-(void)test1;	// NSArrayテスト
+-(void)test2;	// NSMutableArrayテスト
 
 @end

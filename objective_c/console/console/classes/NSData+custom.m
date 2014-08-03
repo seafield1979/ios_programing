@@ -16,6 +16,7 @@
 
 @implementation NSData (custom)
 
+// NSDataのデータを文字列(UTF8)形式で出力する
 -(NSString*)description2
 {
 	return [[NSString alloc]initWithData:self encoding:NSUTF8StringEncoding];

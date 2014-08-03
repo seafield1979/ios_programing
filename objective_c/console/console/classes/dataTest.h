@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface dataTest : NSObject
-
+-(void)test1;
+-(void)test2;
 @end

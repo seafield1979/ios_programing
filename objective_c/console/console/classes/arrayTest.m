@@ -65,22 +65,13 @@
 
 	// 初期化
 	_arr1 = [[NSArray alloc]initWithObjects:@"111", @"222", @"333", nil];
-	_marr1 = [[NSMutableArray alloc] initWithObjects:@"444", @"555", @"666", nil];
 
-	// 追加
-	[_marr1 addObject:@"777"];
-	[_marr1 insertObject:@"422" atIndex:1];
-	NSLog(@"1: %@", self);
-
-	// 削除
-	[_marr1 removeObjectAtIndex:1];
- 
 	// 参照
+	NSLog(@"arr at 2:%@", [_arr1 objectAtIndex:2]);
+
+	// 全要素参照
 	for(int i=0; i<[_arr1 count]; i++){
 		NSLog(@"arr%d: %@", i, [_arr1 objectAtIndex:i]);
-	}
-	for(int i=0; i<[_marr1 count]; i++){
-		NSLog(@"mutable array%d: %@", i, [_marr1 objectAtIndex:i]);
 	}
 
 	// define参照
@@ -92,6 +83,33 @@
 			 ];
 	NSLog(@"ARRAY2 %@", ARRAY2);
 
+
+}
+
+/*
+ * NSMutableArrayテスト
+ */
+- (void)test2
+{
+	_marr1 = [[NSMutableArray alloc] initWithObjects:@"111", @"222", @"333", @"444", @"555", @"666", nil];
+	// 参照
+	for(int i=0; i<[_marr1 count]; i++){
+		NSLog(@"mutable array%d: %@", i, [_marr1 objectAtIndex:i]);
+	}
+
+	// 追加
+	[_marr1 addObject:@"777"];
+	NSLog(@"addObject %@", _marr1);
+
+	// 挿入
+	[_marr1 insertObject:@"insert" atIndex:1];
+	NSLog(@"1: %@", self);
+
+	// 削除
+	[_marr1 removeObjectAtIndex:1];
+	NSLog(@"removeObjectAtIndex 1:%@", _marr1);
+
+	// 最後の要素を削除
 
 }
 

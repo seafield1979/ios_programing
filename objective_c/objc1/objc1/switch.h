@@ -10,7 +10,7 @@
 #define objc1_switch_h
 
 // ライフサイクル系のメソッドのログをコンソールに出力する
-#define DISP_LIFE_CYCLE		(FALSE)
+#define DISP_LIFE_CYCLE		(TRUE)
 
 
 #if DISP_LIFE_CYCLE

@@ -8,6 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface protocolTest : NSObject
+@protocol Protocol1
+// メソッドの定義
+-(int)add:(int)a b:(int)b;
+-(int)mul:(int)a b:(int)b;
+-(void)print;
+// 変数の定義
+@property (nonatomic, strong) NSString *name;
+@end
 
+@interface protocolTest : NSObject <Protocol1>
+
+-(void)test1;
 @end

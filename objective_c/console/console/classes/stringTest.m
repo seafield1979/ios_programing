@@ -14,4 +14,8 @@
 
 @implementation stringTest
 
+-(void)test1
+{
+	
+}
 @end

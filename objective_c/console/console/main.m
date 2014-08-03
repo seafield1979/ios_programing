@@ -18,6 +18,7 @@
 #import "dateTest.h"
 #import "categoryTest.h"
 #import "protocolTest.h"
+#import "urlTest.h"
 
 void testSharedObject();
 void testNSData();
@@ -114,6 +115,13 @@ int main(int argc, const char * argv[])
 			else if(0 == strcmp((const char*)cmd_buf, "protocol")){
 				protocolTest *pt = [[protocolTest alloc]init];
 				[pt test1];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "url1")){
+				urlTest *ut = [[urlTest alloc]init];
+				[ut test1];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "singleton")){
+				testSharedObject();
 			}
 			else{
 				NSLog(@"exit");

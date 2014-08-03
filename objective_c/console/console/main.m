@@ -19,6 +19,7 @@
 #import "categoryTest.h"
 #import "protocolTest.h"
 #import "urlTest.h"
+#import "stringTest.h"
 
 void testSharedObject();
 void testNSData();
@@ -34,7 +35,7 @@ int main(int argc, const char * argv[])
 
 		// userDefaultTestのテスト
 		userDefaultTest *udt = [[userDefaultTest alloc]init];
-
+		
 		char cmd_buf[32] = {"\0"}, *pos1;
 		while(1){
 			printf(">");
@@ -48,6 +49,14 @@ int main(int argc, const char * argv[])
 			NSLog(@"%s", cmd_buf);
 			if(0 == strcmp((const char*)cmd_buf, "init")){
 				[udt setDefault];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "string1")){
+				stringTest *st = [[stringTest alloc]init];
+				[st test1];
+			}
+			else if(0 == strcmp((const char*)cmd_buf, "string2")){
+				stringTest *st = [[stringTest alloc]init];
+				[st test2];
 			}
 			else if(0 == strcmp((const char*)cmd_buf, "save")){
 				[udt save1];
@@ -120,6 +129,11 @@ int main(int argc, const char * argv[])
 				urlTest *ut = [[urlTest alloc]init];
 				[ut test1];
 			}
+			// コンソールだとNSTimerが動作しない
+//			else if(0 == strcmp((const char*)cmd_buf, "timer1")){
+//				timerTest *tt = [[timerTest alloc]init];
+//				[tt test1];
+//			}
 			else if(0 == strcmp((const char*)cmd_buf, "singleton")){
 				testSharedObject();
 			}

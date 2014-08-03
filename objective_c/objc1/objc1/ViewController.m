@@ -7,8 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "oc_test1.h"
-#import "oc_test2.h"
 #import "UserDefaultTest.h"
 
 @interface ViewController ()

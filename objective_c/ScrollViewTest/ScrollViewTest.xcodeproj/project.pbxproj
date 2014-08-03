@@ -21,8 +21,6 @@
 		0721D7C7198E966A002D5657 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0721D7C6198E966A002D5657 /* XCTest.framework */; };
 		0721D7C8198E966A002D5657 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0721D7A1198E966A002D5657 /* Foundation.framework */; };
 		0721D7C9198E966A002D5657 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0721D7A5198E966A002D5657 /* UIKit.framework */; };
-		0721D7D1198E966A002D5657 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0721D7CF198E966A002D5657 /* InfoPlist.strings */; };
-		0721D7D3198E966A002D5657 /* ScrollViewTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0721D7D2198E966A002D5657 /* ScrollViewTestTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,9 +54,6 @@
 		0721D7BF198E966A002D5657 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0721D7C5198E966A002D5657 /* ScrollViewTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollViewTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0721D7C6198E966A002D5657 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		0721D7CE198E966A002D5657 /* ScrollViewTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ScrollViewTestTests-Info.plist"; sourceTree = "<group>"; };
-		0721D7D0198E966A002D5657 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0721D7D2198E966A002D5657 /* ScrollViewTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewTestTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				0721D7A7198E966A002D5657 /* ScrollViewTest */,
-				0721D7CC198E966A002D5657 /* ScrollViewTestTests */,
 				0721D7A0198E966A002D5657 /* Frameworks */,
 				0721D79F198E966A002D5657 /* Products */,
 			);
@@ -140,24 +134,6 @@
 				0721D7AA198E966A002D5657 /* InfoPlist.strings */,
 				0721D7AD198E966A002D5657 /* main.m */,
 				0721D7AF198E966A002D5657 /* ScrollViewTest-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0721D7CC198E966A002D5657 /* ScrollViewTestTests */ = {
-			isa = PBXGroup;
-			children = (
-				0721D7D2198E966A002D5657 /* ScrollViewTestTests.m */,
-				0721D7CD198E966A002D5657 /* Supporting Files */,
-			);
-			path = ScrollViewTestTests;
-			sourceTree = "<group>";
-		};
-		0721D7CD198E966A002D5657 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0721D7CE198E966A002D5657 /* ScrollViewTestTests-Info.plist */,
-				0721D7CF198E966A002D5657 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -248,7 +224,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0721D7D1198E966A002D5657 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +246,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0721D7D3198E966A002D5657 /* ScrollViewTestTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,14 +274,6 @@
 				0721D7BD198E966A002D5657 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0721D7CF198E966A002D5657 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0721D7D0198E966A002D5657 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -468,6 +434,7 @@
 				0721D7D8198E966A002D5657 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0721D7D9198E966A002D5657 /* Build configuration list for PBXNativeTarget "ScrollViewTestTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +443,7 @@
 				0721D7DB198E966A002D5657 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -19,8 +19,6 @@
 		0721D808198E97ED002D5657 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0721D807198E97ED002D5657 /* XCTest.framework */; };
 		0721D809198E97ED002D5657 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0721D7E8198E97ED002D5657 /* Foundation.framework */; };
 		0721D80A198E97ED002D5657 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0721D7EC198E97ED002D5657 /* UIKit.framework */; };
-		0721D812198E97ED002D5657 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0721D810198E97ED002D5657 /* InfoPlist.strings */; };
-		0721D814198E97ED002D5657 /* ResponderTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0721D813198E97ED002D5657 /* ResponderTestTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,9 +48,6 @@
 		0721D800198E97ED002D5657 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0721D806198E97ED002D5657 /* ResponderTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResponderTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0721D807198E97ED002D5657 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		0721D80F198E97ED002D5657 /* ResponderTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ResponderTestTests-Info.plist"; sourceTree = "<group>"; };
-		0721D811198E97ED002D5657 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0721D813198E97ED002D5657 /* ResponderTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResponderTestTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				0721D7EE198E97ED002D5657 /* ResponderTest */,
-				0721D80D198E97ED002D5657 /* ResponderTestTests */,
 				0721D7E7198E97ED002D5657 /* Frameworks */,
 				0721D7E6198E97ED002D5657 /* Products */,
 			);
@@ -130,24 +124,6 @@
 				0721D7F1198E97ED002D5657 /* InfoPlist.strings */,
 				0721D7F4198E97ED002D5657 /* main.m */,
 				0721D7F6198E97ED002D5657 /* ResponderTest-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0721D80D198E97ED002D5657 /* ResponderTestTests */ = {
-			isa = PBXGroup;
-			children = (
-				0721D813198E97ED002D5657 /* ResponderTestTests.m */,
-				0721D80E198E97ED002D5657 /* Supporting Files */,
-			);
-			path = ResponderTestTests;
-			sourceTree = "<group>";
-		};
-		0721D80E198E97ED002D5657 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0721D80F198E97ED002D5657 /* ResponderTestTests-Info.plist */,
-				0721D810198E97ED002D5657 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -238,7 +214,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0721D812198E97ED002D5657 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +234,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0721D814198E97ED002D5657 /* ResponderTestTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,14 +262,6 @@
 				0721D7FB198E97ED002D5657 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0721D810198E97ED002D5657 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0721D811198E97ED002D5657 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -456,6 +422,7 @@
 				0721D819198E97ED002D5657 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0721D81A198E97ED002D5657 /* Build configuration list for PBXNativeTarget "ResponderTestTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +431,7 @@
 				0721D81C198E97ED002D5657 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

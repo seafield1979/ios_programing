@@ -16,7 +16,6 @@
 		0721D7B5198E966A002D5657 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0721D7B4198E966A002D5657 /* RootViewController.m */; };
 		0721D7B8198E966A002D5657 /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0721D7B7198E966A002D5657 /* DataViewController.m */; };
 		0721D7BB198E966A002D5657 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0721D7BA198E966A002D5657 /* ModelController.m */; };
-		0721D7BE198E966A002D5657 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0721D7BC198E966A002D5657 /* Main.storyboard */; };
 		0721D7C0198E966A002D5657 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0721D7BF198E966A002D5657 /* Images.xcassets */; };
 		0721D7C7198E966A002D5657 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0721D7C6198E966A002D5657 /* XCTest.framework */; };
 		0721D7C8198E966A002D5657 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0721D7A1198E966A002D5657 /* Foundation.framework */; };
@@ -50,7 +49,6 @@
 		0721D7B7198E966A002D5657 /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
 		0721D7B9198E966A002D5657 /* ModelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
 		0721D7BA198E966A002D5657 /* ModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
-		0721D7BD198E966A002D5657 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0721D7BF198E966A002D5657 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0721D7C5198E966A002D5657 /* ScrollViewTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollViewTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0721D7C6198E966A002D5657 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -120,7 +118,6 @@
 				0721D7B7198E966A002D5657 /* DataViewController.m */,
 				0721D7B9198E966A002D5657 /* ModelController.h */,
 				0721D7BA198E966A002D5657 /* ModelController.m */,
-				0721D7BC198E966A002D5657 /* Main.storyboard */,
 				0721D7BF198E966A002D5657 /* Images.xcassets */,
 				0721D7A8198E966A002D5657 /* Supporting Files */,
 			);
@@ -216,7 +213,6 @@
 			files = (
 				0721D7C0198E966A002D5657 /* Images.xcassets in Resources */,
 				0721D7AC198E966A002D5657 /* InfoPlist.strings in Resources */,
-				0721D7BE198E966A002D5657 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,14 +262,6 @@
 				0721D7AB198E966A002D5657 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		0721D7BC198E966A002D5657 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0721D7BD198E966A002D5657 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

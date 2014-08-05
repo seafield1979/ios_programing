@@ -35,4 +35,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)pushButton1:(id)sender
+{
+	NSLog(@"pushButton1");
+}
+
 @end

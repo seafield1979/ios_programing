@@ -5,6 +5,38 @@
 //  Created by 海野 秀祐 on 2014/08/04.
 //  Copyright (c) 2014年 海野 秀祐. All rights reserved.
 //
+/**
+ シングルのビューでできることをいろいろと試す
+ ■UIView::
+
+ ■UIViewController::
+
+ ■UIWindow::
+
+ ■UILabel::
+
+ ■UIProgressView::
+
+ ■UIActionSheet::
+
+ ■UIImageView::
+
+ ■UIWebView::
+
+ ■UIActivityIndicatorView::
+
+ ■UIPickerView::
+
+ ■UISearchBar::
+
+ ■UINavigationBar::
+
+ ■UIBarButtonItem::
+ ツールバーやナビゲーションバーに配置するボタンを管理する
+ 
+ 
+ */
+
 
 #import "AppDelegate.h"
 

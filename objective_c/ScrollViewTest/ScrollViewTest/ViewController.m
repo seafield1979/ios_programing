@@ -13,6 +13,7 @@
 	UIScrollView *_scrollView;
 	int pageNum;
 	int pageMax;
+	UIPageControl *_pc;
 }
 @end
 
@@ -34,7 +35,7 @@
     // Do any additional setup after loading the view from its nib.
 	
 	// Custom initialization
-	CGRect scrollViewRect = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 100);
+	CGRect scrollViewRect = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 200);
 	_scrollView = [[UIScrollView alloc]initWithFrame:scrollViewRect];
 	_scrollView.pagingEnabled = YES;
 	[self.view addSubview:_scrollView];
@@ -70,11 +71,24 @@
 #endif
 	
 	_scrollView.delegate = self;
-	
-	
+		
 	// 初期表示するコンテンツViewの場所を指定します。
 	// 今回は２ページ目から表示します。
 	_scrollView.contentOffset = CGPointMake(320, 0);
+	
+	
+	// サイズを指定した生成例
+	_pc = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 400, 320, 30)];
+	_pc.numberOfPages = pageMax;
+	_pc.currentPage = pageNum;
+
+	// デフォルトの色
+	_pc.pageIndicatorTintColor = [UIColor blueColor];
+	
+	// 選択されてるページを現す色
+	_pc.currentPageIndicatorTintColor = [UIColor greenColor];
+
+	[self.view addSubview:_pc];
 	
 }
 
@@ -85,6 +99,8 @@
 }
 
 #pragma mark _UIScrollViewDelegate
+
+// スクロール時の処理
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
 	int offset_x = (int)scrollView.contentOffset.x;
@@ -92,6 +108,9 @@
 	_label1.text = [NSString stringWithFormat:@"offset_x:%d", offset_x];
 	pageNum = (int)(offset_x / 320);
 	_label2.text = [NSString stringWithFormat:@"page:%d", pageNum + 1];
+	
+	//ページコントロール
+	_pc.currentPage = pageNum;
 }
 
 

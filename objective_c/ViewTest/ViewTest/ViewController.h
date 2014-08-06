@@ -11,5 +11,8 @@
 @interface ViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIButton *button1;
 
+
 - (IBAction)pushButton1:(id)sender;
+- (IBAction)pushButton2:(id)sender;
+
 @end

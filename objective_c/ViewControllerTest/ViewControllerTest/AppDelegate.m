@@ -8,7 +8,19 @@
 
 #import "AppDelegate.h"
 
+#define NAVIGATION		(true)		// ナビゲーションコントローラを使用するか(true/false)
+
+@interface AppDelegate ()
+{
+#if NAVIGATION
+	UINavigationController *_nav;
+#endif
+}
+
+@end
+
 @implementation AppDelegate
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -16,7 +28,24 @@
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.viewController = [[ViewController alloc] init];
     self.window.rootViewController = self.viewController;
+#if NAVIGATION
+	_nav = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+#endif
     [self.window makeKeyAndVisible];
+	
+#if NAVIGATION
+	[self.window addSubview:_nav.view];
+#endif
+	
+	// ViewController2を追加
+	_viewController2 = [[ViewController2 alloc] initWithNibName: @"ViewController2" bundle:[NSBundle mainBundle]];
+#if 1
+	[[[UIApplication sharedApplication] windows][0] addSubview:self.viewController2.view];
+#endif
+#if 0
+	self.window.rootViewController = _viewController2;
+#endif
+	
     return YES;
 }
 							

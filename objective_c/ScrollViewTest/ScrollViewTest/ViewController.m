@@ -34,12 +34,31 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	
+	[self initScrollView];
+	[self initPageControl];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark _PrivateFunctions
+
+
+/**
+ * スクロールビューを初期化
+ * 4ページ分のコンテンツをスクロールする
+ */
+-(void)initScrollView
+{
 	// Custom initialization
 	CGRect scrollViewRect = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 200);
 	_scrollView = [[UIScrollView alloc]initWithFrame:scrollViewRect];
 	_scrollView.pagingEnabled = YES;
 	[self.view addSubview:_scrollView];
-		
+	
 	// UIScrollViewに表示するコンテンツViewを作成する。
 	CGSize s = _scrollView.frame.size;
 	CGRect contentRect = CGRectMake(0, 0, s.width * pageMax, s.height);
@@ -71,31 +90,32 @@
 #endif
 	
 	_scrollView.delegate = self;
-		
+	
 	// 初期表示するコンテンツViewの場所を指定します。
 	// 今回は２ページ目から表示します。
 	_scrollView.contentOffset = CGPointMake(320, 0);
 	
-	
+
+}
+
+/*
+ * ページコントロールを初期化
+ * スクロールビューの現在のページを表示するページコントロール
+ */
+-(void)initPageControl
+{
 	// サイズを指定した生成例
 	_pc = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 400, 320, 30)];
 	_pc.numberOfPages = pageMax;
 	_pc.currentPage = pageNum;
-
+	
 	// デフォルトの色
 	_pc.pageIndicatorTintColor = [UIColor blueColor];
 	
 	// 選択されてるページを現す色
 	_pc.currentPageIndicatorTintColor = [UIColor greenColor];
-
-	[self.view addSubview:_pc];
 	
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+	[self.view addSubview:_pc];
 }
 
 #pragma mark _UIScrollViewDelegate

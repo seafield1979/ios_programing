@@ -14,12 +14,12 @@
 {
     // Override point for customization after application launch.
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-#if 1
+#if 0
     self.viewController = [[ViewController alloc] init];
     self.window.rootViewController = self.viewController;
 #else
-	self.viewController2 = [[ViewController2 alloc] init];
-    self.window.rootViewController = self.viewController2;
+	self.viewController3 = [[ViewController3 alloc] init];
+    self.window.rootViewController = self.viewController3;
 #endif
     [self.window makeKeyAndVisible];
     return YES;

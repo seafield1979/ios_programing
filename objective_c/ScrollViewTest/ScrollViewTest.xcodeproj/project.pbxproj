@@ -17,6 +17,8 @@
 		0721D7C7198E966A002D5657 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0721D7C6198E966A002D5657 /* XCTest.framework */; };
 		0721D7C8198E966A002D5657 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0721D7A1198E966A002D5657 /* Foundation.framework */; };
 		0721D7C9198E966A002D5657 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0721D7A5198E966A002D5657 /* UIKit.framework */; };
+		58ABBBF419934CC500259F7C /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 58ABBBF219934CC500259F7C /* ViewController3.m */; };
+		58ABBBF519934CC500259F7C /* ViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58ABBBF319934CC500259F7C /* ViewController3.xib */; };
 		58C306EF1991E74B005DBF21 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C306ED1991E74B005DBF21 /* ViewController.m */; };
 		58C306F01991E74B005DBF21 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C306EE1991E74B005DBF21 /* ViewController.xib */; };
 		58C306F41991EE65005DBF21 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C306F21991EE65005DBF21 /* ViewController2.m */; };
@@ -47,6 +49,9 @@
 		0721D7BF198E966A002D5657 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0721D7C5198E966A002D5657 /* ScrollViewTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollViewTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0721D7C6198E966A002D5657 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		58ABBBF119934CC500259F7C /* ViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
+		58ABBBF219934CC500259F7C /* ViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
+		58ABBBF319934CC500259F7C /* ViewController3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController3.xib; sourceTree = "<group>"; };
 		58C306EC1991E74B005DBF21 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		58C306ED1991E74B005DBF21 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		58C306EE1991E74B005DBF21 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
@@ -119,6 +124,9 @@
 				58C306F11991EE65005DBF21 /* ViewController2.h */,
 				58C306F21991EE65005DBF21 /* ViewController2.m */,
 				58C306F31991EE65005DBF21 /* ViewController2.xib */,
+				58ABBBF119934CC500259F7C /* ViewController3.h */,
+				58ABBBF219934CC500259F7C /* ViewController3.m */,
+				58ABBBF319934CC500259F7C /* ViewController3.xib */,
 				0721D7BF198E966A002D5657 /* Images.xcassets */,
 				0721D7A8198E966A002D5657 /* Supporting Files */,
 			);
@@ -216,6 +224,7 @@
 				58C306F51991EE65005DBF21 /* ViewController2.xib in Resources */,
 				58C306F01991E74B005DBF21 /* ViewController.xib in Resources */,
 				0721D7AC198E966A002D5657 /* InfoPlist.strings in Resources */,
+				58ABBBF519934CC500259F7C /* ViewController3.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +246,7 @@
 				58C306F41991EE65005DBF21 /* ViewController2.m in Sources */,
 				0721D7AE198E966A002D5657 /* main.m in Sources */,
 				58C306EF1991E74B005DBF21 /* ViewController.m in Sources */,
+				58ABBBF419934CC500259F7C /* ViewController3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

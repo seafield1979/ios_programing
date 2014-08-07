@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 海野 秀祐. All rights reserved.
 //
 /*
-	縦にスクロールするView
+	縦にスクロールする
  */
 
 #import "ViewController2.h"

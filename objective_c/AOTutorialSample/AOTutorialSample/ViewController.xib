@@ -67,11 +67,11 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boke_text_how.png" id="FQ4-Wp-xSh">
-                    <rect key="frame" x="26" y="404" width="238" height="70"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boke_text_how.png" id="FQ4-Wp-xSh">
+                    <rect key="frame" x="48" y="398" width="238" height="70"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boke_text_tapzabuton.png" id="tyo-vq-46e">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boke_text_tapzabuton.png" id="tyo-vq-46e">
                     <rect key="frame" x="20" y="482" width="295" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>

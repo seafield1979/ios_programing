@@ -21,6 +21,7 @@
 		588A50DA1993444B00F2A2AC /* AOTutorialSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 588A50D91993444B00F2A2AC /* AOTutorialSampleTests.m */; };
 		588A50E61993446F00F2A2AC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588A50E41993446F00F2A2AC /* ViewController.m */; };
 		588A50E71993446F00F2A2AC /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588A50E51993446F00F2A2AC /* ViewController.xib */; };
+		58ABBBF819935D2800259F7C /* Image in Resources */ = {isa = PBXBuildFile; fileRef = 58ABBBF719935D2800259F7C /* Image */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		588A50E31993446F00F2A2AC /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		588A50E41993446F00F2A2AC /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		588A50E51993446F00F2A2AC /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		58ABBBF719935D2800259F7C /* Image */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Image; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		588A50B41993444B00F2A2AC /* AOTutorialSample */ = {
 			isa = PBXGroup;
 			children = (
+				58ABBBF619935B9200259F7C /* Resource */,
 				588A50BD1993444B00F2A2AC /* AppDelegate.h */,
 				588A50BE1993444B00F2A2AC /* AppDelegate.m */,
 				588A50E31993446F00F2A2AC /* ViewController.h */,
@@ -150,6 +153,14 @@
 				588A50D61993444B00F2A2AC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		58ABBBF619935B9200259F7C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				58ABBBF719935D2800259F7C /* Image */,
+			);
+			name = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58ABBBF819935D2800259F7C /* Image in Resources */,
 				588A50C71993444B00F2A2AC /* Images.xcassets in Resources */,
 				588A50E71993446F00F2A2AC /* ViewController.xib in Resources */,
 				588A50B91993444B00F2A2AC /* InfoPlist.strings in Resources */,

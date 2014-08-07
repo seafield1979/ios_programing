@@ -14,5 +14,6 @@
 
 - (IBAction)pushButton1:(id)sender;
 - (IBAction)pushButton2:(id)sender;
+- (IBAction)pushButton3:(id)sender;
 
 @end

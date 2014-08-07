@@ -12,10 +12,14 @@
 {
 	int showView;
 	int imageView;
+	int priorityView;
+	
 	UIView *_view1;
 	UIView *_view2;
 	UIView *_imgView1;
 	UIView *_imgView2;
+	UIView *_priView1;
+	UIView *_priView2;
 }
 @end
 
@@ -46,6 +50,13 @@
 		_imgView2.backgroundColor = [UIColor colorWithPatternImage:image2];
 		_imgView2.alpha = 0.0;
 		
+		// 表示優先度テスト用
+		priorityView = 0;
+		_priView1 = [[UIView alloc]initWithFrame:CGRectMake(100, 200, 100, 50)];
+		_priView1.backgroundColor = [UIColor redColor];
+		
+		_priView2 = [[UIView alloc]initWithFrame:CGRectMake(150, 200, 100, 50)];
+		_priView2.backgroundColor = [UIColor blueColor];
     }
     return self;
 }
@@ -58,6 +69,9 @@
 	[self.view addSubview:_view2];
 	[self.view addSubview:_imgView1];
 	[self.view addSubview:_imgView2];
+	[self.view addSubview:_priView1];
+	[self.view addSubview:_priView2];
+	
 }
 
 - (void)didReceiveMemoryWarning
@@ -110,6 +124,22 @@
 							 _imgView1.alpha = 0.0;
 							 _imgView2.alpha = 1.0;
 						 }];
+	}
+}
+
+/*
+ * Viewの表示優先度を変更する
+ */
+- (IBAction)pushButton3:(id)sender
+{
+	NSLog(@"pushButton3");
+	if(priorityView == 0){
+		priorityView = 1;
+		[self.view bringSubviewToFront:_priView1];
+	}
+	else{
+		priorityView = 0;
+		[self.view bringSubviewToFront:_priView2];
 	}
 }
 

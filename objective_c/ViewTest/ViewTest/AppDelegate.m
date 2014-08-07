@@ -47,8 +47,13 @@
     // Override point for customization after application launch.
 	// ここから
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+#if 0
     self.viewController = [[ViewController alloc] init];
     self.window.rootViewController = self.viewController;
+#else
+	self.viewController2 = [[ViewController2 alloc] init];
+    self.window.rootViewController = self.viewController2;
+#endif
     [self.window makeKeyAndVisible];
     // ここまでを追加
     return YES;

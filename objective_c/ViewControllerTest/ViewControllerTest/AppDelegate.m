@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#define NAVIGATION		(true)		// ナビゲーションコントローラを使用するか(true/false)
+#define NAVIGATION		(false)		// ナビゲーションコントローラを使用するか(true/false)
 
 @interface AppDelegate ()
 {
@@ -27,7 +27,9 @@
     // Override point for customization after application launch.
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.viewController = [[ViewController alloc] init];
-    self.window.rootViewController = self.viewController;
+	self.tableViewController = [[TableViewController alloc]init];
+//    self.window.rootViewController = self.viewController;
+    self.window.rootViewController = self.tableViewController;
 #if NAVIGATION
 	_nav = [[UINavigationController alloc] initWithRootViewController:self.viewController];
 #endif
@@ -39,7 +41,8 @@
 	
 	// ViewController2を追加
 	_viewController2 = [[ViewController2 alloc] initWithNibName: @"ViewController2" bundle:[NSBundle mainBundle]];
-#if 1
+
+#if 0
 	[[[UIApplication sharedApplication] windows][0] addSubview:self.viewController2.view];
 #endif
 #if 0

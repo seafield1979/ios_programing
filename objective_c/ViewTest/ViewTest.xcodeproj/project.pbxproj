@@ -17,6 +17,8 @@
 		0720697D198E88E100A2C829 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0720697C198E88E100A2C829 /* XCTest.framework */; };
 		0720697E198E88E100A2C829 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0720695D198E88E100A2C829 /* Foundation.framework */; };
 		0720697F198E88E100A2C829 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07206961198E88E100A2C829 /* UIKit.framework */; };
+		07662F3C1993C10400134472 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 07662F3A1993C10400134472 /* ViewController2.m */; };
+		07662F3D1993C10400134472 /* ViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07662F3B1993C10400134472 /* ViewController2.xib */; };
 		07F16D26198EA1640077ABB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F16D24198EA1640077ABB3 /* ViewController.m */; };
 		07F16D27198EA1640077ABB3 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F16D25198EA1640077ABB3 /* ViewController.xib */; };
 		58C306EB1991E32F005DBF21 /* Image in Resources */ = {isa = PBXBuildFile; fileRef = 58C306EA1991E32F005DBF21 /* Image */; };
@@ -46,6 +48,9 @@
 		07206975198E88E100A2C829 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0720697B198E88E100A2C829 /* ViewTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViewTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0720697C198E88E100A2C829 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		07662F391993C10400134472 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		07662F3A1993C10400134472 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		07662F3B1993C10400134472 /* ViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController2.xib; sourceTree = "<group>"; };
 		07F16D23198EA1640077ABB3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		07F16D24198EA1640077ABB3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		07F16D25198EA1640077ABB3 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
@@ -112,6 +117,9 @@
 				07F16D23198EA1640077ABB3 /* ViewController.h */,
 				07F16D24198EA1640077ABB3 /* ViewController.m */,
 				07F16D25198EA1640077ABB3 /* ViewController.xib */,
+				07662F391993C10400134472 /* ViewController2.h */,
+				07662F3A1993C10400134472 /* ViewController2.m */,
+				07662F3B1993C10400134472 /* ViewController2.xib */,
 				0720696C198E88E100A2C829 /* AppDelegate.h */,
 				0720696D198E88E100A2C829 /* AppDelegate.m */,
 				07206975198E88E100A2C829 /* Images.xcassets */,
@@ -215,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07662F3D1993C10400134472 /* ViewController2.xib in Resources */,
 				58C306EB1991E32F005DBF21 /* Image in Resources */,
 				07206976198E88E100A2C829 /* Images.xcassets in Resources */,
 				07F16D27198EA1640077ABB3 /* ViewController.xib in Resources */,
@@ -237,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07F16D26198EA1640077ABB3 /* ViewController.m in Sources */,
+				07662F3C1993C10400134472 /* ViewController2.m in Sources */,
 				0720696E198E88E100A2C829 /* AppDelegate.m in Sources */,
 				0720696A198E88E100A2C829 /* main.m in Sources */,
 			);

@@ -72,7 +72,12 @@
 -(IBAction)pushCloseButton:(id)sender
 {
 	NSLog(@"pushCloseButton");
-	[self.view removeFromSuperview];
+		[UIView animateWithDuration:1.0f animations:^(void){
+			self.view.alpha = 0.0f;
+		}
+		completion:^(BOOL finished){
+			[self.view removeFromSuperview];
+		}];
 }
 
 @end

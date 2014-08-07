@@ -90,6 +90,9 @@
 				 // アニメーションをする処理
 				 _view1.alpha = 1.0;
 				 _view2.alpha = 0.0;
+			 }
+			 completion:^(BOOL finished){
+				NSLog(@"finish amimation");
 			 }];
 	}
 	else{
@@ -99,6 +102,9 @@
 							 // アニメーションをする処理
 							 _view1.alpha = 0.0;
 							 _view2.alpha = 1.0;
+						 }
+						 completion:^(BOOL finished){
+							 NSLog(@"finish amimation");
 						 }];
 
 	}

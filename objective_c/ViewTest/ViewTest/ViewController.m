@@ -20,6 +20,8 @@
 	UIView *_imgView2;
 	UIView *_priView1;
 	UIView *_priView2;
+	
+	UIView *_touchView;
 }
 @end
 
@@ -57,6 +59,22 @@
 		
 		_priView2 = [[UIView alloc]initWithFrame:CGRectMake(150, 200, 100, 50)];
 		_priView2.backgroundColor = [UIColor blueColor];
+		
+		
+		// タッチ、タップテスト
+		_touchView = [[UIView alloc] initWithFrame:CGRectMake(100, 250, 50, 50)];
+		_touchView.backgroundColor = [UIColor orangeColor];
+		// タッチを有効にする
+		UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapped:)];
+        _touchView.userInteractionEnabled = YES;
+		[_touchView addGestureRecognizer: recognizer];
+		[self.view addSubview:_touchView];
+		
+		UILabel *labelTouch = [[UILabel alloc] initWithFrame:CGRectMake(20, 250, 80, 30)];
+		labelTouch.text = @"touch -> ";
+		[self.view addSubview:labelTouch];
+		
+		
     }
     return self;
 }
@@ -148,5 +166,15 @@
 		[self.view bringSubviewToFront:_priView2];
 	}
 }
+
+/**
+ * UIViewがタップされたときに呼ばれるメソッド
+ */
+- (void)onTapped:(UITapGestureRecognizer *)recognizer {
+	
+    //タップされた際のアクション
+    NSLog(@"%@",recognizer);
+}
+
 
 @end

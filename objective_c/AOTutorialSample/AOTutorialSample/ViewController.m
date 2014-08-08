@@ -205,3 +205,66 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
 }
 
 @end
+
+
+
+typedef enum{
+	ZABU_INIT = 0,		// タッチされていない
+	ZABU_TOUCH_START,	// タッチされた
+	ZABU_TOUCH_END,		// タッチ離された
+	ZABU_STOP
+}ZabutonState;
+
+@interface ZabutonView ()
+{
+	int state;
+	int count;
+	NSMutableArray *images;
+}
+
+@end
+@implementation ZabutonView
+-(id)init
+{
+	self = [super init];
+	if(self){
+		// 座布団で使用する画像を生成
+		NSArray *imageName = @[@"aaa.png", @"bbb.png", @"ccc.png", @"ddd.png", @"eee.png"];
+		images = [[NSMutableArray alloc]init];
+		for(NSString *name in imageName){
+			[images addObject:[UIImage imageNamed:name]];
+		}
+		count = 0;
+	}
+	return self;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	// タッチされたときの処理
+	NSLog(@"touchesBegan");
+	if(count >= 3){
+		return;
+	}
+	switch(state){
+		case ZABU_INIT:
+			// 座布団押されたときのアニメーション
+			[UIView animateWithDuration:0.1f
+				 animations:^(void){
+					 
+				 }
+			 completion:^(BOOL finished){
+				 
+			 }
+			 ];
+			break;
+	}
+}
+			 
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	NSLog(@"touchesEnded");
+}
+
+
+@end

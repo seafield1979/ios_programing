@@ -23,3 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *skipButtonView;
 
 @end
+
+@interface ZabutonView : UIView
+
+@end

@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "ViewController.h"
 #import "ViewController2.h"
+#import "ViewController3.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) ViewController *viewController; // 追加
 @property (strong, nonatomic) ViewController2 *viewController2; // 追加
+@property (strong, nonatomic) ViewController3 *viewController3; // 追加
 
 
 @end

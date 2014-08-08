@@ -21,7 +21,8 @@
 	UIView *_priView1;
 	UIView *_priView2;
 	
-	UIView *_touchView;
+	UIView *_tapView;
+	MyTouchView *_myTouchView;
 }
 @end
 
@@ -62,19 +63,24 @@
 		
 		
 		// タッチ、タップテスト
-		_touchView = [[UIView alloc] initWithFrame:CGRectMake(100, 250, 50, 50)];
-		_touchView.backgroundColor = [UIColor orangeColor];
-		// タッチを有効にする
+		_tapView = [[UIView alloc] initWithFrame:CGRectMake(100, 250, 50, 50)];
+		_tapView.backgroundColor = [UIColor orangeColor];
+		
+		
+		// タッチできるUIView
 		UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapped:)];
-        _touchView.userInteractionEnabled = YES;
-		[_touchView addGestureRecognizer: recognizer];
-		[self.view addSubview:_touchView];
+        _tapView.userInteractionEnabled = YES;
+		[_tapView addGestureRecognizer: recognizer];
+		[self.view addSubview:_tapView];
 		
 		UILabel *labelTouch = [[UILabel alloc] initWithFrame:CGRectMake(20, 250, 80, 30)];
 		labelTouch.text = @"touch -> ";
 		[self.view addSubview:labelTouch];
-		
-		
+
+		// タッチできるUIView 2
+		_myTouchView = [[MyTouchView alloc] initWithFrame:CGRectMake(200, 250, 50, 50)];
+		_myTouchView.backgroundColor = [UIColor purpleColor];
+		[self.view addSubview: _myTouchView];
     }
     return self;
 }
@@ -151,6 +157,7 @@
 	}
 }
 
+
 /*
  * Viewの表示優先度を変更する
  */
@@ -176,5 +183,27 @@
     NSLog(@"%@",recognizer);
 }
 
+
+@end
+
+
+@interface MyTouchView ()
+@end
+
+@implementation MyTouchView
+
+/**
+ * タッチされたとき
+ */
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    // タッチされたときの処理
+	NSLog(@"touchesBegan");
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	NSLog(@"touchesEnded");
+}
 
 @end

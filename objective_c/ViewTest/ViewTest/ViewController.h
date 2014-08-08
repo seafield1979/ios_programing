@@ -17,3 +17,7 @@
 - (IBAction)pushButton3:(id)sender;
 
 @end
+
+@interface MyTouchView : UIView
+
+@end

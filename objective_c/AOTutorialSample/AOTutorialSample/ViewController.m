@@ -72,14 +72,16 @@ typedef enum{
 
 -(void) init_TUTO_INIT			// 初期状態
 {
-	//	_tm =
-	//	[NSTimer
-	//	 scheduledTimerWithTimeInterval:2.0f    // タイマーを発生させる間隔(秒)
-	//	 target:self                            // タイマー発生時に呼び出すメソッドがあるターゲット
-	//	 selector:@selector(stateFunc)        // タイマー発生時に呼び出すメソッド
-	//	 userInfo:nil                           // selectorで呼び出すメソッドに渡す情報(NSDictionary)
-	//	 repeats:YES                            // タイマーの実行を繰り返すかどうかの指定 （YES：繰り返す　NO：１回のみ）
-	//	];
+    /*
+		_tm =
+		[NSTimer
+		 scheduledTimerWithTimeInterval:2.0f    // タイマーを発生させる間隔(秒)
+		 target:self                            // タイマー発生時に呼び出すメソッドがあるターゲット
+		 selector:@selector(stateFunc)        // タイマー発生時に呼び出すメソッド
+		 userInfo:nil                           // selectorで呼び出すメソッドに渡す情報(NSDictionary)
+		 repeats:YES                            // タイマーの実行を繰り返すかどうかの指定 （YES：繰り返す　NO：１回のみ）
+		];
+     */
 
 }
 -(void) init_TUTO_FADE_IN           // 初期フェードイン
@@ -94,50 +96,87 @@ typedef enum{
 						 _page1View.alpha = 1.0;
 					 }
 					 completion:^(BOOL finished){
+                    [self init_TUTO_TELOP_APP];
 					 }
 	 ];
 }
--(void) TUTO_TELOP_APP         // ？？？、「この画像、あなたならどうボケる？？」の表示
+-(void) init_TUTO_TELOP_APP         // ？？？、「この画像、あなたならどうボケる？？」の表示
+{
+    NSLog(@"init_TUTO_TELOP_APP");
+	state = TUTO_TELOP_APP;
+    
+    // ？？？を表示
+    _tm =
+    [NSTimer
+     scheduledTimerWithTimeInterval:1.0f    // タイマーを発生させる間隔(秒)
+     target:self                            // タイマー発生時に呼び出すメソッドがあるターゲット
+     selector:@selector(TUTO_TELOP_APP_timer_func1)        // タイマー発生時に呼び出すメソッド
+     userInfo:nil                           // selectorで呼び出すメソッドに渡す情報(NSDictionary)
+     repeats:NO                            // タイマーの実行を繰り返すかどうかの指定 （YES：繰り返す　NO：１回のみ）
+     ];
+    
+    // この画像、あなたならどうボケる？を表示
+    _tm =
+    [NSTimer
+     scheduledTimerWithTimeInterval:2.0f    // タイマーを発生させる間隔(秒)
+     target:self                            // タイマー発生時に呼び出すメソッドがあるターゲット
+     selector:@selector(TUTO_TELOP_APP_timer_func2)        // タイマー発生時に呼び出すメソッド
+     userInfo:nil                           // selectorで呼び出すメソッドに渡す情報(NSDictionary)
+     repeats:NO                            // タイマーの実行を繰り返すかどうかの指定 （YES：繰り返す　NO：１回のみ）
+     ];
+    
+    
+}
+-(void)TUTO_TELOP_APP_timer_func1
+{
+    NSLog(@"timer1");
+}
+-(void)TUTO_TELOP_APP_timer_func2
+{
+    NSLog(@"timer2");
+    
+}
+
+
+-(void) init_TUTO_TELOP_WAIT		// 表示待ち1
+{
+    NSLog(@"init_TUTO_TELOP_WAIT");
+    state = TUTO_TELOP_WAIT;
+    [self init_TUTO_BOKE_APP];
+}
+-(void) init_TUTO_BOKE_APP		    // ボケテキストの表示
+{
+    
+}
+-(void) init_TUTO_ZABUTON_APP       // 座布団、「座布団をタップしてみよう」の表示
 {
 	
 }
--(void) TUTO_TELOP_WAIT		// 表示待ち1
+-(void) init_TUTO_ZABUTON_WAIT		// 座布団がタッチされるまでの待ち
 {
 	
 }
--(void) TUTO_BOKE_APP		    // ボケテキストの表示
+-(void) init_TUTO_ZABUTON_ANIM      // 座布団アニメーション
 {
 	
 }
--(void) TUTO_ZABUTON_APP       // 座布団、「座布団をタップしてみよう」の表示
+-(void) init_TUTO_TELOP2_APP        // 「気軽にボケられるよ」の表示
 {
 	
 }
--(void) TUTO_ZABUTON_WAIT		// 座布団がタッチされるまでの待ち
+-(void) init_TUTO_TELOP2_WAIT       // 「気軽にボケられるよ」の待ち
 {
 	
 }
--(void) TUTO_ZABUTON_ANIM      // 座布団アニメーション
+-(void) init_TUTO_FADE_OUT_1		// フェードアウト1
 {
 	
 }
--(void) TUTO_TELOP2_APP        // 「気軽にボケられるよ」の表示
+-(void) init_TUTO_FADE_IN_2         // フェードイン2
 {
 	
 }
--(void) TUTO_TELOP2_WAIT       // 「気軽にボケられるよ」の待ち
-{
-	
-}
--(void) TUTO_FADE_OUT_1		// フェードアウト1
-{
-	
-}
--(void) TUTO_FADE_IN_2         // フェードイン2
-{
-	
-}
--(void) TUTO_LAST_WAIT			// ログインorスキップボタンが押されるのの待ち
+-(void) init_TUTO_LAST_WAIT			// ログインorスキップボタンが押されるのの待ち
 {
 	
 }

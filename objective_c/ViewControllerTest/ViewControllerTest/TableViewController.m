@@ -9,22 +9,39 @@
 #import "TableViewController.h"
 
 @interface TableViewController ()
-
+{
+	NSArray *sectionList;
+    NSDictionary *dataSource;
+}
 @end
 
 @implementation TableViewController
 
+-(id)init
+{
+	self = [super initWithStyle:UITableViewStylePlain];
+	if (self) {
+		// ・・・・
+	}
+	return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	// セクション名を設定する
+    sectionList = [NSArray arrayWithObjects:@"人間", @"犬", @"その他", nil];
 
-	dataSource = [[NSArray alloc]initWithObjects:@"111", @"222", @"333", @"444", @"555", nil];
+    // セルの項目を作成する
+	NSArray *peple = [NSArray arrayWithObjects:@"Charlie", @"Sally", @"Lucy", nil];
+    NSArray *dogs  = [NSArray arrayWithObjects:@"Snoopy", @"Spike", @"Olaf", nil];
+    NSArray *others = [NSArray arrayWithObjects:@"Woodstock", nil];
+
+    // セルの項目をまとめる
+    NSArray *datas = [NSArray arrayWithObjects:peple, dogs, others, nil];
+
+    dataSource = [NSDictionary dictionaryWithObjects:datas forKeys:sectionList];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,32 +58,47 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 0;
+	return [sectionList count];
+
 }
 
 #pragma mark - Table view delegate
 
+/**
+ * 指定されたセクションのセクション名を返す
+ */
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [sectionList objectAtIndex:section];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [dataSource count];
+	NSString *sectionName = [sectionList objectAtIndex: section];
+    return [[dataSource objectForKey:sectionName] count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *cellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+
     // セルが作成されていないか?
     if (!cell) { // yes
         // セルを作成
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
 
-    // セルにテキストを設定
-    cell.textLabel.text = [dataSource objectAtIndex:indexPath.row];
+    // セクション名を取得する
+    NSString *sectionName = [sectionList objectAtIndex:indexPath.section];
 
+    // セクション名をキーにしてそのセクションの項目をすべて取得
+    NSArray *items = [dataSource objectForKey:sectionName];
+
+    // セルにテキストを設定
+    cell.textLabel.text = [items objectAtIndex:indexPath.row];
 
     return cell;
 }
@@ -76,7 +108,13 @@
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"「%@」が選択されました", [dataSource objectAtIndex:indexPath.row]);
+    // セクション名を取得する
+    NSString *sectionName = [sectionList objectAtIndex:indexPath.section];
+
+    // セクション名をキーにしてそのセクションの項目をすべて取得
+    NSArray *items = [dataSource objectForKey:sectionName];
+
+    NSLog(@"「%@」が選択されました", [items objectAtIndex:indexPath.row]);
 }
 
 /*

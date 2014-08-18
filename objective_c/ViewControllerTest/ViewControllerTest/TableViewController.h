@@ -9,8 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TableViewController : UITableViewController
-{
-	NSArray *dataSource;
-}
 
 @end

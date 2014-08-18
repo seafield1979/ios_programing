@@ -11,12 +11,16 @@
 @interface ViewController : UIViewController <UIAlertViewDelegate>
 - (IBAction)pushButton1:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *page1View;
-@property (strong, nonatomic) IBOutlet UIView *page2View;
-@property (weak, nonatomic) IBOutlet UIImageView *bokeText2View;
+@property (weak, nonatomic) IBOutlet UIView *bokeImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *bokeText1View;
-@property (weak, nonatomic) IBOutlet UIImageView *telop1View;
+@property (weak, nonatomic) IBOutlet UIImageView *bokeText2View;
+@property (weak, nonatomic) IBOutlet UIImageView *howToBokeView;
 @property (weak, nonatomic) IBOutlet UIImageView *telop2View;
+
 @property (weak, nonatomic) IBOutlet UIImageView *letsBokeView;
+@property (weak, nonatomic) IBOutlet UIImageView *balloneView;
+
+@property (strong, nonatomic) IBOutlet UIView *page2View;
 
 @property (weak, nonatomic) IBOutlet UIView *buttonAreaView;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
@@ -24,6 +28,6 @@
 
 @end
 
-@interface ZabutonView : UIView
+@interface ZabutonView : UIImageView
 
 @end

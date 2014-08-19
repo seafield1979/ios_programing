@@ -21,6 +21,10 @@
 		588A50DA1993444B00F2A2AC /* AOTutorialSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 588A50D91993444B00F2A2AC /* AOTutorialSampleTests.m */; };
 		588A50E61993446F00F2A2AC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588A50E41993446F00F2A2AC /* ViewController.m */; };
 		588A50E71993446F00F2A2AC /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588A50E51993446F00F2A2AC /* ViewController.xib */; };
+		588B4A6F19A335F900AC9A84 /* PRTween.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B4A6C19A335F900AC9A84 /* PRTween.m */; };
+		588B4A7019A335F900AC9A84 /* PRTweenTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B4A6E19A335F900AC9A84 /* PRTweenTimingFunctions.m */; };
+		588B4A7319A3441200AC9A84 /* MovingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B4A7219A3441200AC9A84 /* MovingImageView.m */; };
+		588B4A7719A34D0000AC9A84 /* boke_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 588B4A7619A34D0000AC9A84 /* boke_arrow.png */; };
 		58ABBC1419937B4700259F7C /* boke_obi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58ABBBFA19937B1D00259F7C /* boke_obi@2x.png */; };
 		58ABBC1519937B4700259F7C /* boke_photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58ABBBFB19937B1D00259F7C /* boke_photo@2x.png */; };
 		58ABBC1619937B4700259F7C /* boke_text_cardboard-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58ABBBFC19937B1D00259F7C /* boke_text_cardboard-568@2x.png */; };
@@ -82,6 +86,13 @@
 		588A50E31993446F00F2A2AC /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		588A50E41993446F00F2A2AC /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		588A50E51993446F00F2A2AC /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		588B4A6B19A335F900AC9A84 /* PRTween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRTween.h; path = PRTween/PRTween.h; sourceTree = SOURCE_ROOT; };
+		588B4A6C19A335F900AC9A84 /* PRTween.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRTween.m; path = PRTween/PRTween.m; sourceTree = SOURCE_ROOT; };
+		588B4A6D19A335F900AC9A84 /* PRTweenTimingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRTweenTimingFunctions.h; path = PRTween/PRTweenTimingFunctions.h; sourceTree = SOURCE_ROOT; };
+		588B4A6E19A335F900AC9A84 /* PRTweenTimingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRTweenTimingFunctions.m; path = PRTween/PRTweenTimingFunctions.m; sourceTree = SOURCE_ROOT; };
+		588B4A7119A3441200AC9A84 /* MovingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingImageView.h; sourceTree = "<group>"; };
+		588B4A7219A3441200AC9A84 /* MovingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovingImageView.m; sourceTree = "<group>"; };
+		588B4A7619A34D0000AC9A84 /* boke_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boke_arrow.png; sourceTree = "<group>"; };
 		58ABBBFA19937B1D00259F7C /* boke_obi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "boke_obi@2x.png"; sourceTree = "<group>"; };
 		58ABBBFB19937B1D00259F7C /* boke_photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "boke_photo@2x.png"; sourceTree = "<group>"; };
 		58ABBBFC19937B1D00259F7C /* boke_text_cardboard-568@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "boke_text_cardboard-568@2x.png"; sourceTree = "<group>"; };
@@ -170,11 +181,14 @@
 		588A50B41993444B00F2A2AC /* AOTutorialSample */ = {
 			isa = PBXGroup;
 			children = (
+				588B4A6919A335D100AC9A84 /* Libs */,
 				58ABBBF619935B9200259F7C /* Resource */,
 				588A50BD1993444B00F2A2AC /* AppDelegate.h */,
 				588A50BE1993444B00F2A2AC /* AppDelegate.m */,
 				588A50E31993446F00F2A2AC /* ViewController.h */,
 				588A50E41993446F00F2A2AC /* ViewController.m */,
+				588B4A7119A3441200AC9A84 /* MovingImageView.h */,
+				588B4A7219A3441200AC9A84 /* MovingImageView.m */,
 				588A50E51993446F00F2A2AC /* ViewController.xib */,
 				588A50C61993444B00F2A2AC /* Images.xcassets */,
 				588A50B51993444B00F2A2AC /* Supporting Files */,
@@ -211,6 +225,25 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		588B4A6919A335D100AC9A84 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				588B4A6A19A335D600AC9A84 /* PRTween */,
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
+		588B4A6A19A335D600AC9A84 /* PRTween */ = {
+			isa = PBXGroup;
+			children = (
+				588B4A6B19A335F900AC9A84 /* PRTween.h */,
+				588B4A6C19A335F900AC9A84 /* PRTween.m */,
+				588B4A6D19A335F900AC9A84 /* PRTweenTimingFunctions.h */,
+				588B4A6E19A335F900AC9A84 /* PRTweenTimingFunctions.m */,
+			);
+			name = PRTween;
+			sourceTree = "<group>";
+		};
 		58ABBBF619935B9200259F7C /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +255,7 @@
 		58ABBBF919937B1D00259F7C /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				588B4A7619A34D0000AC9A84 /* boke_arrow.png */,
 				58ABBBFA19937B1D00259F7C /* boke_obi@2x.png */,
 				58ABBBFB19937B1D00259F7C /* boke_photo@2x.png */,
 				58ABBBFC19937B1D00259F7C /* boke_text_cardboard-568@2x.png */,
@@ -347,6 +381,7 @@
 				58ABBC2019937B4800259F7C /* login_icon_sns@2x.png in Resources */,
 				58ABBC2119937B4800259F7C /* login_logo_pigg-568@2x.png in Resources */,
 				58F9095319A21D6300F2C46A /* boke_text_tapzabuton-568@2x.png in Resources */,
+				588B4A7719A34D0000AC9A84 /* boke_arrow.png in Resources */,
 				58ABBC2219937B4800259F7C /* login_text_caution@2x.png in Resources */,
 				58F9095419A21D6300F2C46A /* boke_ballone@2x.png in Resources */,
 				58ABBC2319937B4800259F7C /* zabuton_0@2x.png in Resources */,
@@ -382,7 +417,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				588A50E61993446F00F2A2AC /* ViewController.m in Sources */,
+				588B4A6F19A335F900AC9A84 /* PRTween.m in Sources */,
+				588B4A7019A335F900AC9A84 /* PRTweenTimingFunctions.m in Sources */,
 				588A50BF1993444B00F2A2AC /* AppDelegate.m in Sources */,
+				588B4A7319A3441200AC9A84 /* MovingImageView.m in Sources */,
 				588A50BB1993444B00F2A2AC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

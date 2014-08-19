@@ -20,6 +20,8 @@
     if (self) {
         // Custom initialization
     }
+    
+    UITapGestureRecognizer *aaa;
     return self;
 }
 

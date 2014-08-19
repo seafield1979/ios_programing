@@ -19,6 +19,8 @@
 		0721D80A198E97ED002D5657 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0721D7EC198E97ED002D5657 /* UIKit.framework */; };
 		07662F321991365700134472 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07662F301991365700134472 /* ViewController.m */; };
 		07662F331991365700134472 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07662F311991365700134472 /* ViewController.xib */; };
+		588B4A7B19A3502F00AC9A84 /* GestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B4A7919A3502F00AC9A84 /* GestureViewController.m */; };
+		588B4A7C19A3502F00AC9A84 /* GestureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588B4A7A19A3502F00AC9A84 /* GestureViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		07662F2F1991365700134472 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		07662F301991365700134472 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		07662F311991365700134472 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		588B4A7819A3502F00AC9A84 /* GestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureViewController.h; sourceTree = "<group>"; };
+		588B4A7919A3502F00AC9A84 /* GestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureViewController.m; sourceTree = "<group>"; };
+		588B4A7A19A3502F00AC9A84 /* GestureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GestureViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +116,9 @@
 				07662F2F1991365700134472 /* ViewController.h */,
 				07662F301991365700134472 /* ViewController.m */,
 				07662F311991365700134472 /* ViewController.xib */,
+				588B4A7819A3502F00AC9A84 /* GestureViewController.h */,
+				588B4A7919A3502F00AC9A84 /* GestureViewController.m */,
+				588B4A7A19A3502F00AC9A84 /* GestureViewController.xib */,
 				0721D800198E97ED002D5657 /* Images.xcassets */,
 				0721D7EF198E97ED002D5657 /* Supporting Files */,
 			);
@@ -204,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				588B4A7C19A3502F00AC9A84 /* GestureViewController.xib in Resources */,
 				0721D801198E97ED002D5657 /* Images.xcassets in Resources */,
 				07662F331991365700134472 /* ViewController.xib in Resources */,
 				0721D7F3198E97ED002D5657 /* InfoPlist.strings in Resources */,
@@ -224,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				588B4A7B19A3502F00AC9A84 /* GestureViewController.m in Sources */,
 				07662F321991365700134472 /* ViewController.m in Sources */,
 				0721D7F9198E97ED002D5657 /* AppDelegate.m in Sources */,
 				0721D7F5198E97ED002D5657 /* main.m in Sources */,

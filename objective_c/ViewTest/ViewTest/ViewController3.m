@@ -65,7 +65,7 @@
 						 NSLog(@"finish amimation");
 					 }];
 	
-	CGAffineTransform t, t2, t3;
+//	CGAffineTransform t, t2, t3;
 #if 0
 	[UIView animateWithDuration:1.0f
 					 animations:^{
@@ -117,7 +117,24 @@
 -(IBAction)pushButton2:(id)sender
 {
 	NSLog(@"pushButton2");
-	_imageView1.transform = CGAffineTransformMakeScale(0.75, 0.75);
+
+	NSLog(@"pushButton1");
+
+	CGRect rect1 = _imageView1.frame;
+
+	[UIView animateWithDuration:1.0f
+					 animations:^{
+						 //拡大
+						 float width = rect1.size.width * 0.75;
+						 float height = rect1.size.height * 0.75;
+						 _imageView1.frame = CGRectMake(rect1.origin.x + rect1.size.width / 2 - width / 2,
+														rect1.origin.y + rect1.size.height / 2 - height / 2, width, height);
+					 }
+					 completion:^(BOOL finished){
+						 NSLog(@"finish amimation");
+					 }];
+
+
 }
 
 

@@ -7,20 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PRTween.h"
+#import "MovingImageView.h"
 
 @interface ZabutonView : UIImageView
 
 @end
 
 @interface ViewController : UIViewController <UIAlertViewDelegate>
+{
+	PRTweenOperation *activeTweenOperation;
+}
 - (IBAction)pushButton1:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *page1View;
 @property (weak, nonatomic) IBOutlet UIView *bokeImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *bokeText1View;
-@property (weak, nonatomic) IBOutlet UIImageView *bokeText2View;
-@property (weak, nonatomic) IBOutlet UIImageView *howToBokeView;
+@property (weak, nonatomic) IBOutlet MovingImageView *bokeText1View;
+@property (weak, nonatomic) IBOutlet MovingImageView *bokeText2View;
+@property (weak, nonatomic) IBOutlet MovingImageView *howToBokeView;
 @property (weak, nonatomic) IBOutlet UIImageView *letsTapView;
 @property (weak, nonatomic) IBOutlet ZabutonView *zabutonView;
+@property (weak, nonatomic) IBOutlet UIImageView *handIconView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *letsBokeView;
 @property (weak, nonatomic) IBOutlet UIImageView *balloneView;

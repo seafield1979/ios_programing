@@ -73,12 +73,14 @@ typedef enum{
 	_letsBokeView.hidden = YES;
 	_balloneView.hidden = YES;
 	_zabutonView.hidden = YES;
-	
+	_handIconView.hidden = YES;
 	
 	[self init_TUTO_FADE_IN];
 #endif
 }
 
+
+#pragma mark _statusFunctions
 
 -(void) init_TUTO_INIT			// 初期状態
 {
@@ -94,7 +96,9 @@ typedef enum{
      */
 
 }
--(void) init_TUTO_FADE_IN           // 初期フェードイン
+
+// 初期フェードイン
+-(void) init_TUTO_FADE_IN
 {
 	state = TUTO_FADE_IN;
 	_page1View.alpha = 0.0;
@@ -110,32 +114,42 @@ typedef enum{
 					 }
 	 ];
 }
--(void) init_TUTO_TELOP_APP         // ？？？、「この画像、あなたならどうボケる？？」の表示
+
+// ？？？、「この画像、あなたならどうボケる？？」の表示
+-(void) init_TUTO_TELOP_APP
 {
     NSLog(@"init_TUTO_TELOP_APP");
 	state = TUTO_TELOP_APP;
     
     // ？？？を表示
+    
+	CGRect frame = _bokeText1View.frame;
+    _bokeText1View.frame = CGRectMake(0, 0, 0, 0);
+    _bokeText1View.hidden = NO;
+	
+    [_bokeText1View appearAnim:2.0 center_x:frame.origin.x + frame.size.width / 2 center_y:frame.origin.y + frame.size.height / 2 dst_width:84.0 dst_height:35.0];
+
+#if 0
     _tm =
     [NSTimer
-     scheduledTimerWithTimeInterval:1.0f    // タイマーを発生させる間隔(秒)
-     target:self                            // タイマー発生時に呼び出すメソッドがあるターゲット
-     selector:@selector(TUTO_TELOP_APP_timer_func1)        // タイマー発生時に呼び出すメソッド
-     userInfo:nil                           // selectorで呼び出すメソッドに渡す情報(NSDictionary)
-     repeats:NO                            // タイマーの実行を繰り返すかどうかの指定 （YES：繰り返す　NO：１回のみ）
+     scheduledTimerWithTimeInterval:1.0f
+     target:self
+     selector:@selector(TUTO_TELOP_APP_timer_func1)
+     userInfo:nil
+     repeats:NO
      ];
-    
+#endif
     // この画像、あなたならどうボケる？を表示
+#if 1
     _tm =
     [NSTimer
-     scheduledTimerWithTimeInterval:2.0f    // タイマーを発生させる間隔(秒)
-     target:self                            // タイマー発生時に呼び出すメソッドがあるターゲット
-     selector:@selector(TUTO_TELOP_APP_timer_func2)        // タイマー発生時に呼び出すメソッド
-     userInfo:nil                           // selectorで呼び出すメソッドに渡す情報(NSDictionary)
-     repeats:NO                            // タイマーの実行を繰り返すかどうかの指定 （YES：繰り返す　NO：１回のみ）
+     scheduledTimerWithTimeInterval:1.0f
+     target:self
+     selector:@selector(TUTO_TELOP_APP_timer_func2)
+     userInfo:nil
+     repeats:NO
      ];
-    
-    
+#endif
 }
 -(void)TUTO_TELOP_APP_timer_func1
 {
@@ -147,6 +161,13 @@ typedef enum{
 {
     NSLog(@"timer2");
 	_howToBokeView.hidden = NO;
+
+   	CGRect frame = _howToBokeView.frame;
+    _howToBokeView.frame = CGRectMake(0, 0, 0, 0);
+    _howToBokeView.hidden = NO;
+
+     [_howToBokeView appearAnim:2.0 center_x:frame.origin.x + frame.size.width / 2 center_y:frame.origin.y + frame.size.height / 2 dst_width:255.0 dst_height:77.0];
+
     [self init_TUTO_TELOP_WAIT];
 }
 
@@ -446,6 +467,8 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
 	
 }
 
+
+#pragma mark _eventfunctions
 
 - (IBAction)pushLoginButton:(id)sender
 {

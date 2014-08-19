@@ -60,6 +60,8 @@
 }
 
 - (IBAction)pushTween4:(id)sender {
+	[[PRTween sharedInstance] removeTweenOperation:activeTweenOperation];
+
     PRTweenPeriod *period = [PRTweenPeriod periodWithStartValue:0.0 endValue:400.0 duration:1.5];
 	activeTweenOperation = [[PRTween sharedInstance] addTweenPeriod:period
 														updateBlock:^(PRTweenPeriod *period) {

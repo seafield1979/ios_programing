@@ -12,6 +12,7 @@
                 <outlet property="bokeText1View" destination="44B-oi-Og1" id="8XL-2x-KRV"/>
                 <outlet property="bokeText2View" destination="lCK-ld-W8X" id="HX7-dR-Amt"/>
                 <outlet property="buttonAreaView" destination="rgR-vU-o5Z" id="V6w-SQ-5XC"/>
+                <outlet property="handIconView" destination="N2A-id-3e4" id="qvV-wi-pqE"/>
                 <outlet property="howToBokeView" destination="oGJ-T2-i4u" id="dHj-aO-hNz"/>
                 <outlet property="letsBokeView" destination="RC5-Au-s3u" id="VSq-EH-9Jz"/>
                 <outlet property="letsTapView" destination="tyo-vq-46e" id="vMt-Tk-Vq1"/>
@@ -55,7 +56,7 @@
                             <rect key="frame" x="20" y="31" width="234" height="150"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boke_text_hatena.png" id="44B-oi-Og1">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boke_text_hatena.png" id="44B-oi-Og1" customClass="MovingImageView">
                             <rect key="frame" x="95" y="252" width="84" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -82,7 +83,7 @@
                     <rect key="frame" x="13" y="424" width="295" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boke_text_how.png" id="oGJ-T2-i4u">
+                <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boke_text_how.png" id="oGJ-T2-i4u" customClass="MovingImageView">
                     <rect key="frame" x="33" y="429" width="255" height="77"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>

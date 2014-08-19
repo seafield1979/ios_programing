@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>3CB17245-4FE9-4263-8BD5-CDE64203C13B</string>
+	<string>304D61F5-AF24-4A54-AFB5-FDA820274A7A</string>
 	<key>IDESourceControlProjectName</key>
 	<string>ResponderTest</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>5355DBCF-B8EF-4313-9019-DC3E0557B948</key>
-		<string>https://github.com/seafield1979/objc1</string>
+		<key>285F249D-42FA-4792-AFD5-D8B83912380A</key>
+		<string>https://github.com/seafield1979/ios_programing</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ResponderTest/ResponderTest.xcodeproj/project.xcworkspace</string>
+	<string>objective_c/ResponderTest/ResponderTest.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>5355DBCF-B8EF-4313-9019-DC3E0557B948</key>
-		<string>../../..</string>
+		<key>285F249D-42FA-4792-AFD5-D8B83912380A</key>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/seafield1979/objc1</string>
+	<string>https://github.com/seafield1979/ios_programing</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>5355DBCF-B8EF-4313-9019-DC3E0557B948</string>
+	<string>285F249D-42FA-4792-AFD5-D8B83912380A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>5355DBCF-B8EF-4313-9019-DC3E0557B948</string>
+			<string>285F249D-42FA-4792-AFD5-D8B83912380A</string>
 			<key>IDESourceControlWCCName</key>
-			<string>objective_c</string>
+			<string>ios_programing</string>
 		</dict>
 	</array>
 </dict>

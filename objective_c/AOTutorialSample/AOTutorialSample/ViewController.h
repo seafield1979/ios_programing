@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@interface ZabutonView : UIImageView
+
+@end
+
 @interface ViewController : UIViewController <UIAlertViewDelegate>
 - (IBAction)pushButton1:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *page1View;
@@ -15,7 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *bokeText1View;
 @property (weak, nonatomic) IBOutlet UIImageView *bokeText2View;
 @property (weak, nonatomic) IBOutlet UIImageView *howToBokeView;
-@property (weak, nonatomic) IBOutlet UIImageView *telop2View;
+@property (weak, nonatomic) IBOutlet UIImageView *letsTapView;
+@property (weak, nonatomic) IBOutlet ZabutonView *zabutonView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *letsBokeView;
 @property (weak, nonatomic) IBOutlet UIImageView *balloneView;
@@ -26,8 +31,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *skipButtonView;
 
-@end
 
-@interface ZabutonView : UIImageView
+- (IBAction)pushHowToText:(id)sender;
+- (IBAction)pushLoginButton:(id)sender;
+- (IBAction)pushSkipButton:(id)sender;
+
 
 @end

@@ -30,6 +30,9 @@
 		58ABBC371994C5F000259F7C /* loading_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 58ABBC341994C5F000259F7C /* loading_01.png */; };
 		58ABBC381994C5F000259F7C /* loading_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 58ABBC351994C5F000259F7C /* loading_02.png */; };
 		58ABBC391994C5F000259F7C /* loading_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 58ABBC361994C5F000259F7C /* loading_03.png */; };
+		79784E7F19A4F24B0035537B /* ViewControllerNib.m in Sources */ = {isa = PBXBuildFile; fileRef = 79784E7D19A4F24B0035537B /* ViewControllerNib.m */; };
+		79784E8019A4F24B0035537B /* ViewControllerNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79784E7E19A4F24B0035537B /* ViewControllerNib.xib */; };
+		79784E8319A4F2E30035537B /* testNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79784E8219A4F2E30035537B /* testNib.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,10 @@
 		58ABBC341994C5F000259F7C /* loading_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_01.png; sourceTree = "<group>"; };
 		58ABBC351994C5F000259F7C /* loading_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_02.png; sourceTree = "<group>"; };
 		58ABBC361994C5F000259F7C /* loading_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_03.png; sourceTree = "<group>"; };
+		79784E7C19A4F24B0035537B /* ViewControllerNib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerNib.h; sourceTree = "<group>"; };
+		79784E7D19A4F24B0035537B /* ViewControllerNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerNib.m; sourceTree = "<group>"; };
+		79784E7E19A4F24B0035537B /* ViewControllerNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerNib.xib; sourceTree = "<group>"; };
+		79784E8219A4F2E30035537B /* testNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = testNib.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +151,9 @@
 				58ABBC2E1994C1F100259F7C /* ViewController3.h */,
 				58ABBC2F1994C1F100259F7C /* ViewController3.m */,
 				58ABBC301994C1F100259F7C /* ViewController3.xib */,
+				79784E7C19A4F24B0035537B /* ViewControllerNib.h */,
+				79784E7D19A4F24B0035537B /* ViewControllerNib.m */,
+				79784E7E19A4F24B0035537B /* ViewControllerNib.xib */,
 				588B4A5C19A32E6600AC9A84 /* ViewControllerPRTween.h */,
 				588B4A5D19A32E6600AC9A84 /* ViewControllerPRTween.m */,
 				588B4A5E19A32E6600AC9A84 /* ViewControllerPRTween.xib */,
@@ -199,9 +209,18 @@
 		58C306E81991CF54005DBF21 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				79784E8119A4F2C10035537B /* xib */,
 				58ABBC331994C5F000259F7C /* Image */,
 			);
 			name = Resource;
+			sourceTree = "<group>";
+		};
+		79784E8119A4F2C10035537B /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				79784E8219A4F2E30035537B /* testNib.xib */,
+			);
+			name = xib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,11 +301,13 @@
 			files = (
 				58ABBC321994C1F100259F7C /* ViewController3.xib in Resources */,
 				58ABBC391994C5F000259F7C /* loading_03.png in Resources */,
+				79784E8019A4F24B0035537B /* ViewControllerNib.xib in Resources */,
 				588B4A6019A32E6600AC9A84 /* ViewControllerPRTween.xib in Resources */,
 				07662F3D1993C10400134472 /* ViewController2.xib in Resources */,
 				58ABBC381994C5F000259F7C /* loading_02.png in Resources */,
 				07206976198E88E100A2C829 /* Images.xcassets in Resources */,
 				58ABBC371994C5F000259F7C /* loading_01.png in Resources */,
+				79784E8319A4F2E30035537B /* testNib.xib in Resources */,
 				07F16D27198EA1640077ABB3 /* ViewController.xib in Resources */,
 				07206968198E88E100A2C829 /* InfoPlist.strings in Resources */,
 			);
@@ -309,6 +330,7 @@
 				07F16D26198EA1640077ABB3 /* ViewController.m in Sources */,
 				588B4A6819A32EA300AC9A84 /* PRTweenTimingFunctions.m in Sources */,
 				07662F3C1993C10400134472 /* ViewController2.m in Sources */,
+				79784E7F19A4F24B0035537B /* ViewControllerNib.m in Sources */,
 				0720696E198E88E100A2C829 /* AppDelegate.m in Sources */,
 				0720696A198E88E100A2C829 /* main.m in Sources */,
 				588B4A5F19A32E6600AC9A84 /* ViewControllerPRTween.m in Sources */,

@@ -47,7 +47,7 @@
     // Override point for customization after application launch.
 	// ここから
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-#if 1
+#if 0
     self.viewController = [[ViewController alloc] init];
     self.window.rootViewController = self.viewController;
 #endif
@@ -60,6 +60,11 @@
 #if 0
     self.viewController3 = [[ViewController3 alloc] init];
     self.window.rootViewController = self.viewController3;
+#endif
+    
+#if 1
+    self.viewControllerNib = [[ViewControllerNib alloc] init];
+    self.window.rootViewController = self.viewControllerNib;
 #endif
 
 #if 0

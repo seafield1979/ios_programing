@@ -47,9 +47,15 @@
     // Override point for customization after application launch.
 	// ここから
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+#if 1
+    self.viewController = [[ViewController alloc] init];
+    self.window.rootViewController = self.viewController;
+#endif
 
-	self.viewControllerTween = [[ViewControllerPRTween alloc] init];
-    self.window.rootViewController = self.viewControllerTween;
+#if 0
+	self.viewController2 = [[ViewController2 alloc] init];
+    self.window.rootViewController = self.viewController2;
+#endif
 
 #if 0
     self.viewController3 = [[ViewController3 alloc] init];
@@ -57,12 +63,8 @@
 #endif
 
 #if 0
-    self.viewController = [[ViewController alloc] init];
-    self.window.rootViewController = self.viewController;
-#endif
-#if 0
-	self.viewController2 = [[ViewController2 alloc] init];
-    self.window.rootViewController = self.viewController2;
+	self.viewControllerTween = [[ViewControllerPRTween alloc] init];
+    self.window.rootViewController = self.viewControllerTween;
 #endif
     [self.window makeKeyAndVisible];
     // ここまでを追加

@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UISwitch *switch1;
 @property (weak, nonatomic) IBOutlet UILabel *label1;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 - (IBAction)switch1Changed:(id)sender;
 
 @end

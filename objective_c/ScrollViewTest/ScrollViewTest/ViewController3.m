@@ -33,6 +33,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // ページコントロールをタップされたときに呼ばれるメソッドを設定
+    _pageControl.userInteractionEnabled = YES;
+    [_pageControl addTarget:self
+                    action:@selector(pageControl_Tapped:)
+          forControlEvents:UIControlEventValueChanged];
+    // 色を変更
+    _pageControl.currentPageIndicatorTintColor = [UIColor greenColor];
+    _pageControl.pageIndicatorTintColor = [UIColor grayColor];
+    // 現在のページ
+    _pageControl.currentPage = pageNum;
+
     // Do any additional setup after loading the view from its nib.
 	[self initScrollView];
 	
@@ -109,11 +121,50 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
 	int offset_x = (int)scrollView.contentOffset.x;
-	NSLog(@"%d", offset_x);
-//	_label1.text = [NSString stringWithFormat:@"offset_x:%d", offset_x];
 	pageNum = (int)(offset_x / 320);
-//	_label2.text = [NSString stringWithFormat:@"page:%d", pageNum + 1];
-	
+    
+    // ページコントロールの現在のページの切り替え
+    float scroll_x =  scrollView.contentOffset.x;
+    int page = _scrollView.contentOffset.x / _scrollView.frame.size.width;
+    NSLog(@"scrollViewDidEndDecelerating %f %d",scroll_x, page );
+    _pageControl.currentPage = page;
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    NSLog(@"scrollViewWillBeginDragging");
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset NS_AVAILABLE_IOS(5_0)
+{
+    NSLog(@"scrollViewWillEndDragging");
+}
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    NSLog(@"scrollViewDidEndDragging");
+}
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
+{
+    NSLog(@"scrollViewWillBeginDecelerating");
+}
+
+// ページの切り替え完了時のイベント
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+   
+}
+
+#pragma mark _PageControlEvent
+
+// ページコントロールのページをタップ
+-(void)pageControl_Tapped:(id)sender
+{
+    UIPageControl *pc = (UIPageControl*)sender;
+    NSLog(@"page control tapped: %d", pc.currentPage);
+    
+    CGRect frame = _scrollView.frame;
+    frame.origin.x = frame.size.width * _pageControl.currentPage;
+    [_scrollView scrollRectToVisible:frame animated:YES];
 }
 
 #pragma mark _UISwitch

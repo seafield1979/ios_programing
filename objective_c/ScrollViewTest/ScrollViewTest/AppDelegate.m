@@ -14,10 +14,26 @@
 {
     // Override point for customization after application launch.
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    
+    // UserAgentを変更
+    UIWebView *wv = [[UIWebView alloc] initWithFrame:CGRectZero];
+    NSString *ua = [wv stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+    NSString *currentVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    ua = [NSString stringWithFormat:@"%@ CaWebApp/1.0(ameba-oogiri;%@;ja;)", ua, currentVersion];
+	
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UserAgent":ua}];
+    
+#if 0
+    self.viewControllerWeb = [[ViewControllerWeb alloc] init];
+    self.window.rootViewController = self.viewControllerWeb;
+#endif
+    
 #if 0
     self.viewController = [[ViewController alloc] init];
     self.window.rootViewController = self.viewController;
-#else
+#endif
+#if 1
 	self.viewController3 = [[ViewController3 alloc] init];
     self.window.rootViewController = self.viewController3;
 #endif

@@ -5,6 +5,16 @@
 //  Created by 海野 秀祐 on 2014/08/04.
 //
 //
+/**
+ サンプルの内容
+ UIViewの生成
+ UIImageViewの生成
+ UIViewのアニメーション(アルファ)
+ UIViewの表示優先度の設定(bringSubviewToFront)
+ UIViewのタッチ(ジェスチャー)
+ UIViewのタッチ(UIResponderのオーバーライド) 
+ 
+ */
 
 #import "ViewController.h"
 
@@ -34,22 +44,22 @@
     if (self) {
         // Custom initialization
 		showView = 1;
-		_view1 = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 50, 50)];
+		_view1 = [[UIView alloc]initWithFrame:CGRectMake(50, 70, 50, 50)];
 		_view1.backgroundColor = [UIColor redColor];
 		_view1.alpha = 1.0;
 
-		_view2 = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 50, 50)];
+		_view2 = [[UIView alloc]initWithFrame:CGRectMake(50, 70, 50, 50)];
 		_view2.backgroundColor = [UIColor blueColor];
 		_view2.alpha = 0.0;
 		
 		imageView = 1;
-		UIImage *image1 = [UIImage imageNamed:@"Image/loading_01.png"];
-		_imgView1 = [[UIView alloc]initWithFrame:CGRectMake(200, 100, 56, 56)];
+		UIImage *image1 = [UIImage imageNamed:@"loading_01.png"];
+		_imgView1 = [[UIView alloc]initWithFrame:CGRectMake(150, 70, 56, 56)];
 		_imgView1.backgroundColor = [UIColor colorWithPatternImage:image1];
 		_imgView1.alpha = 1.0;
 		
-		UIImage *image2 = [UIImage imageNamed:@"Image/loading_02.png"];
-		_imgView2 = [[UIView alloc]initWithFrame:CGRectMake(200, 100, 56, 56)];
+		UIImage *image2 = [UIImage imageNamed:@"loading_02.png"];
+		_imgView2 = [[UIView alloc]initWithFrame:CGRectMake(150, 70, 56, 56)];
 		_imgView2.backgroundColor = [UIColor colorWithPatternImage:image2];
 		_imgView2.alpha = 0.0;
 		
@@ -134,6 +144,7 @@
 	}
 }
 
+//imgView1,imgView2のアルファ値をアニメーションで切り替える
 - (IBAction)pushButton2:(id)sender
 {
 	NSLog(@"pushButton2");

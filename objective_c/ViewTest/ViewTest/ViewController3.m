@@ -6,7 +6,10 @@
 //  Copyright (c) 2014年 海野 秀祐. All rights reserved.
 //
 /**
-	UIViewの変形のサンプル
+  UIViewの変形のサンプル
+  拡大
+  縮小
+ 
  */
 
 #import "ViewController3.h"
@@ -144,6 +147,7 @@
 -(IBAction)pushButton3:(id)sender
 {
 	NSLog(@"pushButton3");
+    //todo
 }
 
 /*
@@ -152,6 +156,7 @@
 -(IBAction)pushButton4:(id)sender
 {
 	NSLog(@"pushButton4");
+    //todo
 }
 
 

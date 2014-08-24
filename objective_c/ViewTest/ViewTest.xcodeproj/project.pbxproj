@@ -30,6 +30,9 @@
 		58ABBC371994C5F000259F7C /* loading_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 58ABBC341994C5F000259F7C /* loading_01.png */; };
 		58ABBC381994C5F000259F7C /* loading_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 58ABBC351994C5F000259F7C /* loading_02.png */; };
 		58ABBC391994C5F000259F7C /* loading_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 58ABBC361994C5F000259F7C /* loading_03.png */; };
+		796828C419AA4B9D007F8098 /* ViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 796828C219AA4B9D007F8098 /* ViewController4.m */; };
+		796828C519AA4B9D007F8098 /* ViewController4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796828C319AA4B9D007F8098 /* ViewController4.xib */; };
+		796828C719AA4E23007F8098 /* anpanman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 796828C619AA4E23007F8098 /* anpanman.jpg */; };
 		79784E7F19A4F24B0035537B /* ViewControllerNib.m in Sources */ = {isa = PBXBuildFile; fileRef = 79784E7D19A4F24B0035537B /* ViewControllerNib.m */; };
 		79784E8019A4F24B0035537B /* ViewControllerNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79784E7E19A4F24B0035537B /* ViewControllerNib.xib */; };
 		79784E8319A4F2E30035537B /* testNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79784E8219A4F2E30035537B /* testNib.xib */; };
@@ -78,6 +81,10 @@
 		58ABBC341994C5F000259F7C /* loading_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_01.png; sourceTree = "<group>"; };
 		58ABBC351994C5F000259F7C /* loading_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_02.png; sourceTree = "<group>"; };
 		58ABBC361994C5F000259F7C /* loading_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_03.png; sourceTree = "<group>"; };
+		796828C119AA4B9D007F8098 /* ViewController4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController4.h; sourceTree = "<group>"; };
+		796828C219AA4B9D007F8098 /* ViewController4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController4.m; sourceTree = "<group>"; };
+		796828C319AA4B9D007F8098 /* ViewController4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController4.xib; sourceTree = "<group>"; };
+		796828C619AA4E23007F8098 /* anpanman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = anpanman.jpg; sourceTree = "<group>"; };
 		79784E7C19A4F24B0035537B /* ViewControllerNib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerNib.h; sourceTree = "<group>"; };
 		79784E7D19A4F24B0035537B /* ViewControllerNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerNib.m; sourceTree = "<group>"; };
 		79784E7E19A4F24B0035537B /* ViewControllerNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerNib.xib; sourceTree = "<group>"; };
@@ -142,23 +149,6 @@
 			children = (
 				588B4A6119A32E7200AC9A84 /* Libs */,
 				58C306E81991CF54005DBF21 /* Resource */,
-				07F16D23198EA1640077ABB3 /* ViewController.h */,
-				07F16D24198EA1640077ABB3 /* ViewController.m */,
-				07F16D25198EA1640077ABB3 /* ViewController.xib */,
-				07662F391993C10400134472 /* ViewController2.h */,
-				07662F3A1993C10400134472 /* ViewController2.m */,
-				07662F3B1993C10400134472 /* ViewController2.xib */,
-				58ABBC2E1994C1F100259F7C /* ViewController3.h */,
-				58ABBC2F1994C1F100259F7C /* ViewController3.m */,
-				58ABBC301994C1F100259F7C /* ViewController3.xib */,
-				79784E7C19A4F24B0035537B /* ViewControllerNib.h */,
-				79784E7D19A4F24B0035537B /* ViewControllerNib.m */,
-				79784E7E19A4F24B0035537B /* ViewControllerNib.xib */,
-				588B4A5C19A32E6600AC9A84 /* ViewControllerPRTween.h */,
-				588B4A5D19A32E6600AC9A84 /* ViewControllerPRTween.m */,
-				588B4A5E19A32E6600AC9A84 /* ViewControllerPRTween.xib */,
-				0720696C198E88E100A2C829 /* AppDelegate.h */,
-				0720696D198E88E100A2C829 /* AppDelegate.m */,
 				07206975198E88E100A2C829 /* Images.xcassets */,
 				07206964198E88E100A2C829 /* Supporting Files */,
 			);
@@ -201,6 +191,7 @@
 				58ABBC341994C5F000259F7C /* loading_01.png */,
 				58ABBC351994C5F000259F7C /* loading_02.png */,
 				58ABBC361994C5F000259F7C /* loading_03.png */,
+				796828C619AA4E23007F8098 /* anpanman.jpg */,
 			);
 			name = Image;
 			path = Resource/Image;
@@ -209,10 +200,38 @@
 		58C306E81991CF54005DBF21 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				0720696C198E88E100A2C829 /* AppDelegate.h */,
+				0720696D198E88E100A2C829 /* AppDelegate.m */,
+				796828C019AA46A5007F8098 /* ViewControllers */,
 				79784E8119A4F2C10035537B /* xib */,
 				58ABBC331994C5F000259F7C /* Image */,
 			);
 			name = Resource;
+			sourceTree = "<group>";
+		};
+		796828C019AA46A5007F8098 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				07F16D23198EA1640077ABB3 /* ViewController.h */,
+				07F16D24198EA1640077ABB3 /* ViewController.m */,
+				07F16D25198EA1640077ABB3 /* ViewController.xib */,
+				07662F391993C10400134472 /* ViewController2.h */,
+				07662F3A1993C10400134472 /* ViewController2.m */,
+				07662F3B1993C10400134472 /* ViewController2.xib */,
+				58ABBC2E1994C1F100259F7C /* ViewController3.h */,
+				58ABBC2F1994C1F100259F7C /* ViewController3.m */,
+				58ABBC301994C1F100259F7C /* ViewController3.xib */,
+				796828C119AA4B9D007F8098 /* ViewController4.h */,
+				796828C219AA4B9D007F8098 /* ViewController4.m */,
+				796828C319AA4B9D007F8098 /* ViewController4.xib */,
+				79784E7C19A4F24B0035537B /* ViewControllerNib.h */,
+				79784E7D19A4F24B0035537B /* ViewControllerNib.m */,
+				79784E7E19A4F24B0035537B /* ViewControllerNib.xib */,
+				588B4A5C19A32E6600AC9A84 /* ViewControllerPRTween.h */,
+				588B4A5D19A32E6600AC9A84 /* ViewControllerPRTween.m */,
+				588B4A5E19A32E6600AC9A84 /* ViewControllerPRTween.xib */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		79784E8119A4F2C10035537B /* xib */ = {
@@ -302,6 +321,7 @@
 				58ABBC321994C1F100259F7C /* ViewController3.xib in Resources */,
 				58ABBC391994C5F000259F7C /* loading_03.png in Resources */,
 				79784E8019A4F24B0035537B /* ViewControllerNib.xib in Resources */,
+				796828C519AA4B9D007F8098 /* ViewController4.xib in Resources */,
 				588B4A6019A32E6600AC9A84 /* ViewControllerPRTween.xib in Resources */,
 				07662F3D1993C10400134472 /* ViewController2.xib in Resources */,
 				58ABBC381994C5F000259F7C /* loading_02.png in Resources */,
@@ -309,6 +329,7 @@
 				58ABBC371994C5F000259F7C /* loading_01.png in Resources */,
 				79784E8319A4F2E30035537B /* testNib.xib in Resources */,
 				07F16D27198EA1640077ABB3 /* ViewController.xib in Resources */,
+				796828C719AA4E23007F8098 /* anpanman.jpg in Resources */,
 				07206968198E88E100A2C829 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07F16D26198EA1640077ABB3 /* ViewController.m in Sources */,
+				796828C419AA4B9D007F8098 /* ViewController4.m in Sources */,
 				588B4A6819A32EA300AC9A84 /* PRTweenTimingFunctions.m in Sources */,
 				07662F3C1993C10400134472 /* ViewController2.m in Sources */,
 				79784E7F19A4F24B0035537B /* ViewControllerNib.m in Sources */,

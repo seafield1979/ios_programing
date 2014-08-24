@@ -7,34 +7,7 @@
 //
 /**
  シングルのビューでできることをいろいろと試す
- ■UIView::
-
- ■UIViewController::
-
- ■UIWindow::
-
- ■UILabel::
-
- ■UIProgressView::
-
- ■UIActionSheet::
-
- ■UIImageView::
-
- ■UIWebView::
-
- ■UIActivityIndicatorView::
-
- ■UIPickerView::
-
- ■UISearchBar::
-
- ■UINavigationBar::
-
- ■UIBarButtonItem::
  ツールバーやナビゲーションバーに配置するボタンを管理する
- 
- 
  */
 
 
@@ -61,8 +34,12 @@
     self.viewController3 = [[ViewController3 alloc] init];
     self.window.rootViewController = self.viewController3;
 #endif
-    
 #if 1
+    self.viewController4 = [[ViewController4 alloc] init];
+    self.window.rootViewController = self.viewController4;
+#endif
+    
+#if 0
     self.viewControllerNib = [[ViewControllerNib alloc] init];
     self.window.rootViewController = self.viewControllerNib;
 #endif

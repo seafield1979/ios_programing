@@ -5,6 +5,13 @@
 //  Created by 海野 秀祐 on 2014/08/07.
 //  Copyright (c) 2014年 海野 秀祐. All rights reserved.
 //
+/*
+ サンプルの内容
+   UIProgressView
+   タイマー(NSTimer scheduledTimerWithTimeInterval)
+   UIActionSheet
+ 
+ */
 
 #import "ViewController2.h"
 
@@ -41,8 +48,8 @@
 	_as = [[UIActionSheet alloc]init];
 	_as.delegate = self;
 	_as.title = @"選択してください。";
-	[_as addButtonWithTitle:@"実行"];
-	[_as addButtonWithTitle:@"やめとく"];
+	[_as addButtonWithTitle:@"実行1"];
+  	[_as addButtonWithTitle:@"実行2"];
 	[_as addButtonWithTitle:@"キャンセル"];
 	_as.cancelButtonIndex = 2;
 	_as.destructiveButtonIndex = 0;
@@ -100,12 +107,15 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 	switch (buttonIndex) {
 		case 0:
 			// １番目のボタンが押されたときの処理を記述する
+            NSLog(@"実行1");
 			break;
 		case 1:
 			// ２番目のボタンが押されたときの処理を記述する
+            NSLog(@"実行2");
 			break;
 		case 2:
 			// ３番目のボタンが押されたときの処理を記述する
+            NSLog(@"キャンセル");
 			break;
 	}
 }
@@ -113,14 +123,14 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 //表示直前に呼ばれるメソッド
 -(void)willPresentActionSheet:(UIActionSheet*)actionSheet
 {
-	NSLog(@"willPresentActionSheet");
+	NSLog(@"アクションシート表示した");
 }
 
 //閉じた直後に呼ばれるメソッド
 -(void)actionSheet:(UIActionSheet*)actionSheet
 	didDismissWithButtonIndex: (NSInteger)buttonIndex
 {
-	NSLog(@"didDismissWithButtonIndex");
+	NSLog(@"アクションシート閉じた");
 }
 
 

@@ -21,6 +21,13 @@
 		79784F5319A90CB10035537B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79784F5119A90CB10035537B /* InfoPlist.strings */; };
 		79784F5519A90CB10035537B /* UNNavigationControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79784F5419A90CB10035537B /* UNNavigationControllerTests.m */; };
 		79784F5F19A90D460035537B /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79784F5E19A90D460035537B /* ViewController.xib */; };
+		79784F6319A9AAAD0035537B /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 79784F6119A9AAAD0035537B /* ViewController2.m */; };
+		79784F6419A9AAAD0035537B /* ViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79784F6219A9AAAD0035537B /* ViewController2.xib */; };
+		79784F6919A9AF1F0035537B /* navi_button1.png in Resources */ = {isa = PBXBuildFile; fileRef = 79784F6819A9AF1F0035537B /* navi_button1.png */; };
+		79784F6B19A9B4730035537B /* navi_button1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79784F6A19A9B4730035537B /* navi_button1@2x.png */; };
+		79784F6E19A9B4E40035537B /* UNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79784F6D19A9B4E40035537B /* UNNavigationController.m */; };
+		79784F7119A9C5790035537B /* dot_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 79784F6F19A9C5790035537B /* dot_line.png */; };
+		79784F7219A9C5790035537B /* dot_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79784F7019A9C5790035537B /* dot_line@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +60,15 @@
 		79784F5219A90CB10035537B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		79784F5419A90CB10035537B /* UNNavigationControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UNNavigationControllerTests.m; sourceTree = "<group>"; };
 		79784F5E19A90D460035537B /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		79784F6019A9AAAD0035537B /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		79784F6119A9AAAD0035537B /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		79784F6219A9AAAD0035537B /* ViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController2.xib; sourceTree = "<group>"; };
+		79784F6819A9AF1F0035537B /* navi_button1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navi_button1.png; path = Resources/image/navi_button1.png; sourceTree = "<group>"; };
+		79784F6A19A9B4730035537B /* navi_button1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navi_button1@2x.png"; path = "Resources/image/navi_button1@2x.png"; sourceTree = "<group>"; };
+		79784F6C19A9B4E40035537B /* UNNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNNavigationController.h; sourceTree = "<group>"; };
+		79784F6D19A9B4E40035537B /* UNNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNNavigationController.m; sourceTree = "<group>"; };
+		79784F6F19A9C5790035537B /* dot_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dot_line.png; path = Resources/image/dot_line.png; sourceTree = "<group>"; };
+		79784F7019A9C5790035537B /* dot_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dot_line@2x.png"; path = "Resources/image/dot_line@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +128,12 @@
 		79784F2F19A90CB10035537B /* UNNavigationController */ = {
 			isa = PBXGroup;
 			children = (
+				79784F6619A9AF0C0035537B /* Resources */,
+				79784F6519A9ACAA0035537B /* ViewControllers */,
+				79784F6C19A9B4E40035537B /* UNNavigationController.h */,
+				79784F6D19A9B4E40035537B /* UNNavigationController.m */,
 				79784F3819A90CB10035537B /* AppDelegate.h */,
 				79784F3919A90CB10035537B /* AppDelegate.m */,
-				79784F3E19A90CB10035537B /* ViewController.h */,
-				79784F3F19A90CB10035537B /* ViewController.m */,
-				79784F5E19A90D460035537B /* ViewController.xib */,
 				79784F4119A90CB10035537B /* Images.xcassets */,
 				79784F3019A90CB10035537B /* Supporting Files */,
 			);
@@ -150,6 +167,38 @@
 				79784F5119A90CB10035537B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		79784F6519A9ACAA0035537B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				79784F3E19A90CB10035537B /* ViewController.h */,
+				79784F3F19A90CB10035537B /* ViewController.m */,
+				79784F5E19A90D460035537B /* ViewController.xib */,
+				79784F6019A9AAAD0035537B /* ViewController2.h */,
+				79784F6119A9AAAD0035537B /* ViewController2.m */,
+				79784F6219A9AAAD0035537B /* ViewController2.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		79784F6619A9AF0C0035537B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				79784F6719A9AF160035537B /* image */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		79784F6719A9AF160035537B /* image */ = {
+			isa = PBXGroup;
+			children = (
+				79784F6F19A9C5790035537B /* dot_line.png */,
+				79784F7019A9C5790035537B /* dot_line@2x.png */,
+				79784F6819A9AF1F0035537B /* navi_button1.png */,
+				79784F6A19A9B4730035537B /* navi_button1@2x.png */,
+			);
+			name = image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,8 +277,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79784F6B19A9B4730035537B /* navi_button1@2x.png in Resources */,
 				79784F4219A90CB10035537B /* Images.xcassets in Resources */,
+				79784F7219A9C5790035537B /* dot_line@2x.png in Resources */,
+				79784F6419A9AAAD0035537B /* ViewController2.xib in Resources */,
 				79784F5F19A90D460035537B /* ViewController.xib in Resources */,
+				79784F7119A9C5790035537B /* dot_line.png in Resources */,
+				79784F6919A9AF1F0035537B /* navi_button1.png in Resources */,
 				79784F3419A90CB10035537B /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,7 +304,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				79784F4019A90CB10035537B /* ViewController.m in Sources */,
+				79784F6319A9AAAD0035537B /* ViewController2.m in Sources */,
 				79784F3A19A90CB10035537B /* AppDelegate.m in Sources */,
+				79784F6E19A9B4E40035537B /* UNNavigationController.m in Sources */,
 				79784F3619A90CB10035537B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +504,7 @@
 				79784F5A19A90CB10035537B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		79784F5B19A90CB10035537B /* Build configuration list for PBXNativeTarget "UNNavigationControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +513,7 @@
 				79784F5D19A90CB10035537B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

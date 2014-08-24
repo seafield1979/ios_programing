@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ViewController.h"
+#import "ViewController2.h"
+#import "UNNavigationController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) UINavigationController *naviController;
+@property (strong, nonatomic) UNNavigationController *naviController;
 
 @end

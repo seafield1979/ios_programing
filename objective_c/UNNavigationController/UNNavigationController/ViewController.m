@@ -19,13 +19,28 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    int naviCount = [self.navigationController.viewControllers count];
+    _label1.text = [NSString stringWithFormat:@"%d", naviCount];
     // タイトル
-    self.navigationItem.title = @"111";
+#if 0
+    self.navigationItem.title = [NSString stringWithFormat:@"page %d", naviCount];
+#endif
     
+    // 背景色
 #if 1
+    [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:0.000 green:0.549 blue:0.890 alpha:1.000];
+
+#endif
+    
+#if 0
+    // 戻るボタンのテキストを変更
     UIBarButtonItem *backButton = [UIBarButtonItem new];
     backButton.title = @"戻る";
     self.navigationItem.backBarButtonItem = backButton;
+#endif
+    
+#if 1
+    [self.navigationItem setHidesBackButton:YES];
 #endif
 
     // 左ボタン

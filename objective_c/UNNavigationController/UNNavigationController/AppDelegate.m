@@ -16,14 +16,21 @@
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     
     // ナビゲーションコントローラにベースとなるコントローラをセット
+#if 0
     ViewController *topController = [[ViewController alloc]init];
     _naviController = [[UINavigationController alloc]
                        initWithRootViewController:topController];
-    
+#endif
+#if 1
+    ViewController2 *topController = [[ViewController2 alloc]init];
+    _naviController = [[UNNavigationController alloc]
+                       initWithRootViewController:topController];
+#endif
     // ナビゲーションコントローラのビューをウィンドウに貼付ける
     [self.window addSubview:_naviController.view];
     
     [self.window makeKeyAndVisible];
+    
 
     return YES;
 }

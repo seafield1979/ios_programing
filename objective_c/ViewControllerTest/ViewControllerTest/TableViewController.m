@@ -5,13 +5,14 @@
 //  Created by 海野 秀祐 on 2014/08/08.
 //  Copyright (c) 2014年 海野 秀祐. All rights reserved.
 //
+// ただのUITableView
 
 #import "TableViewController.h"
 
 @interface TableViewController ()
 {
-	NSArray *sectionList;
-    NSDictionary *dataSource;
+	NSArray *sectionList;       // セクションリスト
+    NSDictionary *dataSource;   // データ
 }
 @end
 
@@ -21,7 +22,19 @@
 {
 	self = [super initWithStyle:UITableViewStylePlain];
 	if (self) {
-		// ・・・・
+    // セクション名を設定する
+    sectionList = [NSArray arrayWithObjects:@"人間", @"犬", @"その他", nil];
+    
+    // セルの項目を作成する
+    NSArray *peple = [NSArray arrayWithObjects:@"Charlie", @"Sally", @"Lucy", nil];
+    NSArray *dogs  = [NSArray arrayWithObjects:@"Snoopy", @"Spike", @"Olaf", nil];
+    NSArray *others = [NSArray arrayWithObjects:@"Woodstock", nil];
+    
+    // セルの項目をまとめる
+    dataSource = @{sectionList[0] : peple,
+                   sectionList[1] : dogs,
+                   sectionList[2] : others};
+
 	}
 	return self;
 }
@@ -29,19 +42,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// セクション名を設定する
-    sectionList = [NSArray arrayWithObjects:@"人間", @"犬", @"その他", nil];
-
-    // セルの項目を作成する
-	NSArray *peple = [NSArray arrayWithObjects:@"Charlie", @"Sally", @"Lucy", nil];
-    NSArray *dogs  = [NSArray arrayWithObjects:@"Snoopy", @"Spike", @"Olaf", nil];
-    NSArray *others = [NSArray arrayWithObjects:@"Woodstock", nil];
-
-    // セルの項目をまとめる
-    NSArray *datas = [NSArray arrayWithObjects:peple, dogs, others, nil];
-
-    dataSource = [NSDictionary dictionaryWithObjects:datas forKeys:sectionList];
-
+    
+    // テーブルのサイズを調整
+    CGRect rect = [[UIScreen mainScreen]bounds];
+    self.view.frame = CGRectMake(0, 20, rect.size.width, rect.size.height - 20);
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,19 +55,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - Table view delegate
 
 /**
- * テーブルのアイテム数を返す
+ * セクション数を返す
  */
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
 	return [sectionList count];
-
 }
-
-#pragma mark - Table view delegate
 
 /**
  * 指定されたセクションのセクション名を返す
@@ -72,14 +73,21 @@
     return [sectionList objectAtIndex:section];
 }
 
+/**
+ * セクションのカラム数を返す
+ * @param section セクション番号
+ */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-	NSString *sectionName = [sectionList objectAtIndex: section];
-    return [[dataSource objectForKey:sectionName] count];
+    NSString *sectionName = sectionList[section];
+    return [dataSource[sectionName] count];
 }
 
 
+/**
+ * セルを取得する
+ * @param indexPath  .
+ */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *cellIdentifier = @"Cell";
@@ -92,29 +100,31 @@
     }
 
     // セクション名を取得する
-    NSString *sectionName = [sectionList objectAtIndex:indexPath.section];
+    NSString *sectionName = sectionList[indexPath.section];
 
     // セクション名をキーにしてそのセクションの項目をすべて取得
-    NSArray *items = [dataSource objectForKey:sectionName];
+    NSArray *items = dataSource[sectionName];
 
     // セルにテキストを設定
-    cell.textLabel.text = [items objectAtIndex:indexPath.row];
+    cell.textLabel.text = items[indexPath.row];
 
     return cell;
 }
 
 /**
  * セルが選択されたとき
+ * @param indexPath .section  セクション番号
+                    .row      項目番号
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // セクション名を取得する
-    NSString *sectionName = [sectionList objectAtIndex:indexPath.section];
+    NSString *sectionName = sectionList[indexPath.section];
 
     // セクション名をキーにしてそのセクションの項目をすべて取得
-    NSArray *items = [dataSource objectForKey:sectionName];
+    NSArray *items = dataSource[sectionName];
 
-    NSLog(@"「%@」が選択されました", [items objectAtIndex:indexPath.row]);
+    NSLog(@"「%@」が選択されました", items[indexPath.row]);
 }
 
 /*

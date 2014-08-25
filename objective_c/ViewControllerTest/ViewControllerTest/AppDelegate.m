@@ -27,35 +27,12 @@
     // Override point for customization after application launch.
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.viewController = [[ViewController alloc] init];
-#if 0
+#if 1
 	self.tableViewController = [[TableViewController alloc]init];
-#endif
-//    self.window.rootViewController = self.viewController;
-//	self.tableViewTest = [[TableViewTestVC alloc]init];
-	self.tableViewController2 = [[TableViewController2 alloc]init];
-#if 0
     self.window.rootViewController = self.tableViewController;
-#endif
-//	self.window.rootViewController = _tableViewTest;
-	self.window.rootViewController = _tableViewController2;
-#if NAVIGATION
-	_nav = [[UINavigationController alloc] initWithRootViewController:self.viewController];
 #endif
     [self.window makeKeyAndVisible];
 	
-#if NAVIGATION
-	[self.window addSubview:_nav.view];
-#endif
-	
-	// ViewController2を追加
-	_viewController2 = [[ViewController2 alloc] initWithNibName: @"ViewController2" bundle:[NSBundle mainBundle]];
-
-#if 0
-	[[[UIApplication sharedApplication] windows][0] addSubview:self.viewController2.view];
-#endif
-#if 0
-	self.window.rootViewController = _viewController2;
-#endif
 	
     return YES;
 }

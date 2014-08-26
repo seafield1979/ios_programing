@@ -34,9 +34,14 @@
     self.viewController3 = [[ViewController3 alloc] init];
     self.window.rootViewController = self.viewController3;
 #endif
-#if 1
+#if 0
     self.viewController4 = [[ViewController4 alloc] init];
     self.window.rootViewController = self.viewController4;
+#endif
+    
+#if 1
+    self.viewControllerAd = [[ViewControllerAd alloc] init];
+    self.window.rootViewController = self.viewControllerAd;
 #endif
     
 #if 0

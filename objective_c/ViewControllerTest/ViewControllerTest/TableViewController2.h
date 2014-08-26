@@ -1,13 +1,13 @@
 //
-//  ViewController.h
+//  TableViewController2.h
 //  ViewControllerTest
 //
-//  Created by 海野 秀祐 on 2014/08/06.
+//  Created by B02681 on 2014/08/26.
 //  Copyright (c) 2014年 海野 秀祐. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface TableViewController2 : UITableViewController
 
 @end

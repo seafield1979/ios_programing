@@ -34,16 +34,7 @@
 {
     [super viewDidLoad];
     
-    // ページコントロールをタップされたときに呼ばれるメソッドを設定
-    _pageControl.userInteractionEnabled = YES;
-    [_pageControl addTarget:self
-                    action:@selector(pageControl_Tapped:)
-          forControlEvents:UIControlEventValueChanged];
-    // 色を変更
-    _pageControl.currentPageIndicatorTintColor = [UIColor greenColor];
-    _pageControl.pageIndicatorTintColor = [UIColor grayColor];
-    // 現在のページ
-    _pageControl.currentPage = pageNum;
+    [self initPageControll];
 
     // Do any additional setup after loading the view from its nib.
 	[self initScrollView];
@@ -64,13 +55,32 @@
 }
 
 /**
+ * ページコントロールを初期化
+ */
+-(void)initPageControll
+{
+    // ページコントロールをタップされたときに呼ばれるメソッドを設定
+    _pageControl.userInteractionEnabled = YES;
+    [_pageControl addTarget:self
+                     action:@selector(pageControl_Tapped:)
+           forControlEvents:UIControlEventValueChanged];
+    
+    // 色を変更
+    _pageControl.currentPageIndicatorTintColor = [UIColor greenColor];
+    _pageControl.pageIndicatorTintColor = [UIColor grayColor];
+    _pageControl.backgroundColor = [UIColor blackColor];
+    // 現在のページ
+    _pageControl.currentPage = pageNum;
+}
+
+/**
  * スクロールビューを初期化
  * 4ページ分のコンテンツをスクロールする
  */
 -(void)initScrollView
 {
 	// Custom initialization
-	CGRect scrollViewRect = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 200);
+	CGRect scrollViewRect = CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height - 200);
 	_scrollView = [[UIScrollView alloc]initWithFrame:scrollViewRect];
 	_scrollView.pagingEnabled = YES;
 	[self.view addSubview:_scrollView];

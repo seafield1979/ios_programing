@@ -45,7 +45,7 @@
     
     // テーブルのサイズを調整
     CGRect rect = [[UIScreen mainScreen]bounds];
-    self.view.frame = CGRectMake(0, 20, rect.size.width, rect.size.height - 20);
+    self.tableView.frame = CGRectMake(0, 20, rect.size.width, rect.size.height - 20);
     
 }
 

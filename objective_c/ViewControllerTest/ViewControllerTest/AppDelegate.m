@@ -26,11 +26,11 @@
 {
     // Override point for customization after application launch.
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.viewController = [[ViewController alloc] init];
 #if 1
-	self.tableViewController = [[TableViewController alloc]init];
-    self.window.rootViewController = self.tableViewController;
+	self.tableViewController2 = [[TableViewController2 alloc]init];
+    self.window.rootViewController = self.tableViewController2;
 #endif
+
     [self.window makeKeyAndVisible];
 	
 	

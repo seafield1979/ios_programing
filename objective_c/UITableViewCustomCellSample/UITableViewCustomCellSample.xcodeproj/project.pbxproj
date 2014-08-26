@@ -23,7 +23,6 @@
 		1F9C443D18F90A2D003C1BB5 /* UITableViewCustomCellSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C443C18F90A2D003C1BB5 /* UITableViewCustomCellSampleTests.m */; };
 		1F9C4B3618F9106700D384BA /* android-200x200.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9C4B3418F9106700D384BA /* android-200x200.png */; };
 		1F9C4B3918F9121900D384BA /* ios1-100x100.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9C4B3818F9121900D384BA /* ios1-100x100.png */; };
-		1F9C4B4618F91E2400D384BA /* TableViewCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F9C4B4518F91E2400D384BA /* TableViewCustomCell.xib */; };
 		1FE2B40918FAEE5B00619891 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE2B40818FAEE5B00619891 /* CustomTableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +59,6 @@
 		1F9C4B3418F9106700D384BA /* android-200x200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "android-200x200.png"; sourceTree = "<group>"; };
 		1F9C4B3818F9121900D384BA /* ios1-100x100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios1-100x100.png"; sourceTree = "<group>"; };
 		1F9C4B4118F91B7400D384BA /* TableViewConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewConst.h; sourceTree = "<group>"; };
-		1F9C4B4518F91E2400D384BA /* TableViewCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCustomCell.xib; sourceTree = "<group>"; };
 		1FE2B40718FAEE5B00619891 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		1FE2B40818FAEE5B00619891 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,7 +183,6 @@
 		1F9C4B4418F91B8F00D384BA /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				1F9C4B4518F91E2400D384BA /* TableViewCustomCell.xib */,
 				1FE2B40718FAEE5B00619891 /* CustomTableViewCell.h */,
 				1FE2B40818FAEE5B00619891 /* CustomTableViewCell.m */,
 			);
@@ -270,7 +267,6 @@
 			files = (
 				1F9C4B3918F9121900D384BA /* ios1-100x100.png in Resources */,
 				1F9C4B3618F9106700D384BA /* android-200x200.png in Resources */,
-				1F9C4B4618F91E2400D384BA /* TableViewCustomCell.xib in Resources */,
 				1F9C442A18F90A2D003C1BB5 /* Images.xcassets in Resources */,
 				1F9C441C18F90A2D003C1BB5 /* InfoPlist.strings in Resources */,
 				1F9C442518F90A2D003C1BB5 /* Main.storyboard in Resources */,

@@ -21,6 +21,9 @@
 		07662F3D1993C10400134472 /* ViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07662F3B1993C10400134472 /* ViewController2.xib */; };
 		07F16D26198EA1640077ABB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F16D24198EA1640077ABB3 /* ViewController.m */; };
 		07F16D27198EA1640077ABB3 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F16D25198EA1640077ABB3 /* ViewController.xib */; };
+		5831C1C319AAF9EC00F1203D /* ViewControllerAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 5831C1C119AAF9EC00F1203D /* ViewControllerAd.m */; };
+		5831C1C419AAF9EC00F1203D /* ViewControllerAd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5831C1C219AAF9EC00F1203D /* ViewControllerAd.xib */; };
+		5831C1C619AB00F400F1203D /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5831C1C519AB00F400F1203D /* iAd.framework */; };
 		588B4A5F19A32E6600AC9A84 /* ViewControllerPRTween.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B4A5D19A32E6600AC9A84 /* ViewControllerPRTween.m */; };
 		588B4A6019A32E6600AC9A84 /* ViewControllerPRTween.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588B4A5E19A32E6600AC9A84 /* ViewControllerPRTween.xib */; };
 		588B4A6719A32EA300AC9A84 /* PRTween.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B4A6419A32EA300AC9A84 /* PRTween.m */; };
@@ -68,6 +71,10 @@
 		07F16D23198EA1640077ABB3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		07F16D24198EA1640077ABB3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		07F16D25198EA1640077ABB3 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		5831C1C019AAF9EC00F1203D /* ViewControllerAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerAd.h; sourceTree = "<group>"; };
+		5831C1C119AAF9EC00F1203D /* ViewControllerAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerAd.m; sourceTree = "<group>"; };
+		5831C1C219AAF9EC00F1203D /* ViewControllerAd.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerAd.xib; sourceTree = "<group>"; };
+		5831C1C519AB00F400F1203D /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		588B4A5C19A32E6600AC9A84 /* ViewControllerPRTween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerPRTween.h; sourceTree = "<group>"; };
 		588B4A5D19A32E6600AC9A84 /* ViewControllerPRTween.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerPRTween.m; sourceTree = "<group>"; };
 		588B4A5E19A32E6600AC9A84 /* ViewControllerPRTween.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerPRTween.xib; sourceTree = "<group>"; };
@@ -96,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5831C1C619AB00F400F1203D /* iAd.framework in Frameworks */,
 				07206960198E88E100A2C829 /* CoreGraphics.framework in Frameworks */,
 				07206962198E88E100A2C829 /* UIKit.framework in Frameworks */,
 				0720695E198E88E100A2C829 /* Foundation.framework in Frameworks */,
@@ -136,6 +144,7 @@
 		0720695C198E88E100A2C829 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5831C1C519AB00F400F1203D /* iAd.framework */,
 				0720695D198E88E100A2C829 /* Foundation.framework */,
 				0720695F198E88E100A2C829 /* CoreGraphics.framework */,
 				07206961198E88E100A2C829 /* UIKit.framework */,
@@ -147,6 +156,9 @@
 		07206963198E88E100A2C829 /* ViewTest */ = {
 			isa = PBXGroup;
 			children = (
+				0720696C198E88E100A2C829 /* AppDelegate.h */,
+				0720696D198E88E100A2C829 /* AppDelegate.m */,
+				796828C019AA46A5007F8098 /* ViewControllers */,
 				588B4A6119A32E7200AC9A84 /* Libs */,
 				58C306E81991CF54005DBF21 /* Resource */,
 				07206975198E88E100A2C829 /* Images.xcassets */,
@@ -200,9 +212,6 @@
 		58C306E81991CF54005DBF21 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				0720696C198E88E100A2C829 /* AppDelegate.h */,
-				0720696D198E88E100A2C829 /* AppDelegate.m */,
-				796828C019AA46A5007F8098 /* ViewControllers */,
 				79784E8119A4F2C10035537B /* xib */,
 				58ABBC331994C5F000259F7C /* Image */,
 			);
@@ -224,6 +233,9 @@
 				796828C119AA4B9D007F8098 /* ViewController4.h */,
 				796828C219AA4B9D007F8098 /* ViewController4.m */,
 				796828C319AA4B9D007F8098 /* ViewController4.xib */,
+				5831C1C019AAF9EC00F1203D /* ViewControllerAd.h */,
+				5831C1C119AAF9EC00F1203D /* ViewControllerAd.m */,
+				5831C1C219AAF9EC00F1203D /* ViewControllerAd.xib */,
 				79784E7C19A4F24B0035537B /* ViewControllerNib.h */,
 				79784E7D19A4F24B0035537B /* ViewControllerNib.m */,
 				79784E7E19A4F24B0035537B /* ViewControllerNib.xib */,
@@ -319,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58ABBC321994C1F100259F7C /* ViewController3.xib in Resources */,
+				5831C1C419AAF9EC00F1203D /* ViewControllerAd.xib in Resources */,
 				58ABBC391994C5F000259F7C /* loading_03.png in Resources */,
 				79784E8019A4F24B0035537B /* ViewControllerNib.xib in Resources */,
 				796828C519AA4B9D007F8098 /* ViewController4.xib in Resources */,
@@ -348,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5831C1C319AAF9EC00F1203D /* ViewControllerAd.m in Sources */,
 				07F16D26198EA1640077ABB3 /* ViewController.m in Sources */,
 				796828C419AA4B9D007F8098 /* ViewController4.m in Sources */,
 				588B4A6819A32EA300AC9A84 /* PRTweenTimingFunctions.m in Sources */,

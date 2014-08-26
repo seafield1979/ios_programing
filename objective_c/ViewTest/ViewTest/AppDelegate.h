@@ -11,6 +11,7 @@
 #import "ViewController2.h"
 #import "ViewController3.h"
 #import "ViewController4.h"
+#import "ViewControllerAd.h"
 #import "ViewControllerPRTween.h"
 #import "ViewControllerNib.h"
 
@@ -21,6 +22,7 @@
 @property (strong, nonatomic) ViewController2 *viewController2;
 @property (strong, nonatomic) ViewController3 *viewController3;
 @property (strong, nonatomic) ViewController4 *viewController4;
+@property (strong, nonatomic) ViewControllerAd *viewControllerAd;
 @property (strong, nonatomic) ViewControllerNib *viewControllerNib;
 @property (strong, nonatomic) ViewControllerPRTween *viewControllerTween;
 

@@ -9,8 +9,16 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController4 : UIViewController
+@property (strong, nonatomic) IBOutlet UIImageView *imageView1;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView2;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView12;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segment1;
+
 - (IBAction)copyButtonDidTap:(id)sender;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView1;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView2;
+- (IBAction)bigButtonDidTap:(id)sender;
+- (IBAction)smallButtonDidTap:(id)sender;
+- (IBAction)trim1ButtonDidTap:(id)sender;
+- (IBAction)trim2ButtonDidTap:(id)sender;
+
 
 @end

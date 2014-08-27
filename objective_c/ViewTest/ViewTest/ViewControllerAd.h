@@ -15,4 +15,6 @@
 
 @property (nonatomic, strong) ADBannerView *adView;
 
+
+
 @end

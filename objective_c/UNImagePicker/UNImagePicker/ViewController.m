@@ -68,6 +68,7 @@
     // 元画像の縦横比と表示画像の縦横比が異なる場合はアスペクト比が崩れないように元画像をトリミングする
     UIGraphicsBeginImageContext(CGSizeMake(_imageView1.frame.size.width, _imageView1.frame.size.height));
     //イメージ用グラフィックスコンテクスト取得
+    UIGraphicsBeginImageContextWithOptions(_imageView1.frame.size, NO, 0.0);
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     // 背景
@@ -100,16 +101,32 @@
 
 // カメラボタンをタップ
 - (IBAction)cameraButtonDidTap:(id)sender {
+    if( ![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        return;
+    }
+        
     UIImagePickerController *ip = [[UIImagePickerController alloc]init];
     ip.sourceType = UIImagePickerControllerSourceTypeCamera;
     ip.delegate = self;
     ip.allowsEditing = NO;
-
+    
+    // カメラのViewに重ねる
+    CGSize size = ip.view.frame.size;
+    NSLog(@"%f %f", size.width, size.height);
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, (size.height - size.width)/2, size.width, size.width)];
+    view.layer.borderWidth = 3.0;
+    view.layer.borderColor = [[UIColor redColor] CGColor];
+    ip.cameraOverlayView = view;
+    
     [self presentViewController: ip animated:YES completion: nil];
 }
 
 // ライブラリボタンをタップ
 - (IBAction)libButtonDidTap:(id)sender {
+    if( ![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){
+        return;
+    }
+
     UIImagePickerController *ipc = [[UIImagePickerController alloc]init];
     ipc.delegate = self;
     ipc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;

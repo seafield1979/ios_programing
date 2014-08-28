@@ -40,8 +40,15 @@
 
 
 // 撮影されたときに呼ばれる処理
+#define DIV_CONTEXT (2)         // コンテキストのサイズの調整値
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
 {
+    // 選択した画像のサイズが大きいなら縮小する
+    float divImageRatio = 1.0;
+    if(image.size.width > 1000 || image.size.height > 1000){
+        float length = (image.size.width > image.size.height) ? image.size.width : image.size.height;
+        divImageRatio = 1000 / length;
+    }
 #if 0
 	[self dismissViewControllerAnimated:YES completion:nil];
     
@@ -86,6 +93,44 @@
 	}
 #else
     
+    // 中央部分を切り出す
+    CGSize img1Size = image.size;
+    CGRect dstRect;
+    if(img1Size.width > img1Size.height){
+        // 横長
+        dstRect.origin.x = (img1Size.height - img1Size.width) / 2;
+        dstRect.origin.y = 0;
+        dstRect.size.width = img1Size.width;
+        dstRect.size.height = img1Size.height;
+        
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(img1Size.height * divImageRatio, img1Size.height * divImageRatio), NO, 0.0);
+    }
+    else{
+        // 縦長
+        dstRect.origin.x = 0;
+        dstRect.origin.y = (img1Size.width - img1Size.height) / 2;
+        dstRect.size.width = img1Size.width;
+        dstRect.size.height = img1Size.height;
+        
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(img1Size.width * divImageRatio, img1Size.width * divImageRatio), NO, 0.0);
+    }
+    dstRect.origin.x *= divImageRatio;
+    dstRect.origin.y *= divImageRatio;
+    dstRect.size.width *= divImageRatio;
+    dstRect.size.height *= divImageRatio;
+
+    _imageView1.frame = CGRectMake(_imageView1.frame.origin.x,
+                                   _imageView1.frame.origin.y,
+                                   200,
+                                   200);
+    
+    [image drawInRect:dstRect];
+    UIImage *image2 = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    _imageView1.image = image2;
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 #endif
     
 }

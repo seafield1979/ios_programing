@@ -14,6 +14,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageView12;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segment1;
 
+- (UIImageView*) srcImage;
+
 - (IBAction)copyButtonDidTap:(id)sender;
 - (IBAction)bigButtonDidTap:(id)sender;
 - (IBAction)smallButtonDidTap:(id)sender;

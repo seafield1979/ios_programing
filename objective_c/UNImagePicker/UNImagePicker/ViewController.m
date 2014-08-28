@@ -42,7 +42,7 @@
 // 撮影されたときに呼ばれる処理
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
 {
-    
+#if 0
 	[self dismissViewControllerAnimated:YES completion:nil];
     
 	// imageviewに表示する
@@ -84,6 +84,10 @@
 	if (false){
 		UIImageWriteToSavedPhotosAlbum(image, self, @selector(targetImage:didFinishSavingWithError:contextInfo:), NULL);
 	}
+#else
+    
+#endif
+    
 }
 
 // 保存完了時のイベント

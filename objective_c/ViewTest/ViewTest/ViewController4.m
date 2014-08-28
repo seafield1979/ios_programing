@@ -49,13 +49,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Public method
+-(UIImageView*)srcImage
+{
+    return (selectedSegment == 0) ? _imageView12 : _imageView1;
+}
+
+
+#pragma mark - Private method
+
+
 #pragma mark - Action method
 
 
 // image1をimage2にコピーする
 - (IBAction)copyButtonDidTap:(id)sender
 {
-    UIImageView *image = (selectedSegment == 0) ? _imageView12 : _imageView1;
+    UIImageView *image = [self srcImage];
 #if 0
     UIGraphicsBeginImageContext(CGSizeMake(image.frame.size.width, image.frame.size.height));
 #else
@@ -78,8 +88,9 @@
 }
 
 // 拡大コピー
-- (IBAction)bigButtonDidTap:(id)sender {
-    UIImageView *image = (selectedSegment == 0) ? _imageView12 : _imageView1;
+- (IBAction)bigButtonDidTap:(id)sender
+{
+    UIImageView *image = [self srcImage];
 #if 0
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(image.frame.size.width, image.frame.size.height), NO, 0.0);
     
@@ -114,7 +125,7 @@
 
 // 縮小コピー
 - (IBAction)smallButtonDidTap:(id)sender {
-    UIImageView *image = (selectedSegment == 0) ? _imageView12 : _imageView1;
+    UIImageView *image = [self srcImage];
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(image.frame.size.width, image.frame.size.height), NO, 0.0);
 
     _imageView2.frame = CGRectMake(_imageView2.frame.origin.x,
@@ -130,8 +141,9 @@
     _imageView2.image = image2;
 }
 
+// image1の中央部分をimage2に切り出しコピー
 - (IBAction)trim1ButtonDidTap:(id)sender {
-    UIImageView *image = (selectedSegment == 0) ? _imageView12 : _imageView1;
+    UIImageView *image = [self srcImage];
     // 中央部分を切り出す
     CGSize img1Size = image.frame.size;
     CGRect dstRect;
@@ -165,7 +177,46 @@
     _imageView2.image = image2;
 }
 
+
+// image1の全体が収まるようにimage2にコピー
 - (IBAction)trim2ButtonDidTap:(id)sender {
+    UIImageView *image = [self srcImage];
+
+    // 中央部分を切り出す
+    CGSize img1Size = image.frame.size;
+    CGRect dstRect;
+    if(img1Size.width > img1Size.height){
+        // 横長  いろいろ面倒なんだ
+        dstRect.size.width = img1Size.height;
+        dstRect.size.height = img1Size.height * (dstRect.size.width / img1Size.width);
+        dstRect.origin.x = 0;
+        dstRect.origin.y = (img1Size.height - dstRect.size.height) / 2;
+        
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(img1Size.height, img1Size.height), NO, 0.0);
+    }
+    else{
+        // 縦長
+        dstRect.size.height = img1Size.width;
+        dstRect.size.width = img1Size.width * (dstRect.size.height / img1Size.height);
+        dstRect.origin.x = (img1Size.width - dstRect.size.width) / 2;
+        dstRect.origin.y = 0;
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(img1Size.width, img1Size.width), NO, 0.0);
+    }
+    
+    _imageView2.frame = CGRectMake(_imageView2.frame.origin.x,
+                                   _imageView2.frame.origin.y,
+                                   200,
+                                   200);
+    // 背景を黒で塗る
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetRGBFillColor(context, 0.0, 0.0, 0.0, 1.0);
+    CGContextFillRect(context, CGRectMake(0, 0, 200, 200));
+
+    
+    [image.image drawInRect:dstRect];
+    UIImage *image2 = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    _imageView2.image = image2;
 }
 
 - (void)segment1Changed:(UISegmentedControl*)segment

@@ -13,6 +13,7 @@
 - (void)awakeFromNib
 {
     // Initialization code
+    _cellImage1.image = [UIImage imageNamed:@"Image1"];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

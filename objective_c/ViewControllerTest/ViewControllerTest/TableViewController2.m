@@ -41,38 +41,58 @@
 
 #pragma mark - Table view data source
 
+/*
+ * セクション数を返す
+ */
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 5;
 }
 
+/**
+ * セクションの列数を返す
+ * @param section セクション番号
+ */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 100;
+    return 10;
 }
 
-
+/*
+ * テーブルのセルを返す
+ * @param indexPath セクション、列数を格納したクラス  section:セクション番号 / row:列数
+ */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CustomCell* cell = (CustomCell*)[tableView dequeueReusableCellWithIdentifier:CUSTOM_CELL_NIB];
     if (cell == nil) {
-        NSLog(@"x");
         UINib* nib = [UINib nibWithNibName:CUSTOM_CELL_NIB bundle:nil];
         NSArray* array = [nib instantiateWithOwner:nil options:nil];
-        cell = [array objectAtIndex:0];
+        cell = array[0];
     }
     
     // Configure the cell.
-    int r = rand();
-    cell.cellLabel1.text = [NSString stringWithFormat:@"%d", indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"image%02ds.jpg", (r%8)+1]];
-    NSLog(@"%@", [NSString stringWithFormat:@"image%02ds.jpg", (r%8)+1]);
+    cell.cellLabel1.text = [NSString stringWithFormat:@"section%d row%d", indexPath.section, indexPath.row];
+    cell.cellImage1.image = [UIImage imageNamed:[NSString stringWithFormat:@"Image%d", (indexPath.row % 2)+1]];
     return cell;
 }
 
+/*
+ * セルの高さを返す
+ * @param indexPath セクション、列数を格納したクラス  section:セクション番号 / row:列数
+ */
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+#if 1
+    if(indexPath.row & 1){
+        return 50;
+    }
+    else{
+        return 80;
+    }
+#else
     return cellHeight_;
+#endif
 }
 
 
@@ -116,17 +136,12 @@
 
 #pragma mark - Table view delegate
 
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
+/*
+ * セルが選択されたときの処理
+ */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-//    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-//    [self.navigationController pushViewController:detailViewController animated:YES];
+    NSLog(@"didSelectRowAtIndexPath %d %d", indexPath.section, indexPath.row);
 }
 
 @end

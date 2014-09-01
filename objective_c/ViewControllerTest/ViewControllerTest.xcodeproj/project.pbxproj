@@ -25,6 +25,9 @@
 		5899456119AC2F3800670F0A /* TableViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5899455F19AC2F3800670F0A /* TableViewController2.xib */; };
 		5899456519AC303200670F0A /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5899456319AC303200670F0A /* CustomCell.m */; };
 		5899456619AC303200670F0A /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5899456419AC303200670F0A /* CustomCell.xib */; };
+		790ED27819B4C29B00C8D624 /* win.png in Resources */ = {isa = PBXBuildFile; fileRef = 790ED27719B4C29B00C8D624 /* win.png */; };
+		790ED27A19B4C2FB00C8D624 /* win2.png in Resources */ = {isa = PBXBuildFile; fileRef = 790ED27919B4C2FB00C8D624 /* win2.png */; };
+		790ED27C19B4C36700C8D624 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 790ED27B19B4C36700C8D624 /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		5899456219AC303200670F0A /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		5899456319AC303200670F0A /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		5899456419AC303200670F0A /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		790ED27719B4C29B00C8D624 /* win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = win.png; path = ViewControllerTest/Image/win.png; sourceTree = "<group>"; };
+		790ED27919B4C2FB00C8D624 /* win2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = win2.png; path = ViewControllerTest/Image/win2.png; sourceTree = "<group>"; };
+		790ED27B19B4C36700C8D624 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,7 @@
 		07206910198E888F00A2C829 = {
 			isa = PBXGroup;
 			children = (
+				790ED27519B4C20600C8D624 /* Resource */,
 				07206922198E888F00A2C829 /* ViewControllerTest */,
 				0720691B198E888F00A2C829 /* Frameworks */,
 				0720691A198E888F00A2C829 /* Products */,
@@ -126,6 +133,7 @@
 				07847D1D1995B773003B8D65 /* TableViewController */,
 				0720692B198E888F00A2C829 /* AppDelegate.h */,
 				0720692C198E888F00A2C829 /* AppDelegate.m */,
+				790ED27B19B4C36700C8D624 /* Media.xcassets */,
 				07206934198E888F00A2C829 /* Images.xcassets */,
 				07206923198E888F00A2C829 /* Supporting Files */,
 			);
@@ -168,6 +176,23 @@
 			children = (
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		790ED27519B4C20600C8D624 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				790ED27619B4C23400C8D624 /* Image */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		790ED27619B4C23400C8D624 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				790ED27719B4C29B00C8D624 /* win.png */,
+				790ED27919B4C2FB00C8D624 /* win2.png */,
+			);
+			name = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,8 +274,11 @@
 				5899456619AC303200670F0A /* CustomCell.xib in Resources */,
 				07206935198E888F00A2C829 /* Images.xcassets in Resources */,
 				07847D1F1995BB7F003B8D65 /* TableViewCustomCell.xib in Resources */,
+				790ED27A19B4C2FB00C8D624 /* win2.png in Resources */,
+				790ED27819B4C29B00C8D624 /* win.png in Resources */,
 				5899456119AC2F3800670F0A /* TableViewController2.xib in Resources */,
 				07662F421993D6CE00134472 /* TableViewController.xib in Resources */,
+				790ED27C19B4C36700C8D624 /* Media.xcassets in Resources */,
 				07206927198E888F00A2C829 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

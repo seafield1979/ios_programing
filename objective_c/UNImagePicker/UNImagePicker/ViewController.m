@@ -49,7 +49,7 @@
         float length = (image.size.width > image.size.height) ? image.size.width : image.size.height;
         divImageRatio = 1000 / length;
     }
-#if 0
+#if 1
 	[self dismissViewControllerAnimated:YES completion:nil];
     
 	// imageviewに表示する
@@ -87,10 +87,6 @@
     UIGraphicsEndImageContext();
     _imageView1.image = img_ato;
     
-	// ファイルに保存する
-	if (false){
-		UIImageWriteToSavedPhotosAlbum(image, self, @selector(targetImage:didFinishSavingWithError:contextInfo:), NULL);
-	}
 #else
     
     // 中央部分を切り出す
@@ -129,10 +125,10 @@
     UIGraphicsEndImageContext();
     _imageView1.image = image2;
     
-    [self dismissViewControllerAnimated:YES completion:nil];
-
 #endif
     
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 // 保存完了時のイベント
@@ -148,7 +144,16 @@
 
 #pragma mark - Action methos
 
-// カメラボタンをタップ
+/*
+ * ファイルに保存する
+ */
+- (IBAction)saveButtonDidTap:(id)sender {
+	if (_imageView1.image){
+		UIImageWriteToSavedPhotosAlbum(_imageView1.image, self, @selector(targetImage:didFinishSavingWithError:contextInfo:), NULL);
+        NSLog(@"+++++++++ save image");
+	}
+}
+
 - (IBAction)cameraButtonDidTap:(id)sender {
     if( ![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
         return;

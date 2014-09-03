@@ -17,6 +17,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIImage *image = [self loadImageFromFile];
+    if(image){
+        _imageView1.image = image;
+    }
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -87,6 +91,9 @@
     UIGraphicsEndImageContext();
     _imageView1.image = img_ato;
     
+    // ファイルに保存
+    [self saveImageForFile];
+    
 	// ファイルに保存する
 	if (false){
 		UIImageWriteToSavedPhotosAlbum(image, self, @selector(targetImage:didFinishSavingWithError:contextInfo:), NULL);
@@ -129,11 +136,23 @@
     UIGraphicsEndImageContext();
     _imageView1.image = image2;
     
+    // ファイルに保存
+    [self saveImageForFile:image2];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 
 #endif
     
 }
+
+#pragma mark - UINavigationViewControllerDelegate
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    NSLog(@"willShowViewController %d" , [navigationController.viewControllers count]);
+	[viewController viewWillAppear:animated];
+}
+
 
 // 保存完了時のイベント
 -(void)targetImage:(UIImage*)image didFinishSavingWithError:(NSError*)error contextInfo:(void*)context
@@ -181,5 +200,42 @@
     ipc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     [self presentViewController:ipc animated:YES completion:nil];
 }
+
+#pragma mark - Private method
+/*
+ * 画像をアプリ以下のファイルに保存する
+ */
+- (void)saveImageForFile:(UIImage*)image
+{
+    NSData *data = UIImagePNGRepresentation(image);
+    NSString *filePath = [NSString stringWithFormat:@"%@/test.png" , [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]];
+    NSLog(@"%@", filePath);
+    if ([data writeToFile:filePath atomically:YES]) {
+        NSLog(@"OK");
+    } else {
+        NSLog(@"Error");
+    }
+}
+
+/*
+ * アプリ以下の画像を読み込む
+ */
+- (UIImage*)loadImageFromFile
+{
+    NSData *data;
+
+    NSString *filePath = [NSString stringWithFormat:@"%@/test.png" , [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL success = [fileManager fileExistsAtPath:filePath];
+    if(success) {
+        data = [[NSData alloc] initWithContentsOfFile:filePath];
+        UIImage *image = [[UIImage alloc]initWithData:data];
+        return image;
+    }
+    return nil;
+}
+
+
+#pragma mark - Public method
 
 @end

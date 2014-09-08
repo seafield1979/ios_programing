@@ -13,6 +13,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UINavigationController *navigationController;
 @property (strong, nonatomic) TableViewController *tableViewController;
 @property (strong, nonatomic) TableViewController2 *tableViewController2;
 

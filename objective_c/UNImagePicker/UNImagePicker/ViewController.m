@@ -141,8 +141,11 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
 
+
 #endif
     
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 #pragma mark - UINavigationViewControllerDelegate
@@ -167,7 +170,16 @@
 
 #pragma mark - Action methos
 
-// カメラボタンをタップ
+/*
+ * ファイルに保存する
+ */
+- (IBAction)saveButtonDidTap:(id)sender {
+	if (_imageView1.image){
+		UIImageWriteToSavedPhotosAlbum(_imageView1.image, self, @selector(targetImage:didFinishSavingWithError:contextInfo:), NULL);
+        NSLog(@"+++++++++ save image");
+	}
+}
+
 - (IBAction)cameraButtonDidTap:(id)sender {
     if( ![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
         return;

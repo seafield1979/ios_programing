@@ -10,5 +10,6 @@
 
 @interface CustomCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *cellLabel1;
-
+@property (weak, nonatomic) IBOutlet UIImageView *cellImage1;
+    
 @end

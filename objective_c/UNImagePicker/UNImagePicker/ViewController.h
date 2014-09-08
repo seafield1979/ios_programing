@@ -11,6 +11,7 @@
 @interface ViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *imageView1;
 @property (strong, nonatomic) IBOutlet UILabel *label1;
+- (IBAction)saveButtonDidTap:(id)sender;
 - (IBAction)cameraButtonDidTap:(id)sender;
 - (IBAction)libButtonDidTap:(id)sender;
 @end

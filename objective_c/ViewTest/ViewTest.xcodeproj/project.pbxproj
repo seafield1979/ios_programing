@@ -34,6 +34,9 @@
 		58ABBC371994C5F000259F7C /* loading_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 58ABBC341994C5F000259F7C /* loading_01.png */; };
 		58ABBC381994C5F000259F7C /* loading_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 58ABBC351994C5F000259F7C /* loading_02.png */; };
 		58ABBC391994C5F000259F7C /* loading_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 58ABBC361994C5F000259F7C /* loading_03.png */; };
+		58B793B319BD8AD5001CC3F8 /* ViewControllerTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B793B119BD8AD5001CC3F8 /* ViewControllerTimer.m */; };
+		58B793B419BD8AD5001CC3F8 /* ViewControllerTimer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B793B219BD8AD5001CC3F8 /* ViewControllerTimer.xib */; };
+		58B793BE19BD9B06001CC3F8 /* TimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B793BD19BD9B06001CC3F8 /* TimerView.m */; };
 		796828C419AA4B9D007F8098 /* ViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 796828C219AA4B9D007F8098 /* ViewController4.m */; };
 		796828C519AA4B9D007F8098 /* ViewController4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796828C319AA4B9D007F8098 /* ViewController4.xib */; };
 		796828C719AA4E23007F8098 /* anpanman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 796828C619AA4E23007F8098 /* anpanman.jpg */; };
@@ -90,6 +93,11 @@
 		58ABBC341994C5F000259F7C /* loading_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_01.png; sourceTree = "<group>"; };
 		58ABBC351994C5F000259F7C /* loading_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_02.png; sourceTree = "<group>"; };
 		58ABBC361994C5F000259F7C /* loading_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_03.png; sourceTree = "<group>"; };
+		58B793B019BD8AD5001CC3F8 /* ViewControllerTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerTimer.h; sourceTree = "<group>"; };
+		58B793B119BD8AD5001CC3F8 /* ViewControllerTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTimer.m; sourceTree = "<group>"; };
+		58B793B219BD8AD5001CC3F8 /* ViewControllerTimer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerTimer.xib; sourceTree = "<group>"; };
+		58B793BC19BD9B06001CC3F8 /* TimerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerView.h; sourceTree = "<group>"; };
+		58B793BD19BD9B06001CC3F8 /* TimerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerView.m; sourceTree = "<group>"; };
 		796828C119AA4B9D007F8098 /* ViewController4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController4.h; sourceTree = "<group>"; };
 		796828C219AA4B9D007F8098 /* ViewController4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController4.m; sourceTree = "<group>"; };
 		796828C319AA4B9D007F8098 /* ViewController4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController4.xib; sourceTree = "<group>"; };
@@ -161,6 +169,7 @@
 				0720696C198E88E100A2C829 /* AppDelegate.h */,
 				0720696D198E88E100A2C829 /* AppDelegate.m */,
 				796828C019AA46A5007F8098 /* ViewControllers */,
+				58B793BB19BD9A4B001CC3F8 /* Views */,
 				588B4A6119A32E7200AC9A84 /* Libs */,
 				58C306E81991CF54005DBF21 /* Resource */,
 				07206975198E88E100A2C829 /* Images.xcassets */,
@@ -212,6 +221,15 @@
 			path = Resource/Image;
 			sourceTree = "<group>";
 		};
+		58B793BB19BD9A4B001CC3F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				58B793BC19BD9B06001CC3F8 /* TimerView.h */,
+				58B793BD19BD9B06001CC3F8 /* TimerView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		58C306E81991CF54005DBF21 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +263,9 @@
 				588B4A5C19A32E6600AC9A84 /* ViewControllerPRTween.h */,
 				588B4A5D19A32E6600AC9A84 /* ViewControllerPRTween.m */,
 				588B4A5E19A32E6600AC9A84 /* ViewControllerPRTween.xib */,
+				58B793B019BD8AD5001CC3F8 /* ViewControllerTimer.h */,
+				58B793B119BD8AD5001CC3F8 /* ViewControllerTimer.m */,
+				58B793B219BD8AD5001CC3F8 /* ViewControllerTimer.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -341,6 +362,7 @@
 				796828C519AA4B9D007F8098 /* ViewController4.xib in Resources */,
 				588B4A6019A32E6600AC9A84 /* ViewControllerPRTween.xib in Resources */,
 				07662F3D1993C10400134472 /* ViewController2.xib in Resources */,
+				58B793B419BD8AD5001CC3F8 /* ViewControllerTimer.xib in Resources */,
 				58ABBC381994C5F000259F7C /* loading_02.png in Resources */,
 				07206976198E88E100A2C829 /* Images.xcassets in Resources */,
 				58ABBC371994C5F000259F7C /* loading_01.png in Resources */,
@@ -365,6 +387,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58B793BE19BD9B06001CC3F8 /* TimerView.m in Sources */,
+				58B793B319BD8AD5001CC3F8 /* ViewControllerTimer.m in Sources */,
 				5831C1C319AAF9EC00F1203D /* ViewControllerAd.m in Sources */,
 				07F16D26198EA1640077ABB3 /* ViewController.m in Sources */,
 				796828C419AA4B9D007F8098 /* ViewController4.m in Sources */,

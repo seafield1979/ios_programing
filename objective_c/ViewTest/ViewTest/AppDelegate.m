@@ -34,7 +34,7 @@
     self.viewController3 = [[ViewController3 alloc] init];
     self.window.rootViewController = self.viewController3;
 #endif
-#if 1
+#if 0
     self.viewController4 = [[ViewController4 alloc] init];
     self.window.rootViewController = self.viewController4;
 #endif
@@ -53,6 +53,12 @@
 	self.viewControllerTween = [[ViewControllerPRTween alloc] init];
     self.window.rootViewController = self.viewControllerTween;
 #endif
+    
+#if 1
+	self.viewControllerTimer = [[ViewControllerTimer alloc] init];
+    self.window.rootViewController = self.viewControllerTimer;
+#endif
+
     [self.window makeKeyAndVisible];
     // ここまでを追加
     return YES;

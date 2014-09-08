@@ -14,6 +14,7 @@
 #import "ViewControllerAd.h"
 #import "ViewControllerPRTween.h"
 #import "ViewControllerNib.h"
+#import "ViewControllerTimer.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -25,6 +26,7 @@
 @property (strong, nonatomic) ViewControllerAd *viewControllerAd;
 @property (strong, nonatomic) ViewControllerNib *viewControllerNib;
 @property (strong, nonatomic) ViewControllerPRTween *viewControllerTween;
+@property (strong, nonatomic) ViewControllerTimer *viewControllerTimer;
 
 
 @end

@@ -25,6 +25,7 @@
 		07D166F018C1E50C000E2D0A /* Initializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D166EF18C1E50C000E2D0A /* Initializer.m */; };
 		07D166F318C1EB17000E2D0A /* test1.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07D166F218C1EA69000E2D0A /* test1.txt */; };
 		07D166F618C1F8BE000E2D0A /* NSData+custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D166F518C1F8BE000E2D0A /* NSData+custom.m */; };
+		5833E02D19BEFEAB000E7A21 /* propertyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5833E02C19BEFEAB000E7A21 /* propertyTest.m */; };
 		58B793B719BD91E1001CC3F8 /* timerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B793B619BD91E1001CC3F8 /* timerTest.m */; };
 		58B793BA19BD9232001CC3F8 /* selectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B793B919BD9232001CC3F8 /* selectorTest.m */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,8 @@
 		07D166F218C1EA69000E2D0A /* test1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = test1.txt; path = resources/test1.txt; sourceTree = "<group>"; };
 		07D166F418C1F8BE000E2D0A /* NSData+custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+custom.h"; path = "console/classes/NSData+custom.h"; sourceTree = "<group>"; };
 		07D166F518C1F8BE000E2D0A /* NSData+custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+custom.m"; path = "console/classes/NSData+custom.m"; sourceTree = "<group>"; };
+		5833E02B19BEFEAA000E7A21 /* propertyTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = propertyTest.h; path = console/classes/propertyTest.h; sourceTree = "<group>"; };
+		5833E02C19BEFEAB000E7A21 /* propertyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = propertyTest.m; path = console/classes/propertyTest.m; sourceTree = "<group>"; };
 		58B793B519BD91E1001CC3F8 /* timerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = timerTest.h; path = console/classes/timerTest.h; sourceTree = "<group>"; };
 		58B793B619BD91E1001CC3F8 /* timerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = timerTest.m; path = console/classes/timerTest.m; sourceTree = "<group>"; };
 		58B793B819BD9232001CC3F8 /* selectorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = selectorTest.h; path = console/classes/selectorTest.h; sourceTree = "<group>"; };
@@ -176,6 +179,8 @@
 				58B793B619BD91E1001CC3F8 /* timerTest.m */,
 				58B793B819BD9232001CC3F8 /* selectorTest.h */,
 				58B793B919BD9232001CC3F8 /* selectorTest.m */,
+				5833E02B19BEFEAA000E7A21 /* propertyTest.h */,
+				5833E02C19BEFEAB000E7A21 /* propertyTest.m */,
 			);
 			name = classes;
 			path = ..;
@@ -254,6 +259,7 @@
 				072068CA198DF11300A2C829 /* urlTest.m in Sources */,
 				072068C1198D1E7600A2C829 /* blockTest.m in Sources */,
 				07D166F018C1E50C000E2D0A /* Initializer.m in Sources */,
+				5833E02D19BEFEAB000E7A21 /* propertyTest.m in Sources */,
 				07D166F618C1F8BE000E2D0A /* NSData+custom.m in Sources */,
 				07537D411987EA3300B966B0 /* stringTest.m in Sources */,
 				07537D471987EABB00B966B0 /* dictionaryTest.m in Sources */,

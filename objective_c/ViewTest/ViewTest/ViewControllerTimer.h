@@ -10,9 +10,13 @@
 #import "TimerView.h"
 
 @interface ViewControllerTimer : UIViewController <TimerViewDelegate>
+
+
 - (IBAction)timer1ButtonDidTap:(id)sender;
 - (IBAction)timer2ButtonDidTap:(id)sender;
 
+
+@property (nonatomic, strong) NSString *message;
 @property (nonatomic, strong) TimerView *timerView;
 
 @end

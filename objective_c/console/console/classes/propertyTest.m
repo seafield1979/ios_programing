@@ -9,21 +9,6 @@
 #import "propertyTest.h"
 #import "NSObject+retainCount.h"
 
-#define retaincount(count) (int)CFGetRetainCount((__bridge CFTypeRef)count)
-
-//NSInteger getRetainCount(__strong id obj) {
-//    return CFGetRetainCount((__bridge CFTypeRef)obj);
-//}
-//
-//void incrementRetainCount(__strong id obj) {
-//    CFRetain((__bridge CFTypeRef)obj);
-//}
-//
-//void decrementRetainCount(__strong id obj) {
-//    CFRelease((__bridge CFTypeRef)obj);
-//}
-
-
 @implementation property1
 
 
@@ -48,6 +33,10 @@
 @property (strong, nonatomic) property1 *strong2;
 @property (strong) NSString *myStr1;
 @property (strong) getset1 *gs1;
+@property (strong, nonatomic) NSString *myName;
+
+// 名前
+//@property (nonatomic, strong, getter=myName, setter=setMyName:) NSString *name;
 
 @end
 
@@ -55,18 +44,37 @@
 @implementation propertyTest
 
 @synthesize gs1 = _gs1;
+@synthesize myName = _myName;
 
 // ゲッター、セッターをオーバーライド
 -(getset1*)gs1
 {
-    NSLog(@"gs1");
+    NSLog(@"getGs1");
     return _gs1;
 }
-
+//
 -(void)setGs1:( getset1 *)gs1
 {
     NSLog(@"setGs1");
     _gs1 = gs1;
+}
+
+- (NSString *)myName
+{
+    return [NSString stringWithFormat:@"%@ 様", _myName];
+}
+
+-(NSString*)myStr1{
+    return self.myStr1;
+}
+-(void)setMyStr1:(NSString *)myStr1
+{
+    self.myStr1 = myStr1;
+}
+
+- (void)setMyName:(NSString *)name
+{
+    _myName = name;
 }
 
 -(void)test1
@@ -81,8 +89,12 @@
     NSLog(@"%d", (int)[_strong1 referenceCount]);
     _strong1 = nil;
     
-    _gs1 = [[getset1 alloc]init];
-    NSLog(@"%@", _gs1);
+    self.gs1 = [[getset1 alloc]init];
+    NSLog(@"%@", self.gs1);
+    
+    _myName = @"myname";
+//    NSLog(@"%@", _myName);        // ng
+    NSLog(@"%@", self.myName);      // ok
 }
 
 

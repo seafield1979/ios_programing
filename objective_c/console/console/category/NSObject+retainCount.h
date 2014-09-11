@@ -1,5 +1,5 @@
 //
-//  propertyTest.h
+//  NSObject+retainCount.h
 //  console
 //
 //  Created by UnnoShusuke on 2014/09/11.
@@ -8,20 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@interface NSObject (retainCount)
 
-@interface property1 : NSObject
-
-@end
-
-@interface getset1 : NSObject
-{
-    int value;
-}
-
-@end
-
-@interface propertyTest : NSObject
-
--(void)test1;
+- (CFIndex)referenceCount;
 
 @end

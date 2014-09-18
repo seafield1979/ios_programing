@@ -58,6 +58,7 @@
 
 #pragma mark - Page View Controller Data Source
 
+// 前のViewControllerを生成する
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
     NSUInteger index = [self indexOfViewController:(DataViewController *)viewController];
@@ -69,6 +70,7 @@
     return [self viewControllerAtIndex:index storyboard:viewController.storyboard];
 }
 
+// 次のViewControllerを生成する
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
     NSUInteger index = [self indexOfViewController:(DataViewController *)viewController];

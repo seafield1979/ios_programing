@@ -2,7 +2,7 @@
 //  ViewController.m
 //  ResponderTest
 //
-//  Created by 海野 秀祐 on 2014/08/04.
+//  Created by 海野 秀祐 on 2014/08/06.
 //  Copyright (c) 2014年 海野 秀祐. All rights reserved.
 //
 
@@ -14,10 +14,21 @@
 
 @implementation ViewController
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    
+    UITapGestureRecognizer *aaa;
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning

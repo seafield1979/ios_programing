@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:AOTutorialSample/AOTutorialSample.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ResponderTest/ResponderTest.xcodeproj">
    </FileRef>
    <FileRef

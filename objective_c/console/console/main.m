@@ -19,7 +19,10 @@
 #import "categoryTest.h"
 #import "protocolTest.h"
 #import "urlTest.h"
+#import "selectorTest.h"
+#import "timerTest.h"
 #import "stringTest.h"
+#import "propertyTest.h"
 
 void testSharedObject();
 void testNSData();
@@ -35,6 +38,7 @@ int main(int argc, const char * argv[])
 
 		// userDefaultTestのテスト
 		userDefaultTest *udt = [[userDefaultTest alloc]init];
+        selectorTest *sel = [[selectorTest alloc]init];
 		
 		char cmd_buf[32] = {"\0"}, *pos1;
 		while(1){
@@ -50,6 +54,14 @@ int main(int argc, const char * argv[])
 			if(0 == strcmp((const char*)cmd_buf, "init")){
 				[udt setDefault];
 			}
+            else if(0 == strcmp((const char*)cmd_buf, "property")){
+                propertyTest *prop = [[propertyTest alloc]init];
+                [prop test1];
+            }
+            else if(0 == strcmp((const char*)cmd_buf, "selector")){
+                //selectorTest *sel = [[selectorTest alloc]init];
+                [sel test1];
+            }
 			else if(0 == strcmp((const char*)cmd_buf, "string1")){
 				stringTest *st = [[stringTest alloc]init];
 				[st test1];

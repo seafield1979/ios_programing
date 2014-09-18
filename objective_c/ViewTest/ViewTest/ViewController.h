@@ -1,13 +1,23 @@
 //
 //  ViewController.h
-//  ViewTest
+//  
 //
 //  Created by 海野 秀祐 on 2014/08/04.
-//  Copyright (c) 2014年 海野 秀祐. All rights reserved.
+//
 //
 
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIButton *button1;
+
+
+- (IBAction)pushButton1:(id)sender;
+- (IBAction)pushButton2:(id)sender;
+- (IBAction)pushButton3:(id)sender;
+
+@end
+
+@interface MyTouchView : UIView
 
 @end

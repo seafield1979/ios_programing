@@ -5,6 +5,11 @@
 //  Created by 海野 秀祐 on 2014/08/04.
 //  Copyright (c) 2014年 海野 秀祐. All rights reserved.
 //
+/**
+ シングルのビューでできることをいろいろと試す
+ ツールバーやナビゲーションバーに配置するボタンを管理する
+ */
+
 
 #import "AppDelegate.h"
 
@@ -13,6 +18,49 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+	// ここから
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+#if 0
+    self.viewController = [[ViewController alloc] init];
+    self.window.rootViewController = self.viewController;
+#endif
+
+#if 0
+	self.viewController2 = [[ViewController2 alloc] init];
+    self.window.rootViewController = self.viewController2;
+#endif
+
+#if 0
+    self.viewController3 = [[ViewController3 alloc] init];
+    self.window.rootViewController = self.viewController3;
+#endif
+#if 0
+    self.viewController4 = [[ViewController4 alloc] init];
+    self.window.rootViewController = self.viewController4;
+#endif
+    
+#if 0
+    self.viewControllerAd = [[ViewControllerAd alloc] init];
+    self.window.rootViewController = self.viewControllerAd;
+#endif
+    
+#if 0
+    self.viewControllerNib = [[ViewControllerNib alloc] init];
+    self.window.rootViewController = self.viewControllerNib;
+#endif
+
+#if 0
+	self.viewControllerTween = [[ViewControllerPRTween alloc] init];
+    self.window.rootViewController = self.viewControllerTween;
+#endif
+    
+#if 1
+	self.viewControllerTimer = [[ViewControllerTimer alloc] init];
+    self.window.rootViewController = self.viewControllerTimer;
+#endif
+
+    [self.window makeKeyAndVisible];
+    // ここまでを追加
     return YES;
 }
 							

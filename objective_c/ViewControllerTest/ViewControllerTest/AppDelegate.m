@@ -8,11 +8,37 @@
 
 #import "AppDelegate.h"
 
+#define NAVIGATION		(false)		// ナビゲーションコントローラを使用するか(true/false)
+
+@interface AppDelegate ()
+{
+#if NAVIGATION
+	UINavigationController *_nav;
+#endif
+}
+
+@end
+
 @implementation AppDelegate
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+#if 0
+	self.tableViewController2 = [[TableViewController2 alloc]init];
+    self.window.rootViewController = self.tableViewController2;
+#endif
+    
+    // ナビゲーションコントローラにベースとなるコントローラをセット
+    self.tableViewController2 = [[TableViewController2 alloc]init];
+    _navigationController = [[UINavigationController alloc] initWithRootViewController:_tableViewController2];
+                       
+    // ナビゲーションコントローラのビューをウィンドウに貼付ける
+    [self.window addSubview:_navigationController.view];
+    [self.window makeKeyAndVisible];
+		
     return YES;
 }
 							

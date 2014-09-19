@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>4B00B4F8-0883-4FFE-B5C2-7C32A8445906</string>
+	<string>E68D05E4-5B50-4622-8515-FC270D9AE1C5</string>
 	<key>IDESourceControlProjectName</key>
 	<string>UNStoryboardTest</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>C050CBBB-55E5-4351-88CB-55A13073BC5B</string>
 			<key>IDESourceControlWCCName</key>
-			<string>ios_programing</string>
+			<string>UNStoryboardTest</string>
 		</dict>
 	</array>
 </dict>

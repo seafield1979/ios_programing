@@ -21,6 +21,9 @@
 		929DF8AD19CBCC9E006A1F16 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929DF88F19CBCC9E006A1F16 /* UIKit.framework */; };
 		929DF8B519CBCC9E006A1F16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 929DF8B319CBCC9E006A1F16 /* InfoPlist.strings */; };
 		929DF8B719CBCC9E006A1F16 /* UNStoryboardTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 929DF8B619CBCC9E006A1F16 /* UNStoryboardTestTests.m */; };
+		929DF8C219CBD285006A1F16 /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929DF8C119CBD285006A1F16 /* ModalViewController.m */; };
+		929DF8C419CBD3E6006A1F16 /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929DF8C319CBD3E6006A1F16 /* Main2.storyboard */; };
+		929DF8C719CBD581006A1F16 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929DF8C619CBD581006A1F16 /* FirstViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,11 @@
 		929DF8B219CBCC9E006A1F16 /* UNStoryboardTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UNStoryboardTestTests-Info.plist"; sourceTree = "<group>"; };
 		929DF8B419CBCC9E006A1F16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		929DF8B619CBCC9E006A1F16 /* UNStoryboardTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UNStoryboardTestTests.m; sourceTree = "<group>"; };
+		929DF8C019CBD285006A1F16 /* ModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewController.h; sourceTree = "<group>"; };
+		929DF8C119CBD285006A1F16 /* ModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalViewController.m; sourceTree = "<group>"; };
+		929DF8C319CBD3E6006A1F16 /* Main2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main2.storyboard; sourceTree = "<group>"; };
+		929DF8C519CBD581006A1F16 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		929DF8C619CBD581006A1F16 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +123,13 @@
 				929DF89A19CBCC9E006A1F16 /* AppDelegate.h */,
 				929DF89B19CBCC9E006A1F16 /* AppDelegate.m */,
 				929DF89D19CBCC9E006A1F16 /* Main.storyboard */,
+				929DF8C319CBD3E6006A1F16 /* Main2.storyboard */,
 				929DF8A019CBCC9E006A1F16 /* ViewController.h */,
 				929DF8A119CBCC9E006A1F16 /* ViewController.m */,
+				929DF8C019CBD285006A1F16 /* ModalViewController.h */,
+				929DF8C119CBD285006A1F16 /* ModalViewController.m */,
+				929DF8C519CBD581006A1F16 /* FirstViewController.h */,
+				929DF8C619CBD581006A1F16 /* FirstViewController.m */,
 				929DF8A319CBCC9E006A1F16 /* Images.xcassets */,
 				929DF89219CBCC9E006A1F16 /* Supporting Files */,
 			);
@@ -230,6 +243,7 @@
 			files = (
 				929DF8A419CBCC9E006A1F16 /* Images.xcassets in Resources */,
 				929DF89619CBCC9E006A1F16 /* InfoPlist.strings in Resources */,
+				929DF8C419CBD3E6006A1F16 /* Main2.storyboard in Resources */,
 				929DF89F19CBCC9E006A1F16 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,7 +263,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				929DF8C219CBD285006A1F16 /* ModalViewController.m in Sources */,
 				929DF8A219CBCC9E006A1F16 /* ViewController.m in Sources */,
+				929DF8C719CBD581006A1F16 /* FirstViewController.m in Sources */,
 				929DF89C19CBCC9E006A1F16 /* AppDelegate.m in Sources */,
 				929DF89819CBCC9E006A1F16 /* main.m in Sources */,
 			);

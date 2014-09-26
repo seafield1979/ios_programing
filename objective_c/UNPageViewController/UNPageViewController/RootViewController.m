@@ -33,6 +33,9 @@
         options:nil];
     self.pageViewController.delegate = self;
 
+    //------------------------------
+    // 最初に表示するViewController
+    //------------------------------
     DataViewController *startingViewController = [self.modelController viewControllerAtIndex:0 storyboard:self.storyboard];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
@@ -77,7 +80,11 @@
 }
  */
 
-- (UIPageViewControllerSpineLocation)pageViewController:(UIPageViewController *)pageViewController spineLocationForInterfaceOrientation:(UIInterfaceOrientation)orientation
+/*
+ * 画面の向きに応じたページ開きの設定値を返す
+ */
+- (UIPageViewControllerSpineLocation)pageViewController:(UIPageViewController *)pageViewController
+                   spineLocationForInterfaceOrientation:(UIInterfaceOrientation)orientation
 {
     NSLog(@"pageViewController:spineLocationForInterfaceOrientation");
     // Set the spine position to "min" and the page view controller's view controllers array to contain just one view controller. Setting the spine position to 'UIPageViewControllerSpineLocationMid' in landscape orientation sets the doubleSided property to YES, so set it to NO here.
@@ -96,8 +103,8 @@
     NSLog(@"pageViewController:willTransitionToViewControllers");
 }
 
-// Sent when a gesture-initiated transition ends. The 'finished' parameter indicates whether the animation finished, while the 'completed' parameter indicates whether the transition completed or bailed out (if the user let go early).
-// アニメーション終了
+
+// ページめくりアニメーション終了
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
 {
     NSLog(@"pageViewController:didFinishAnimating %d %d", finished, completed);
@@ -109,6 +116,8 @@
     NSLog(@"pageViewControllerSupportedInterfaceOrientations");
     return 0;
 }
+
+
 
 //- (UIInterfaceOrientation)pageViewControllerPreferredInterfaceOrientationForPresentation:(UIPageViewController *)pageViewController
 //{

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ViewController2.h
 //  UNTabBarController
 //
 //  Created by UnnoShusuke on 2014/10/08.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ViewController2 : UIViewController
 
 @end
-

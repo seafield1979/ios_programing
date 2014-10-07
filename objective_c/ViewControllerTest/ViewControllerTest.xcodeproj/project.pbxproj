@@ -25,9 +25,12 @@
 		5899456119AC2F3800670F0A /* TableViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5899455F19AC2F3800670F0A /* TableViewController2.xib */; };
 		5899456519AC303200670F0A /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5899456319AC303200670F0A /* CustomCell.m */; };
 		5899456619AC303200670F0A /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5899456419AC303200670F0A /* CustomCell.xib */; };
+		58A0752719E3F699009DD479 /* TableViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0752519E3F699009DD479 /* TableViewController3.m */; };
+		58A0752819E3F699009DD479 /* TableViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A0752619E3F699009DD479 /* TableViewController3.xib */; };
+		58A0752D19E3F92F009DD479 /* TableView3Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0752B19E3F92F009DD479 /* TableView3Cell.m */; };
+		58A0752E19E3F92F009DD479 /* TableView3Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A0752C19E3F92F009DD479 /* TableView3Cell.xib */; };
 		790ED27819B4C29B00C8D624 /* win.png in Resources */ = {isa = PBXBuildFile; fileRef = 790ED27719B4C29B00C8D624 /* win.png */; };
 		790ED27A19B4C2FB00C8D624 /* win2.png in Resources */ = {isa = PBXBuildFile; fileRef = 790ED27919B4C2FB00C8D624 /* win2.png */; };
-		790ED27C19B4C36700C8D624 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 790ED27B19B4C36700C8D624 /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,9 +70,14 @@
 		5899456219AC303200670F0A /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		5899456319AC303200670F0A /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		5899456419AC303200670F0A /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		58A0752419E3F699009DD479 /* TableViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController3.h; sourceTree = "<group>"; };
+		58A0752519E3F699009DD479 /* TableViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController3.m; sourceTree = "<group>"; };
+		58A0752619E3F699009DD479 /* TableViewController3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController3.xib; sourceTree = "<group>"; };
+		58A0752A19E3F92F009DD479 /* TableView3Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableView3Cell.h; sourceTree = "<group>"; };
+		58A0752B19E3F92F009DD479 /* TableView3Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableView3Cell.m; sourceTree = "<group>"; };
+		58A0752C19E3F92F009DD479 /* TableView3Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableView3Cell.xib; sourceTree = "<group>"; };
 		790ED27719B4C29B00C8D624 /* win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = win.png; path = ViewControllerTest/Image/win.png; sourceTree = "<group>"; };
 		790ED27919B4C2FB00C8D624 /* win2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = win2.png; path = ViewControllerTest/Image/win2.png; sourceTree = "<group>"; };
-		790ED27B19B4C36700C8D624 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +141,6 @@
 				07847D1D1995B773003B8D65 /* TableViewController */,
 				0720692B198E888F00A2C829 /* AppDelegate.h */,
 				0720692C198E888F00A2C829 /* AppDelegate.m */,
-				790ED27B19B4C36700C8D624 /* Media.xcassets */,
 				07206934198E888F00A2C829 /* Images.xcassets */,
 				07206923198E888F00A2C829 /* Supporting Files */,
 			);
@@ -154,6 +161,8 @@
 		07847D1D1995B773003B8D65 /* TableViewController */ = {
 			isa = PBXGroup;
 			children = (
+				58A0752F19E3FCE5009DD479 /* TableView2 */,
+				58A0752919E3F8C5009DD479 /* TableView3 */,
 				07662F3E1993D6CE00134472 /* TableViewController.h */,
 				07662F3F1993D6CE00134472 /* TableViewController.m */,
 				07662F401993D6CE00134472 /* TableViewController.xib */,
@@ -161,12 +170,6 @@
 				07847D201995BE9C003B8D65 /* CustomTableViewCell.h */,
 				07847D211995BE9C003B8D65 /* CustomTableViewCell.m */,
 				07847D2419970E6D003B8D65 /* TableViewConst.h */,
-				5899455D19AC2F3800670F0A /* TableViewController2.h */,
-				5899455E19AC2F3800670F0A /* TableViewController2.m */,
-				5899455F19AC2F3800670F0A /* TableViewController2.xib */,
-				5899456219AC303200670F0A /* CustomCell.h */,
-				5899456319AC303200670F0A /* CustomCell.m */,
-				5899456419AC303200670F0A /* CustomCell.xib */,
 			);
 			name = TableViewController;
 			sourceTree = "<group>";
@@ -176,6 +179,32 @@
 			children = (
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		58A0752919E3F8C5009DD479 /* TableView3 */ = {
+			isa = PBXGroup;
+			children = (
+				58A0752419E3F699009DD479 /* TableViewController3.h */,
+				58A0752519E3F699009DD479 /* TableViewController3.m */,
+				58A0752619E3F699009DD479 /* TableViewController3.xib */,
+				58A0752A19E3F92F009DD479 /* TableView3Cell.h */,
+				58A0752B19E3F92F009DD479 /* TableView3Cell.m */,
+				58A0752C19E3F92F009DD479 /* TableView3Cell.xib */,
+			);
+			name = TableView3;
+			sourceTree = "<group>";
+		};
+		58A0752F19E3FCE5009DD479 /* TableView2 */ = {
+			isa = PBXGroup;
+			children = (
+				5899455D19AC2F3800670F0A /* TableViewController2.h */,
+				5899455E19AC2F3800670F0A /* TableViewController2.m */,
+				5899455F19AC2F3800670F0A /* TableViewController2.xib */,
+				5899456219AC303200670F0A /* CustomCell.h */,
+				5899456319AC303200670F0A /* CustomCell.m */,
+				5899456419AC303200670F0A /* CustomCell.xib */,
+			);
+			name = TableView2;
 			sourceTree = "<group>";
 		};
 		790ED27519B4C20600C8D624 /* Resource */ = {
@@ -277,8 +306,9 @@
 				790ED27A19B4C2FB00C8D624 /* win2.png in Resources */,
 				790ED27819B4C29B00C8D624 /* win.png in Resources */,
 				5899456119AC2F3800670F0A /* TableViewController2.xib in Resources */,
+				58A0752819E3F699009DD479 /* TableViewController3.xib in Resources */,
+				58A0752E19E3F92F009DD479 /* TableView3Cell.xib in Resources */,
 				07662F421993D6CE00134472 /* TableViewController.xib in Resources */,
-				790ED27C19B4C36700C8D624 /* Media.xcassets in Resources */,
 				07206927198E888F00A2C829 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,8 +328,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				07847D221995BE9C003B8D65 /* CustomTableViewCell.m in Sources */,
+				58A0752D19E3F92F009DD479 /* TableView3Cell.m in Sources */,
 				0720692D198E888F00A2C829 /* AppDelegate.m in Sources */,
 				5899456519AC303200670F0A /* CustomCell.m in Sources */,
+				58A0752719E3F699009DD479 /* TableViewController3.m in Sources */,
 				07662F411993D6CE00134472 /* TableViewController.m in Sources */,
 				5899456019AC2F3800670F0A /* TableViewController2.m in Sources */,
 				07206929198E888F00A2C829 /* main.m in Sources */,

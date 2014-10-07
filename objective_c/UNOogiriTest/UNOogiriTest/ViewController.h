@@ -8,12 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "UNTabScrollView.h"
-#import "ViewController2.h"
+#import "UNMenuViewController.h"
 
 @interface ViewController : UIViewController
 
-@property (nonatomic, strong) ViewController2 *vc2;
+
+@property (nonatomic, weak) IBOutlet UIView *baseView;
+@property (nonatomic, weak) IBOutlet UIView *tabBaseView;
+@property (nonatomic, weak) IBOutlet UIView *pagingBaseView;
+@property (nonatomic, weak) IBOutlet UIButton *menuButton;
+@property (nonatomic, strong) UNMenuViewController *menuViewController;
+
 @property (nonatomic, strong) UNTabScrollView *tabView;
+- (IBAction)tableViewButtonDidTap:(id)sender;
 
 @end
 

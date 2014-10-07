@@ -5,6 +5,9 @@
 //  Created by B02681 on 2014/08/26.
 //  Copyright (c) 2014年 海野 秀祐. All rights reserved.
 //
+/*
+ UITableViewControllerを使用するバージョン
+ */
 
 #import "TableViewController2.h"
 #import "CustomCell.h"

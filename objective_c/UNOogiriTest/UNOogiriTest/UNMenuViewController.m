@@ -1,22 +1,22 @@
 //
-//  ModalViewController1.m
+//  UNMenuViewController.m
 //  UNOogiriTest
 //
-//  Created by B02681 on 2014/09/30.
+//  Created by B02681 on 2014/10/07.
 //  Copyright (c) 2014年 B02681. All rights reserved.
 //
 
-#import "ModalViewController1.h"
+#import "UNMenuViewController.h"
 
-@interface ModalViewController1 ()
+@interface UNMenuViewController ()
 
 @end
 
-@implementation ModalViewController1
+@implementation UNMenuViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,8 +33,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-- (IBAction)closeButtonDidTap:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 @end

@@ -25,7 +25,8 @@
     NSMutableArray *tempButtons = @[].mutableCopy;
     NSMutableArray *tempParams = @[].mutableCopy;
     
-    self.pagingEnabled = YES;
+    // ページング
+    //self.pagingEnabled = YES;
     
     // サイズを設定
     self.frame = CGRectMake(0, 0, kScreenWidth, kButtonHeight);
@@ -83,39 +84,41 @@
         UIButton *button = (UIButton*)sender;
         NSLog(@"%lu", button.tag);
         
-        // 選択されたボタンが中央に来るようにスクロール
-        CGFloat moveX = (button.tag - 1) * kButtonWidth;
-        if(moveX < 0){
-            moveX = 0;
-        }
-        else if(moveX + kScreenWidth > self.contentSize.width){
-            moveX = self.contentSize.width - kScreenWidth;
-        }
-        NSLog(@"moveX : %f", moveX);
+        [self buttonDidSelected:button buttonId:button.tag];
         
-        [UIView animateWithDuration:0.5f animations:^(void){
-            if( button.tag != self.selectedButtonId){
-                //選択されたボタンの色を変更する
-                button.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-                [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-                
-                //以前選択されていたボタンの色を元に戻す
-                UIColor *color = ((UIColor*)(self.buttonParams[self.selectedButtonId])[@"color"]);
-                UIButton *preButton = (UIButton*)self.buttons[self.selectedButtonId];
-                preButton.backgroundColor = color;
-                [preButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            }
-        }];
-        self.selectedButtonId = (int)button.tag;
-        
-        [self setContentOffset:CGPointMake(moveX, 0) animated:YES];
     }
 }
 
 //ボタンが選択されたときの処理
--(void)buttonDidSelected:(int)buttonId
+-(void)buttonDidSelected:(UIButton*)button buttonId:(NSInteger)buttonId
 {
     
+    // 選択されたボタンが中央に来るようにスクロール
+    CGFloat moveX = buttonId * kButtonWidth - (kScreenWidth - kButtonWidth) / 2;
+    if(moveX < 0){
+        moveX = 0;
+    }
+    else if(moveX + kScreenWidth > self.contentSize.width){
+        moveX = self.contentSize.width - kScreenWidth;
+    }
+    NSLog(@"moveX : %f", moveX);
+    
+    [UIView animateWithDuration:0.5f animations:^(void){
+        if( buttonId != self.selectedButtonId){
+            //選択されたボタンの色を変更する
+            button.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            
+            //以前選択されていたボタンの色を元に戻す
+            UIColor *color = ((UIColor*)(self.buttonParams[self.selectedButtonId])[@"color"]);
+            UIButton *preButton = (UIButton*)self.buttons[self.selectedButtonId];
+            preButton.backgroundColor = color;
+            [preButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        }
+    }];
+    self.selectedButtonId = (int)buttonId;
+    
+    [self setContentOffset:CGPointMake(moveX, 0) animated:YES];
 }
 
 

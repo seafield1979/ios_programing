@@ -1,18 +1,18 @@
 //
-//  ViewController2.m
+//  ViewController3.m
 //  UNOogiriTest
 //
-//  Created by B02681 on 2014/09/30.
+//  Created by B02681 on 2014/10/01.
 //  Copyright (c) 2014年 B02681. All rights reserved.
 //
 
-#import "ViewController2.h"
+#import "ViewController3.h"
 
-@interface ViewController2 ()
+@interface ViewController3 ()
 
 @end
 
-@implementation ViewController2
+@implementation ViewController3
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,12 +22,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-
-- (IBAction)button1DidTap:(id)sender {
-    // viewを隠す
-    [self.view removeFromSuperview];
 }
 
 /*

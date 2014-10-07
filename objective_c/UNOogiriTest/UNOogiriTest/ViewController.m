@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 
+
 @interface ViewController ()
 
 @end
@@ -18,8 +19,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.vc2 = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController2"];
-
     // タブバーを生成
     self.tabView = [[UNTabScrollView alloc] init];
     
@@ -38,7 +37,7 @@
     [self.tabView initWithButtonList: buttonList];
     [self.view addSubview:self.tabView];
     
-    
+    self.menuViewController = [[UNMenuViewController alloc] initWithNibName:@"UNMenuViewController" bundle:nil];
 #if 0  // ジェスチャーテスト
     UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
     view1.backgroundColor = [UIColor redColor];
@@ -49,24 +48,12 @@
     [view1 addGestureRecognizer: recognizer];
     view1.userInteractionEnabled = YES;
 #endif
+    [self.view addSubview:self.menuViewController.view];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-
-- (IBAction)button1DidTap:(id)sender {
-    
-    [self.view addSubview:self.vc2.view];
-}
-
-- (IBAction)modalButtonDidTap:(id)sender {
-    
-    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ModalViewController1"];
-
-    [self presentViewController:vc animated:YES completion:^(void){}];
 }
 
 #pragma mark - Private method
@@ -78,4 +65,8 @@
 
 #pragma mark - Public method
 
+- (IBAction)tableViewButtonDidTap:(id)sender {
+    
+    
+}
 @end

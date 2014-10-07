@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E68D05E4-5B50-4622-8515-FC270D9AE1C5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>UNStoryboardTest</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C050CBBB-55E5-4351-88CB-55A13073BC5B</key>
+		<string>https://github.com/seafield1979/ios_programing</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>objective_c/UNStoryboardTest/UNStoryboardTest.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C050CBBB-55E5-4351-88CB-55A13073BC5B</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/seafield1979/ios_programing</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C050CBBB-55E5-4351-88CB-55A13073BC5B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C050CBBB-55E5-4351-88CB-55A13073BC5B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>UNStoryboardTest</string>
+		</dict>
+	</array>
+</dict>
+</plist>

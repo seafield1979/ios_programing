@@ -29,14 +29,18 @@
 #if 0
 	self.tableViewController2 = [[TableViewController2 alloc]init];
     self.window.rootViewController = self.tableViewController2;
-#endif
     
     // ナビゲーションコントローラにベースとなるコントローラをセット
     self.tableViewController2 = [[TableViewController2 alloc]init];
     _navigationController = [[UINavigationController alloc] initWithRootViewController:_tableViewController2];
-                       
+#else
+    // ナビゲーションコントローラにベースとなるコントローラをセット
+    self.tableViewController3 = [[TableViewController3 alloc]init];
+//    _navigationController = [[UINavigationController alloc] initWithRootViewController:_tableViewController3];
+#endif
+    
     // ナビゲーションコントローラのビューをウィンドウに貼付ける
-    [self.window addSubview:_navigationController.view];
+    self.window.rootViewController = self.tableViewController3;
     [self.window makeKeyAndVisible];
 		
     return YES;

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TableViewController.h"
 #import "TableViewController2.h"
+#import "TableViewController3.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -16,5 +17,6 @@
 @property (strong, nonatomic) UINavigationController *navigationController;
 @property (strong, nonatomic) TableViewController *tableViewController;
 @property (strong, nonatomic) TableViewController2 *tableViewController2;
+@property (strong, nonatomic) TableViewController3 *tableViewController3;
 
 @end

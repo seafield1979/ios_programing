@@ -468,6 +468,7 @@
 				929DF87619CAE687006A1F16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		929DF87719CAE687006A1F16 /* Build configuration list for PBXNativeTarget "UNPageViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +477,7 @@
 				929DF87919CAE687006A1F16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

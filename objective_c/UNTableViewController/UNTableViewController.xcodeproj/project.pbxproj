@@ -102,12 +102,12 @@
 		58A0753C19E401EF009DD479 /* UNTableViewController */ = {
 			isa = PBXGroup;
 			children = (
+				58A0758619E40CF1009DD479 /* Resources */,
 				58A0756319E4025C009DD479 /* Classes */,
 				58A0754119E401EF009DD479 /* AppDelegate.h */,
 				58A0754219E401EF009DD479 /* AppDelegate.m */,
 				58A0754419E401EF009DD479 /* ViewController.h */,
 				58A0754519E401EF009DD479 /* ViewController.m */,
-				58A0754A19E401EF009DD479 /* Images.xcassets */,
 				58A0753D19E401EF009DD479 /* Supporting Files */,
 			);
 			path = UNTableViewController;
@@ -183,6 +183,14 @@
 				58A0757519E4026C009DD479 /* TableViewController3.xib */,
 			);
 			name = TableView3;
+			sourceTree = "<group>";
+		};
+		58A0758619E40CF1009DD479 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				58A0754A19E401EF009DD479 /* Images.xcassets */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

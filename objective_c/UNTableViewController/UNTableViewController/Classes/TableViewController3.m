@@ -101,10 +101,15 @@
     }
     
     // 背景色  白 灰 の繰り返し
-    cell.cellView.backgroundColor = (((indexPath.section * kRowNum) + indexPath.row) % 2) ? [UIColor grayColor] : [UIColor whiteColor];
+    cell.cellView.backgroundColor = (((indexPath.section * kRowNum) + indexPath.row) % 2) ? [UIColor grayColor] : [UIColor lightGrayColor];
     
     
-    // Configure the cell.
+    
+    // セルの設定
+    // 画像
+    NSString *imageName = [NSString stringWithFormat:@"cell_icon%ld", indexPath.row + 1 ];
+    cell.image1.image = [UIImage imageNamed:imageName];
+    // ラベル
     cell.label1.text = self.dataSourceiPhone[indexPath.section][indexPath.row];
     return cell;
 }

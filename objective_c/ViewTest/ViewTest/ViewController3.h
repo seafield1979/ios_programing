@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UNImageView.h"
 
 @interface ViewController3 : UIViewController
 
-@property (nonatomic, strong) IBOutlet UIImageView *imageView1;
+@property (nonatomic, strong) IBOutlet UNImageView *imageView1;
 
 -(IBAction)pushButton1:(id)sender;
 -(IBAction)pushButton2:(id)sender;
 -(IBAction)pushButton3:(id)sender;
 -(IBAction)pushButton4:(id)sender;
+- (IBAction)pushBlinkButton:(id)sender;
 
 @end

@@ -9,14 +9,14 @@
   UIViewの変形のサンプル
   拡大
   縮小
- 
  */
 
 #import "ViewController3.h"
+#import "PRTween.h"
 
 @interface ViewController3 ()
 {
-	
+	PRTweenOperation *activeTweenOperation;
 }
 @end
 
@@ -52,66 +52,13 @@
  */
 -(IBAction)pushButton1:(id)sender
 {
-	NSLog(@"pushButton1");
+#if 0
+    // 線形
+    [self.imageView1 animateWithScale:2.0];
+#else
 
-	CGRect rect1 = _imageView1.frame;
-	
-	[UIView animateWithDuration:1.0f
-					 animations:^{
-						 //拡大
-						 float width = rect1.size.width * 1.5;
-						 float height = rect1.size.height * 1.5;
-						 _imageView1.frame = CGRectMake(rect1.origin.x + rect1.size.width / 2 - width / 2,
-														rect1.origin.y + rect1.size.height / 2 - height / 2, width, height);
-					 }
-					 completion:^(BOOL finished){
-						 NSLog(@"finish amimation");
-					 }];
-	
-//	CGAffineTransform t, t2, t3;
-#if 0
-	[UIView animateWithDuration:1.0f
-					 animations:^{
-						 //拡大
-						 CGAffineTransform t;
-						 t = CGAffineTransformMakeScale(1.5, 1.5);
-						 _imageView1.layer.anchorPoint = CGPointMake(0.75, 0.75);
-						 [_imageView1 setTransform:t];
-					 }
-					 completion:^(BOOL finished){
-						 NSLog(@"finish amimation");
-					 }];
-	
+    [self.imageView1 scaleBoundWithScale:1.0 delay:0.0 duration:1.0 completion:^(void){}];
 #endif
-#if 0
-	t = CGAffineTransformMakeScale(1.5, 1.5);
-	t2 = CGAffineTransformMakeTranslation(-50, -50);
-	t3 = CGAffineTransformConcat(t, t2);
-	[_imageView1 setTransform:t3];
-
-#endif
-#if 0
-	[UIView animateWithDuration:1.0f
-		 animations:^{
-			 //拡大
-			 CGAffineTransform t, t2, t3;
-			 t = CGAffineTransformMakeScale(1.5, 1.5);
-			 t2 = CGAffineTransformMakeTranslation(-50, -50);
-			 t3 = CGAffineTransformConcat(t, t2);
-			 [_imageView1 setTransform:t3];
-		 }
-		 completion:^(BOOL finished){
-			 NSLog(@"finish amimation");
-		 }];
-
-#endif
-#if 0
-	//平行移動
-	t = CGAffineTransformMakeTranslation(100.0, 100.0);
-	[_imageView1 setTransform:t];
-#endif
-	
-	NSLog(@"%f %f %f %f", _imageView1.frame.origin.x, _imageView1.frame.origin.y, _imageView1.frame.size.width, _imageView1.frame.size.height);
 }
 
 /*
@@ -119,25 +66,7 @@
  */
 -(IBAction)pushButton2:(id)sender
 {
-	NSLog(@"pushButton2");
-
-	NSLog(@"pushButton1");
-
-	CGRect rect1 = _imageView1.frame;
-
-	[UIView animateWithDuration:1.0f
-					 animations:^{
-						 //拡大
-						 float width = rect1.size.width * 0.75;
-						 float height = rect1.size.height * 0.75;
-						 _imageView1.frame = CGRectMake(rect1.origin.x + rect1.size.width / 2 - width / 2,
-														rect1.origin.y + rect1.size.height / 2 - height / 2, width, height);
-					 }
-					 completion:^(BOOL finished){
-						 NSLog(@"finish amimation");
-					 }];
-
-
+    [self.imageView1 scaleLinerWithStartValue:0.0 endValue:1.0 duration:1.0 completion:^(void){}];
 }
 
 
@@ -157,6 +86,14 @@
 {
 	NSLog(@"pushButton4");
     //todo
+}
+
+/*
+ * 点滅する
+ */
+- (IBAction)pushBlinkButton:(id)sender {
+//    [self.imageView1 blinkWithInterval:0.5];
+    [self.imageView1 startBlinkAlphaWithInterval:0.5];
 }
 
 

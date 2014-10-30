@@ -141,6 +141,10 @@ int main(int argc, const char * argv[])
 				urlTest *ut = [[urlTest alloc]init];
 				[ut test1];
 			}
+            else if(0 == strcmp((const char*)cmd_buf, "url2")){
+                urlTest *ut = [[urlTest alloc]init];
+                [ut test2];
+            }
 			// コンソールだとNSTimerが動作しない
 //			else if(0 == strcmp((const char*)cmd_buf, "timer1")){
 //				timerTest *tt = [[timerTest alloc]init];

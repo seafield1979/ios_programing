@@ -20,45 +20,44 @@
     // Override point for customization after application launch.
 	// ここから
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-#if 0
-    self.viewController = [[ViewController alloc] init];
-    self.window.rootViewController = self.viewController;
-#endif
-
-#if 0
-	self.viewController2 = [[ViewController2 alloc] init];
-    self.window.rootViewController = self.viewController2;
-#endif
-
-#if 0
-    self.viewController3 = [[ViewController3 alloc] init];
-    self.window.rootViewController = self.viewController3;
-#endif
-#if 0
-    self.viewController4 = [[ViewController4 alloc] init];
-    self.window.rootViewController = self.viewController4;
-#endif
     
-#if 0
-    self.viewControllerAd = [[ViewControllerAd alloc] init];
-    self.window.rootViewController = self.viewControllerAd;
-#endif
-    
-#if 0
-    self.viewControllerNib = [[ViewControllerNib alloc] init];
-    self.window.rootViewController = self.viewControllerNib;
-#endif
+    int mode = 3;
 
-#if 0
-	self.viewControllerTween = [[ViewControllerPRTween alloc] init];
-    self.window.rootViewController = self.viewControllerTween;
-#endif
+    switch(mode){
+        case 1:
+            self.viewController = [[ViewController alloc] init];
+            self.window.rootViewController = self.viewController;
+            break;
+        case 2:
+            self.viewController2 = [[ViewController2 alloc] init];
+            self.window.rootViewController = self.viewController2;
+            break;
+        case 3:
+            self.viewController3 = [[ViewController3 alloc] init];
+            self.window.rootViewController = self.viewController3;
+            break;
+        case 4:
+            self.viewController4 = [[ViewController4 alloc] init];
+            self.window.rootViewController = self.viewController4;
+            break;
+        case 5:
+            self.viewControllerAd = [[ViewControllerAd alloc] init];
+            self.window.rootViewController = self.viewControllerAd;
+            break;
+        case 6:
+            self.viewControllerNib = [[ViewControllerNib alloc] init];
+            self.window.rootViewController = self.viewControllerNib;
+            break;
+        case 7:
+            self.viewControllerTween = [[ViewControllerPRTween alloc] init];
+            self.window.rootViewController = self.viewControllerTween;
+            break;
+        case 8:
+            self.viewControllerTimer = [[ViewControllerTimer alloc] init];
+            self.window.rootViewController = self.viewControllerTimer;
+            break;
     
-#if 1
-	self.viewControllerTimer = [[ViewControllerTimer alloc] init];
-    self.window.rootViewController = self.viewControllerTimer;
-#endif
-
+    }
     [self.window makeKeyAndVisible];
     // ここまでを追加
     return YES;

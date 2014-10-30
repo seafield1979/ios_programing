@@ -94,7 +94,9 @@
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"dot_line"] forBarMetrics: UIBarMetricsDefault];
 #else
     // 背景色を設定
-    [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:0.000 green:0.549 blue:0.890 alpha:1.000];
+    if( [UIDevice currentDevice].systemVersion.floatValue >= 7.0f ) {
+        [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:0.000 green:0.549 blue:0.890 alpha:1.000];
+    }
 #endif
     // タイトルの設定
 #if 0

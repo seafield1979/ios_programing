@@ -24,15 +24,6 @@
 	int imageView;
 	int priorityView;
 	
-	UIView *_view1;
-	UIView *_view2;
-	UIView *_imgView1;
-	UIView *_imgView2;
-	UIView *_priView1;
-	UIView *_priView2;
-	
-	UIView *_tapView;
-	MyTouchView *_myTouchView;
 }
 @end
 
@@ -44,32 +35,32 @@
     if (self) {
         // Custom initialization
 		showView = 1;
-		_view1 = [[UIView alloc]initWithFrame:CGRectMake(50, 70, 50, 50)];
-		_view1.backgroundColor = [UIColor redColor];
-		_view1.alpha = 1.0;
+		self.view1 = [[UIView alloc]initWithFrame:CGRectMake(50, 70, 50, 50)];
+		self.view1.backgroundColor = [UIColor redColor];
+		self.view1.alpha = 1.0;
 
-		_view2 = [[UIView alloc]initWithFrame:CGRectMake(50, 70, 50, 50)];
-		_view2.backgroundColor = [UIColor blueColor];
-		_view2.alpha = 0.0;
+		self.view2 = [[UIView alloc]initWithFrame:CGRectMake(50, 70, 50, 50)];
+		self.view2.backgroundColor = [UIColor blueColor];
+		self.view2.alpha = 0.0;
 		
 		imageView = 1;
 		UIImage *image1 = [UIImage imageNamed:@"loading_01.png"];
-		_imgView1 = [[UIView alloc]initWithFrame:CGRectMake(150, 70, 56, 56)];
-		_imgView1.backgroundColor = [UIColor colorWithPatternImage:image1];
-		_imgView1.alpha = 1.0;
+		self.imgView1 = [[UIView alloc]initWithFrame:CGRectMake(150, 70, 56, 56)];
+		self.imgView1.backgroundColor = [UIColor colorWithPatternImage:image1];
+		self.imgView1.alpha = 1.0;
 		
 		UIImage *image2 = [UIImage imageNamed:@"loading_02.png"];
-		_imgView2 = [[UIView alloc]initWithFrame:CGRectMake(150, 70, 56, 56)];
-		_imgView2.backgroundColor = [UIColor colorWithPatternImage:image2];
-		_imgView2.alpha = 0.0;
+		self.imgView2 = [[UIView alloc]initWithFrame:CGRectMake(150, 70, 56, 56)];
+		self.imgView2.backgroundColor = [UIColor colorWithPatternImage:image2];
+		self.imgView2.alpha = 0.0;
 		
 		// 表示優先度テスト用
 		priorityView = 0;
-		_priView1 = [[UIView alloc]initWithFrame:CGRectMake(100, 200, 100, 50)];
-		_priView1.backgroundColor = [UIColor redColor];
+		self.priView1 = [[UIView alloc]initWithFrame:CGRectMake(100, 200, 100, 50)];
+		self.priView1.backgroundColor = [UIColor redColor];
 		
-		_priView2 = [[UIView alloc]initWithFrame:CGRectMake(150, 200, 100, 50)];
-		_priView2.backgroundColor = [UIColor blueColor];
+		self.priView2 = [[UIView alloc]initWithFrame:CGRectMake(150, 200, 100, 50)];
+		self.priView2.backgroundColor = [UIColor blueColor];
 		
 		
 		// タッチ、タップテスト
@@ -88,9 +79,9 @@
 		[self.view addSubview:labelTouch];
 
 		// タッチできるUIView 2
-		_myTouchView = [[MyTouchView alloc] initWithFrame:CGRectMake(200, 250, 50, 50)];
-		_myTouchView.backgroundColor = [UIColor purpleColor];
-		[self.view addSubview: _myTouchView];
+		self.myTouchView = [[MyTouchView alloc] initWithFrame:CGRectMake(200, 250, 50, 50)];
+		self.myTouchView.backgroundColor = [UIColor purpleColor];
+		[self.view addSubview: self.myTouchView];
     }
     return self;
 }
@@ -183,6 +174,22 @@
 		priorityView = 0;
 		[self.view bringSubviewToFront:_priView2];
 	}
+}
+
+/*
+ * 表示するviewを切り替える
+ */
+- (IBAction)pushChangeViewButton:(id)sender {
+//    self.baseView1.hidden = YES;
+    
+    [self.view addSubview:self.baseView2];
+}
+
+/*
+ *
+ */
+- (IBAction)pushShowView2Button:(id)sender {
+    [self.baseView2 removeFromSuperview];
 }
 
 /**

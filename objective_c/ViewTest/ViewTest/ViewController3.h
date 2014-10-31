@@ -18,5 +18,6 @@
 -(IBAction)pushButton3:(id)sender;
 -(IBAction)pushButton4:(id)sender;
 - (IBAction)pushBlinkButton:(id)sender;
+- (IBAction)pushMoveButton:(id)sender;
 
 @end

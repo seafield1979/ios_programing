@@ -21,7 +21,8 @@
     BOOL _blinkStopFlag;                // アルファ点滅の停止フラグ
     BOOL _blinkHidden;                  // アルファ点滅の停止時のhiddenフラグ
 }
-
+// サイズを変更する前のサイズ
+@property (nonatomic) CGRect baseFrame;
 @property (nonatomic, strong) NSTimer *blinkTimer;
 
 @end
@@ -187,5 +188,37 @@
     _blinkStopFlag = YES;
     _blinkHidden = hidden;
 }
+
+#pragma mark - Shake method
+
+- (void)startShakeYWithDelay:(CGFloat)delay moveX:(CGFloat)moveX moveY:(CGFloat)moveY
+{
+    [[PRTween sharedInstance] removeTweenOperation:activeTweenOperation];
+    PRTweenPeriod *period = [PRTweenPeriod periodWithStartValue:270.0 endValue:(270.0+360 * 4.0) duration:2.0];
+    period.delay = delay;
+
+    activeTweenOperation =
+    [[PRTween sharedInstance] addTweenPeriod:period
+                                 updateBlock:^(PRTweenPeriod *period) {
+                                     if (period.tweenedValue < 270 + 360 * 2){
+                                         CGFloat move = sin(period.tweenedValue * RADIAN) + 1.0;
+                                         CGFloat x = move * moveX;
+                                         CGFloat y = move * moveY;
+                                         self.frame = CGRectMake(self.baseFrame.origin.x + x, self.baseFrame.origin.y + y, self.frame.size.width, self.frame.size.height);
+                                         NSLog(@"%f %f", period.tweenedValue, y);
+                                         
+                                     }
+                                 }completionBlock:^(void) {
+                                     // 繰り返し
+                                     [self startShakeYWithDelay:0.0 moveX:moveX moveY:moveY];
+                                 }
+                                 timingFunction: &PRTweenTimingFunctionLinear];
+}
+
+- (void)stopShakeY
+{
+    [[PRTween sharedInstance] removeTweenOperation:activeTweenOperation];
+}
+
 
 @end

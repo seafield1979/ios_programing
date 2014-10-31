@@ -26,6 +26,7 @@
 		5831C1C619AB00F400F1203D /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5831C1C519AB00F400F1203D /* iAd.framework */; };
 		584838951A02481B008BA0DC /* UIView+Draw.m in Sources */ = {isa = PBXBuildFile; fileRef = 584838941A02481B008BA0DC /* UIView+Draw.m */; };
 		5848389B1A024BAE008BA0DC /* UNImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5848389A1A024BAE008BA0DC /* UNImageView.m */; };
+		585C04531A03514B00CFE3FF /* UNButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 585C04521A03514B00CFE3FF /* UNButton.m */; };
 		58676F9919AE07E70072952D /* anpanman2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58676F9819AE07E70072952D /* anpanman2.jpg */; };
 		588B4A5F19A32E6600AC9A84 /* ViewControllerPRTween.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B4A5D19A32E6600AC9A84 /* ViewControllerPRTween.m */; };
 		588B4A6019A32E6600AC9A84 /* ViewControllerPRTween.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588B4A5E19A32E6600AC9A84 /* ViewControllerPRTween.xib */; };
@@ -85,6 +86,8 @@
 		584838941A02481B008BA0DC /* UIView+Draw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Draw.m"; sourceTree = "<group>"; };
 		584838991A024BAE008BA0DC /* UNImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNImageView.h; sourceTree = "<group>"; };
 		5848389A1A024BAE008BA0DC /* UNImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNImageView.m; sourceTree = "<group>"; };
+		585C04511A03514B00CFE3FF /* UNButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNButton.h; sourceTree = "<group>"; };
+		585C04521A03514B00CFE3FF /* UNButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNButton.m; sourceTree = "<group>"; };
 		58676F9819AE07E70072952D /* anpanman2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = anpanman2.jpg; sourceTree = "<group>"; };
 		588B4A5C19A32E6600AC9A84 /* ViewControllerPRTween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerPRTween.h; sourceTree = "<group>"; };
 		588B4A5D19A32E6600AC9A84 /* ViewControllerPRTween.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerPRTween.m; sourceTree = "<group>"; };
@@ -244,6 +247,8 @@
 				58B793BD19BD9B06001CC3F8 /* TimerView.m */,
 				584838991A024BAE008BA0DC /* UNImageView.h */,
 				5848389A1A024BAE008BA0DC /* UNImageView.m */,
+				585C04511A03514B00CFE3FF /* UNButton.h */,
+				585C04521A03514B00CFE3FF /* UNButton.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -409,6 +414,7 @@
 				58B793B319BD8AD5001CC3F8 /* ViewControllerTimer.m in Sources */,
 				5831C1C319AAF9EC00F1203D /* ViewControllerAd.m in Sources */,
 				07F16D26198EA1640077ABB3 /* ViewController.m in Sources */,
+				585C04531A03514B00CFE3FF /* UNButton.m in Sources */,
 				584838951A02481B008BA0DC /* UIView+Draw.m in Sources */,
 				796828C419AA4B9D007F8098 /* ViewController4.m in Sources */,
 				588B4A6819A32EA300AC9A84 /* PRTweenTimingFunctions.m in Sources */,

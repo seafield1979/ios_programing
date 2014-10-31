@@ -8,8 +8,7 @@
 
 @interface UNImageView : UIImageView
 
-// サイズを変更する前のサイズ
-@property (nonatomic) CGRect baseFrame;
+
 
 - (void)scaleLinerWithStartValue:(CGFloat)startValue endValue:(CGFloat)endValue duration:(CGFloat)duration completion:(void (^)(void))completion;
 
@@ -19,7 +18,16 @@
 - (void)blinkWithInterval:(CGFloat)interval;
 - (void)stopBlinkWithHidden:(BOOL)hidden;
 
+// 点滅(アルファ)
 - (void)startBlinkAlphaWithInterval:(CGFloat)interval;
 - (void)blinkAlphaWithInterval:(CGFloat)interval;
 - (void)stopBlinkAlphaWithHidden:(BOOL)hidden;
+
+// 上下ぶるぶる
+- (void)startShakeYWithDelay:(CGFloat)delay moveX:(CGFloat)moveX moveY:(CGFloat)moveY;
+- (void)startShakeY;
+
+// 押したらへこむ
+- (void)pushOn;
+
 @end

@@ -13,11 +13,13 @@
 
 #import "ViewController3.h"
 #import "PRTween.h"
+#import "UNButton.h"
 
 @interface ViewController3 ()
 {
 	PRTweenOperation *activeTweenOperation;
 }
+@property (nonatomic, strong) UNButton *button1;
 @end
 
 @implementation ViewController3
@@ -35,6 +37,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    //ボタン追加
+    self.button1 = [[UNButton alloc]initWithFrame:CGRectMake(100.0, 350.0, 50, 50)];
+    [self.view addSubview:self.button1];
 
 }
 
@@ -94,6 +100,13 @@
 - (IBAction)pushBlinkButton:(id)sender {
 //    [self.imageView1 blinkWithInterval:0.5];
     [self.imageView1 startBlinkAlphaWithInterval:0.5];
+}
+
+/*
+ * 移動する
+ */
+- (IBAction)pushMoveButton:(id)sender {
+    [self.imageView1 startShakeYWithDelay:0.0 moveX:0.0 moveY:20.0];
 }
 
 

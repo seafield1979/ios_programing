@@ -39,9 +39,18 @@
     // Do any additional setup after loading the view from its nib.
     
     //ボタン追加
-    self.button1 = [[UNButton alloc]initWithFrame:CGRectMake(100.0, 350.0, 50, 50)];
+    self.button1 = [[UNButton alloc]initWithFrame:CGRectMake(100.0, 350.0, 93.0, 72.0)];
+    self.button1.endAnimatedCompletion = ^(void){
+        NSLog(@"end animation");
+    };
     [self.view addSubview:self.button1];
 
+#if 0
+    UIView *view1 = [[UIView alloc]initWithFrame:CGRectMake(200, 350, 93, 72)];
+    view1.backgroundColor = [UIColor redColor];
+    view1.hidden = NO;
+    [self.button1.superview addSubview:view1];
+#endif
 }
 
 - (void)didReceiveMemoryWarning
@@ -107,6 +116,16 @@
  */
 - (IBAction)pushMoveButton:(id)sender {
     [self.imageView1 startShakeYWithDelay:0.0 moveX:0.0 moveY:20.0];
+}
+
+/*
+ * 座布団ボタンを押した
+ */
+- (IBAction)pushZabutonButton:(id)sender {
+    UIButton *button = self.zabutonButton;//(UIButton*)sender;
+    button.frame = CGRectMake(button.frame.origin.x, button.frame.origin.y,
+                              200, 200);
+    
 }
 
 

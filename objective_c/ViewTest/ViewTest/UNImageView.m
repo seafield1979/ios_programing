@@ -34,9 +34,18 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.baseFrame = self.frame;
+        
+        UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapView:)];
+        [self addGestureRecognizer:tapGesture];
+        
+        //タップを有効化する。
+        self.userInteractionEnabled = YES;
+
     }
     return self;
 }
+
+
 
 /*
  * 線形の拡大縮小
@@ -220,5 +229,10 @@
     [[PRTween sharedInstance] removeTweenOperation:activeTweenOperation];
 }
 
+- (void)tapView:(UIPanGestureRecognizer *)panGesture
+{
+    NSLog(@"tapView");
+    panGesture.enabled = NO;
+}
 
 @end

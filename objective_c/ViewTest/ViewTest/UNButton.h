@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^ZabutonCompletion)(void);
+
 @interface UNButton : UIButton
 
-// タッチON
-- (void)setTouchOn;
+// アニメーション終了時に呼ばれる
+@property (nonatomic, strong) ZabutonCompletion endAnimatedCompletion;
 
 @end

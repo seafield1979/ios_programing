@@ -28,6 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+#if 0
     UINib *objectsNib =[UINib nibWithNibName:@"testNib" bundle:nil];
     NSArray *objects = [objectsNib instantiateWithOwner:nil options:nil];
     NSLog(@"%@", objects);
@@ -52,7 +53,10 @@
     
     // ボタンを押したときのイベントを追加
     [_button1 addTarget:self action:@selector(button1DidTap:) forControlEvents:UIControlEventTouchUpInside];
- 
+#else
+    [self.view addSubview:self.view2];
+    
+#endif
 }
 
 - (void)didReceiveMemoryWarning

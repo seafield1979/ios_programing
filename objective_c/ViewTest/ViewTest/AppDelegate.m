@@ -12,6 +12,28 @@
 
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "ViewController2.h"
+#import "ViewController3.h"
+#import "ViewController4.h"
+#import "ViewControllerAd.h"
+#import "ViewControllerPRTween.h"
+#import "ViewControllerNib.h"
+#import "ViewControllerTimer.h"
+
+
+@interface AppDelegate()
+
+@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) ViewController2 *viewController2;
+@property (strong, nonatomic) ViewController3 *viewController3;
+@property (strong, nonatomic) ViewController4 *viewController4;
+@property (strong, nonatomic) ViewControllerAd *viewControllerAd;
+@property (strong, nonatomic) ViewControllerNib *viewControllerNib;
+@property (strong, nonatomic) ViewControllerPRTween *viewControllerTween;
+@property (strong, nonatomic) ViewControllerTimer *viewControllerTimer;
+
+@end
 
 @implementation AppDelegate
 
@@ -21,7 +43,7 @@
 	// ここから
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    int mode = 3;
+    int mode = 6;
 
     switch(mode){
         case 1:
@@ -53,6 +75,10 @@
             self.window.rootViewController = self.viewControllerTween;
             break;
         case 8:
+            self.viewControllerTimer = [[ViewControllerTimer alloc] init];
+            self.window.rootViewController = self.viewControllerTimer;
+            break;
+        case 9:
             self.viewControllerTimer = [[ViewControllerTimer alloc] init];
             self.window.rootViewController = self.viewControllerTimer;
             break;

@@ -12,6 +12,7 @@
 @interface ViewController3 : UIViewController
 
 @property (nonatomic, strong) IBOutlet UNImageView *imageView1;
+@property (weak, nonatomic) IBOutlet UIButton *zabutonButton;
 
 -(IBAction)pushButton1:(id)sender;
 -(IBAction)pushButton2:(id)sender;
@@ -19,5 +20,6 @@
 -(IBAction)pushButton4:(id)sender;
 - (IBAction)pushBlinkButton:(id)sender;
 - (IBAction)pushMoveButton:(id)sender;
+- (IBAction)pushZabutonButton:(id)sender;
 
 @end

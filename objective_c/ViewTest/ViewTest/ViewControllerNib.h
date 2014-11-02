@@ -12,5 +12,8 @@
 
 @property (nonatomic, strong) UIButton *button1;
 @property (nonatomic, strong) UIButton *view41;
+@property (strong, nonatomic) IBOutlet UIView *view1;
+@property (strong, nonatomic) IBOutlet UIView *view2;
+@property (strong, nonatomic) IBOutlet UIView *view3;
 
 @end

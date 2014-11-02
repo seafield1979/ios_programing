@@ -25,9 +25,5 @@
 
 // 上下ぶるぶる
 - (void)startShakeYWithDelay:(CGFloat)delay moveX:(CGFloat)moveX moveY:(CGFloat)moveY;
-- (void)startShakeY;
-
-// 押したらへこむ
-- (void)pushOn;
 
 @end

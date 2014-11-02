@@ -46,6 +46,7 @@
 		79784E7F19A4F24B0035537B /* ViewControllerNib.m in Sources */ = {isa = PBXBuildFile; fileRef = 79784E7D19A4F24B0035537B /* ViewControllerNib.m */; };
 		79784E8019A4F24B0035537B /* ViewControllerNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79784E7E19A4F24B0035537B /* ViewControllerNib.xib */; };
 		79784E8319A4F2E30035537B /* testNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79784E8219A4F2E30035537B /* testNib.xib */; };
+		79EE0ADA1A05010B007A8E17 /* UNEffect1.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EE0AD91A05010B007A8E17 /* UNEffect1.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,9 @@
 		79784E7D19A4F24B0035537B /* ViewControllerNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerNib.m; sourceTree = "<group>"; };
 		79784E7E19A4F24B0035537B /* ViewControllerNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerNib.xib; sourceTree = "<group>"; };
 		79784E8219A4F2E30035537B /* testNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = testNib.xib; sourceTree = "<group>"; };
+		79EE0AD81A05010B007A8E17 /* UNEffect1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNEffect1.h; sourceTree = "<group>"; };
+		79EE0AD91A05010B007A8E17 /* UNEffect1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNEffect1.m; sourceTree = "<group>"; };
+		79EE0ADB1A050930007A8E17 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +188,7 @@
 				58C306E81991CF54005DBF21 /* Resource */,
 				07206975198E88E100A2C829 /* Images.xcassets */,
 				07206964198E88E100A2C829 /* Supporting Files */,
+				79EE0ADB1A050930007A8E17 /* common.h */,
 			);
 			path = ViewTest;
 			sourceTree = "<group>";
@@ -249,6 +254,8 @@
 				5848389A1A024BAE008BA0DC /* UNImageView.m */,
 				585C04511A03514B00CFE3FF /* UNButton.h */,
 				585C04521A03514B00CFE3FF /* UNButton.m */,
+				79EE0AD81A05010B007A8E17 /* UNEffect1.h */,
+				79EE0AD91A05010B007A8E17 /* UNEffect1.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -418,6 +425,7 @@
 				584838951A02481B008BA0DC /* UIView+Draw.m in Sources */,
 				796828C419AA4B9D007F8098 /* ViewController4.m in Sources */,
 				588B4A6819A32EA300AC9A84 /* PRTweenTimingFunctions.m in Sources */,
+				79EE0ADA1A05010B007A8E17 /* UNEffect1.m in Sources */,
 				07662F3C1993C10400134472 /* ViewController2.m in Sources */,
 				79784E7F19A4F24B0035537B /* ViewControllerNib.m in Sources */,
 				5848389B1A024BAE008BA0DC /* UNImageView.m in Sources */,

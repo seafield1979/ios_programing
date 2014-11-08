@@ -26,4 +26,7 @@
 // 上下ぶるぶる
 - (void)startShakeYWithDelay:(CGFloat)delay moveX:(CGFloat)moveX moveY:(CGFloat)moveY;
 
+// 出現ぶるぶる
+- (void)startScaleAndShake;
+
 @end

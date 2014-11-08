@@ -43,7 +43,7 @@
 	// ここから
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    int mode = 6;
+    int mode = 3;
 
     switch(mode){
         case 1:

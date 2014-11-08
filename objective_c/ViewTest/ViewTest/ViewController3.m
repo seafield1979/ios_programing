@@ -15,6 +15,7 @@
 #import "PRTween.h"
 #import "UNButton.h"
 
+
 @interface ViewController3 ()
 {
 	PRTweenOperation *activeTweenOperation;
@@ -67,14 +68,9 @@
  */
 -(IBAction)pushButton1:(id)sender
 {
-#if 0
-    // 線形
-    [self.imageView1 animateWithScale:2.0];
-#else
-
-    [self.imageView1 scaleBoundWithScale:1.0 delay:0.0 duration:1.0 completion:^(void){}];
-#endif
+    [self.imageView1 startScaleAndShake];
 }
+
 
 /*
  * Viewを縮小する
@@ -92,6 +88,10 @@
 {
 	NSLog(@"pushButton3");
     //todo
+    // ビューを45度回転
+    CGFloat angle = 45.0 * M_PI / 180.0;
+    self.imageView1.transform = CGAffineTransformMakeRotation(angle);
+    
 }
 
 /*
@@ -115,7 +115,12 @@
  * 移動する
  */
 - (IBAction)pushMoveButton:(id)sender {
+#if 1
+    // ビューをx方向に100px，y方向に200px移動
+    self.imageView1.transform = CGAffineTransformMakeTranslation(100, 200);
+#else
     [self.imageView1 startShakeYWithDelay:0.0 moveX:0.0 moveY:20.0];
+#endif
 }
 
 /*
@@ -127,7 +132,5 @@
                               200, 200);
     
 }
-
-
 
 @end

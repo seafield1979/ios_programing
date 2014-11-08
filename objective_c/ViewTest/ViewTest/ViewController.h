@@ -13,8 +13,6 @@
 
 @interface ViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIButton *button1;
-//@property (strong, nonatomic) IBOutlet UIView *view1;
-//@property (strong, nonatomic) IBOutlet UIView *view2;
 @property (strong, nonatomic) IBOutlet UIView *baseView1;
 @property (strong, nonatomic) IBOutlet UIView *baseView2;
 

@@ -63,6 +63,7 @@
 }
 
 
+#pragma mark - Action method
 /*
  * プログレスバーテスト
  */
@@ -99,6 +100,7 @@
 }
 
 #pragma mark _UIActionSheetDelegate
+
 // アクションシートのボタンが押された時に呼ばれるデリゲート例文
 -(void)actionSheet:(UIActionSheet*)actionSheet
 clickedButtonAtIndex:(NSInteger)buttonIndex

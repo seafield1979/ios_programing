@@ -180,13 +180,11 @@
  * 表示するviewを切り替える
  */
 - (IBAction)pushChangeViewButton:(id)sender {
-//    self.baseView1.hidden = YES;
-    
     [self.view addSubview:self.baseView2];
 }
 
 /*
- *
+ * View2を非表示にする
  */
 - (IBAction)pushShowView2Button:(id)sender {
     [self.baseView2 removeFromSuperview];

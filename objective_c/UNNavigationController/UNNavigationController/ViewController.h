@@ -10,9 +10,12 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, strong) UIButton *logoButton;
+@property (weak, nonatomic) IBOutlet UILabel *label1;
+
 - (IBAction)pushPopButton:(id)sender;
 - (IBAction)pushPushButton:(id)sender;
-@property (weak, nonatomic) IBOutlet UILabel *label1;
+
 
 
 @end

@@ -128,12 +128,12 @@
 		79784F2F19A90CB10035537B /* UNNavigationController */ = {
 			isa = PBXGroup;
 			children = (
+				79784F3819A90CB10035537B /* AppDelegate.h */,
+				79784F3919A90CB10035537B /* AppDelegate.m */,
 				79784F6619A9AF0C0035537B /* Resources */,
 				79784F6519A9ACAA0035537B /* ViewControllers */,
 				79784F6C19A9B4E40035537B /* UNNavigationController.h */,
 				79784F6D19A9B4E40035537B /* UNNavigationController.m */,
-				79784F3819A90CB10035537B /* AppDelegate.h */,
-				79784F3919A90CB10035537B /* AppDelegate.m */,
 				79784F4119A90CB10035537B /* Images.xcassets */,
 				79784F3019A90CB10035537B /* Supporting Files */,
 			);
@@ -429,7 +429,7 @@
 				INFOPLIST_FILE = "UNNavigationController/UNNavigationController-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "687a2b76-171d-487d-81b0-62d109214a9e";
+				PROVISIONING_PROFILE = "5db32e1d-4c85-4414-a3ab-0d81692141ff";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

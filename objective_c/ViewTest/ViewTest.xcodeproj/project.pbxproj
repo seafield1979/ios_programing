@@ -32,14 +32,16 @@
 		588B4A6019A32E6600AC9A84 /* ViewControllerPRTween.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588B4A5E19A32E6600AC9A84 /* ViewControllerPRTween.xib */; };
 		588B4A6719A32EA300AC9A84 /* PRTween.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B4A6419A32EA300AC9A84 /* PRTween.m */; };
 		588B4A6819A32EA300AC9A84 /* PRTweenTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B4A6619A32EA300AC9A84 /* PRTweenTimingFunctions.m */; };
-		58ABBC311994C1F100259F7C /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 58ABBC2F1994C1F100259F7C /* ViewController3.m */; };
-		58ABBC321994C1F100259F7C /* ViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58ABBC301994C1F100259F7C /* ViewController3.xib */; };
 		58ABBC371994C5F000259F7C /* loading_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 58ABBC341994C5F000259F7C /* loading_01.png */; };
 		58ABBC381994C5F000259F7C /* loading_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 58ABBC351994C5F000259F7C /* loading_02.png */; };
 		58ABBC391994C5F000259F7C /* loading_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 58ABBC361994C5F000259F7C /* loading_03.png */; };
 		58B793B319BD8AD5001CC3F8 /* ViewControllerTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B793B119BD8AD5001CC3F8 /* ViewControllerTimer.m */; };
 		58B793B419BD8AD5001CC3F8 /* ViewControllerTimer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B793B219BD8AD5001CC3F8 /* ViewControllerTimer.xib */; };
 		58B793BE19BD9B06001CC3F8 /* TimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B793BD19BD9B06001CC3F8 /* TimerView.m */; };
+		791088A41A0DCFC800F3072C /* ViewControllerLifeCycle.m in Sources */ = {isa = PBXBuildFile; fileRef = 791088A21A0DCFC800F3072C /* ViewControllerLifeCycle.m */; };
+		791088A51A0DCFC800F3072C /* ViewControllerLifeCycle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 791088A31A0DCFC800F3072C /* ViewControllerLifeCycle.xib */; };
+		791088B41A0E632600F3072C /* ViewControllerAffine.m in Sources */ = {isa = PBXBuildFile; fileRef = 791088B21A0E632600F3072C /* ViewControllerAffine.m */; };
+		791088B51A0E632600F3072C /* ViewControllerAffine.xib in Resources */ = {isa = PBXBuildFile; fileRef = 791088B31A0E632600F3072C /* ViewControllerAffine.xib */; };
 		796828C419AA4B9D007F8098 /* ViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 796828C219AA4B9D007F8098 /* ViewController4.m */; };
 		796828C519AA4B9D007F8098 /* ViewController4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796828C319AA4B9D007F8098 /* ViewController4.xib */; };
 		796828C719AA4E23007F8098 /* anpanman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 796828C619AA4E23007F8098 /* anpanman.jpg */; };
@@ -97,9 +99,6 @@
 		588B4A6419A32EA300AC9A84 /* PRTween.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRTween.m; path = PRTween/lib/PRTween.m; sourceTree = SOURCE_ROOT; };
 		588B4A6519A32EA300AC9A84 /* PRTweenTimingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRTweenTimingFunctions.h; path = PRTween/lib/PRTweenTimingFunctions.h; sourceTree = SOURCE_ROOT; };
 		588B4A6619A32EA300AC9A84 /* PRTweenTimingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRTweenTimingFunctions.m; path = PRTween/lib/PRTweenTimingFunctions.m; sourceTree = SOURCE_ROOT; };
-		58ABBC2E1994C1F100259F7C /* ViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
-		58ABBC2F1994C1F100259F7C /* ViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
-		58ABBC301994C1F100259F7C /* ViewController3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController3.xib; sourceTree = "<group>"; };
 		58ABBC341994C5F000259F7C /* loading_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_01.png; sourceTree = "<group>"; };
 		58ABBC351994C5F000259F7C /* loading_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_02.png; sourceTree = "<group>"; };
 		58ABBC361994C5F000259F7C /* loading_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_03.png; sourceTree = "<group>"; };
@@ -108,6 +107,12 @@
 		58B793B219BD8AD5001CC3F8 /* ViewControllerTimer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerTimer.xib; sourceTree = "<group>"; };
 		58B793BC19BD9B06001CC3F8 /* TimerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerView.h; sourceTree = "<group>"; };
 		58B793BD19BD9B06001CC3F8 /* TimerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerView.m; sourceTree = "<group>"; };
+		791088A11A0DCFC800F3072C /* ViewControllerLifeCycle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerLifeCycle.h; path = ViewController/ViewControllerLifeCycle.h; sourceTree = "<group>"; };
+		791088A21A0DCFC800F3072C /* ViewControllerLifeCycle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerLifeCycle.m; path = ViewController/ViewControllerLifeCycle.m; sourceTree = "<group>"; };
+		791088A31A0DCFC800F3072C /* ViewControllerLifeCycle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewControllerLifeCycle.xib; path = ViewController/ViewControllerLifeCycle.xib; sourceTree = "<group>"; };
+		791088B11A0E632600F3072C /* ViewControllerAffine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerAffine.h; path = ViewController/ViewControllerAffine.h; sourceTree = "<group>"; };
+		791088B21A0E632600F3072C /* ViewControllerAffine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerAffine.m; path = ViewController/ViewControllerAffine.m; sourceTree = "<group>"; };
+		791088B31A0E632600F3072C /* ViewControllerAffine.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewControllerAffine.xib; path = ViewController/ViewControllerAffine.xib; sourceTree = "<group>"; };
 		796828C119AA4B9D007F8098 /* ViewController4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController4.h; sourceTree = "<group>"; };
 		796828C219AA4B9D007F8098 /* ViewController4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController4.m; sourceTree = "<group>"; };
 		796828C319AA4B9D007F8098 /* ViewController4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController4.xib; sourceTree = "<group>"; };
@@ -269,33 +274,100 @@
 			name = Resource;
 			sourceTree = "<group>";
 		};
-		796828C019AA46A5007F8098 /* ViewControllers */ = {
+		791088991A0DB8EF00F3072C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				07F16D23198EA1640077ABB3 /* ViewController.h */,
-				07F16D24198EA1640077ABB3 /* ViewController.m */,
 				07F16D25198EA1640077ABB3 /* ViewController.xib */,
+				07F16D24198EA1640077ABB3 /* ViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		7910889A1A0DB8FF00F3072C /* ViewController2 */ = {
+			isa = PBXGroup;
+			children = (
+				07662F3B1993C10400134472 /* ViewController2.xib */,
 				07662F391993C10400134472 /* ViewController2.h */,
 				07662F3A1993C10400134472 /* ViewController2.m */,
-				07662F3B1993C10400134472 /* ViewController2.xib */,
-				58ABBC2E1994C1F100259F7C /* ViewController3.h */,
-				58ABBC2F1994C1F100259F7C /* ViewController3.m */,
-				58ABBC301994C1F100259F7C /* ViewController3.xib */,
+			);
+			name = ViewController2;
+			sourceTree = "<group>";
+		};
+		7910889C1A0DB91F00F3072C /* ViewController4 */ = {
+			isa = PBXGroup;
+			children = (
+				796828C319AA4B9D007F8098 /* ViewController4.xib */,
 				796828C119AA4B9D007F8098 /* ViewController4.h */,
 				796828C219AA4B9D007F8098 /* ViewController4.m */,
-				796828C319AA4B9D007F8098 /* ViewController4.xib */,
+			);
+			name = ViewController4;
+			sourceTree = "<group>";
+		};
+		7910889D1A0DB92B00F3072C /* ViewControllerAd */ = {
+			isa = PBXGroup;
+			children = (
+				5831C1C219AAF9EC00F1203D /* ViewControllerAd.xib */,
 				5831C1C019AAF9EC00F1203D /* ViewControllerAd.h */,
 				5831C1C119AAF9EC00F1203D /* ViewControllerAd.m */,
-				5831C1C219AAF9EC00F1203D /* ViewControllerAd.xib */,
+			);
+			name = ViewControllerAd;
+			sourceTree = "<group>";
+		};
+		7910889E1A0DB93200F3072C /* ViewControllerNib */ = {
+			isa = PBXGroup;
+			children = (
+				79784E7E19A4F24B0035537B /* ViewControllerNib.xib */,
 				79784E7C19A4F24B0035537B /* ViewControllerNib.h */,
 				79784E7D19A4F24B0035537B /* ViewControllerNib.m */,
-				79784E7E19A4F24B0035537B /* ViewControllerNib.xib */,
+			);
+			name = ViewControllerNib;
+			sourceTree = "<group>";
+		};
+		7910889F1A0DB93F00F3072C /* ViewControllerPRTween */ = {
+			isa = PBXGroup;
+			children = (
+				588B4A5E19A32E6600AC9A84 /* ViewControllerPRTween.xib */,
 				588B4A5C19A32E6600AC9A84 /* ViewControllerPRTween.h */,
 				588B4A5D19A32E6600AC9A84 /* ViewControllerPRTween.m */,
-				588B4A5E19A32E6600AC9A84 /* ViewControllerPRTween.xib */,
+			);
+			name = ViewControllerPRTween;
+			sourceTree = "<group>";
+		};
+		791088A01A0DB98200F3072C /* ViewControllerTimer */ = {
+			isa = PBXGroup;
+			children = (
+				58B793B219BD8AD5001CC3F8 /* ViewControllerTimer.xib */,
 				58B793B019BD8AD5001CC3F8 /* ViewControllerTimer.h */,
 				58B793B119BD8AD5001CC3F8 /* ViewControllerTimer.m */,
-				58B793B219BD8AD5001CC3F8 /* ViewControllerTimer.xib */,
+			);
+			name = ViewControllerTimer;
+			sourceTree = "<group>";
+		};
+		791088A61A0DCFD300F3072C /* LifeCycle */ = {
+			isa = PBXGroup;
+			children = (
+				791088A11A0DCFC800F3072C /* ViewControllerLifeCycle.h */,
+				791088A21A0DCFC800F3072C /* ViewControllerLifeCycle.m */,
+				791088A31A0DCFC800F3072C /* ViewControllerLifeCycle.xib */,
+			);
+			name = LifeCycle;
+			sourceTree = "<group>";
+		};
+		796828C019AA46A5007F8098 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				791088A61A0DCFD300F3072C /* LifeCycle */,
+				791088991A0DB8EF00F3072C /* ViewController */,
+				7910889A1A0DB8FF00F3072C /* ViewController2 */,
+				7910889C1A0DB91F00F3072C /* ViewController4 */,
+				7910889D1A0DB92B00F3072C /* ViewControllerAd */,
+				7910889E1A0DB93200F3072C /* ViewControllerNib */,
+				7910889F1A0DB93F00F3072C /* ViewControllerPRTween */,
+				791088A01A0DB98200F3072C /* ViewControllerTimer */,
+				791088B11A0E632600F3072C /* ViewControllerAffine.h */,
+				791088B21A0E632600F3072C /* ViewControllerAffine.m */,
+				791088B31A0E632600F3072C /* ViewControllerAffine.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -384,13 +456,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58ABBC321994C1F100259F7C /* ViewController3.xib in Resources */,
 				58676F9919AE07E70072952D /* anpanman2.jpg in Resources */,
 				5831C1C419AAF9EC00F1203D /* ViewControllerAd.xib in Resources */,
 				58ABBC391994C5F000259F7C /* loading_03.png in Resources */,
 				79784E8019A4F24B0035537B /* ViewControllerNib.xib in Resources */,
 				796828C519AA4B9D007F8098 /* ViewController4.xib in Resources */,
 				588B4A6019A32E6600AC9A84 /* ViewControllerPRTween.xib in Resources */,
+				791088B51A0E632600F3072C /* ViewControllerAffine.xib in Resources */,
+				791088A51A0DCFC800F3072C /* ViewControllerLifeCycle.xib in Resources */,
 				07662F3D1993C10400134472 /* ViewController2.xib in Resources */,
 				58B793B419BD8AD5001CC3F8 /* ViewControllerTimer.xib in Resources */,
 				58ABBC381994C5F000259F7C /* loading_02.png in Resources */,
@@ -418,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58B793BE19BD9B06001CC3F8 /* TimerView.m in Sources */,
+				791088A41A0DCFC800F3072C /* ViewControllerLifeCycle.m in Sources */,
 				58B793B319BD8AD5001CC3F8 /* ViewControllerTimer.m in Sources */,
 				5831C1C319AAF9EC00F1203D /* ViewControllerAd.m in Sources */,
 				07F16D26198EA1640077ABB3 /* ViewController.m in Sources */,
@@ -428,11 +502,11 @@
 				79EE0ADA1A05010B007A8E17 /* UNEffect1.m in Sources */,
 				07662F3C1993C10400134472 /* ViewController2.m in Sources */,
 				79784E7F19A4F24B0035537B /* ViewControllerNib.m in Sources */,
+				791088B41A0E632600F3072C /* ViewControllerAffine.m in Sources */,
 				5848389B1A024BAE008BA0DC /* UNImageView.m in Sources */,
 				0720696E198E88E100A2C829 /* AppDelegate.m in Sources */,
 				0720696A198E88E100A2C829 /* main.m in Sources */,
 				588B4A5F19A32E6600AC9A84 /* ViewControllerPRTween.m in Sources */,
-				58ABBC311994C1F100259F7C /* ViewController3.m in Sources */,
 				588B4A6719A32EA300AC9A84 /* PRTween.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

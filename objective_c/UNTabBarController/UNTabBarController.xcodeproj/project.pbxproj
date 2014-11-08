@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		791088AA1A0E443D00F3072C /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 791088A81A0E443D00F3072C /* ViewController3.m */; };
+		791088AB1A0E443D00F3072C /* ViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 791088A91A0E443D00F3072C /* ViewController3.xib */; };
+		791088AF1A0E445E00F3072C /* ViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 791088AD1A0E445E00F3072C /* ViewController4.m */; };
+		791088B01A0E445E00F3072C /* ViewController4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 791088AE1A0E445E00F3072C /* ViewController4.xib */; };
 		792D1ACA19E44267004C7852 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 792D1AC919E44267004C7852 /* main.m */; };
 		792D1ACD19E44267004C7852 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 792D1ACC19E44267004C7852 /* AppDelegate.m */; };
 		792D1AD019E44267004C7852 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 792D1ACF19E44267004C7852 /* ViewController.m */; };
@@ -30,21 +34,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		791088A71A0E443D00F3072C /* ViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
+		791088A81A0E443D00F3072C /* ViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
+		791088A91A0E443D00F3072C /* ViewController3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController3.xib; sourceTree = "<group>"; };
+		791088AC1A0E445E00F3072C /* ViewController4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController4.h; sourceTree = "<group>"; };
+		791088AD1A0E445E00F3072C /* ViewController4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController4.m; sourceTree = "<group>"; };
+		791088AE1A0E445E00F3072C /* ViewController4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController4.xib; sourceTree = "<group>"; };
 		792D1AC419E44267004C7852 /* UNTabBarController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UNTabBarController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		792D1AC819E44267004C7852 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		792D1AC919E44267004C7852 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		792D1ACB19E44267004C7852 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		792D1ACC19E44267004C7852 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		792D1ACB19E44267004C7852 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = UNTabBarController/AppDelegate.h; sourceTree = "<group>"; };
+		792D1ACC19E44267004C7852 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = UNTabBarController/AppDelegate.m; sourceTree = "<group>"; };
 		792D1ACE19E44267004C7852 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		792D1ACF19E44267004C7852 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		792D1AD419E44267004C7852 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		792D1AD419E44267004C7852 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = UNTabBarController/Images.xcassets; sourceTree = "<group>"; };
 		792D1ADD19E44268004C7852 /* UNTabBarControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UNTabBarControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		792D1AE219E44268004C7852 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		792D1AE319E44268004C7852 /* UNTabBarControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UNTabBarControllerTests.m; sourceTree = "<group>"; };
 		792D1AED19E442E8004C7852 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		792D1AEF19E446D0004C7852 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
-		792D1AF019E446D0004C7852 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
-		792D1AF119E446D0004C7852 /* TabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarController.xib; sourceTree = "<group>"; };
+		792D1AEF19E446D0004C7852 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabBarController.h; path = UNTabBarController/TabBarController.h; sourceTree = "<group>"; };
+		792D1AF019E446D0004C7852 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabBarController.m; path = UNTabBarController/TabBarController.m; sourceTree = "<group>"; };
+		792D1AF119E446D0004C7852 /* TabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TabBarController.xib; path = UNTabBarController/TabBarController.xib; sourceTree = "<group>"; };
 		792D1AF419E44CFD004C7852 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		792D1AF519E44CFD004C7852 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		792D1AF619E44CFD004C7852 /* ViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController2.xib; sourceTree = "<group>"; };
@@ -71,7 +81,13 @@
 		792D1ABB19E44267004C7852 = {
 			isa = PBXGroup;
 			children = (
+				792D1ACB19E44267004C7852 /* AppDelegate.h */,
+				792D1ACC19E44267004C7852 /* AppDelegate.m */,
+				792D1AEF19E446D0004C7852 /* TabBarController.h */,
+				792D1AF019E446D0004C7852 /* TabBarController.m */,
+				792D1AF119E446D0004C7852 /* TabBarController.xib */,
 				792D1AC619E44267004C7852 /* UNTabBarController */,
+				792D1AD419E44267004C7852 /* Images.xcassets */,
 				792D1AE019E44268004C7852 /* UNTabBarControllerTests */,
 				792D1AC519E44267004C7852 /* Products */,
 			);
@@ -89,19 +105,19 @@
 		792D1AC619E44267004C7852 /* UNTabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				792D1ACB19E44267004C7852 /* AppDelegate.h */,
-				792D1ACC19E44267004C7852 /* AppDelegate.m */,
 				792D1ACE19E44267004C7852 /* ViewController.h */,
 				792D1ACF19E44267004C7852 /* ViewController.m */,
 				792D1AED19E442E8004C7852 /* ViewController.xib */,
 				792D1AF419E44CFD004C7852 /* ViewController2.h */,
 				792D1AF519E44CFD004C7852 /* ViewController2.m */,
 				792D1AF619E44CFD004C7852 /* ViewController2.xib */,
-				792D1AD419E44267004C7852 /* Images.xcassets */,
+				791088A71A0E443D00F3072C /* ViewController3.h */,
+				791088A81A0E443D00F3072C /* ViewController3.m */,
+				791088A91A0E443D00F3072C /* ViewController3.xib */,
+				791088AC1A0E445E00F3072C /* ViewController4.h */,
+				791088AD1A0E445E00F3072C /* ViewController4.m */,
+				791088AE1A0E445E00F3072C /* ViewController4.xib */,
 				792D1AC719E44267004C7852 /* Supporting Files */,
-				792D1AEF19E446D0004C7852 /* TabBarController.h */,
-				792D1AF019E446D0004C7852 /* TabBarController.m */,
-				792D1AF119E446D0004C7852 /* TabBarController.xib */,
 			);
 			path = UNTabBarController;
 			sourceTree = "<group>";
@@ -215,7 +231,9 @@
 				792D1AEE19E442E8004C7852 /* ViewController.xib in Resources */,
 				792D1AF819E44CFD004C7852 /* ViewController2.xib in Resources */,
 				792D1AF319E446D0004C7852 /* TabBarController.xib in Resources */,
+				791088B01A0E445E00F3072C /* ViewController4.xib in Resources */,
 				792D1AD519E44267004C7852 /* Images.xcassets in Resources */,
+				791088AB1A0E443D00F3072C /* ViewController3.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,8 +253,10 @@
 			files = (
 				792D1AD019E44267004C7852 /* ViewController.m in Sources */,
 				792D1AF219E446D0004C7852 /* TabBarController.m in Sources */,
+				791088AA1A0E443D00F3072C /* ViewController3.m in Sources */,
 				792D1AF719E44CFD004C7852 /* ViewController2.m in Sources */,
 				792D1ACD19E44267004C7852 /* AppDelegate.m in Sources */,
+				791088AF1A0E445E00F3072C /* ViewController4.m in Sources */,
 				792D1ACA19E44267004C7852 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +429,7 @@
 				792D1AE919E44268004C7852 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		792D1AEA19E44268004C7852 /* Build configuration list for PBXNativeTarget "UNTabBarControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +438,7 @@
 				792D1AEC19E44268004C7852 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) IBOutlet UIView *originalTabbar;
 
+- (IBAction)tabButtonDidTap:(id)sender;
 
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttons;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *tabbars;
 @end

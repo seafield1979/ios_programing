@@ -8,6 +8,8 @@
 
 #import "TabBarController.h"
 
+#define DEBUG_NAVIGATION_MODE    (0)
+
 @interface TabBarController ()
 
 @end
@@ -24,10 +26,20 @@ static TabBarController *_sharedTabBarController;
         // タブにビューコントローラを登録する
         NSMutableArray *vcs = [NSMutableArray array];
         
-        for(int i=0; i<2; i++){
-            UIViewController *vc = [[UIViewController alloc]initWithNibName:@"ViewController2" bundle:nil];
+        NSArray *tabViewControllerName =
+        @[@"ViewController", @"ViewController2", @"ViewController3", @"ViewController4"];
+
+        for(int i=0; i<tabViewControllerName.count; i++){
+#if DEBUG_NAVIGATION_MODE
+            // ナビゲーションあり
+            UIViewController *vc = [[UIViewController alloc]initWithNibName:tabViewControllerName[i] bundle:nil];
             UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:vc];
             [vcs addObject:navi];
+#else
+            // ナビゲーションなし
+            UIViewController *vc = [[UIViewController alloc]initWithNibName:tabViewControllerName[i] bundle:nil];
+            [vcs addObject:vc];
+#endif
         }
         [_sharedTabBarController setViewControllers:vcs animated:NO];
     }
@@ -44,19 +56,53 @@ static TabBarController *_sharedTabBarController;
     
 }
 
+/*
+ *
+ */
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+   
+    // これをやらないとボタンが反応しない
+    [self.tabBar bringSubviewToFront:self.originalTabbar];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+ * タブボタンが押されたときの処理
+ */
+- (IBAction)tabButtonDidTap:(id)sender {
+    NSLog(@"tabButtonDidTap:");
+    
+    for(UIButton *button in self.tabbars){
+        button.backgroundColor = [UIColor clearColor];
+    }
+    
+    UIButton *button = (UIButton*)sender;
+    switch (button.tag) {
+        case 1:
+            self.selectedIndex = 0;
+            button.backgroundColor = [UIColor blackColor];
+            break;
+        case 2:
+            self.selectedIndex = 1;
+            button.backgroundColor = [UIColor blackColor];
+            break;
+        case 3:
+            self.selectedIndex = 2;
+            button.backgroundColor = [UIColor blackColor];
+            break;
+        case 4:
+            self.selectedIndex = 3;
+            button.backgroundColor = [UIColor blackColor];
+            break;
+        default:
+            break;
+    }
+    
 }
-*/
-
 @end

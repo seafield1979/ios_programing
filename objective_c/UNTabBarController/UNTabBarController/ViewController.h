@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface ViewController : UIViewController
 
+- (IBAction)showTabBarButtonDidTap:(id)sender;
+- (IBAction)hideTabBarDidTap:(id)sender;
+- (IBAction)buttonDidTap:(id)sender;
 
 @end
 

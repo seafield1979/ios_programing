@@ -8,9 +8,21 @@
 
 #import "TabBarController.h"
 
-#define DEBUG_NAVIGATION_MODE    (0)
+#define DEBUG_NAVIGATION_MODE    (1)
+
+
+
+/// ナビゲーションバー高さ
+#define kNavigationBarHeight                        (49)
+
+/// ナビの表示アニメーション時間
+#define kNaviShowDulation                           (0.3)
 
 @interface TabBarController ()
+
+@property (nonatomic) CGFloat barBaseTop;        // タブバーのベースy座標
+@property (nonatomic) BOOL isShow;				    // タブバーの表示フラグ
+@property (nonatomic) BOOL isTbAnimating;			// タブバーの表示アニメーション中フラグ
 
 @end
 
@@ -27,17 +39,22 @@ static TabBarController *_sharedTabBarController;
         NSMutableArray *vcs = [NSMutableArray array];
         
         NSArray *tabViewControllerName =
-        @[@"ViewController", @"ViewController2", @"ViewController3", @"ViewController4"];
+        @[@"ViewController",
+          @"ViewController2",
+          @"ViewController3",
+          @"ViewController4"];
 
         for(int i=0; i<tabViewControllerName.count; i++){
+            Class vcClass = NSClassFromString(tabViewControllerName[i]);
+            
 #if DEBUG_NAVIGATION_MODE
             // ナビゲーションあり
-            UIViewController *vc = [[UIViewController alloc]initWithNibName:tabViewControllerName[i] bundle:nil];
+            UIViewController *vc = [[vcClass alloc]initWithNibName:tabViewControllerName[i] bundle:nil];
             UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:vc];
             [vcs addObject:navi];
 #else
             // ナビゲーションなし
-            UIViewController *vc = [[UIViewController alloc]initWithNibName:tabViewControllerName[i] bundle:nil];
+            UIViewController *vc = [[vcClass alloc]initWithNibName:tabViewControllerName[i] bundle:nil];
             [vcs addObject:vc];
 #endif
         }
@@ -46,6 +63,7 @@ static TabBarController *_sharedTabBarController;
     return _sharedTabBarController;
 }
 
+#pragma mark - Life cycle
 
 - (void)viewDidLoad
 {
@@ -54,11 +72,12 @@ static TabBarController *_sharedTabBarController;
     [[NSBundle mainBundle] loadNibNamed:@"TabBarController" owner:self options:nil];
     [self.tabBar addSubview:self.originalTabbar];
     
+    self.isShow = YES;
+    
+    // OSバージョンによるレイアウトの調整
+    self.barBaseTop = [[UIScreen mainScreen]bounds].size.height - kNavigationBarHeight;
 }
 
-/*
- *
- */
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -71,6 +90,7 @@ static TabBarController *_sharedTabBarController;
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - Action method
 
 /*
  * タブボタンが押されたときの処理
@@ -86,23 +106,53 @@ static TabBarController *_sharedTabBarController;
     switch (button.tag) {
         case 1:
             self.selectedIndex = 0;
-            button.backgroundColor = [UIColor blackColor];
+            button.backgroundColor = [UIColor whiteColor];
             break;
         case 2:
             self.selectedIndex = 1;
-            button.backgroundColor = [UIColor blackColor];
+            button.backgroundColor = [UIColor whiteColor];
             break;
         case 3:
             self.selectedIndex = 2;
-            button.backgroundColor = [UIColor blackColor];
+            button.backgroundColor = [UIColor whiteColor];
             break;
         case 4:
             self.selectedIndex = 3;
-            button.backgroundColor = [UIColor blackColor];
+            button.backgroundColor = [UIColor whiteColor];
             break;
         default:
             break;
     }
-    
 }
+
+
+#pragma mark - Private method
+
+#pragma mark - Public method
+/*
+ * タブバーを表示する
+ * @param showFlag  NO:非表示 / YES:表示
+ */
+- (void)showAnimated:(BOOL)isShow
+{
+    if( !self.isTbAnimating && self.isShow != isShow ){
+        self.isShow = isShow;
+        self.isTbAnimating = YES;
+        
+        [UIView animateWithDuration:kNaviShowDulation
+                         animations:^{
+                             // アニメーションをする処理
+                             float top = isShow ? self.barBaseTop : self.barBaseTop + self.tabBar.frame.size.height;
+                             
+                             //TabBarを移動
+                             self.tabBar.frame = CGRectMake(0.0f, top, self.tabBar.frame.size.width, self.tabBar.frame.size.height);
+                         }
+                         completion:^(BOOL finished){
+                             self.isTbAnimating = NO;
+                         }];
+    }
+}
+
+
+
 @end

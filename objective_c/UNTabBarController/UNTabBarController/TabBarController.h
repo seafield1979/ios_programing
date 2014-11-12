@@ -13,8 +13,9 @@
 + (TabBarController *)sharedController;
 
 @property (strong, nonatomic) IBOutlet UIView *originalTabbar;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *tabbars;
 
 - (IBAction)tabButtonDidTap:(id)sender;
+- (void)showAnimated:(BOOL)isShow;
 
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *tabbars;
 @end

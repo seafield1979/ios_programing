@@ -57,6 +57,12 @@
 	// 文字列の検索
 	NSRange range = [str1 rangeOfString:@"567"];
 	NSLog(@"rangeOfString %ld %lu", (long)(range.location), range.length);
+    
+    // 文字列の一致箇所以降を切り出し
+    NSString *str3 = @"123456789";
+    NSRange range2 = [str3 rangeOfString:@"567"];
+    NSLog(@"substring search %@", [str2 substringFromIndex:range2.location]);
+    
 
 	NSNumber *num1 = [NSNumber numberWithInt:10];
 	NSLog(@"NSNumber %@", num1);

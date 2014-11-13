@@ -6,6 +6,7 @@
 //  Copyright (c) 2014年 海野 秀祐. All rights reserved.
 //
 /*
+ イメージコンテキストを使用した画像のコピー、拡大縮小
  UIGraphicsBeginImageContextWithOptions  仮想的な描画エリアを作成
  
  
@@ -32,113 +33,138 @@
     return self;
 }
 
+#pragma mark - Life cycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
-    _imageView1.hidden = YES;
+    self.imageView1.hidden = YES;
     //セグメント値が変更された時にhogeメソッドを呼び出す
-    [_segment1 addTarget:self action:@selector(segment1Changed:)
+    [self.segment1 addTarget:self action:@selector(segment1Changed:)
         forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Public method
 -(UIImageView*)srcImage
 {
-    return (selectedSegment == 0) ? _imageView12 : _imageView1;
+    return (selectedSegment == 0) ? self.imageView12 : self.imageView1;
 }
 
 
 #pragma mark - Private method
 
+- (UIImage*)resizedImage:(UIImage*)img width:(CGFloat)width height:(CGFloat)height
+{
+    CGFloat width_ratio  = width  / img.size.width;
+    CGFloat height_ratio = height / img.size.height;
+    CGFloat ratio = (width_ratio < height_ratio) ? width_ratio : height_ratio;
+    CGSize resized_size = CGSizeMake(img.size.width*ratio, img.size.height*ratio);
+    
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(width, height), NO, [[UIScreen mainScreen] scale]);
+    
+    [img drawInRect:CGRectMake(0, 0, resized_size.width, resized_size.height)];
+    UIImage* resized_image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return resized_image;
+}
 
 #pragma mark - Action method
 
 
 // image1をimage2にコピーする
+// ※image1とimage2の縦横比を考慮しないのでアスペクト比が崩れる
 - (IBAction)copyButtonDidTap:(id)sender
 {
-    UIImageView *image = [self srcImage];
-#if 0
-    UIGraphicsBeginImageContext(CGSizeMake(image.frame.size.width, image.frame.size.height));
-#else
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(image.frame.size.width, image.frame.size.height), NO, 0.0);
-#endif
-    //イメージ用グラフィックスコンテクスト取得
-//    CGContextRef context = UIGraphicsGetCurrentContext();
+    UIImageView *srcImageView = [self srcImage];
     
-    _imageView2.frame = CGRectMake(_imageView2.frame.origin.x,
-                                   _imageView2.frame.origin.y,
-                                   image.frame.size.width,
-                                   image.frame.size.height);
+    CGRect rect = self.imageView2.frame;
+    UIImage *image = [self resizedImage:srcImageView.image
+                                  width:srcImageView.frame.size.width
+                                 height:srcImageView.frame.size.height];
+    self.imageView2 = [[UIImageView alloc]initWithImage:image];
+    self.imageView2.frame = CGRectMake(rect.origin.x, rect.origin.y,
+                                       self.imageView2.frame.size.width,
+                                       self.imageView2.frame.size.height);
+    [self.view addSubview:self.imageView2];
     
-    [image.image drawInRect:CGRectMake(0, 0, image.frame.size.width, image.frame.size.height)];
-    UIImage *image2 = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    _imageView2.image = image2;
     
-
 }
 
 // 拡大コピー
+//
 - (IBAction)bigButtonDidTap:(id)sender
 {
+#if 1
+    UIImageView *srcImageView = [self srcImage];
+    
+    CGRect rect = self.imageView2.frame;
+    UIImage *image = [self resizedImage:srcImageView.image
+                                  width:srcImageView.frame.size.width * 2
+                                 height:srcImageView.frame.size.height * 2];
+    self.imageView2 = [[UIImageView alloc]initWithImage:image];
+    self.imageView2.frame = CGRectMake(rect.origin.x, rect.origin.y,
+                                       self.imageView2.frame.size.width,
+                                       self.imageView2.frame.size.height);
+    [self.view addSubview:self.imageView2];
+
+#else
     UIImageView *image = [self srcImage];
-#if 0
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(image.frame.size.width, image.frame.size.height), NO, 0.0);
     
-    _imageView2.frame = CGRectMake(_imageView2.frame.origin.x,
-                                   _imageView2.frame.origin.y,
-                                   image.frame.size.width,
-                                   image.frame.size.height);
+    // 1.コンテキスト作成 srcImageのサイズ
+    // イメージコンテキスト作成
+    if (UIGraphicsBeginImageContextWithOptions != NULL) {
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(image.frame.size.width / 2, image.frame.size.height / 2), NO, [[UIScreen mainScreen] scale]);
+    } else {
+        UIGraphicsBeginImageContext(CGSizeMake(image.frame.size.width / 2, image.frame.size.height / 2));
+    }
+
+//    UIGraphicsBeginImageContextWithOptions(CGSizeMake(image.frame.size.width / 2, image.frame.size.height / 2), NO, 0.0);
     
+    // 2.srcImage -> context 画像コピー
     [image.image drawInRect:CGRectMake(0, 0,
                                              image.frame.size.width * 2,
                                              image.frame.size.height * 2)];
-    UIImage *image2 = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    _imageView2.image = image2;
-#else
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(
-                image.frame.size.width / 2, image.frame.size.height / 2), NO, 0.0);
+    // 3.context から UIImage 作成
+    UIImage *dstImage = UIGraphicsGetImageFromCurrentImageContext();
     
-    _imageView2.frame = CGRectMake(_imageView2.frame.origin.x,
-                                   _imageView2.frame.origin.y,
-                                   image.frame.size.width,
-                                   image.frame.size.height);
-    
-    [image.image drawInRect:CGRectMake(0, 0,
-                                             image.frame.size.width,
-                                             image.frame.size.height)];
-    UIImage *image2 = UIGraphicsGetImageFromCurrentImageContext();
+    self.imageView2.frame = CGRectMake(self.imageView2.frame.origin.x,
+                                       self.imageView2.frame.origin.y,
+                                       dstImage.size.width,
+                                       dstImage.size.height);
+    self.imageView2.image = dstImage;
     UIGraphicsEndImageContext();
-    _imageView2.image = image2;
 #endif
 }
 
 // 縮小コピー
 - (IBAction)smallButtonDidTap:(id)sender {
     UIImageView *image = [self srcImage];
+    
+    // 1.コンテキスト作成 srcImageのサイズ
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(image.frame.size.width, image.frame.size.height), NO, 0.0);
 
-    _imageView2.frame = CGRectMake(_imageView2.frame.origin.x,
-                                   _imageView2.frame.origin.y,
-                                   image.frame.size.width,
-                                   image.frame.size.height);
-    
+    // 2.srcImage -> context 画像コピー
     [image.image drawInRect:CGRectMake(0, 0,
                                              image.frame.size.width / 2,
                                              image.frame.size.height / 2)];
+    // 3.context から UIImage 作成
     UIImage *image2 = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // 4.context破棄
     UIGraphicsEndImageContext();
-    _imageView2.image = image2;
+    
+    self.imageView2.frame = CGRectMake(self.imageView2.frame.origin.x,
+                                       self.imageView2.frame.origin.y,
+                                       image.frame.size.width,
+                                       image.frame.size.height);
+    self.imageView2.image = image2;
 }
 
 // image1の中央部分をimage2に切り出しコピー
@@ -166,15 +192,15 @@
         UIGraphicsBeginImageContextWithOptions(CGSizeMake(img1Size.width, img1Size.width), NO, 0.0);
     }
     
-    _imageView2.frame = CGRectMake(_imageView2.frame.origin.x,
-                                   _imageView2.frame.origin.y,
+    self.imageView2.frame = CGRectMake(self.imageView2.frame.origin.x,
+                                   self.imageView2.frame.origin.y,
                                    200,
                                    200);
     
     [image.image drawInRect:dstRect];
     UIImage *image2 = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    _imageView2.image = image2;
+    self.imageView2.image = image2;
 }
 
 
@@ -203,8 +229,8 @@
         UIGraphicsBeginImageContextWithOptions(CGSizeMake(img1Size.width, img1Size.width), NO, 0.0);
     }
     
-    _imageView2.frame = CGRectMake(_imageView2.frame.origin.x,
-                                   _imageView2.frame.origin.y,
+    self.imageView2.frame = CGRectMake(self.imageView2.frame.origin.x,
+                                   self.imageView2.frame.origin.y,
                                    200,
                                    200);
     // 背景を黒で塗る
@@ -216,20 +242,20 @@
     [image.image drawInRect:dstRect];
     UIImage *image2 = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    _imageView2.image = image2;
+    self.imageView2.image = image2;
 }
 
 - (void)segment1Changed:(UISegmentedControl*)segment
 {
     if(segment.selectedSegmentIndex == 0){
         selectedSegment = 0;
-        _imageView1.hidden = YES;
-        _imageView12.hidden = NO;
+        self.imageView1.hidden = YES;
+        self.imageView12.hidden = NO;
     }
     else{
         selectedSegment = 1;
-        _imageView1.hidden = NO;
-        _imageView12.hidden = YES;
+        self.imageView1.hidden = NO;
+        self.imageView12.hidden = YES;
     }
 }
 

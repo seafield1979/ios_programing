@@ -20,11 +20,9 @@
 {
     // ナビゲーションコントローラにベースとなるコントローラをセット
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.viewController = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
     
     // UI
     self.window.rootViewController = [TabBarController sharedController];
-    
     [self.window makeKeyAndVisible];
 
     return YES;

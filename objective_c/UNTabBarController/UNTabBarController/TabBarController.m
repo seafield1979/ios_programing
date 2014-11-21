@@ -5,6 +5,13 @@
 //  Created by UnnoShusuke on 2014/10/08.
 //  Copyright (c) 2014年 UnnoShusuke. All rights reserved.
 //
+/*
+   TabBarControllerを独自のViewにカスタマイズするテンプレート
+   以下要点
+   1.TabBarはシングルトンなのでsharedオブジェクトを返す sharedControllerでオブジェクトを生成する
+   2.TabBarのviewにaddSubviewで自前のviewを追加する
+   3.2でaddSubviewしたviewを self.tabbarの最前面に移動する
+ */
 
 #import "TabBarController.h"
 

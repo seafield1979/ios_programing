@@ -12,9 +12,10 @@
    UIViewの生成、アニメーション、表示プライオリティ、
  ViewController2
    プログレスバー、アクションシート
- ViewController3
-   
+ ViewControllerAffine
+ 　　アフィン変換を使用した移動、拡大縮小、回転
  ViewController4
+   
  ViewControllerAd
  ViewControllerNib
  ViewControllerTimer
@@ -67,7 +68,7 @@ typedef NS_ENUM(NSInteger, UNViewTestMode){
 	// ここから
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    UNViewTestMode mode = UNViewTestModeAffine;
+    UNViewTestMode mode = UNViewTestMode4;
 
     switch(mode){
         case UNViewTestMode1:

@@ -26,6 +26,12 @@
  スーパークラスの処理が呼び出される
  
  
+ サンプル
+   親クラスの変数参照
+ 　親クラスのメソッド呼び出し
+ 　親クラスのメソッドのオーバーライド
+
+ 
  */
 
 #import <Foundation/Foundation.h>
@@ -33,57 +39,30 @@
 /*
  * 親クラス
  */
-@interface classTest : NSObject
-{
-@public
-	// クラス外部からアクセス可能
-	NSString *name;
-@protected
-	// 子クラスからアクセス可能
-	NSString *protected_name;
-@private
-	// クラス外部からアクセス禁止
-	NSString *private_name;
-}
+@interface parentClass : NSObject
+
+@property (nonatomic, strong) NSString *name;
+
 -(id)init;
 -(void)print;
--(void)print:(int)val1 val2:(NSString*)val2;
 @end
 
 /*
  * 子クラス
  */
-@interface classTest2 : classTest
-{
-	NSString *child_name;
-}
--(void)print;
+@interface childClass : parentClass
+
+@property (nonatomic, strong) NSString *name;
+
+-(void)print;   // 親クラスをオーバーライド
 @end
 
-/**
- * コンストラクタ
- */
-@interface initTest : NSObject
-{
-	int value1;
-	int value2;
-	int value3;
-}
-- (id) initWithAllParams:(int)val1 val2:(int)val2 val3:(int)val3;
-- (id) initWithValue1:(int)val1;
-- (id) init;
-- (void)print;
-@end
 
-/**
- * デストラクタ
+/*
+ * テストクラス
  */
-@interface releaseTest : NSObject
-{
-	NSMutableArray *marr1;
-	char *buf1;
-}
-- (id) init;
-- (void)print;
+@interface classTest : NSObject
+
+- (void)test;
 
 @end

@@ -24,4 +24,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+/*
+ * Returnボタンを押したときの処理
+ *
+ */
+- (IBAction)returnButtonDidTap:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

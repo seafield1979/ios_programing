@@ -109,7 +109,7 @@
 	[_scrollView addSubview:contentView];
 	
 	// スクロールView上のコンテンツViewのサイズを指定します。
-#if 1
+#if 0
 	_scrollView.contentSize = contentView.frame.size;
 #else
 	_scrollView.contentSize = CGSizeMake(4000, 1000);

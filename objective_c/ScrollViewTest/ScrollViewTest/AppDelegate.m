@@ -24,19 +24,25 @@
 	
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UserAgent":ua}];
     
-#if 0
-    self.viewControllerWeb = [[ViewControllerWeb alloc] init];
-    self.window.rootViewController = self.viewControllerWeb;
-#endif
     
-#if 0
-    self.viewController = [[ViewController alloc] init];
-    self.window.rootViewController = self.viewController;
-#endif
-#if 1
-	self.viewController3 = [[ViewController3 alloc] init];
-    self.window.rootViewController = self.viewController3;
-#endif
+    switch (1) {
+        case 0:
+            self.viewControllerWeb = [[ViewControllerWeb alloc] init];
+            self.window.rootViewController = self.viewControllerWeb;
+            break;
+        case 1:
+            self.viewController = [[ViewController alloc] init];
+            self.window.rootViewController = self.viewController;
+            break;
+        case 2:
+            self.viewController2 = [[ViewController2 alloc] init];
+            self.window.rootViewController = self.viewController2;
+            break;
+        case 3:
+            self.viewController3 = [[ViewController3 alloc] init];
+            self.window.rootViewController = self.viewController3;
+            break;
+    }
     [self.window makeKeyAndVisible];
     return YES;
 }

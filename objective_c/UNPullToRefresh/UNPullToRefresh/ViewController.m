@@ -19,11 +19,11 @@
     [super viewDidLoad];
 	
     
-    [self.webView1 loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.nintendo.co.jp"]]];
+    [self.webView1 loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://ameba-oogiri.jp/sp/mypage/nonmember"]]];
     
-    _webView1.delegate = self;
-    _webView1.scrollView.delegate = self;
-    _webView1.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.webView1.delegate = self;
+    self.webView1.scrollView.delegate = self;
+    self.webView1.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
     [self.webView1.scrollView addSubview:self.refreshView];
     
@@ -75,8 +75,13 @@
         // 完了ハンドラの設定
         RefreshWebHeaderView *refreshView = self.refreshView;
         UIScrollView *scrollView = self.webView1.scrollView;
+        
+        __block ViewController *blockself = self;
         self.webViewLoadComplition = ^(BOOL success) {
             [refreshView pullRefreshScrollViewDataSourceDidFinishedLoading:scrollView];
+            
+            blockself.webView1.scrollView.contentSize = CGSizeMake(blockself.webView1.scrollView.contentSize.width,
+                                                              blockself.webView1.scrollView.contentSize.height + 32);
         };
     }
 }

@@ -8,6 +8,8 @@
 
 #import "UNWebViewController.h"
 
+#define kLoadURL   @"http://stg.yomyo.jp"
+
 @interface UNWebViewController ()
 
 @end
@@ -31,7 +33,7 @@
     // Webページの大きさを自動的に画面にフィットさせる
     _webView.scalesPageToFit = YES;
     // ページをロードする
-    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.nintendo.co.jp"]]];
+    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:kLoadURL]]];
     _webView.delegate = self;
     
 }

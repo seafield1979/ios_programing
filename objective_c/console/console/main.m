@@ -87,23 +87,7 @@ int main(int argc, const char * argv[])
 			}
 			else if(0 == strcmp((const char*)cmd_buf, "class")){
 				classTest *cl1 = [[classTest alloc]init];
-				classTest2 *cl2 = [[classTest2 alloc]init];
-				[cl1 print];
-				[cl1 print:100 val2:@"hello"];
-				[cl2 print];
-			}
-			else if(0 == strcmp((const char*)cmd_buf, "cinit")){
-				initTest *cinit1 = [[initTest alloc]init];
-				[cinit1 print];
-				initTest *cinit2 = [[initTest alloc]initWithValue1:100];
-				[cinit2 print];
-				initTest *cinit3 = [[initTest alloc]initWithAllParams:100 val2:200 val3:300];
-				[cinit3 print];
-
-			}
-			else if(0 == strcmp((const char*)cmd_buf, "crelease")){
-				releaseTest *crel = [[releaseTest alloc]init];
-				[crel print];
+                [cl1 test];
 			}
 			else if(0 == strcmp((const char*)cmd_buf, "array1")){
 				arrayTest *arr = [[arrayTest alloc]init];

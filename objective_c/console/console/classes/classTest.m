@@ -8,108 +8,76 @@
 
 #import "classTest.h"
 
-@implementation classTest
+@implementation parentClass
 
 -(id)init
 {
 	self = [super init];
 	if(self){
-		self->name = @"name1";
-		self->protected_name = @"protected_name1";
-		self->private_name = @"private_name1";
+		self.name = @"name1";
 	}
 	return self;
 }
 
 -(void)print
 {
-	NSLog(@"classTest::print");
-	NSLog(@"name %@", name);
-	NSLog(@"protected_name %@", self->protected_name);
-	NSLog(@"private_name %@", private_name);
-}
--(void)print : (int)val val2:(NSString *)val2
-{
-	NSLog(@"print2 %d %@", val, val2);
-}
-@end
-
-#pragma mark hogehoge
-
-
-@implementation classTest2
--(id)init
-{
-	self = [super init];
-	if(self){
-		child_name = @"child_name1";
-	}
-	return self;
-}
--(void)print
-{
-	NSLog(@"classTest2::print");
-	NSLog(@"protected_name %@", protected_name);
-	NSLog(@"child_name %@", child_name);
+	NSLog(@"parentClass name %@", self.name);
 }
 
-@end
-
-@implementation initTest
-
-- (id) initWithAllParams:(int)val1 val2:(int)val2 val3:(int)val3
-{
-	self = [super init];
-	self->value1 = val1;
-	self->value2 = val2;
-	self->value3 = val3;
-	return self;
-}
-- (id) initWithValue1:(int)val1
-{
-	return [self initWithAllParams:val1 val2:0 val3:0];
-}
-- (id) init
-{
-	return [self initWithAllParams:0 val2:0 val3:0];
-}
-
-- (void)print
-{
-	NSLog(@"initTest::print");
-	NSLog(@"%d %d %d", value1, value2, value3);
-}
-
-@end
-
-@implementation releaseTest
-
-- (id) init
-{
-	self = [super init];
-	if(self){
-		self->marr1 = [[NSMutableArray alloc]initWithObjects:@"aaa",@"bbb", @"ccc", nil];
-		buf1 = malloc(100);
-		strcpy(buf1, "aaaaaaaaaaabbbbbbbbbbbbccccccccccc");
-	}
-	return self;
-}
-- (void) print
-{
-	NSLog(@"releaseTest::print");
-	for(NSString *str in marr1){
-		NSLog(@"%@", str);
-	}
-	NSLog(@"buf1 %s", buf1);
-}
-
-// メモリ解放のタイミングで呼ばれる
-// 自前で確保したメモリでARCが解放してくれないものを解放する
+// override
 -(void)dealloc
 {
-	if(buf1){
-		free(buf1); buf1 = nil;
+    NSLog(@"parentClass dealloc");
+}
+
+@end
+
+
+@implementation childClass
+
+-(id)init
+{
+	self = [super init];
+	if(self){
+		self.name = @"child_name1";
 	}
+	return self;
+}
+
+// override
+-(void)print
+{
+    [super print];
+	NSLog(@"childClass child_name %@", self.name);
+}
+
+// override
+-(void)dealloc
+{
+    NSLog(@"childClass dealloc");
+}
+
+@end
+
+@interface classTest ()
+
+@property (nonatomic, strong) parentClass *parent;
+@property (nonatomic, strong) childClass *child;
+
+@end
+
+@implementation classTest
+
+- (void)test
+{
+    self.parent = [[parentClass alloc]init];
+    self.child = [[childClass alloc]init];
+    
+    [self.parent print];
+    [self.child print];
+    
+    self.parent = nil;
+    self.child = nil;
 }
 
 @end

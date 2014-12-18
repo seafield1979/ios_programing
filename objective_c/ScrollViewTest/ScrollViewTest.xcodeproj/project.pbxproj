@@ -114,6 +114,7 @@
 				0721D7A3198E966A002D5657 /* CoreGraphics.framework */,
 				0721D7A5198E966A002D5657 /* UIKit.framework */,
 				0721D7C6198E966A002D5657 /* XCTest.framework */,
+				C1C0FFE31A431F6B00938A24 /* New Group */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -150,6 +151,13 @@
 				0721D7AF198E966A002D5657 /* ScrollViewTest-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C1C0FFE31A431F6B00938A24 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

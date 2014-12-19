@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UITextViewDelegate, UIScrollViewDelegate>
+@interface ViewController : UIViewController <UIScrollViewDelegate, UITextViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @property (weak, nonatomic) IBOutlet UIView *baseView;
-@property (weak, nonatomic) IBOutlet UITextView *scrollView;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 

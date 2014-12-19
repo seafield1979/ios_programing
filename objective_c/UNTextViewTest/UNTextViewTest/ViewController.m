@@ -37,16 +37,6 @@ const static NSInteger _lineMax = 3;
     
     // TextView初期化
     [self initTextView];
-    
-    // キーボード表示・非表示時のイベント登録
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShown:)
-                                                 name:UIKeyboardWillShowNotification object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHidden:)
-                                                 name:UIKeyboardWillHideNotification object:nil];
-
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -123,17 +113,13 @@ const static NSInteger _lineMax = 3;
     // 移動後のオフセット算出
     CGPoint scrollPoint = CGPointMake(0.0, nowOffsetY + offsetY);
 
-    // キーボードアニメーションと同じ間隔、速度になるように設定
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:[notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue]];
-    [UIView setAnimationCurve:[notification.userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue]];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    
-    // 移動後のオフセット設定
-    self.scrollView.contentOffset = scrollPoint;
-    
-    // 表示アニメーション開始
-    [UIView commitAnimations];
+    [UIView animateWithDuration:1.0 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^(){
+        // 移動後のオフセット設定
+        self.scrollView.contentOffset = scrollPoint;
+    }
+     completion:^(BOOL finished){}
+     ];
+
 }
 
 /*
@@ -143,18 +129,16 @@ const static NSInteger _lineMax = 3;
 {
     
     // キーボードアニメーションと同じ間隔、速度になるように設定
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:[notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue]];
-    [UIView setAnimationCurve:[notification.userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue]];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    
-    // インセットを 0 にする
-    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
-    self.scrollView.contentInset = contentInsets;
-    self.scrollView.scrollIndicatorInsets = contentInsets;
-    
-    // 非表示アニメーション開始
-    [UIView commitAnimations];
+    [UIView animateWithDuration:1.0 delay:0.0 options:UIViewAnimationOptionCurveEaseIn
+     animations:^(){
+        // インセットを 0 にする
+        UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+        self.scrollView.contentInset = contentInsets;
+        self.scrollView.scrollIndicatorInsets = contentInsets;
+
+     }
+     completion:^(BOOL finished){}
+     ];
 }
 
 + (CGSize)getScreenSize
@@ -197,6 +181,16 @@ const static NSInteger _lineMax = 3;
     
     // Viewの配置
     self.textView.inputAccessoryView = keyboardDoneButtonView;
+    
+    // キーボード表示・非表示時のイベント登録
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShown:)
+                                                 name:UIKeyboardWillShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+
 }
 
 @end

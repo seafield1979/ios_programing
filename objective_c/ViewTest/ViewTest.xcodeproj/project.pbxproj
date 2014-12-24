@@ -38,6 +38,9 @@
 		58B793B319BD8AD5001CC3F8 /* ViewControllerTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B793B119BD8AD5001CC3F8 /* ViewControllerTimer.m */; };
 		58B793B419BD8AD5001CC3F8 /* ViewControllerTimer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B793B219BD8AD5001CC3F8 /* ViewControllerTimer.xib */; };
 		58B793BE19BD9B06001CC3F8 /* TimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B793BD19BD9B06001CC3F8 /* TimerView.m */; };
+		58C8D37B1A4A93D0007780B3 /* ViewController5.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C8D3791A4A93D0007780B3 /* ViewController5.m */; };
+		58C8D37C1A4A93D0007780B3 /* ViewController5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C8D37A1A4A93D0007780B3 /* ViewController5.xib */; };
+		58C8D37E1A4A94AD007780B3 /* view5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C8D37D1A4A94AD007780B3 /* view5.xib */; };
 		791088A41A0DCFC800F3072C /* ViewControllerLifeCycle.m in Sources */ = {isa = PBXBuildFile; fileRef = 791088A21A0DCFC800F3072C /* ViewControllerLifeCycle.m */; };
 		791088A51A0DCFC800F3072C /* ViewControllerLifeCycle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 791088A31A0DCFC800F3072C /* ViewControllerLifeCycle.xib */; };
 		791088B41A0E632600F3072C /* ViewControllerAffine.m in Sources */ = {isa = PBXBuildFile; fileRef = 791088B21A0E632600F3072C /* ViewControllerAffine.m */; };
@@ -107,6 +110,10 @@
 		58B793B219BD8AD5001CC3F8 /* ViewControllerTimer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerTimer.xib; sourceTree = "<group>"; };
 		58B793BC19BD9B06001CC3F8 /* TimerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerView.h; sourceTree = "<group>"; };
 		58B793BD19BD9B06001CC3F8 /* TimerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerView.m; sourceTree = "<group>"; };
+		58C8D3781A4A93D0007780B3 /* ViewController5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController5.h; sourceTree = "<group>"; };
+		58C8D3791A4A93D0007780B3 /* ViewController5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController5.m; sourceTree = "<group>"; };
+		58C8D37A1A4A93D0007780B3 /* ViewController5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController5.xib; sourceTree = "<group>"; };
+		58C8D37D1A4A94AD007780B3 /* view5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = view5.xib; sourceTree = "<group>"; };
 		791088A11A0DCFC800F3072C /* ViewControllerLifeCycle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerLifeCycle.h; path = ViewController/ViewControllerLifeCycle.h; sourceTree = "<group>"; };
 		791088A21A0DCFC800F3072C /* ViewControllerLifeCycle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerLifeCycle.m; path = ViewController/ViewControllerLifeCycle.m; sourceTree = "<group>"; };
 		791088A31A0DCFC800F3072C /* ViewControllerLifeCycle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewControllerLifeCycle.xib; path = ViewController/ViewControllerLifeCycle.xib; sourceTree = "<group>"; };
@@ -274,6 +281,17 @@
 			name = Resource;
 			sourceTree = "<group>";
 		};
+		58C8D3771A4A93AE007780B3 /* ViewController5 */ = {
+			isa = PBXGroup;
+			children = (
+				58C8D3781A4A93D0007780B3 /* ViewController5.h */,
+				58C8D3791A4A93D0007780B3 /* ViewController5.m */,
+				58C8D37A1A4A93D0007780B3 /* ViewController5.xib */,
+				58C8D37D1A4A94AD007780B3 /* view5.xib */,
+			);
+			name = ViewController5;
+			sourceTree = "<group>";
+		};
 		791088991A0DB8EF00F3072C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +379,7 @@
 				791088991A0DB8EF00F3072C /* ViewController */,
 				7910889A1A0DB8FF00F3072C /* ViewController2 */,
 				7910889C1A0DB91F00F3072C /* ViewController4 */,
+				58C8D3771A4A93AE007780B3 /* ViewController5 */,
 				7910889D1A0DB92B00F3072C /* ViewControllerAd */,
 				7910889E1A0DB93200F3072C /* ViewControllerNib */,
 				7910889F1A0DB93F00F3072C /* ViewControllerPRTween */,
@@ -462,6 +481,7 @@
 				79784E8019A4F24B0035537B /* ViewControllerNib.xib in Resources */,
 				796828C519AA4B9D007F8098 /* ViewController4.xib in Resources */,
 				588B4A6019A32E6600AC9A84 /* ViewControllerPRTween.xib in Resources */,
+				58C8D37C1A4A93D0007780B3 /* ViewController5.xib in Resources */,
 				791088B51A0E632600F3072C /* ViewControllerAffine.xib in Resources */,
 				791088A51A0DCFC800F3072C /* ViewControllerLifeCycle.xib in Resources */,
 				07662F3D1993C10400134472 /* ViewController2.xib in Resources */,
@@ -471,6 +491,7 @@
 				58ABBC371994C5F000259F7C /* loading_01.png in Resources */,
 				79784E8319A4F2E30035537B /* testNib.xib in Resources */,
 				07F16D27198EA1640077ABB3 /* ViewController.xib in Resources */,
+				58C8D37E1A4A94AD007780B3 /* view5.xib in Resources */,
 				796828C719AA4E23007F8098 /* anpanman.jpg in Resources */,
 				07206968198E88E100A2C829 /* InfoPlist.strings in Resources */,
 			);
@@ -508,6 +529,7 @@
 				0720696A198E88E100A2C829 /* main.m in Sources */,
 				588B4A5F19A32E6600AC9A84 /* ViewControllerPRTween.m in Sources */,
 				588B4A6719A32EA300AC9A84 /* PRTween.m in Sources */,
+				58C8D37B1A4A93D0007780B3 /* ViewController5.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,6 +27,7 @@
 #import "ViewController.h"
 #import "ViewController2.h"
 #import "ViewController4.h"
+#import "ViewController5.h"
 #import "ViewControllerAd.h"
 #import "ViewControllerPRTween.h"
 #import "ViewControllerNib.h"
@@ -38,6 +39,7 @@ typedef NS_ENUM(NSInteger, UNViewTestMode){
     UNViewTestMode1,
     UNViewTestMode2,
     UNViewTestMode4,
+    UNViewTestMode5,
     UNViewTestModeAd,
     UNViewTestModeTween,
     UNViewTestModeNib,
@@ -51,6 +53,7 @@ typedef NS_ENUM(NSInteger, UNViewTestMode){
 @property (strong, nonatomic) ViewController *viewController;
 @property (strong, nonatomic) ViewController2 *viewController2;
 @property (strong, nonatomic) ViewController4 *viewController4;
+@property (strong, nonatomic) ViewController5 *viewController5;
 @property (strong, nonatomic) ViewControllerAd *viewControllerAd;
 @property (strong, nonatomic) ViewControllerNib *viewControllerNib;
 @property (strong, nonatomic) ViewControllerPRTween *viewControllerTween;
@@ -68,7 +71,7 @@ typedef NS_ENUM(NSInteger, UNViewTestMode){
 	// ここから
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    UNViewTestMode mode = UNViewTestMode4;
+    UNViewTestMode mode = UNViewTestMode5;
 
     switch(mode){
         case UNViewTestMode1:
@@ -86,6 +89,10 @@ typedef NS_ENUM(NSInteger, UNViewTestMode){
         case UNViewTestMode4:
             self.viewController4 = [[ViewController4 alloc] init];
             self.window.rootViewController = self.viewController4;
+            break;
+        case UNViewTestMode5:
+            self.viewController5 = [[ViewController5 alloc] init];
+            self.window.rootViewController = self.viewController5;
             break;
         case UNViewTestModeAd:
             self.viewControllerAd = [[ViewControllerAd alloc] init];

@@ -27,7 +27,21 @@
 	NSDate *dt3 = [[NSDate alloc] initWithString:@"2010-01-01 23:59:59 +0900"];
 	NSLog(@"date3: %@", dt3);
 
-	
+    // 2つのNSDateの日付を比較
+    // NSDate同士の比較はできないため、フォーマット関数で日時の文字列に返還後文字列で比較する
+    NSDate *dt41 = [[NSDate alloc]initWithString:@"2015-01-09 15:00:00 +0900"];
+    NSDate *dt42 = [[NSDate alloc]initWithString:@"2015-01-09 21:00:00 +0900"];
+    
+    NSDateFormatter *df = [[NSDateFormatter alloc]init];
+    df.dateFormat = @"yyyy/MM/dd";
+    NSString *str1 = [df stringFromDate:dt41];
+    NSString *str2 = [df stringFromDate:dt42];
+    if ([str1 isEqualToString:str2]){
+        NSLog(@"same date");
+    } else {
+        NSLog(@"different date");
+    }
+    
 }
 
 @end

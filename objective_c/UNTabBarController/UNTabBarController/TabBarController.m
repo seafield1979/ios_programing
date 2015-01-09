@@ -83,6 +83,18 @@ static TabBarController *_sharedTabBarController;
     
     // OSバージョンによるレイアウトの調整
     self.barBaseTop = [[UIScreen mainScreen]bounds].size.height - kNavigationBarHeight;
+    
+    
+    // 適当なViewを追加してみる
+#if 0
+    UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    view1.backgroundColor = [UIColor redColor];
+    [self.view addSubview:view1];
+    
+    UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 100, 100, 100)];
+    view2.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:view2];
+#endif
 }
 
 - (void)viewWillAppear:(BOOL)animated

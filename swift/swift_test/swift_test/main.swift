@@ -10,3 +10,7 @@ import Foundation
 
 println("Hello, World!")
 
+var optional1 : Optional1 = Optional1(name: "syutaro", number: 100)
+
+println( optional1.hello() )
+

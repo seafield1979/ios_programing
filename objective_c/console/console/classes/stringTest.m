@@ -97,6 +97,10 @@
 	[mstr setString:@"1234567890"];
 	[mstr replaceCharactersInRange:NSMakeRange(2, 4) withString:@"aaa"];
 	NSLog(@"replaceCharactersInRange %@", mstr);
+    
+    
+    NSMutableString *mstr2 = @"hogehoge".mutableCopy;
+    NSLog(@"%@", mstr2);
 
 }
 @end

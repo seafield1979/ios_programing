@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58B2B3771A8C94F200AE057F /* UNWebViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B2B3751A8C94F200AE057F /* UNWebViewController2.m */; };
+		58B2B3781A8C94F200AE057F /* UNWebViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B2B3761A8C94F200AE057F /* UNWebViewController2.xib */; };
 		79784EE419A8C31C0035537B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79784EE319A8C31C0035537B /* Foundation.framework */; };
 		79784EE619A8C31C0035537B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79784EE519A8C31C0035537B /* CoreGraphics.framework */; };
 		79784EE819A8C31C0035537B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79784EE719A8C31C0035537B /* UIKit.framework */; };
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58B2B3741A8C94F200AE057F /* UNWebViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNWebViewController2.h; sourceTree = "<group>"; };
+		58B2B3751A8C94F200AE057F /* UNWebViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNWebViewController2.m; sourceTree = "<group>"; };
+		58B2B3761A8C94F200AE057F /* UNWebViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UNWebViewController2.xib; sourceTree = "<group>"; };
 		79784EE019A8C31C0035537B /* UNWebViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UNWebViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79784EE319A8C31C0035537B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		79784EE519A8C31C0035537B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,6 +84,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58B2B3721A8C94C300AE057F /* test1 */ = {
+			isa = PBXGroup;
+			children = (
+				79784F1819A8C3B60035537B /* UNWebViewController.h */,
+				79784F1919A8C3B60035537B /* UNWebViewController.m */,
+				79784F1A19A8C3B60035537B /* UNWebViewController.xib */,
+			);
+			name = test1;
+			sourceTree = "<group>";
+		};
+		58B2B3731A8C94CD00AE057F /* test2 */ = {
+			isa = PBXGroup;
+			children = (
+				58B2B3741A8C94F200AE057F /* UNWebViewController2.h */,
+				58B2B3751A8C94F200AE057F /* UNWebViewController2.m */,
+				58B2B3761A8C94F200AE057F /* UNWebViewController2.xib */,
+			);
+			name = test2;
+			sourceTree = "<group>";
+		};
 		79784ED719A8C31C0035537B = {
 			isa = PBXGroup;
 			children = (
@@ -112,11 +137,10 @@
 		79784EE919A8C31C0035537B /* UNWebViewController */ = {
 			isa = PBXGroup;
 			children = (
+				58B2B3721A8C94C300AE057F /* test1 */,
+				58B2B3731A8C94CD00AE057F /* test2 */,
 				79784EF219A8C31C0035537B /* AppDelegate.h */,
 				79784EF319A8C31C0035537B /* AppDelegate.m */,
-				79784F1819A8C3B60035537B /* UNWebViewController.h */,
-				79784F1919A8C3B60035537B /* UNWebViewController.m */,
-				79784F1A19A8C3B60035537B /* UNWebViewController.xib */,
 				79784EFB19A8C31C0035537B /* Images.xcassets */,
 				79784EEA19A8C31C0035537B /* Supporting Files */,
 			);
@@ -231,6 +255,7 @@
 				79784F1C19A8C3B60035537B /* UNWebViewController.xib in Resources */,
 				79784EFC19A8C31C0035537B /* Images.xcassets in Resources */,
 				79784EEE19A8C31C0035537B /* InfoPlist.strings in Resources */,
+				58B2B3781A8C94F200AE057F /* UNWebViewController2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +277,7 @@
 				79784EF419A8C31C0035537B /* AppDelegate.m in Sources */,
 				79784EF019A8C31C0035537B /* main.m in Sources */,
 				79784F1B19A8C3B60035537B /* UNWebViewController.m in Sources */,
+				58B2B3771A8C94F200AE057F /* UNWebViewController2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +474,7 @@
 				79784F1419A8C31C0035537B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		79784F1519A8C31C0035537B /* Build configuration list for PBXNativeTarget "UNWebViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +483,7 @@
 				79784F1719A8C31C0035537B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

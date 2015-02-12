@@ -42,7 +42,7 @@ class UNTestBasis {
         
         var hoge : Int = 1
         
-        hoge = 2
+        hoge = 0
         if hoge == 1 {
             println("hoge == 1")
         } else if hoge == 2 {
@@ -57,6 +57,16 @@ class UNTestBasis {
 //        if hoge { <- エラー
 //            
 //        }
+        
+        // オブジェクトのnil判定
+        var hoges:String? = nil
+        if hoges == nil {
+        //if hoges {        <- エラー。nilかどうかで判定できない。BOOL値を返さないといけない。
+            println("hoge == nil")
+        }
+        else {
+            println("hoge != nil")
+        }
     }
     
     func test_for() {

@@ -8,7 +8,7 @@
 
 #import "UNWebViewController.h"
 
-#define kLoadURL   @"http://stg.yomyo.jp"
+#define kLoadURL   @"http://www.nintendo.co.jp"
 
 @interface UNWebViewController ()
 
@@ -67,4 +67,24 @@
     NSLog(@"webViewDidFinishLoad");
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
+
+/*
+ * ツールバーのアイテムをタップしたときの処理
+ */
+- (IBAction)barItemDidTap:(id)sender {
+    UIBarItem *item = (UIBarItem*)sender;
+    switch(item.tag) {
+        case 1:
+            [self.webView goBack];
+            break;
+        case 2:
+            [self.webView goForward];
+            break;
+        case 3:
+            [self.webView reload];
+            break;
+    }
+}
+
+
 @end

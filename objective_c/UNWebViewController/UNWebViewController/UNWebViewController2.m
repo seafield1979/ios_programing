@@ -22,6 +22,23 @@ static NSInteger kTutorialPageNum = 3;
 
 @end
 
+
+@implementation UIColor (Hexadecimal)
+
+
+#pragma mark - api
++ (UIColor *)colorWithHexadecimal:(NSInteger)hexadecimal
+{
+    return [UIColor colorWithRed:((hexadecimal & 0xff000000) >> 24) / 255.0
+                           green:((hexadecimal & 0x00ff0000) >> 16) / 255.0
+                            blue:((hexadecimal & 0x0000ff00) >>  8) / 255.0
+                           alpha:( hexadecimal & 0x000000ff       ) / 255.0];
+}
+
+
+@end
+
+
 @implementation UNWebViewController2
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -39,13 +56,17 @@ static NSInteger kTutorialPageNum = 3;
     
     self.scrollView.delegate = self;
     
+    // pageControl
+    [self initPageControll];
+    
     // 背景のScrollView
     self.bgScrollView.contentSize = CGSizeMake(500, 308);
     
-    
+    self.scrollView.showsHorizontalScrollIndicator = NO;
+    self.scrollView.showsVerticalScrollIndicator   = NO;
     // スクロールViewにWebviewを３つ配置する
     // スクロールViewの幅を３ページ分に拡張
-    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width * 3, self.scrollView.frame.size.height);
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width * (kTutorialPageNum + 1), self.scrollView.frame.size.height);
     
     // ページング
     self.scrollView.pagingEnabled = YES;
@@ -134,18 +155,22 @@ static NSInteger kTutorialPageNum = 3;
         }
         
         // ページの切り替わりをチェック
-#if 1
         NSInteger page = (posX + width / 2) / width;
         if (page < 0 || page > 2) {
             page = self.pageNum;
         }
         if (page != self.pageNum) {
             self.pageNum = page;
+            self.pageControl.currentPage = page;
             // タイトルの差し替え
             [self.titleImageView setPage:page];
         }
         self.preScrollX = scrollView.contentOffset.x;
-#endif
+        
+        // 右端までスクロールしたら終了
+        if (posX >= width * 2.2) {
+            NSLog(@"finished");
+        }
     }
 }
 
@@ -188,7 +213,7 @@ static NSInteger kTutorialPageNum = 3;
 {
     //NSLog(@"scrollViewDidEndDecelerating");
     
-    self.pageControl.currentPage = scrollView.contentOffset.x / scrollView.frame.size.width;
+    
 }
 
 
@@ -214,9 +239,9 @@ static NSInteger kTutorialPageNum = 3;
            forControlEvents:UIControlEventValueChanged];
     
     // 色を変更
-    self.pageControl.currentPageIndicatorTintColor = [UIColor greenColor];
-    self.pageControl.pageIndicatorTintColor = [UIColor grayColor];
-    self.pageControl.backgroundColor = [UIColor blackColor];
+    self.pageControl.currentPageIndicatorTintColor = [UIColor colorWithHexadecimal:0x4D4D4DFF];
+    self.pageControl.pageIndicatorTintColor = [UIColor colorWithHexadecimal:0xCCCCCCFF];
+    self.pageControl.backgroundColor = [UIColor clearColor];
     
     // 現在のページ
     self.pageControl.currentPage = 0;

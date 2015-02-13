@@ -28,17 +28,17 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="inn-CG-Vxy">
-                    <rect key="frame" x="0.0" y="120" width="320" height="305"/>
+                    <rect key="frame" x="0.0" y="120" width="320" height="306"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" id="ADD-jw-sTx">
-                            <rect key="frame" x="0.0" y="0.0" width="500" height="308"/>
+                            <rect key="frame" x="0.0" y="0.0" width="500" height="309"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
                     </subviews>
                 </scrollView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Bzk-qs-dux">
-                    <rect key="frame" x="0.0" y="138" width="320" height="292"/>
+                    <rect key="frame" x="0.0" y="120" width="320" height="306"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </scrollView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg2" id="vG7-ml-Q4w" customClass="bg">

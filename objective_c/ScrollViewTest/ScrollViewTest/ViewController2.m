@@ -7,6 +7,7 @@
 //
 /*
 	縦にスクロールする
+    ページングあり
  */
 
 #import "ViewController2.h"

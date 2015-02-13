@@ -5,15 +5,20 @@
 //  Created by B02681 on 2014/08/07.
 //  Copyright (c) 2014年 海野 秀祐. All rights reserved.
 //
+/*
+ * 横にスクロール
+    ページングあり
+    ページ表示あり（●○○）
+    スクロールのON/OFFあり
+ */
 
 #import "ViewController3.h"
 
 @interface ViewController3 ()
-{
-	int pageMax;
-	int pageNum;
-	UIScrollView *_scrollView;
-}
+
+@property (nonatomic) NSInteger pageMax;
+@property (nonatomic) NSInteger pageNum;
+@property (nonatomic, strong) UIScrollView *scrollView;
 
 @end
 
@@ -24,8 +29,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-		pageNum = 1;
-		pageMax = 4;
+		_pageNum = 1;
+		_pageMax = 4;
     }
     return self;
 }
@@ -36,14 +41,9 @@
     
     [self initPageControll];
 
-    // Do any additional setup after loading the view from its nib.
 	[self initScrollView];
 	
 	_label1.text = @"scroll ON";
-	
-	
-	
-
 }
 
 
@@ -70,7 +70,7 @@
     _pageControl.pageIndicatorTintColor = [UIColor grayColor];
     _pageControl.backgroundColor = [UIColor blackColor];
     // 現在のページ
-    _pageControl.currentPage = pageNum;
+    _pageControl.currentPage = self.pageNum;
 }
 
 /**
@@ -87,7 +87,7 @@
 	
 	// UIScrollViewに表示するコンテンツViewを作成する。
 	CGSize s = _scrollView.frame.size;
-	CGRect contentRect = CGRectMake(0, 0, s.width * pageMax, s.height);
+	CGRect contentRect = CGRectMake(0, 0, s.width * self.pageMax, s.height);
 	UIView *contentView = [[UIView alloc] initWithFrame:contentRect];
 	// コンテンツViewに表示する緑色Viewを追加する。
 	UIView *subContent1View = [[UIView alloc] initWithFrame:CGRectMake(320 * 0, 0, s.width, s.height)];
@@ -131,7 +131,7 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
 	int offset_x = (int)scrollView.contentOffset.x;
-	pageNum = (int)(offset_x / 320);
+	self.pageNum = (int)(offset_x / 320);
     
     // ページコントロールの現在のページの切り替え
     float scroll_x =  scrollView.contentOffset.x;
@@ -170,7 +170,7 @@
 -(void)pageControl_Tapped:(id)sender
 {
     UIPageControl *pc = (UIPageControl*)sender;
-    NSLog(@"page control tapped: %d", pc.currentPage);
+    NSLog(@"page control tapped: %ld", pc.currentPage);
     
     CGRect frame = _scrollView.frame;
     frame.origin.x = frame.size.width * _pageControl.currentPage;

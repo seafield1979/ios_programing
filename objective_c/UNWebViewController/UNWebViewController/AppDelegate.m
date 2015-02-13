@@ -12,10 +12,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.viewController = [[UNWebViewController alloc] init];
-    self.window.rootViewController = self.viewController;
+    self.viewController2 = [[UNWebViewController2 alloc] init];
+    self.window.rootViewController = self.viewController2;
     [self.window makeKeyAndVisible];
     
     [self initBasicAuthentication];

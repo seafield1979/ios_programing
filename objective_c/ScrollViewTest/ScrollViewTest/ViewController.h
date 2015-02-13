@@ -12,7 +12,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
 
--(IBAction)pushPrevButton:(id)sender;
--(IBAction)pushNextButton:(id)sender;
-
 @end

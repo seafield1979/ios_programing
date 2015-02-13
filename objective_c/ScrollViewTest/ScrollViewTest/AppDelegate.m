@@ -25,12 +25,12 @@
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UserAgent":ua}];
     
     
-    switch (1) {
+    switch (0) {
         case 0:
             self.viewControllerWeb = [[ViewControllerWeb alloc] init];
             self.window.rootViewController = self.viewControllerWeb;
             break;
-        case 1:
+        case 1:     
             self.viewController = [[ViewController alloc] init];
             self.window.rootViewController = self.viewController;
             break;

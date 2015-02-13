@@ -5,6 +5,10 @@
 //  Created by B02681 on 2014/08/06.
 //  Copyright (c) 2014年 海野 秀祐. All rights reserved.
 //
+/*
+ 縦にスクロール
+ ページングなし
+ */
 
 #import "ViewController.h"
 
@@ -56,12 +60,13 @@
     [self.view addSubview:self.scrollView];
     
     // ScrollViewに表示するViewを生成
-    self.contentView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 1000)];
-    self.contentView.backgroundColor = [UIColor redColor];
+    UIView *view1 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 500)];
+    view1.backgroundColor = [UIColor redColor];
+    [self.scrollView addSubview:view1];
     
-    // ScrollViewにviewを追加
-    [self.scrollView addSubview:self.contentView];
-    
+    UIView *view2 = [[UIView alloc]initWithFrame:CGRectMake(0, 500, 320, 500)];
+    view2.backgroundColor = [UIColor greenColor];
+    [self.scrollView addSubview:view2];
 
 }
 

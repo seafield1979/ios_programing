@@ -46,10 +46,14 @@ func test_func() {
     func1.test1()
 }
 
-func test_array() {
+func test_array(mode : Int) {
     println("test_array")
     var array1 : UNTestArray = UNTestArray()
-    var ret = array1.test1()
+    if mode == 1 {
+        var ret = array1.test1()
+    } else if mode == 2 {
+        var ret = array1.test2()
+    }
 }
 
 /*
@@ -73,8 +77,10 @@ switch command {
         test_class()
     case "func":
         test_func()
-    case "array":
-        test_array()
+    case "array1":
+        test_array(1)
+    case "array2":
+        test_array(2)
     default:
         println("other")
 }

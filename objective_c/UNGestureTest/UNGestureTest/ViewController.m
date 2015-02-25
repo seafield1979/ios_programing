@@ -17,10 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self initPanGesture];
-    [self initTapGesture];
-    [self initPinchGesture];
-    [self initRotateGesture];
+//    [self initPanGesture];
+//    [self initTapGesture];
+//    [self initPinchGesture];
+//    [self initRotateGesture];
+    [self initSwipeGesture];
     [self initLongPressGesture: 1.0 allowableMovement:30];
 }
 
@@ -90,6 +91,17 @@
     [self.view addGestureRecognizer:longPressGesture];
 }
 
+/*
+ * スワイプ
+ */
+-(void)initSwipeGesture
+{
+    // 左スワイプ
+    UISwipeGestureRecognizer* leftSwipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeGesture:)];
+    
+    leftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:leftSwipe];
+}
 
 #pragma mark - Gesture method
 
@@ -141,4 +153,12 @@
         //Do Whatever You want on Began of Gesture
     }
 }
+
+/*
+ * 左スワイプ
+ */
+- (void) handleSwipeGesture:(UISwipeGestureRecognizer*)sender {
+    NSLog(@"swipe left");
+}
+
 @end

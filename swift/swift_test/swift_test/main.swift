@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Darwin
 
 println("Hello, World!")
 
@@ -45,10 +46,26 @@ func test_func() {
     func1.test1()
 }
 
-test_print()
+func test_array() {
+    println("test_array")
+    var array1 : UNTestArray = UNTestArray()
+    var ret = array1.test1()
+}
 
-let mode = "func"   
-switch mode {
+/*
+ * コンソールでユーザーの入力を取得する
+ */
+func input() -> String {
+    var keyboard = NSFileHandle.fileHandleWithStandardInput()
+    var inputData = keyboard.availableData
+    var strData = NSString(data: inputData, encoding: NSUTF8StringEncoding)!
+    
+    return strData.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
+}
+
+let command = input()
+
+switch command {
     case "basis":
         test_basis()
         break
@@ -56,6 +73,8 @@ switch mode {
         test_class()
     case "func":
         test_func()
+    case "array":
+        test_array()
     default:
         println("other")
 }

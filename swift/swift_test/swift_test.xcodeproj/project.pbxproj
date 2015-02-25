@@ -50,9 +50,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		582802531A9DE6ED00246C41 /* c */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = c;
+			sourceTree = "<group>";
+		};
 		5872A9041A71E7B200FF66B5 = {
 			isa = PBXGroup;
 			children = (
+				582802531A9DE6ED00246C41 /* c */,
 				5872A90F1A71E7B200FF66B5 /* swift_test */,
 				5872A90E1A71E7B200FF66B5 /* Products */,
 			);
@@ -227,14 +235,21 @@
 		5872A9151A71E7B200FF66B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "swift_test-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		5872A9161A71E7B200FF66B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "swift_test-Bridging-Header.h";
 			};
 			name = Release;
 		};

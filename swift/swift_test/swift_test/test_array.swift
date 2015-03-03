@@ -53,6 +53,11 @@ class UNTestArray{
         self.array1.removeLast()
         self.array1.display()
         
+        // いてレータとしてforループをまわす
+        for i in [1,2,3] {
+            println("for:%d", i)
+        }
+        
         return ""
     }
 

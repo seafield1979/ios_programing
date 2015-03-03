@@ -63,9 +63,15 @@ class UNClassTest {
     }
     
     // initializer
+    // 引数なし
+    init () {
+        _str1 = ""
+        _str2 = ""
+    }
+    // 引数あり
     init (str1: String, str2: String) {
         _str1 = str1
-        _str2 = str2;
+        _str2 = str2
     }
     
     // method
@@ -79,5 +85,4 @@ class UNClassTest {
         println("str1:\(str1) str2:\(str2)")
     }
 }
-
 

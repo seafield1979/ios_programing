@@ -56,6 +56,12 @@ func test_array(mode : Int) {
     }
 }
 
+func test_optional(){
+    var optional1 : UNTestOptional = UNTestOptional()
+    optional1.test1()
+    optional1.test2()
+}
+
 /*
  * コンソールでユーザーの入力を取得する
  */
@@ -81,6 +87,8 @@ switch command {
         test_array(1)
     case "array2":
         test_array(2)
+    case "opt":
+        test_optional()
     default:
         println("other")
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		580F88551AA5D2AC0047FDFA /* test_optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580F88541AA5D2AC0047FDFA /* test_optional.swift */; };
+		580F88631AA882CA0047FDFA /* test_class_advance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580F88621AA882CA0047FDFA /* test_class_advance.swift */; };
 		582802591A9DFA8B00246C41 /* Array+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582802581A9DFA8B00246C41 /* Array+Display.swift */; };
 		5872A9111A71E7B200FF66B5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5872A9101A71E7B200FF66B5 /* main.swift */; };
 		5872A9181A72008800FF66B5 /* optional_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5872A9171A72008800FF66B5 /* optional_test.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		580F88541AA5D2AC0047FDFA /* test_optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test_optional.swift; sourceTree = "<group>"; };
+		580F88621AA882CA0047FDFA /* test_class_advance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test_class_advance.swift; sourceTree = "<group>"; };
 		582802581A9DFA8B00246C41 /* Array+Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Display.swift"; sourceTree = "<group>"; };
 		5872A90D1A71E7B200FF66B5 /* swift_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = swift_test; sourceTree = BUILT_PRODUCTS_DIR; };
 		5872A9101A71E7B200FF66B5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				5872A9101A71E7B200FF66B5 /* main.swift */,
 				7947EC441A7D1DBB0038B8BD /* test_basis.swift */,
 				793762571A7A626400196768 /* test_class.swift */,
+				580F88621AA882CA0047FDFA /* test_class_advance.swift */,
 				7947EC3E1A7D0CD10038B8BD /* test_function.swift */,
 				7947EC401A7D18220038B8BD /* test_array.swift */,
 				7947EC421A7D182A0038B8BD /* test_enum.swift */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				793762581A7A626400196768 /* test_class.swift in Sources */,
+				580F88631AA882CA0047FDFA /* test_class_advance.swift in Sources */,
 				7947EC451A7D1DBB0038B8BD /* test_basis.swift in Sources */,
 				5872A9111A71E7B200FF66B5 /* main.swift in Sources */,
 				7947EC431A7D182A0038B8BD /* test_enum.swift in Sources */,

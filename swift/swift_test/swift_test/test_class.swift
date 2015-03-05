@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 B02681. All rights reserved.
 //
 /*
+基本的なクラス
 
 クラスの宣言
 class クラス名{
@@ -44,7 +45,7 @@ class UNClassTest {
     var str1 : String {
         get {
             println("str1:get")
-            return _str1
+            return _str1        // この_str1はstr1とは直接関係ないので、プロパティならなんでもOKだYO
         }
         set(str1){
             println("str1:set")

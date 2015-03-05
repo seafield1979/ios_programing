@@ -58,8 +58,9 @@ func test_array(mode : Int) {
 
 func test_optional(){
     var optional1 : UNTestOptional = UNTestOptional()
-    optional1.test1()
-    optional1.test2()
+//    optional1.test1()
+//    optional1.test2()
+    optional1.test3()
 }
 
 /*

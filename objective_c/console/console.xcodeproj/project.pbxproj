@@ -24,6 +24,7 @@
 		07D166ED18C1E4F9000E2D0A /* sharedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D166EC18C1E4F9000E2D0A /* sharedObject.m */; };
 		07D166F018C1E50C000E2D0A /* Initializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D166EF18C1E50C000E2D0A /* Initializer.m */; };
 		07D166F318C1EB17000E2D0A /* test1.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07D166F218C1EA69000E2D0A /* test1.txt */; };
+		580F885B1AA84DA20047FDFA /* cookieTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 580F885A1AA84DA20047FDFA /* cookieTest.m */; };
 		5833E02D19BEFEAB000E7A21 /* propertyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5833E02C19BEFEAB000E7A21 /* propertyTest.m */; };
 		58B793B719BD91E1001CC3F8 /* timerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B793B619BD91E1001CC3F8 /* timerTest.m */; };
 		58B793BA19BD9232001CC3F8 /* selectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B793B919BD9232001CC3F8 /* selectorTest.m */; };
@@ -79,6 +80,8 @@
 		07D166EE18C1E50C000E2D0A /* Initializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Initializer.h; path = console/classes/Initializer.h; sourceTree = "<group>"; };
 		07D166EF18C1E50C000E2D0A /* Initializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Initializer.m; path = console/classes/Initializer.m; sourceTree = "<group>"; };
 		07D166F218C1EA69000E2D0A /* test1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = test1.txt; path = resources/test1.txt; sourceTree = "<group>"; };
+		580F88591AA84DA20047FDFA /* cookieTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cookieTest.h; path = console/classes/cookieTest.h; sourceTree = "<group>"; };
+		580F885A1AA84DA20047FDFA /* cookieTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cookieTest.m; path = console/classes/cookieTest.m; sourceTree = "<group>"; };
 		5833E02B19BEFEAA000E7A21 /* propertyTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = propertyTest.h; path = console/classes/propertyTest.h; sourceTree = "<group>"; };
 		5833E02C19BEFEAB000E7A21 /* propertyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = propertyTest.m; path = console/classes/propertyTest.m; sourceTree = "<group>"; };
 		58B793B519BD91E1001CC3F8 /* timerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = timerTest.h; path = console/classes/timerTest.h; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 				072068C0198D1E7600A2C829 /* blockTest.m */,
 				072068C2198DDAA100A2C829 /* categoryTest.h */,
 				072068C3198DDAA100A2C829 /* categoryTest.m */,
+				580F88591AA84DA20047FDFA /* cookieTest.h */,
+				580F885A1AA84DA20047FDFA /* cookieTest.m */,
 				07537D451987EABB00B966B0 /* dictionaryTest.h */,
 				07537D461987EABB00B966B0 /* dictionaryTest.m */,
 				07537D481987F05000B966B0 /* dateTest.h */,
@@ -275,6 +280,7 @@
 				07537D501987FDEC00B966B0 /* userDefaultTest.m in Sources */,
 				58B793B719BD91E1001CC3F8 /* timerTest.m in Sources */,
 				79BF489D1A18FB0F00B5C91A /* NSObject+PerformBlock.m in Sources */,
+				580F885B1AA84DA20047FDFA /* cookieTest.m in Sources */,
 				07537D4D1987F06500B966B0 /* dataTest.m in Sources */,
 				07537D59198C753E00B966B0 /* protocolTest.m in Sources */,
 				072068CA198DF11300A2C829 /* urlTest.m in Sources */,

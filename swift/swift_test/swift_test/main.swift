@@ -56,6 +56,13 @@ func test_array(mode : Int) {
     }
 }
 
+func test_dictionary(mode: Int) {
+    var dictionary1 : UNTestDictionary = UNTestDictionary()
+    
+    var ret = dictionary1.test1()
+    println("\(ret)")
+}
+
 func test_optional(){
     var optional1 : UNTestOptional = UNTestOptional()
 //    optional1.test1()
@@ -88,10 +95,11 @@ switch command {
         test_array(1)
     case "array2":
         test_array(2)
+    case "dic":
+        test_dictionary(1)
     case "opt":
         test_optional()
     default:
         println("other")
 }
 
-test_print();

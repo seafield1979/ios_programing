@@ -5,6 +5,15 @@
 //  Created by UnnoShusuke on 2015/01/31.
 //  Copyright (c) 2015年 B02681. All rights reserved.
 //
+/*
+    配列 Array
+    var で宣言したArrayはMutable
+    let で宣言したArrayはImmutable
+
+    高速列挙はObjCと同じ感じで使用できる
+    配列の中にいろいろな型を混ぜてもOK
+    結合が簡単 append(), +=[]
+ */
 
 import Foundation
 
@@ -24,7 +33,7 @@ class UNTestArray{
     
     func test1() -> String {
         var retStr : String = ""
-        // 全要素を参照
+        // 全要素を参照 高速列挙
         for i : Int in self.array1 {
             retStr += i.description
         }
@@ -53,7 +62,7 @@ class UNTestArray{
         self.array1.removeLast()
         self.array1.display()
         
-        // いてレータとしてforループをまわす
+        // イテレータとしてforループをまわす
         for i in [1,2,3] {
             println("for:%d", i)
         }

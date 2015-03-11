@@ -29,6 +29,7 @@
 		58B793B719BD91E1001CC3F8 /* timerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B793B619BD91E1001CC3F8 /* timerTest.m */; };
 		58B793BA19BD9232001CC3F8 /* selectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B793B919BD9232001CC3F8 /* selectorTest.m */; };
 		58D276AE19C13E8D000713D7 /* NSData+custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D276AD19C13E8D000713D7 /* NSData+custom.m */; };
+		58E302321AB02B6300E0A736 /* numberTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E302311AB02B6300E0A736 /* numberTest.m */; };
 		79BF489D1A18FB0F00B5C91A /* NSObject+PerformBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BF489C1A18FB0F00B5C91A /* NSObject+PerformBlock.m */; };
 		79CB32E419C0AC1300A72517 /* NSObject+retainCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CB32E319C0AC1300A72517 /* NSObject+retainCount.m */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,8 @@
 		58B793B919BD9232001CC3F8 /* selectorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = selectorTest.m; path = console/classes/selectorTest.m; sourceTree = "<group>"; };
 		58D276AC19C13E8D000713D7 /* NSData+custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+custom.h"; path = "category/NSData+custom.h"; sourceTree = "<group>"; };
 		58D276AD19C13E8D000713D7 /* NSData+custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+custom.m"; path = "category/NSData+custom.m"; sourceTree = "<group>"; };
+		58E302301AB02B6300E0A736 /* numberTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = numberTest.h; path = console/classes/numberTest.h; sourceTree = "<group>"; };
+		58E302311AB02B6300E0A736 /* numberTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = numberTest.m; path = console/classes/numberTest.m; sourceTree = "<group>"; };
 		79BF489B1A18FB0F00B5C91A /* NSObject+PerformBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+PerformBlock.h"; path = "category/NSObject+PerformBlock.h"; sourceTree = "<group>"; };
 		79BF489C1A18FB0F00B5C91A /* NSObject+PerformBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+PerformBlock.m"; path = "category/NSObject+PerformBlock.m"; sourceTree = "<group>"; };
 		79CB32E219C0AC1300A72517 /* NSObject+retainCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+retainCount.h"; path = "category/NSObject+retainCount.h"; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 			children = (
 				07537D421987EA6A00B966B0 /* arrayTest.h */,
 				07537D431987EA6A00B966B0 /* arrayTest.m */,
+				58E302301AB02B6300E0A736 /* numberTest.h */,
+				58E302311AB02B6300E0A736 /* numberTest.m */,
 				07537D54198C74BC00B966B0 /* classTest.h */,
 				07537D55198C74BC00B966B0 /* classTest.m */,
 				072068BF198D1E7600A2C829 /* blockTest.h */,
@@ -282,6 +287,7 @@
 				79BF489D1A18FB0F00B5C91A /* NSObject+PerformBlock.m in Sources */,
 				580F885B1AA84DA20047FDFA /* cookieTest.m in Sources */,
 				07537D4D1987F06500B966B0 /* dataTest.m in Sources */,
+				58E302321AB02B6300E0A736 /* numberTest.m in Sources */,
 				07537D59198C753E00B966B0 /* protocolTest.m in Sources */,
 				072068CA198DF11300A2C829 /* urlTest.m in Sources */,
 				072068C1198D1E7600A2C829 /* blockTest.m in Sources */,

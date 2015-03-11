@@ -24,6 +24,7 @@
 #import "stringTest.h"
 #import "propertyTest.h"
 #import "cookieTest.h"
+#import "numberTest.h"
 
 void testSharedObject();
 void testNSData();
@@ -55,6 +56,10 @@ int main(int argc, const char * argv[])
 			if(0 == strcmp((const char*)cmd_buf, "init")){
 				[udt setDefault];
 			}
+            else if(0 == strcmp((const char*)cmd_buf, "number1")){
+                numberTest *number1 = [numberTest new];
+                [number1 test1];
+            }
             else if(0 == strcmp((const char*)cmd_buf, "cookie1")){
                 cookieTest *cookie = [cookieTest new];
                 [cookie test1];

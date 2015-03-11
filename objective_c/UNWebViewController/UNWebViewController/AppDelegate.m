@@ -13,8 +13,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.viewController2 = [[UNWebViewController2 alloc] init];
-    self.window.rootViewController = self.viewController2;
+    self.viewController = [[UNWebViewController alloc] init];
+    self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
     [self initBasicAuthentication];
@@ -24,8 +24,7 @@
 							
 - (void)initBasicAuthentication
 {
-    // 大喜利用
-    NSString *url = @"http://stg.yomyo.jp/";
+    NSString *url = @"[ページのURL]";
     NSURLCredentialStorage *storage = [NSURLCredentialStorage sharedCredentialStorage];
     NSURLCredential *credential = [NSURLCredential credentialWithUser:@"[Basic認証のID]"
                                                              password:@"[Basic認証のパスワード]"

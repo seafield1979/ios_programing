@@ -8,7 +8,7 @@
 
 #import "UNWebViewController.h"
 
-#define kLoadURL   @"http://www.nintendo.co.jp"
+#define kLoadURL   @"http://stg.ameba-oogiri.jp/sp/boke"
 
 @interface UNWebViewController ()
 
@@ -21,6 +21,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        [self initUserAgent];
     }
     return self;
 }
@@ -84,6 +85,20 @@
             [self.webView reload];
             break;
     }
+}
+
+
+#pragma mark - Private method
+- (void)initUserAgent
+{
+    UIWebView *wv = [[UIWebView alloc] initWithFrame:CGRectZero];
+    NSString *ua = [wv stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+    NSString *currentVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    ua = [NSString stringWithFormat:@"%@ CaWebApp/1.0(ameba-oogiri;%@;ja;)", ua, currentVersion];
+    //バージョンを整数で取得
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UserAgent":ua}];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 

@@ -17,6 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 回転軸を変更する
+    // http://d.hatena.ne.jp/shobonengine/20110517/1305618891
+    self.baseImageView2.layer.anchorPoint = CGPointMake(0, 1);
+    
+    CGRect tempFrame = self.baseImageView2.frame;
+    tempFrame.origin.x -= tempFrame.size.width / 2;
+    tempFrame.origin.y += tempFrame.size.height / 2;
+    self.baseImageView2.frame = tempFrame;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
 }
 
@@ -81,19 +94,40 @@
  * 回転ボタンタップ
  */
 - (IBAction)rotateButtonDidTap:(id)sender {
+    CGFloat rot = (self.rotDirectionSegment.selectedSegmentIndex == 0) ? 90.0 : -90.0;
+    [self rotateView:self.imageView1 angle:rot time:0.7];
+}
+
+/*
+ * 回転ボタンタップ
+ */
+- (IBAction)rotateButton2DidTap:(id)sender {
+    CGFloat rot = (self.rotDirectionSegment.selectedSegmentIndex == 0) ? 90.0 : -90.0;
+    
+    [self rotateView:self.baseImageView2 angle:rot time:0.7];
+}
+
+#pragma mark - Private method
+
+/*
+ * Viewを回転する
+ */
+- (void)rotateView:(UIView*)view angle:(CGFloat)angle time:(CGFloat)time
+{
     if (self.transformSegment.selectedSegmentIndex == 0){
         // 新しくtranformを変換を作成する
-        [UIView animateWithDuration:1.0 animations:^(){
-            CGFloat angle = 30.0 * M_PI / 180.0;
-            self.imageView1.transform = CGAffineTransformMakeRotation(angle);
+        [UIView animateWithDuration:time animations:^(){
+            CGFloat rot = angle * M_PI / 180.0;
+            view.transform = CGAffineTransformMakeRotation(rot);
         }];
     }
     else{
         // 現在のtransformに加算する
-        [UIView animateWithDuration:1.0 animations:^(){
-            CGFloat angle = 30.0 * M_PI / 180.0;
-            self.imageView1.transform = CGAffineTransformRotate(self.imageView1.transform, angle);
+        [UIView animateWithDuration:time animations:^(){
+            CGFloat rot = angle * M_PI / 180.0;
+            view.transform = CGAffineTransformRotate(view.transform, rot);
         }];
     }
 }
+
 @end

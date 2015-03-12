@@ -71,9 +71,7 @@ typedef NS_ENUM(NSInteger, UNViewTestMode){
 	// ここから
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    UNViewTestMode mode = UNViewTestMode5;
-
-    switch(mode){
+    switch(UNViewTestModeAffine){
         case UNViewTestMode1:
             self.viewController = [[ViewController alloc] init];
             self.window.rootViewController = self.viewController;

@@ -31,6 +31,9 @@
 		58A0752E19E3F92F009DD479 /* TableView3Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A0752C19E3F92F009DD479 /* TableView3Cell.xib */; };
 		58B2B5011A91AD2F00AE057F /* UNViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B2B4FF1A91AD2F00AE057F /* UNViewController1.m */; };
 		58B2B5021A91AD2F00AE057F /* UNViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B2B5001A91AD2F00AE057F /* UNViewController1.xib */; };
+		58BDFF661AB2EDDF00E46C5E /* UNViewController21.m in Sources */ = {isa = PBXBuildFile; fileRef = 58BDFF641AB2EDDF00E46C5E /* UNViewController21.m */; };
+		58BDFF671AB2EDDF00E46C5E /* UNViewController21.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58BDFF651AB2EDDF00E46C5E /* UNViewController21.xib */; };
+		58BDFF6A1AB2EE1600E46C5E /* UNViewController22.m in Sources */ = {isa = PBXBuildFile; fileRef = 58BDFF691AB2EE1600E46C5E /* UNViewController22.m */; };
 		790ED27819B4C29B00C8D624 /* win.png in Resources */ = {isa = PBXBuildFile; fileRef = 790ED27719B4C29B00C8D624 /* win.png */; };
 		790ED27A19B4C2FB00C8D624 /* win2.png in Resources */ = {isa = PBXBuildFile; fileRef = 790ED27919B4C2FB00C8D624 /* win2.png */; };
 /* End PBXBuildFile section */
@@ -81,6 +84,11 @@
 		58B2B4FE1A91AD2F00AE057F /* UNViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNViewController1.h; sourceTree = "<group>"; };
 		58B2B4FF1A91AD2F00AE057F /* UNViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNViewController1.m; sourceTree = "<group>"; };
 		58B2B5001A91AD2F00AE057F /* UNViewController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UNViewController1.xib; sourceTree = "<group>"; };
+		58BDFF631AB2EDDF00E46C5E /* UNViewController21.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNViewController21.h; sourceTree = "<group>"; };
+		58BDFF641AB2EDDF00E46C5E /* UNViewController21.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNViewController21.m; sourceTree = "<group>"; };
+		58BDFF651AB2EDDF00E46C5E /* UNViewController21.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UNViewController21.xib; sourceTree = "<group>"; };
+		58BDFF681AB2EE1600E46C5E /* UNViewController22.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNViewController22.h; sourceTree = "<group>"; };
+		58BDFF691AB2EE1600E46C5E /* UNViewController22.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNViewController22.m; sourceTree = "<group>"; };
 		790ED27719B4C29B00C8D624 /* win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = win.png; path = ViewControllerTest/Image/win.png; sourceTree = "<group>"; };
 		790ED27919B4C2FB00C8D624 /* win2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = win2.png; path = ViewControllerTest/Image/win2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +193,11 @@
 				58B2B4FE1A91AD2F00AE057F /* UNViewController1.h */,
 				58B2B4FF1A91AD2F00AE057F /* UNViewController1.m */,
 				58B2B5001A91AD2F00AE057F /* UNViewController1.xib */,
+				58BDFF631AB2EDDF00E46C5E /* UNViewController21.h */,
+				58BDFF641AB2EDDF00E46C5E /* UNViewController21.m */,
+				58BDFF651AB2EDDF00E46C5E /* UNViewController21.xib */,
+				58BDFF681AB2EE1600E46C5E /* UNViewController22.h */,
+				58BDFF691AB2EE1600E46C5E /* UNViewController22.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -312,6 +325,7 @@
 				07206935198E888F00A2C829 /* Images.xcassets in Resources */,
 				07847D1F1995BB7F003B8D65 /* TableViewCustomCell.xib in Resources */,
 				790ED27A19B4C2FB00C8D624 /* win2.png in Resources */,
+				58BDFF671AB2EDDF00E46C5E /* UNViewController21.xib in Resources */,
 				790ED27819B4C29B00C8D624 /* win.png in Resources */,
 				5899456119AC2F3800670F0A /* TableViewController2.xib in Resources */,
 				58A0752819E3F699009DD479 /* TableViewController3.xib in Resources */,
@@ -336,10 +350,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58BDFF6A1AB2EE1600E46C5E /* UNViewController22.m in Sources */,
 				07847D221995BE9C003B8D65 /* CustomTableViewCell.m in Sources */,
 				58A0752D19E3F92F009DD479 /* TableView3Cell.m in Sources */,
 				0720692D198E888F00A2C829 /* AppDelegate.m in Sources */,
 				5899456519AC303200670F0A /* CustomCell.m in Sources */,
+				58BDFF661AB2EDDF00E46C5E /* UNViewController21.m in Sources */,
 				58A0752719E3F699009DD479 /* TableViewController3.m in Sources */,
 				07662F411993D6CE00134472 /* TableViewController.m in Sources */,
 				58B2B5011A91AD2F00AE057F /* UNViewController1.m in Sources */,
@@ -452,10 +468,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shusuke Unno (B6QB2T3FJS)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ViewControllerTest/ViewControllerTest-Prefix.pch";
 				INFOPLIST_FILE = "ViewControllerTest/ViewControllerTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "408461c4-ef78-4303-9071-c74f0ebc5832";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

@@ -2,9 +2,6 @@
 //  AppDelegate.m
 //  ViewControllerTest
 //
-//  Created by 海野 秀祐 on 2014/08/04.
-//  Copyright (c) 2014年 海野 秀祐. All rights reserved.
-//
 
 #import "AppDelegate.h"
 
@@ -27,27 +24,42 @@
 {
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-#if VC_MODE == 0
-    self.viewController1 = [[UNViewController1 alloc]initWithNibName:@"UNViewController1" bundle: nil];
-    self.window.rootViewController = self.viewController1;
-#elif VC_MODE == 1
-	self.tableViewController2 = [[TableViewController2 alloc]init];
-    self.window.rootViewController = self.tableViewController2;
-    
-    // ナビゲーションコントローラにベースとなるコントローラをセット
-    self.tableViewController2 = [[TableViewController2 alloc]init];
-    _navigationController = [[UINavigationController alloc] initWithRootViewController:_tableViewController2];
-    
-    // ナビゲーションコントローラのビューをウィンドウに貼付ける
-    self.window.rootViewController = self.tableViewController3;
+    switch(4){
+        case 1:
+            {
+                self.viewController1 = [[UNViewController1 alloc]initWithNibName:@"UNViewController1" bundle: nil];
+                self.window.rootViewController = self.viewController1;
+            }
+            break;
+        case 2:
+            {
+                self.tableViewController2 = [[TableViewController2 alloc]init];
+                self.window.rootViewController = self.tableViewController2;
+                
+                // ナビゲーションコントローラにベースとなるコントローラをセット
+                self.tableViewController2 = [[TableViewController2 alloc]init];
+                _navigationController = [[UINavigationController alloc] initWithRootViewController:_tableViewController2];
+                
+                // ナビゲーションコントローラのビューをウィンドウに貼付ける
+                self.window.rootViewController = self.tableViewController3;
+            }
+            break;
+        case 3:
+            {
+                // ナビゲーションコントローラにベースとなるコントローラをセット
+                self.tableViewController3 = [[TableViewController3 alloc]init];
+                // ナビゲーションコントローラのビューをウィンドウに貼付ける
+                self.window.rootViewController = self.tableViewController3;
+            }
+            break;
+        case 4:
+            {
+                self.viewController22 = [[UNViewController22 alloc]initWithNibName:@"UNViewController21" bundle:nil];
+                self.window.rootViewController = self.viewController22;
+            }
+            break;
+    }
 
-#elif VC_MODE == 2
-    // ナビゲーションコントローラにベースとなるコントローラをセット
-    self.tableViewController3 = [[TableViewController3 alloc]init];
-    // ナビゲーションコントローラのビューをウィンドウに貼付ける
-    self.window.rootViewController = self.tableViewController3;
-#endif
-    
     [self.window makeKeyAndVisible];
 		
     return YES;

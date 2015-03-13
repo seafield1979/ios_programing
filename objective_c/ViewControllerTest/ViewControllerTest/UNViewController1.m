@@ -2,9 +2,6 @@
 //  UNViewController1.m
 //  ViewControllerTest
 //
-//  Created by B02681 on 2015/02/16.
-//  Copyright (c) 2015年 海野 秀祐. All rights reserved.
-//
 
 #import "UNViewController1.h"
 #import "QuartzCore/QuartzCore.h"

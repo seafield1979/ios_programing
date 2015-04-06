@@ -5,16 +5,21 @@
 //  Created by UnnoShusuke on 2015/01/31.
 //  Copyright (c) 2015年 B02681. All rights reserved.
 //
+/*
+Swiftのメソッドの特徴
+・引数に名前が設定できる
+・引数に初期値を設定できる
+・引数の名前が異なれば、同じ名前のメソッドを宣言できる
+・戻り値を複数返せる（タプル（リスト））
+・外部引数を使用してObjective-Cみたいに呼び出し側でパラメータの名前を指定できる
+・Objective-Cみたいに変数に関数を代入できる。関数の引数に無名関数を渡せる
+ */
 
 import Foundation
 
 
 class UNTestFunc {
-    
-    init() {
         
-    }
-    
     func test1() {
         //①引数なし・戻り値なし
         func hello(){
@@ -158,11 +163,40 @@ class UNTestFunc {
             break
         }
         
+        var ff1 : Int? = nil
+        if ff1 != nil {
+            println(ff1!)
+        }
+        
         if let f = func1 {
-            self.add(10,b:20)
-            let ret = f(20, 10)
+        //if func1 != nil {
+            let ret = f(20,10)
             println("ret:\(ret)")
         }
     }
     
+    
+    // MARK: 無名関数
+    // 関数型の引数を受け取るメソッド
+    typealias FuncType = (Int, Int)->Int
+    
+    func calc1(a : Int, function:FuncType) {
+        println(function(a, a))
+    }
+
+    func test4() {
+        println("UNTextFunction:test4()")
+        
+        // calc1 に無名関数を渡す
+        self.calc1(100, function: {
+            (a:Int, b:Int) in
+                return a * b
+        })
+        
+        // ちなみに無名関数を渡さない場合は事前に関数型変数に代入しておく
+        var add1 : FuncType = {(a : Int, b : Int) in
+            return a + b
+        }
+        self.calc1(33, function: add1)
+    }
 }

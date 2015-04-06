@@ -63,6 +63,8 @@ func test_func(mode:Int) {
         func1.test2()
     case 3:
         func1.test3()
+    case 4:
+        func1.test4()
     default:
         break
     }
@@ -91,11 +93,21 @@ func test_dictionary(mode: Int) {
     println("\(ret)")
 }
 
-func test_optional(){
+func test_optional(mode: Int){
     var optional1 : UNTestOptional = UNTestOptional()
-//    optional1.test1()
-//    optional1.test2()
-    optional1.test3()
+    
+    switch mode {
+    case 1:
+        optional1.test1()
+    case 2:
+        optional1.test2()
+    case 3:
+        optional1.test3()
+    case 4:
+        optional1.test4()
+    default:
+        break
+    }
 }
 
 func test_enum(mode : Int) {
@@ -120,37 +132,50 @@ func input() -> String {
     return strData.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
 }
 
-let command = input()
 
-switch command {
-    case "basis":
-        test_basis()
-        break
-    case "class":
-        test_class()
-    case "class2":
-        test_class2()
-    case "func":
-        test_func(1)
-    case "func2":
-        test_func(2)
-    case "func3":
-        test_func(3)
-    case "array1":
-        test_array(1)
-    case "array2":
-        test_array(2)
-    case "array3":
-        test_array(3)
-    case "dic":
-        test_dictionary(1)
-    case "enum1":
-        test_enum(1)
-    case "enum2":
-        test_enum(2)
-    case "opt":
-        test_optional()
-    default:
-        println("other")
+var breakWhile = false
+while !breakWhile {
+    let command = input()
+
+    switch command {
+        case "basis":
+            test_basis()
+            break
+        case "class":
+            test_class()
+        case "class2":
+            test_class2()
+        case "func":
+            test_func(1)
+        case "func2":
+            test_func(2)
+        case "func3":
+            test_func(3)
+        case "func4":
+            test_func(4)
+        case "array1":
+            test_array(1)
+        case "array2":
+            test_array(2)
+        case "array3":
+            test_array(3)
+        case "dic":
+            test_dictionary(1)
+        case "enum1":
+            test_enum(1)
+        case "enum2":
+            test_enum(2)
+        case "opt1":
+            test_optional(1)
+        case "opt2":
+            test_optional(2)
+        case "opt3":
+            test_optional(3)
+        case "opt4":
+            test_optional(4)
+        
+        default:
+            println("other")
+            breakWhile = true
+    }
 }
-

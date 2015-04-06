@@ -32,34 +32,16 @@ import Foundation
 class UNTestOptional {
     
     // declear variables
-    var _optInt : Int?
-    var _optStr : String?
+    var optInt : Int?
+    var optStr : String?
     
     // init
     init(){
-        _optInt = nil
-        _optStr = nil
+        optInt = nil
+        optStr = nil
     }
+
     
-    // accessor
-    var optInt:Int? {
-        get {
-            return _optInt
-        }
-        set(int1) {
-            _optInt = int1
-        }
-    }
-    var optStr:String? {
-        get {
-            return _optStr
-        }
-        set(str1) {
-            _optStr = str1
-        }
-    }
-    
-    // method
     func test1() {
         optInt = nil        // OK!
         optStr = nil        // OK!
@@ -129,10 +111,33 @@ class UNTestOptional {
         
     }
     
+    /*
+     * オプショナル変数を簡単に使用する方法です
+     */
     func test4() {
+        println("UNTextOptional:test4")
+
+        // 宣言時に?をつけて、参照時も?をつける。これが一番簡単
+        // 参照時に?をつけるとnilのときとnil以外のときでエラーにならずに値が取り出せる
         var str : String? = nil
         println(str?.toInt())       // nilでも大丈夫
         str = "100"
         println(str?.toInt())       // nil以外でも大丈夫
+        println(str!.toInt())       // 強制的にアンラップする
+        
+        // ?を使用せずに値を参照したい場合は自分でnilチェックする
+        var str2 : String? = nil
+        if str2 != nil {
+            println("str2:\(str2)")
+        } else {
+            println("str2 is nil")
+        }
+        
+        str2 = "hello"
+        if str2 != nil {
+            println("str2:\(str2)")
+        } else {
+            println("str2 is nil")
+        }
     }
 }

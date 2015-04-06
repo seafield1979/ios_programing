@@ -44,7 +44,25 @@
 	for(NSString *key in [dic1 allKeys]){
 		NSLog(@"dic1 %@ : %@", key, [dic1 objectForKey:key]);
 	}
+}
 
+- (void)test2
+{
+    NSMutableDictionary *params = @{}.mutableCopy;
+    params[@"aaa"] = @"hoge";     //<- モダンな書き方で未設定のキーに値を設定すると実行時エラー
+    [params setObject:@"hoge" forKey:@"key1"];        //<- これもだめ
+    
+    NSLog(@"%@", params);
+    
+    
+    //範囲外の参照
+    NSDictionary *dic2 = @{@"111":@{@"222":@[@"ok",@"ng",@"yea"]}};
+    
+    NSLog(@"%@ %@", dic2[@"111"][@"222"][0],dic2[@"111"][@"222"][1]);
+    NSArray *arr2 = dic2[@"111"][@"222"];
+    if (arr2.count > 2){
+        NSLog(@"%@", dic2[@"111"][@"222"][2]);
+    }
 }
 
 @end

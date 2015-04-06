@@ -16,7 +16,7 @@
 
 -(void)dealloc
 {
-    NSLog(@"dealloc");
+    NSLog(@"property1:dealloc");
 }
 
 -(NSString*)description
@@ -155,6 +155,19 @@
     self.dynamic1 = @"dynamic1";
     NSLog(@"dynamic test: %@", self.dynamic1);
     
+    
+    // ローカル変数の解放
+    // ローカル変数は基本strongなのでスコープを抜けるとき（メソッドを終了するとき）に自動でnilが設定され解放される
+    property1 *prop1 = [property1 new];
+    NSLog(@"1: %@", prop1);
+    
+    // __weakをつけてweakで宣言すると、宣言直後に解放されてnilになってしまう。
+    __weak property1 *prop2 = [property1 new];
+    NSLog(@"2: %@", prop2);
+}
+
+- (void)test2
+{
     
 }
 

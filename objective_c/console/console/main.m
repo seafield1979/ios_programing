@@ -111,7 +111,11 @@ int main(int argc, const char * argv[])
 				dictionaryTest *dic = [[dictionaryTest alloc]init];
 				[dic test1];
 			}
-			else if(0 == strcmp((const char*)cmd_buf, "block1")){
+            else if(0 == strcmp((const char*)cmd_buf, "dic2")){
+                dictionaryTest *dic = [[dictionaryTest alloc]init];
+                [dic test2];
+            }
+            else if(0 == strcmp((const char*)cmd_buf, "block1")){
 				blockTest *bt = [[blockTest alloc]init];
 				[bt test1];
 			}

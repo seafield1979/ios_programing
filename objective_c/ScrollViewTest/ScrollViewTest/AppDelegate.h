@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "ViewController2.h"
 #import "ViewController3.h"
+#import "ViewControllerAutolayout.h"
 #import "ViewControllerWeb.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
@@ -18,6 +19,7 @@
 @property (strong, nonatomic) ViewController *viewController;
 @property (strong, nonatomic) ViewController2 *viewController2;
 @property (strong, nonatomic) ViewController3 *viewController3;
+@property (strong, nonatomic) ViewControllerAutolayout *viewControllerAutolayout;
 @property (strong, nonatomic) ViewControllerWeb *viewControllerWeb;
 
 @end

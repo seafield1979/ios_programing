@@ -101,6 +101,16 @@
     
     NSMutableString *mstr2 = @"hogehoge".mutableCopy;
     NSLog(@"%@", mstr2);
+    
+    // descriptions
+    NSDate *date1 = [NSDate date];
+    NSString *str = date1.description;
+    NSLog(@"%@", str);
+    
+    NSDictionary *dic1 = @{@"hoge1":@(1), @"hoge2":@"bababa"};
+    BOOL aaa = [dic1[@"hoge1"] boolValue];
+    
+    NSLog(@"%@ %@ %d", ((NSNumber*)dic1[@"hoge1"]).description, ((NSObject*)dic1[@"hoge2"]).description, aaa);
 
 }
 @end

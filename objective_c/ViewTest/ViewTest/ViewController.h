@@ -22,6 +22,7 @@
 @property (strong, nonatomic) UIView *imgView2;
 @property (strong, nonatomic) UIView *priView1;
 @property (strong, nonatomic) UIView *priView2;
+@property (weak, nonatomic) IBOutlet UILabel *label1;
 
 @property (strong, nonatomic) UIView *tapView;
 @property (strong, nonatomic) MyTouchView *myTouchView;

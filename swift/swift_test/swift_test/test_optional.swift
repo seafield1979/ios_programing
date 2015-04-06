@@ -17,6 +17,14 @@
     Implicitly unwrapped Optional型 (nilを代入できる、使用時にアンラップする必要は無いがnilが入っているとエラーになるため、nilが入っている可能性がある場合は ?? でnilの時の置き換わる値を設定する必要がある）
         宣言  var str : String!
         参照  str
+
+    nilの入る変数を使う一番間簡単な方法
+        Optional型の変数を宣言
+            var str : String? = nil
+        変数を使用する
+            println(str?.toInt())       // nilでも大丈夫
+            str = "100"
+            println(str?.toInt())       // nil以外でも大丈夫
 */
 
 import Foundation
@@ -119,5 +127,12 @@ class UNTestOptional {
         str2 = nil
         println((str2 ?? "2").toInt())        // str2はnilなので 2が出力される
         
+    }
+    
+    func test4() {
+        var str : String? = nil
+        println(str?.toInt())       // nilでも大丈夫
+        str = "100"
+        println(str?.toInt())       // nil以外でも大丈夫
     }
 }

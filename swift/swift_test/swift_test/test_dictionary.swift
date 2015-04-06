@@ -61,12 +61,24 @@ class UNTestDictionary
         var d7 = ["Apple" : 100, "Orange" : 200]
         println("d7'keys: " + d7.keys.array.description)
         
-        // 値だけ取得
+        // イテレーションでループを回す
         println("d7'values: " + Array(d7.values).description)
-               
+        for key in d7.keys {
+            println("d7_2 \(key):\(d7[key])")
+        }
         
+        // イテレーションでループを回す(キーと値を取得)
+        for (key, value) in d7 {
+            println("d7_3 \(key):\(value)")
+        }
         
         return ""
+    }
+    
+    func test2() {
+        var d1 : [String : Int]? = nil;
+        
+        
     }
     
     

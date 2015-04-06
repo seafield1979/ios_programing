@@ -100,4 +100,69 @@ class UNTestFunc {
         let ret = compareNumber([1,2,3,4,5])
         println("min: \(ret.min) max:\(ret.max)")
     }
+
+    // MARK: test2
+    // text内にcharactersのリストの文字が含まれていたらtrueを返す
+    func containsCharacter(text:String, characters:Character ...) -> Bool {
+        for ch in characters {
+            for t in text {
+                if ch == t {
+                    println("\(ch) is in the \(text)")
+                    return true
+                }
+            }
+        }
+        return false
+    }
+
+    // 可変引数のテスト
+    func test2() {
+        println("UNTextFunction:test2()")
+        
+        containsCharacter("abcdefg", characters: "i") // false
+        containsCharacter("abcdefg", characters:"z", "o", "g") // true
+    }
+
+    // MARK: test3
+    // 関数の型と関数変数
+    func add(a : Int, b : Int) -> Int {
+        return a + b
+    }
+    func sub(a : Int, b : Int) -> Int {
+        return a - b
+    }
+    func mul(a : Int, b : Int) -> Int {
+        return a * b;
+    }
+    func div(a : Int, b : Int) -> Int {
+        if b == 0 {
+            return 0
+        }
+        return a / b
+    }
+    func test3() {
+        println("UNTextFunction:test3()")
+        var mode : Int = 3
+        
+        var func1 : ((Int, Int) -> Int)? = nil
+        switch mode {
+        case 1:
+            func1 = self.add
+        case 2:
+            func1 = self.sub
+        case 3:
+            func1 = self.mul
+        case 4:
+            func1 = self.div
+        default:
+            break
+        }
+        
+        if let f = func1 {
+            self.add(10,b:20)
+            let ret = f(20, 10)
+            println("ret:\(ret)")
+        }
+    }
+    
 }

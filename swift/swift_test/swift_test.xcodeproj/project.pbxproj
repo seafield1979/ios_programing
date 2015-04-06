@@ -38,7 +38,7 @@
 		582802581A9DFA8B00246C41 /* Array+Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Display.swift"; sourceTree = "<group>"; };
 		5872284D1AAF0F9400F2C430 /* test_dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test_dictionary.swift; sourceTree = "<group>"; };
 		5872A90D1A71E7B200FF66B5 /* swift_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = swift_test; sourceTree = BUILT_PRODUCTS_DIR; };
-		5872A9101A71E7B200FF66B5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		5872A9101A71E7B200FF66B5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = main.swift; path = swift_test/main.swift; sourceTree = "<group>"; };
 		5872A9171A72008800FF66B5 /* optional_test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = optional_test.swift; sourceTree = "<group>"; };
 		793762571A7A626400196768 /* test_class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test_class.swift; sourceTree = "<group>"; };
 		7947EC3E1A7D0CD10038B8BD /* test_function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test_function.swift; sourceTree = "<group>"; };
@@ -69,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				582802531A9DE6ED00246C41 /* c */,
+				5872A9101A71E7B200FF66B5 /* main.swift */,
 				5872A90F1A71E7B200FF66B5 /* swift_test */,
 				5872A90E1A71E7B200FF66B5 /* Products */,
 			);
@@ -85,7 +86,6 @@
 		5872A90F1A71E7B200FF66B5 /* swift_test */ = {
 			isa = PBXGroup;
 			children = (
-				5872A9101A71E7B200FF66B5 /* main.swift */,
 				7947EC441A7D1DBB0038B8BD /* test_basis.swift */,
 				793762571A7A626400196768 /* test_class.swift */,
 				580F88621AA882CA0047FDFA /* test_class_advance.swift */,

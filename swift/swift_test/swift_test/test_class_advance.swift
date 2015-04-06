@@ -16,36 +16,55 @@
 import Foundation
 
 // MARK: - 継承
-class Parent{
+class Parent1{
     var position : CGRect
     init() {
-        self.position = CGRectMake(0, 0, 0, 0)
+        self.position = CGRectMake(1, 2, 3, 4)
+    }
+    func hoge() {
+        println("Parent1:hoge")
     }
 }
 
-class Child : Parent{
+class Child1 : Parent1{
     var name : String?
     
     override init() {
         super.init()
         self.name = ""
     }
+    
+    func test1() {
+        // 親クラスのメンバの参照、メソッドの呼び出し
+        self.hoge()
+        println("position: \(position)")
+    }
 }
 
 // MARK: - オーバーライド
+/*
+    Parent2のinit,hogeを子クラスのChild2でオーバーライドする
+ */
 class Parent2{
     init(){
+        println("Parent2:init")
     }
     func hoge(){
+        println("Parent2:hoge")
     }
 }
 
 class Child2 : Parent2 {
     override init(){
         super.init()
+        println("Child2:init")
     }
     override func hoge(){
-    
+        super.hoge()    // 親クラスのメソッドを呼び出す
+        println("Child2:hoge")
+    }
+    func test1() {
+        self.hoge()
     }
 }
 

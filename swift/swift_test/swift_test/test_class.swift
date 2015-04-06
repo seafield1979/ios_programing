@@ -64,6 +64,7 @@ class UNClassTest {
     }
     
     // initializer
+    // イニシャライザの前にはfuncは不要
     // 引数なし
     init () {
         _str1 = ""

@@ -69,5 +69,31 @@ class UNTestArray{
         
         return ""
     }
+    
+    func test3() {
+        // 混合型の配列から指定の方の値だけを抜き出す
+        var ks : [AnyObject] = []
+        var ki : [AnyObject] = []
+        var array: [AnyObject] = ["abc", 1, "def", 2, "ghi", 3]
+        
+        for (var i = 0; i < array.count; i++) {
+            // String
+            if let string = array[i] as? String {
+                ks.append(string)
+            }
+            // Int
+            if let int1 = array[i] as? Int {
+                ki.append(int1)
+            }
+        }
+        println("test3_1: \(ks)")
+        println("test3_1: \(ki)")
+        
+        
+        // その２
+        var array2: [Any] = ["abc", 1, "def", 2, "ghi", 3]
+        var k2 = array2.filter{v in v is String}
+        println("test3_2: \(k2)")
+    }
 
 }

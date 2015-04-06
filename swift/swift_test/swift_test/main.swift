@@ -9,10 +9,10 @@
 import Foundation
 import Darwin
 
-println("Hello, World!")
+println("Hello, World!\nplease input test name! ")
 
 func test_print() {
-    println("hello")
+    println("hello:")
     
     // 変数を埋め込む
     let str1:String = "syutaro"
@@ -40,19 +40,47 @@ func test_class() {
 
 }
 
-func test_func() {
-    println("test_func")
+func test_class2() {
+    // 継承
+    println("test_class2")
+    var class2 : Child1 = Child1()
+    class2.test1()
+    
+    // オーバーライド
+    var class22 : Child2 = Child2()
+    class22.test1()
+    
+}
+
+func test_func(mode:Int) {
+    println("test_func mode:\(mode)")
+    
     var func1 : UNTestFunc = UNTestFunc()
-    func1.test1()
+    switch mode {
+    case 1:
+        func1.test1()
+    case 2:
+        func1.test2()
+    case 3:
+        func1.test3()
+    default:
+        break
+    }
 }
 
 func test_array(mode : Int) {
     println("test_array")
     var array1 : UNTestArray = UNTestArray()
-    if mode == 1 {
+    
+    switch mode {
+    case 1:
         var ret = array1.test1()
-    } else if mode == 2 {
+    case 2:
         var ret = array1.test2()
+    case 3:
+        array1.test3()
+    default:
+        println()
     }
 }
 
@@ -68,6 +96,17 @@ func test_optional(){
 //    optional1.test1()
 //    optional1.test2()
     optional1.test3()
+}
+
+func test_enum(mode : Int) {
+    let enum1 = UNTestEnum()
+    
+    switch mode {
+    case 1:
+        enum1.test1()
+    default:
+        break;
+    }
 }
 
 /*
@@ -89,14 +128,26 @@ switch command {
         break
     case "class":
         test_class()
+    case "class2":
+        test_class2()
     case "func":
-        test_func()
+        test_func(1)
+    case "func2":
+        test_func(2)
+    case "func3":
+        test_func(3)
     case "array1":
         test_array(1)
     case "array2":
         test_array(2)
+    case "array3":
+        test_array(3)
     case "dic":
         test_dictionary(1)
+    case "enum1":
+        test_enum(1)
+    case "enum2":
+        test_enum(2)
     case "opt":
         test_optional()
     default:

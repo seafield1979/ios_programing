@@ -96,6 +96,18 @@ class UNTestBasis {
             // 何らかの処理を3回実施します
             println("hogehoge")
         }
+        
+        // 多重ループを一気に抜ける
+        println("----- for5 -----")
+        for_i: for i in 1...5 {
+            for j in 1...5 {
+                println("i=\(i) j=\(j)")
+                if i == 2 && j == 2 {
+                    println("break for_i")
+                    break for_i
+                }
+            }
+        }
     }
     
     // MARK: SWITCH ~ CASE

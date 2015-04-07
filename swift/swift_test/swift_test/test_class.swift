@@ -64,6 +64,11 @@ class UNClassTest {
         }
     }
     
+    // getterだけの場合は get のスコープを省略できる
+    var str3 : String {
+        return "hogehoge str3"
+    }
+    
     // initializer
     // イニシャライザの前にはfuncは不要
     // 引数なし
@@ -82,10 +87,28 @@ class UNClassTest {
         return "UNClassTest str1:\(str1)"
     }
     
-    func getset() {
+    // クラスメソッド
+    class func classMethod() {
+        // type method implementation goes here
+        println("class method!")
+    }
+    
+    // クラス変数（の代用）
+    class var classVar : String {
+        get {
+            return "classVar!";
+        }
+    }
+    
+    func test1() {
+        println("----- class1 -----")
         str1 = "1"
         str2 = "2"
-        println("str1:\(str1) str2:\(str2)")
+        println("str1:\(str1) str2:\(str2) str3:\(str3)")
+        
+        println("----- class2 -----")
+        println(UNClassTest.classMethod())
+        println(UNClassTest.classVar)
     }
 }
 

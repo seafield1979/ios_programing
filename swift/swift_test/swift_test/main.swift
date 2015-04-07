@@ -27,14 +27,14 @@ func test_basis() {
     
 //    basis1.test_switch()
 //    basis1.test_tuple()
-//    basis1.test_for()
-    basis1.test_tuple2()
+    basis1.test_for()
+//    basis1.test_tuple2()
 }
 
 func test_class() {
     println("test_class")
     var class1 : UNClassTest = UNClassTest(str1: "ok", str2: "ng")
-    println (class1.getset())
+    println (class1.test1())
 
 }
 
@@ -122,6 +122,32 @@ func test_enum(mode : Int) {
     }
 }
 
+func test_struct(mode:Int) {
+    var struct1 : UNTestStruct = UNTestStruct()
+    
+    switch mode {
+    case 1:
+        struct1.test1()
+    case 2:
+        struct1.test2()
+    default:
+        break
+    }
+}
+
+func test_property(mode:Int) {
+    var property : UNTestProperty = UNTestProperty()
+    
+    switch mode {
+    case 1:
+        property.test1()
+    case 2:
+        property.test2()
+    default:
+        break
+    }
+}
+
 /*
  * コンソールでユーザーの入力を取得する
  */
@@ -180,9 +206,17 @@ while !breakWhile {
             test_optional(3)
         case "opt4":
             test_optional(4)
-        
+        case "struct":
+            test_struct(1)
+        case "struct2":
+            test_struct(2)
+        case "property":
+            test_property(1)
+        case "property2":
+            test_property(2)
+        case "exit":
+            breakWhile = true
         default:
             println("other")
-            breakWhile = true
     }
 }

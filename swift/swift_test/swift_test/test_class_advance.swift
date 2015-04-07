@@ -126,6 +126,7 @@ class UNTestClassAdvance
     
     func test2() {
         // あるクラスを継承しているかを判定
+        println("\nInherit check")
         var array = [Child1(), Parent1(), Parent3()];
         
         for obj in array {
@@ -140,6 +141,17 @@ class UNTestClassAdvance
                 println("obj is Parent3")
             }
         }
+        
+        // 同一インスタンスのチェック
+        println("Instance same check")
+        var obj1 : AnyObject = array[1];
+        for obj in array {
+            println("----")
+            if obj1 === obj {
+                println("obj1 is instance of \(NSStringFromClass(obj.dynamicType))")
+            }
+        }
+        
     }
 }
 

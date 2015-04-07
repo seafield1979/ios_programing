@@ -27,6 +27,7 @@ class クラス名{
 
 // オブジェクトの生成
 var user: User = User(name: "taro", number: 100)
+
 // オブジェクトメソッドの呼び出し
 user.hello()
 

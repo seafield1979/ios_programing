@@ -9,8 +9,6 @@
 import Foundation
 import Darwin
 
-println("Hello, World!\nplease input test name! ")
-
 func test_print() {
     println("hello:")
     
@@ -40,16 +38,17 @@ func test_class() {
 
 }
 
-func test_class2() {
-    // 継承
-    println("test_class2")
-    var class2 : Child1 = Child1()
-    class2.test1()
+func test_class2(mode:Int) {
+    var class1 : UNTestClassAdvance = UNTestClassAdvance()
     
-    // オーバーライド
-    var class22 : Child2 = Child2()
-    class22.test1()
-    
+    switch mode {
+    case 1:
+        class1.test1()
+    case 2:
+        class1.test2()
+    default:
+        break
+    }
 }
 
 func test_func(mode:Int) {
@@ -65,6 +64,8 @@ func test_func(mode:Int) {
         func1.test3()
     case 4:
         func1.test4()
+    case 5:
+        func1.test5()
     default:
         break
     }
@@ -125,6 +126,8 @@ func test_enum(mode : Int) {
  * コンソールでユーザーの入力を取得する
  */
 func input() -> String {
+    println("\nplease input test name! ")
+
     var keyboard = NSFileHandle.fileHandleWithStandardInput()
     var inputData = keyboard.availableData
     var strData = NSString(data: inputData, encoding: NSUTF8StringEncoding)!
@@ -144,7 +147,9 @@ while !breakWhile {
         case "class":
             test_class()
         case "class2":
-            test_class2()
+            test_class2(1)
+        case "class3":
+            test_class2(2)
         case "func":
             test_func(1)
         case "func2":
@@ -153,6 +158,8 @@ while !breakWhile {
             test_func(3)
         case "func4":
             test_func(4)
+        case "func5":
+            test_func(5)
         case "array1":
             test_array(1)
         case "array2":

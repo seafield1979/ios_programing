@@ -12,6 +12,31 @@
 
     ・オーバーライド
     ・タイプ・プロパティとタイプ・メソッド
+
+    ・クラスの判定（あるクラスを継承しているかどうか）
+        あるクラスを継承しているかを判定するには  as? を使用する
+        if let sub1 = object1 as? SubClass {
+        }
+
+        もしくは is演算子を使用する
+        if sub1 is SubClass {
+
+        }
+
+    ・クラスの判定（特定のクラスかどうか） Objective-cのisMemberOfClass:メソッドと同じ
+        if sub1.dynamicType === SubClass.self
+
+    ・同一インスタンスの判定
+        var monsterA = Monster()
+        monsterA.name = "スライム"
+        var monsterB = monsterA
+
+        if monsterA === monsterB {
+        println("同じインスタンス")
+        }
+        if monsterA !== monsterB {
+        println("同じインスタンスではない")
+        }
  */
 import Foundation
 
@@ -80,5 +105,43 @@ class Child3 : Parent3 {
 //        
 //    }
 }
+
+// MARK: クラス判定
+class UNTestClassAdvance
+{
+    init() {
+    }
+    
+    func test1() {
+        // 継承
+        println("test_class2")
+        var class2 : Child1 = Child1()
+        class2.test1()
+        
+        // オーバーライド
+        var class22 : Child2 = Child2()
+        class22.test1()
+    }
+    
+    
+    func test2() {
+        // あるクラスを継承しているかを判定
+        var array = [Child1(), Parent1(), Parent3()];
+        
+        for obj in array {
+            println("----")
+            if obj is Child1 {
+                println("obj is Child1")
+            }
+            if obj is Parent1 {
+                println("obj is Parent1")
+            }
+            if obj is Parent3 {
+                println("obj is Parent3")
+            }
+        }
+    }
+}
+
 
 // MARK: - タイププロパティとタイプメソッド

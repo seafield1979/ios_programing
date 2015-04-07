@@ -19,7 +19,7 @@ import Foundation
 
 
 class UNTestFunc {
-        
+    
     func test1() {
         //①引数なし・戻り値なし
         func hello(){
@@ -122,7 +122,7 @@ class UNTestFunc {
 
     // 可変引数のテスト
     func test2() {
-        println("UNTextFunction:test2()")
+        println("UNTestFunction:test2()")
         
         containsCharacter("abcdefg", characters: "i") // false
         containsCharacter("abcdefg", characters:"z", "o", "g") // true
@@ -146,7 +146,7 @@ class UNTestFunc {
         return a / b
     }
     func test3() {
-        println("UNTextFunction:test3()")
+        println("UNTestFunction:test3()")
         var mode : Int = 3
         
         var func1 : ((Int, Int) -> Int)? = nil
@@ -176,7 +176,7 @@ class UNTestFunc {
     }
     
     
-    // MARK: 無名関数
+    // MARK:test4 無名関数
     // 関数型の引数を受け取るメソッド
     typealias FuncType = (Int, Int)->Int
     
@@ -185,7 +185,7 @@ class UNTestFunc {
     }
 
     func test4() {
-        println("UNTextFunction:test4()")
+        println("UNTestFunction:test4()")
         
         // calc1 に無名関数を渡す
         self.calc1(100, function: {
@@ -198,5 +198,24 @@ class UNTestFunc {
             return a + b
         }
         self.calc1(33, function: add1)
+    }
+    
+    // MARK:test5 クロージャ
+    // スコープ内で宣言され、使用できる範囲が制限された関数。関数の中で関数を宣言できたりする
+    func test5() {
+        println("UNTestFunction:test5()")
+        
+        func hello1(a:Int, b:Int) -> Int{
+            return a + b * (a + b)
+        }
+        println("hello1:" + hello1(1,2).description)
+        
+        let c : Int = 3
+        func hello2(a:Int, b:Int) -> Int{
+            // 呼び出し元のスコープの変数 (c) を参照できる
+            return a + b * (a + b + c)
+        }
+        
+        println("hello2:" + hello2(1,2).description)
     }
 }

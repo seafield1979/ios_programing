@@ -82,6 +82,12 @@ class UNClassTest {
         _str2 = str2
     }
     
+    // デイニシャライザ
+    deinit {
+        // オブジェクト解放時の処理
+        println("UNTestClass:deinit")
+    }
+    
     // method
     func hello() -> String {
         return "UNClassTest str1:\(str1)"

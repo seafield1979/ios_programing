@@ -148,6 +148,11 @@ func test_property(mode:Int) {
     }
 }
 
+func test_ARC(){
+    var arc : UNTestARC = UNTestARC()
+    arc.test1()
+}
+
 /*
  * コンソールでユーザーの入力を取得する
  */
@@ -214,6 +219,8 @@ while !breakWhile {
             test_property(1)
         case "property2":
             test_property(2)
+        case "arc":
+            test_ARC()
         case "exit":
             breakWhile = true
         default:

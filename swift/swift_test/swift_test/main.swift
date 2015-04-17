@@ -46,6 +46,8 @@ func test_class2(mode:Int) {
         class1.test1()
     case 2:
         class1.test2()
+    case 3:
+        class1.test3()
     default:
         break
     }
@@ -106,6 +108,8 @@ func test_optional(mode: Int){
         optional1.test3()
     case 4:
         optional1.test4()
+    case 5:
+        optional1.test5()
     default:
         break
     }
@@ -177,10 +181,12 @@ while !breakWhile {
             break
         case "class":
             test_class()
-        case "class2":
+        case "classa1":
             test_class2(1)
-        case "class3":
+        case "classa2":
             test_class2(2)
+        case "classa3":
+            test_class2(3)
         case "func":
             test_func(1)
         case "func2":
@@ -211,6 +217,8 @@ while !breakWhile {
             test_optional(3)
         case "opt4":
             test_optional(4)
+        case "opt5":
+            test_optional(5)
         case "struct":
             test_struct(1)
         case "struct2":
@@ -224,6 +232,6 @@ while !breakWhile {
         case "exit":
             breakWhile = true
         default:
-            println("other")
+            println("\(command) isn't test name")
     }
 }

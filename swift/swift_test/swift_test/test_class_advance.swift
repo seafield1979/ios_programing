@@ -151,6 +151,74 @@ class UNTestClassAdvance
                 println("obj1 is instance of \(NSStringFromClass(obj.dynamicType))")
             }
         }
+    }
+    
+    
+    // クラスのキャスト
+    func test3() {
+        class Test3P1 {
+            init() {
+                
+            }
+            func goStraight() {
+                print("P1:goStraight ")
+            }
+        }
+        // 子クラス
+        class Test3C1 : Test3P1{
+            override init() {
+                
+            }
+            override func goStraight() {
+                super.goStraight()
+                print("C1:goStraight ")
+            }
+            func goBack(){
+                print("C1:goBack ")
+            }
+        }
+        // 孫クラス
+        class Test3G1 : Test3C1 {
+            override init() {
+                
+            }
+            override func goStraight() {
+                super.goStraight()
+                print("G1:goStraight ")
+            }
+            override func goBack() {
+                super.goBack()
+                print("G1:goBack ")
+            }
+            func goThrough(){
+                print("G1:goThrough ")
+            }
+        }
+        
+        println("---- test3 ----")
+        var p1 : Test3P1 = Test3P1()
+        var c1 : Test3C1 = Test3C1()
+        var g1 : Test3G1 = Test3G1()
+        
+        println("---- 1 ----")
+        var p2 : Test3P1 = c1       // p2はインスタンスはc1だけど、Test3P1のインターフェイスに制限される
+        p2.goStraight()
+//        p2.goBack()       // Test3P1にgoBack()は実装されていないのでエラーになる
+        
+        println("\n---- 2 ----")
+        var p3 : Test3P1 = g1
+        p3.goStraight()
+//        p3.goBack()         // Test3P1にgoBack()は実装されていないのでエラーになる
+        
+        println("\n---- 3 ----")
+        var c2 : Test3C1 = g1
+        c2.goStraight()
+        println()
+        c2.goBack()
+//        c2.goThrought()       // Test3C1にgoThrough()は実装されていないのでエラーになる
+        
+//        var c3 : Test3C1 = p1     // 子クラス変数に親クラスのインスタンスは入れない
+//        var g2 : Test3G1 = p1     // 孫クラス変数に親クラスのインスタンスは入れない
         
     }
 }

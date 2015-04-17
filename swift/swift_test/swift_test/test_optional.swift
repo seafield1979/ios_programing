@@ -140,4 +140,40 @@ class UNTestOptional {
             println("str2 is nil")
         }
     }
+    
+    //MARK: オプショナル連鎖
+    // ?をつけてオプショナル変数がnilを返せるようにできる。これを連結させて複数のnilをとる可能性のある変数を１行にまとめることが出来る
+    class optionalConnect1 {
+        var Str : String?
+        init(str : String?){
+            Str = str;
+        }
+    }
+    class optionalConnect2 {
+        var Str1 : String?
+        var connect1 : optionalConnect1?
+        init(str : String?){
+            Str1 = str
+        }
+    }
+    func test5() {
+        println("UNTextOptional:test5")
+        var connect2 : optionalConnect2 = optionalConnect2(str:nil)
+        print("test1")
+        connect2.connect1 = nil
+        if let Str1 = connect2.connect1?.Str? {
+            println("connect2.connect1.Str \(Str1)")
+        } else {
+            println("connect2.connect1.Str doesn't exist")
+        }
+        
+        print("test2")
+        connect2.connect1 = optionalConnect1(str: "hoge")
+        if let Str1 = connect2.connect1?.Str? {
+            println("connect2.connect1.Str \(Str1)")
+        } else {
+            println("connect2.connect1.Str don't exist")
+        }
+        
+    }
 }

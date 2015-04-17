@@ -13,6 +13,8 @@
 		5872284E1AAF0F9400F2C430 /* test_dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5872284D1AAF0F9400F2C430 /* test_dictionary.swift */; };
 		5872A9111A71E7B200FF66B5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5872A9101A71E7B200FF66B5 /* main.swift */; };
 		5872A9181A72008800FF66B5 /* optional_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5872A9171A72008800FF66B5 /* optional_test.swift */; };
+		58AF37041AE0EBD300F6F687 /* test_protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AF37031AE0EBD300F6F687 /* test_protocol.swift */; };
+		58B02F271AE0D56E00024032 /* test_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B02F261AE0D56E00024032 /* test_extension.swift */; };
 		58EED45A1AD3C4B3008799BE /* test_struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EED4591AD3C4B3008799BE /* test_struct.swift */; };
 		58EED45C1AD3D292008799BE /* test_property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EED45B1AD3D292008799BE /* test_property.swift */; };
 		58EED4611AD7D35B008799BE /* test_ARC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EED4601AD7D35B008799BE /* test_ARC.swift */; };
@@ -43,6 +45,8 @@
 		5872A90D1A71E7B200FF66B5 /* swift_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = swift_test; sourceTree = BUILT_PRODUCTS_DIR; };
 		5872A9101A71E7B200FF66B5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = main.swift; path = swift_test/main.swift; sourceTree = "<group>"; };
 		5872A9171A72008800FF66B5 /* optional_test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = optional_test.swift; sourceTree = "<group>"; };
+		58AF37031AE0EBD300F6F687 /* test_protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test_protocol.swift; sourceTree = "<group>"; };
+		58B02F261AE0D56E00024032 /* test_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test_extension.swift; sourceTree = "<group>"; };
 		58EED4591AD3C4B3008799BE /* test_struct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test_struct.swift; sourceTree = "<group>"; };
 		58EED45B1AD3D292008799BE /* test_property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test_property.swift; sourceTree = "<group>"; };
 		58EED4601AD7D35B008799BE /* test_ARC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test_ARC.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 				582802581A9DFA8B00246C41 /* Array+Display.swift */,
 				58EED45B1AD3D292008799BE /* test_property.swift */,
 				58EED4601AD7D35B008799BE /* test_ARC.swift */,
+				58B02F261AE0D56E00024032 /* test_extension.swift */,
+				58AF37031AE0EBD300F6F687 /* test_protocol.swift */,
 			);
 			path = swift_test;
 			sourceTree = "<group>";
@@ -176,9 +182,11 @@
 				580F88551AA5D2AC0047FDFA /* test_optional.swift in Sources */,
 				5872A9181A72008800FF66B5 /* optional_test.swift in Sources */,
 				58EED4611AD7D35B008799BE /* test_ARC.swift in Sources */,
+				58B02F271AE0D56E00024032 /* test_extension.swift in Sources */,
 				7947EC3F1A7D0CD10038B8BD /* test_function.swift in Sources */,
 				582802591A9DFA8B00246C41 /* Array+Display.swift in Sources */,
 				7947EC411A7D18220038B8BD /* test_array.swift in Sources */,
+				58AF37041AE0EBD300F6F687 /* test_protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

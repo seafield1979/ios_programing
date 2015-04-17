@@ -157,6 +157,24 @@ func test_ARC(){
     arc.test1()
 }
 
+
+func test_extension() {
+    var ext1 : UNTestExtension = UNTestExtension()
+    ext1.test1()
+}
+
+func test_protocol(mode:Int) {
+    var prot1 : UNTestProtocol = UNTestProtocol()
+    switch mode {
+    case 1:
+        prot1.test1()
+    case 2:
+        prot1.test2()
+    default:
+        break;
+    }
+}
+
 /*
  * コンソールでユーザーの入力を取得する
  */
@@ -209,6 +227,10 @@ while !breakWhile {
             test_enum(1)
         case "enum2":
             test_enum(2)
+        case "extension":
+            fallthrough
+        case "ext":
+            test_extension()
         case "opt1":
             test_optional(1)
         case "opt2":
@@ -227,6 +249,14 @@ while !breakWhile {
             test_property(1)
         case "property2":
             test_property(2)
+        case "protocol1":
+            fallthrough
+        case "prot1":
+            test_protocol(1)
+        case "protocol2":
+            fallthrough
+        case "prot2":
+            test_protocol(2)
         case "arc":
             test_ARC()
         case "exit":

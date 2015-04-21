@@ -94,6 +94,13 @@ class UNTestArray{
         var array2: [Any] = ["abc", 1, "def", 2, "ghi", 3]
         var k2 = array2.filter{v in v is String}
         println("test3_2: \(k2)")
+        
+        // その３ 配列の要素を指定の値で初期化
+        var count = Array(count: 100, repeatedValue: 100)
+        var repeated : [AnyObject] = Array(count: 10, repeatedValue : "hoge")
+        println("test3_3: \(count)")
+        println("test3_3: \(repeated)")
     }
+    
 
 }

@@ -9,6 +9,8 @@
     構造体
     主にデータを保持するために特化したクラス。
     機能的には継承、デストラクタが使用できないクラス。
+
+    構造体のプロパティを変更するメソッドは先頭にmutatingを付加する
  */
 
 import Foundation
@@ -54,6 +56,13 @@ class UNTestStruct {
         func description() {
             println("x:\(x) y:\(y) name:\(name) birth:\(birth)")
         }
+        mutating func goUp() {
+            y += 10
+        }
+        mutating func goDown() {
+            y -= 10
+            if (y < 0) { y = 0 }
+        }
     }
     
     func test2() {
@@ -61,4 +70,5 @@ class UNTestStruct {
         var enemy2 : Enemy2 = Enemy2(x:12, y:34, name:"donky", birth:NSDate())
         enemy2.description()
     }
-}
+    
+ }

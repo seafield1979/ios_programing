@@ -119,8 +119,14 @@ class Magazine : BookInfo {
 }
 
 
+protocol GameBoard {
+    // subscriptを使用すると hoge[1,2] のように参照できるようになる
+    subscript(row: Int, column: Int) -> Int { get set }
+}
+
 class UNTestProtocol {
-    var prot1 : UNMovingObject?
+    private var prot1 : UNMovingObject?
+    
     init() {
     }
     func test1() {
@@ -142,6 +148,25 @@ class UNTestProtocol {
         for book in bookList {
             println(book.description)
         }
-        
+    }
+    
+    
+    // MARK: test3 subscipt 配列のアクセス方法を定義する
+    class testGP : GameBoard {
+        var board : [Int] = Array(count:8*8, repeatedValue:0)
+        subscript(row: Int, column: Int) -> Int {
+            get {
+                return board[row * 8 + column]
+            }
+            set {
+                board[row * 8 + column] = newValue
+            }
+        }
+    }
+    func test3() {
+        var gameBoard : testGP = testGP()
+        gameBoard[2,2] = 100
+        gameBoard[3,3] = 200
+        println(gameBoard.board)
     }
 }

@@ -170,9 +170,35 @@ func test_protocol(mode:Int) {
         prot1.test1()
     case 2:
         prot1.test2()
+    case 3:
+        prot1.test3()
     default:
         break;
     }
+}
+
+func test_nested() {
+    var nest : UNTestNested = UNTestNested()
+    
+    nest.test1()
+}
+
+func test_generics(mode: Int) {
+    var generics : UNTestGenerics = UNTestGenerics()
+    
+    switch mode {
+    case 1:
+        generics.test1()
+    case 2:
+        generics.test2()
+    default:
+        break
+    }
+}
+
+func test_overload(mode:Int) {
+    var overload : UNTestOverloadOperator = UNTestOverloadOperator()
+    overload.test1()
 }
 
 /*
@@ -257,8 +283,20 @@ while !breakWhile {
             fallthrough
         case "prot2":
             test_protocol(2)
+        case "protocol3":
+            fallthrough
+        case "prot3":
+            test_protocol(3)
         case "arc":
             test_ARC()
+        case "nest":
+            test_nested()
+        case "generics":
+            test_generics(1)
+        case "generics2":
+            test_generics(2)
+        case "overload":
+            test_overload(1)
         case "exit":
             breakWhile = true
         default:

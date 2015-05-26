@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
 
-@interface ViewControllerAd : UIViewController <ADBannerViewDelegate>
+@interface ViewControllerAd : UIViewController <ADBannerViewDelegate, UITextViewDelegate>
 - (IBAction)ad2ButtonDidTap:(id)sender;
 - (IBAction)ad1ButtonDidTap:(id)sender;
 
 @property (nonatomic, strong) ADBannerView *adView;
 
+@property (weak, nonatomic) IBOutlet UITextView *textView1;
 
 
 @end

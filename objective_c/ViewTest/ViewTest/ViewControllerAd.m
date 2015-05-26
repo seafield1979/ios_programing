@@ -42,6 +42,11 @@
     _adView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
     [self.view addSubview:_adView];
     _adView.alpha = 0.0;
+    
+    // テキスト内のURLをリンク形式で表示する
+    self.textView1.dataDetectorTypes = UIDataDetectorTypeLink;
+    self.textView1.delegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -110,5 +115,11 @@
 }
 
 
+#pragma mark - UITextViewDelegate
+- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange
+{
+    NSLog(@"%@", URL);
+    return YES;
+}
 
 @end

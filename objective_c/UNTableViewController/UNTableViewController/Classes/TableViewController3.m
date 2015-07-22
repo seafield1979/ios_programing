@@ -98,19 +98,19 @@
         UINib* nib = [UINib nibWithNibName:CUSTOM_CELL_NIB bundle:nil];
         NSArray* array = [nib instantiateWithOwner:nil options:nil];
         cell = array[0];
+
+        // 背景色  白 灰 の繰り返し
+        cell.cellView.backgroundColor = (((indexPath.section * kRowNum) + indexPath.row) % 2) ? [UIColor grayColor] : [UIColor lightGrayColor];
+
+        // セルの設定
+        // 画像
+        NSString *imageName = [NSString stringWithFormat:@"cell_icon%ld", indexPath.row + 1 ];
+        cell.image1.image = [UIImage imageNamed:imageName];
+        // ラベル
+        cell.label1.text = self.dataSourceiPhone[indexPath.section][indexPath.row];
+
     }
     
-    // 背景色  白 灰 の繰り返し
-    cell.cellView.backgroundColor = (((indexPath.section * kRowNum) + indexPath.row) % 2) ? [UIColor grayColor] : [UIColor lightGrayColor];
-    
-    
-    
-    // セルの設定
-    // 画像
-    NSString *imageName = [NSString stringWithFormat:@"cell_icon%ld", indexPath.row + 1 ];
-    cell.image1.image = [UIImage imageNamed:imageName];
-    // ラベル
-    cell.label1.text = self.dataSourceiPhone[indexPath.section][indexPath.row];
     return cell;
 }
 
@@ -130,7 +130,15 @@
     
     //itemArray の指定番目の文字列をステータスバーのラベルにセット
     //[indexPath row]で、何行目のセルがタップされたかを取得
-    self.label1.text = self.dataSourceiPhone[indexPath.section][indexPath.row];
+    //self.label1.text = self.dataSourceiPhone[indexPath.section][indexPath.row];
+    
+    TableView3Cell* newCell = (TableView3Cell*)[tableView dequeueReusableCellWithIdentifier:CUSTOM_CELL_NIB];
+    
+    newCell.cellView.backgroundColor = [UIColor redColor];
+//    cell.label1.text = @"hoge";
+    self.label1.text = newCell.label1.text;
+
+    (TableView3Cell*)[self tableView:tableView cellForRowAtIndexPath:indexPath];
 }
 
 

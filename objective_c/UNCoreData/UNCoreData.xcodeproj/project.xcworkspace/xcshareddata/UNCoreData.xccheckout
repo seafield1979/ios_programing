@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>16C4C0A9-7BF3-4401-B98C-FC8BCA829263</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>UNCoreData</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>61497E15D6A4D330BD357D38A64E3EDAB13E4644</key>
 		<string>github.com:seafield1979/ios_programing.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>objective_c/UNCoreData/UNCoreData.xcodeproj/project.xcworkspace</string>
+	<string>objective_c/UNCoreData/UNCoreData.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>61497E15D6A4D330BD357D38A64E3EDAB13E4644</key>

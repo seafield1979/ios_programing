@@ -5,10 +5,26 @@
 //  Created by B02681 on 2015/07/21.
 //  Copyright (c) 2015年 B02681. All rights reserved.
 //
+/*
+ CoreDataを使用してDBを操作するサンプル
+ ・データの追加
+ ・データの削除
+ ・データの更新
+ ・データの参照
+ */
 
 #import "MyDataManager.h"
 
 @implementation MyDataManager
+
+#define EntityNamePerson @"Person"
+#define AttributeName @"name"
+#define AttributeAge @"age"
+#define AttributeAddress @"address"
+
+#define LOAD_MAX_AT_ONCE   5
+
+#pragma mark - Core Data
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
@@ -27,12 +43,10 @@
 
 
 - (NSURL *)applicationDocumentsDirectory {
-    // The directory the application uses to store the Core Data store file. This code uses a directory named "test.UNCoreData" in the application's documents directory.
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 - (NSManagedObjectModel *)managedObjectModel {
-    // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
@@ -42,13 +56,11 @@
 }
 
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-    // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it.
     if (_persistentStoreCoordinator != nil) {
         return _persistentStoreCoordinator;
     }
     
     // Create the coordinator and store
-    
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"UNCoreData.sqlite"];
     NSError *error = nil;
@@ -102,6 +114,12 @@
 
 #pragma mark - Private method
 
+
+
+/*
+ * 指定の条件に一致するデータを取得する
+ * @param name 検索条件の名前
+ */
 - (NSFetchedResultsController*)fetchObject:(NSString*)name
 {
     // NSFetchRequestは、検索条件などを保持させるオブジェクトです。
@@ -110,15 +128,15 @@
     
     // 検索対象のエンティティを指定します。
     NSEntityDescription *entity
-    = [NSEntityDescription entityForName:@"Person" inManagedObjectContext:self.managedObjectContext];
+    = [NSEntityDescription entityForName:EntityNamePerson inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // 一度に読み込むサイズを指定します。
-    [fetchRequest setFetchBatchSize:5];
+    [fetchRequest setFetchBatchSize:LOAD_MAX_AT_ONCE];
     
     // 検索結果を保持する順序を指定します。
     // ここでは、keyというカラムの値の昇順で保持するように指定しています。
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:AttributeName ascending:YES];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
     
     // 続いて検索条件を指定します。
@@ -147,24 +165,72 @@
 
 #pragma mark - Public method
 
+/**
+ * DBにデータを追加する
+ * @param name
+ * @param age
+ */
 - (void)addObject:(NSString*)name age:(NSInteger)age;
 {
-    
     // context は NSManagedObjectContext クラスのインスタンス
-    NSManagedObject *object = [NSEntityDescription insertNewObjectForEntityForName:@"Person"
+    NSManagedObject *object = [NSEntityDescription insertNewObjectForEntityForName:EntityNamePerson
                                                             inManagedObjectContext:self.managedObjectContext];
     
     // 作成したNSManagedObjectインスタンスに値を設定します。
-    [object setValue:@(age)  forKey:@"age"];
-    [object setValue:name forKey:@"name"];
-    [object setValue:@"" forKey:@"address"];
+    [object setValue:@(age)  forKey:AttributeAge];
+    [object setValue:name forKey:AttributeName];
+    [object setValue:@"" forKey:AttributeAddress];
     [self saveContext];
 }
 
+
+/**
+ * DBからデータを削除する
+ * @param name
+ * @param age
+ */
 - (void)deleteObject:(NSString*)name age:(NSInteger)age
 {
+    // NSFetchedResultsControllerを作成します。
+    // 上記までで作成したFetchRequestを指定します。
+    NSFetchedResultsController *fetchedResultsController = [self fetchObject:name];
+    
+    // まずは、NSManagedObjectを取得します。
+    // 以下の例では、DB検索結果から取得しています。
+    for (int i=0; i < fetchedResultsController.fetchedObjects.count; i++) {
+        NSManagedObject *object = [fetchedResultsController.fetchedObjects objectAtIndex:i];
+        
+        // 削除メソッドを呼び出します。
+        [self.managedObjectContext deleteObject:object];
+    }
+    
+    // saveメソッドで更新状態を確定させます。
+    // エラー発生時には、引数に参照渡しで渡しているErrorオブジェクトの中身を表示します。
+    NSError *error = nil;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"error = %@", error);
+        
+    } else {
+        NSLog(@"Insert Completed.");
+    }
 }
 
+/**
+ * 全データを削除する
+ * ※検索条件を指定しないで削除するデータを検索しているので全件ヒットする
+ */
+- (void)deleteAllObject
+{
+    [self deleteObject:nil age:0];
+}
+
+
+/**
+ * DBのデータを更新する
+ * @param oldName  更新元の名前
+ * @param newName  更新毎の名前
+ * @param age 更新後の年齢
+ */
 - (void)updateObject:(NSString*)oldName newName:(NSString*)newName age:(NSInteger)age
 {
     // NSFetchedResultsControllerを作成します。
@@ -176,7 +242,7 @@
     for (int i = 0; i < fetchedResultsController.fetchedObjects.count; i++) {
         NSManagedObject *updObject = [fetchedResultsController.fetchedObjects objectAtIndex:i];
         // 変更したい値を設定します。
-        [updObject setValue:newName   forKey:@"name"];
+        [updObject setValue:newName   forKey:AttributeName];
         
         // saveメソッドでデータをDBに保存します。
         // エラー発生時には、引数に参照渡しで渡しているErrorオブジェクトの中身を表示します。
@@ -190,6 +256,10 @@
     }
 }
 
+
+/**
+ * データを全件取得する
+ */
 - (NSArray*)getObjects
 {
     // NSFetchedResultsControllerを作成します。

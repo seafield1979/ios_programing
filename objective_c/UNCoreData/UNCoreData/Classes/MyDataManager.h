@@ -19,6 +19,7 @@
 
 - (void)addObject:(NSString*)name age:(NSInteger)age;;
 - (void)deleteObject:(NSString*)name age:(NSInteger)age;
+- (void)deleteAllObject;
 - (NSArray*)getObjects;
 - (void)updateObject:(NSString*)oldName newName:(NSString*)newName age:(NSInteger)age;
 @end

@@ -24,7 +24,19 @@ int main(int argc, const char * argv[]) {
             if (!decryptedData) {
                 NSLog(@"Failed to decrypt!");
             }
+            
+            
+            {
+                NSString *writePath = [path stringByReplacingOccurrencesOfString:@"dat" withString:@"txt"];
+                
+                if ([decryptedData writeToFile:writePath atomically:YES]) {
+                }
+            }
+        
             NSLog(@"\n+++++++++++++++++++\n%@\n+++++++++++++++++++", decryptedStr);
+        }
+        else {
+            NSLog(@"Failed to decrypt!");
         }
     }
     return 0;
@@ -36,6 +48,7 @@ int main(int argc, const char * argv[]) {
 NSDictionary* argsToDictionary(int argc, const char * argv[])
 {
     if (argc < 2) {
+        NSLog(@"usage\nAESDecrypter key=[暗号化キー] iv=[初期化ベクトル] file=[複合化するファイル] (output=[保存ファイル名])");
         return nil;
     }
     NSMutableDictionary *dic = @{}.mutableCopy;

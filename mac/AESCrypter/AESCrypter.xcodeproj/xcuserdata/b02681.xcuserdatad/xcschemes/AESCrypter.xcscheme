@@ -60,15 +60,19 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "file=/work/AHG/_doc/UserLog_0716.dat"
+            argument = "file=/work/AHG/_tool/ParisDecrypter/UserLog_7411.dat"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "key=0123456789abcdef"
+            argument = "output=/work/AHG/_tool/ParisDecrypter/log_7411.txt"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "iv=abcdef0123456789"
+            argument = "key="
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "iv="
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

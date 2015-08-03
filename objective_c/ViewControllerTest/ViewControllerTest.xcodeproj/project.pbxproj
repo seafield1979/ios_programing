@@ -150,6 +150,7 @@
 		07206922198E888F00A2C829 /* ViewControllerTest */ = {
 			isa = PBXGroup;
 			children = (
+				5833A84A1B2FBD1D001D1A7C /* MailViewController */,
 				5831C2D919AC0F3800F1203D /* ViewController */,
 				07847D1D1995B773003B8D65 /* TableViewController */,
 				0720692B198E888F00A2C829 /* AppDelegate.h */,
@@ -200,6 +201,13 @@
 				58BDFF691AB2EE1600E46C5E /* UNViewController22.m */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		5833A84A1B2FBD1D001D1A7C /* MailViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MailViewController;
 			sourceTree = "<group>";
 		};
 		58A0752919E3F8C5009DD479 /* TableView3 */ = {
@@ -468,12 +476,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shusuke Unno (B6QB2T3FJS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shusuke Unno (B6QB2T3FJS)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ViewControllerTest/ViewControllerTest-Prefix.pch";
 				INFOPLIST_FILE = "ViewControllerTest/ViewControllerTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "408461c4-ef78-4303-9071-c74f0ebc5832";
+				PROVISIONING_PROFILE = "3d264f77-7acb-46f0-95b5-ea6f76edd7d6";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

@@ -20,7 +20,7 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    switch(1){
+    switch(3){
         case 1:
             self.tableViewController = [[TableViewController alloc]init];
             self.window.rootViewController = self.tableViewController;

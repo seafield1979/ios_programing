@@ -156,11 +156,8 @@ NSString *saveFileName = @"hoge.txt";
  */
 - (BOOL)createDirectory:(NSString*)path
 {
-    // ホームディレクトリを取得
-    NSString *homeDir = NSHomeDirectory();
-    
     // 作成するディレクトリのパスを作成
-    NSString *dirPath = [homeDir stringByAppendingPathComponent:path];
+    NSString *dirPath = [NSHomeDirectory() stringByAppendingPathComponent:path];
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:dirPath]) {
         // ファイルマネージャを作成
@@ -176,6 +173,20 @@ NSString *saveFileName = @"hoge.txt";
         return result;
     }
     return YES;
+}
+
+/**
+ * ディレクトリの有無をチェック
+ */
+- (BOOL)isDirectoryExist:(NSString*)path
+{
+    // 作成するディレクトリのパスを作成
+    NSString *dirPath = [NSHomeDirectory() stringByAppendingPathComponent:path];
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:dirPath]) {
+        return YES;
+    }
+    return NO;
 }
 
 @end

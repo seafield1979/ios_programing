@@ -49,10 +49,17 @@
 - (void)test2
 {
     NSMutableDictionary *params = @{}.mutableCopy;
-    params[@"aaa"] = @"hoge";     //<- モダンな書き方で未設定のキーに値を設定すると実行時エラー
-    [params setObject:@"hoge" forKey:@"key1"];        //<- これもだめ
+    params[@"aaa"] = @"hoge";     //OK
+    [params setObject:@"hoge" forKey:@"key1"];      // OK
+    
     
     NSLog(@"%@", params);
+    NSLog(@"%@", params[@"hidden"]);
+    
+    NSDictionary *params2 = nil;
+    if (params2[@"key"] == nil) {
+        NSLog(@"params2 ok");
+    }
     
     
     //範囲外の参照

@@ -1,15 +1,15 @@
 //
-//  SwiftViewControllerTests.swift
-//  SwiftViewControllerTests
+//  ViewControllerTests.swift
+//  ViewControllerTests
 //
-//  Created by B02681 on 2015/04/21.
+//  Created by B02681 on 2015/09/10.
 //  Copyright (c) 2015年 B02681. All rights reserved.
 //
 
 import UIKit
 import XCTest
 
-class SwiftViewControllerTests: XCTestCase {
+class ViewControllerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

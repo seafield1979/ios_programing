@@ -16,17 +16,28 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPR-uI-55j">
-                    <rect key="frame" x="277" y="84" width="46" height="30"/>
-                    <state key="normal" title="Button">
+                    <rect key="frame" x="255" y="84" width="90" height="30"/>
+                    <state key="normal" title="color change">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="button1DidTap:" destination="-1" eventType="touchUpInside" id="HHL-ZF-4xT"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLH-tq-awJ">
+                    <rect key="frame" x="279" y="122" width="43" height="30"/>
+                    <state key="normal" title="page2">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="page2ButtonDidTap:" destination="-1" eventType="touchUpInside" id="919-GK-zwB"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="xLH-tq-awJ" firstAttribute="top" secondItem="tPR-uI-55j" secondAttribute="bottom" constant="8" symbolic="YES" id="5OP-T1-4wm"/>
+                <constraint firstAttribute="centerX" secondItem="xLH-tq-awJ" secondAttribute="centerX" id="5Qc-Pn-CCp"/>
                 <constraint firstAttribute="centerX" secondItem="tPR-uI-55j" secondAttribute="centerX" id="7b8-71-zd3"/>
                 <constraint firstItem="tPR-uI-55j" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="84" id="7gO-0d-0g9"/>
             </constraints>

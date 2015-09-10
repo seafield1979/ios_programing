@@ -13,6 +13,8 @@
 		5850150E1BA152EC00D91177 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5850150C1BA152EC00D91177 /* LaunchScreen.xib */; };
 		5850151A1BA152EC00D91177 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585015191BA152EC00D91177 /* ViewControllerTests.swift */; };
 		585015241BA156B800D91177 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585015231BA156B800D91177 /* ViewController.xib */; };
+		585015291BA1690A00D91177 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585015271BA1690A00D91177 /* ViewController2.swift */; };
+		5850152A1BA1690A00D91177 /* ViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585015281BA1690A00D91177 /* ViewController2.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		585015181BA152EC00D91177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		585015191BA152EC00D91177 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 		585015231BA156B800D91177 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		585015271BA1690A00D91177 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		585015281BA1690A00D91177 /* ViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController2.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +81,8 @@
 		585015001BA152EC00D91177 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5850152B1BA1691800D91177 /* UI */,
 				585015031BA152EC00D91177 /* AppDelegate.swift */,
-				585015051BA152EC00D91177 /* ViewController.swift */,
-				585015231BA156B800D91177 /* ViewController.xib */,
 				5850150A1BA152EC00D91177 /* Images.xcassets */,
 				5850150C1BA152EC00D91177 /* LaunchScreen.xib */,
 				585015011BA152EC00D91177 /* Supporting Files */,
@@ -110,6 +113,17 @@
 				585015181BA152EC00D91177 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5850152B1BA1691800D91177 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				585015051BA152EC00D91177 /* ViewController.swift */,
+				585015231BA156B800D91177 /* ViewController.xib */,
+				585015271BA1690A00D91177 /* ViewController2.swift */,
+				585015281BA1690A00D91177 /* ViewController2.xib */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5850150E1BA152EC00D91177 /* LaunchScreen.xib in Resources */,
+				5850152A1BA1690A00D91177 /* ViewController2.xib in Resources */,
 				585015241BA156B800D91177 /* ViewController.xib in Resources */,
 				5850150B1BA152EC00D91177 /* Images.xcassets in Resources */,
 			);
@@ -214,6 +229,7 @@
 			files = (
 				585015061BA152EC00D91177 /* ViewController.swift in Sources */,
 				585015041BA152EC00D91177 /* AppDelegate.swift in Sources */,
+				585015291BA1690A00D91177 /* ViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +419,7 @@
 				5850151F1BA152EC00D91177 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		585015201BA152EC00D91177 /* Build configuration list for PBXNativeTarget "ViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +428,7 @@
 				585015221BA152EC00D91177 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

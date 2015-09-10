@@ -21,8 +21,21 @@ class ViewController: UIViewController {
     }
 
 
-    @IBAction func button1DidTap(sender: AnyObject) {
+    @IBAction func button1DidTap(sender: AnyObject)
+    {
         view.backgroundColor = UIColor.greenColor();
+    }
+    
+    /*
+     * ViewController2を表示
+     */
+    @IBAction func page2ButtonDidTap(sender: AnyObject)
+    {
+        let app = UIApplication.sharedApplication().delegate as! AppDelegate;
+        if  app.viewController2 == nil {
+            app.viewController2 = ViewController2(nibName: "ViewController2", bundle: nil);
+        }
+        app.window?.rootViewController = app.viewController2;
     }
 }
 

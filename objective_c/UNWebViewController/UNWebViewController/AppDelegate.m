@@ -13,8 +13,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+#if 1
+    self.wkWebViewController = [[WKWebViewController alloc] initWithNibName:@"WKWebViewController" bundle:[NSBundle mainBundle]];
+    self.window.rootViewController = self.wkWebViewController;
+    
+#else
     self.viewController = [[UNWebViewController alloc] init];
     self.window.rootViewController = self.viewController;
+#endif
+    //[self setUserAgent];
     [self.window makeKeyAndVisible];
     
     [self initBasicAuthentication];
@@ -36,6 +43,16 @@
                                                                   authenticationMethod:NSURLAuthenticationMethodHTTPBasic];
     [storage setDefaultCredential:credential
                forProtectionSpace:protectionSpace];
+}
+
+/**
+ * User Agent設定
+ */
+- (void)setUserAgent
+{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud registerDefaults:@{ @"UserAgent" : @"Mozilla/5.0 (iPhone; CPU iPhone OS 8_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Mobile/12B411 CaBaseApp/1.0(jp.co.cyberagent.paris;1.1.1;ja) CaWebApp/1.0(jp.co.cyberagent.paris;2.0.0;ja)" }];
+    [ud synchronize];
 }
 
 

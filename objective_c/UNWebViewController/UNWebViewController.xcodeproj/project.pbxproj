@@ -15,6 +15,9 @@
 		58B2B4FB1A8E1F3700AE057F /* movieclip-0.7.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 58B2B4F71A8E1F3700AE057F /* movieclip-0.7.1.min.js */; };
 		58B2B4FC1A8E1F3700AE057F /* preloadjs-0.4.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 58B2B4F81A8E1F3700AE057F /* preloadjs-0.4.1.min.js */; };
 		58B2B4FD1A8E1F3700AE057F /* tweenjs-0.5.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 58B2B4F91A8E1F3700AE057F /* tweenjs-0.5.1.min.js */; };
+		58C15F871B70D27800BBBC38 /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C15F851B70D27800BBBC38 /* WKWebViewController.m */; };
+		58C15F881B70D27800BBBC38 /* WKWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C15F861B70D27800BBBC38 /* WKWebViewController.xib */; };
+		58C15F8A1B70D38700BBBC38 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C15F891B70D38700BBBC38 /* WebKit.framework */; };
 		79784EE419A8C31C0035537B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79784EE319A8C31C0035537B /* Foundation.framework */; };
 		79784EE619A8C31C0035537B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79784EE519A8C31C0035537B /* CoreGraphics.framework */; };
 		79784EE819A8C31C0035537B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79784EE719A8C31C0035537B /* UIKit.framework */; };
@@ -53,6 +56,10 @@
 		58B2B4F71A8E1F3700AE057F /* movieclip-0.7.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "movieclip-0.7.1.min.js"; path = "UNWebViewControllerTests/resource/movieclip-0.7.1.min.js"; sourceTree = "<group>"; };
 		58B2B4F81A8E1F3700AE057F /* preloadjs-0.4.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "preloadjs-0.4.1.min.js"; path = "UNWebViewControllerTests/resource/preloadjs-0.4.1.min.js"; sourceTree = "<group>"; };
 		58B2B4F91A8E1F3700AE057F /* tweenjs-0.5.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "tweenjs-0.5.1.min.js"; path = "UNWebViewControllerTests/resource/tweenjs-0.5.1.min.js"; sourceTree = "<group>"; };
+		58C15F841B70D27800BBBC38 /* WKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewController.h; sourceTree = "<group>"; };
+		58C15F851B70D27800BBBC38 /* WKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewController.m; sourceTree = "<group>"; };
+		58C15F861B70D27800BBBC38 /* WKWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKWebViewController.xib; sourceTree = "<group>"; };
+		58C15F891B70D38700BBBC38 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		79784EE019A8C31C0035537B /* UNWebViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UNWebViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79784EE319A8C31C0035537B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		79784EE519A8C31C0035537B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58C15F8A1B70D38700BBBC38 /* WebKit.framework in Frameworks */,
 				79784EE619A8C31C0035537B /* CoreGraphics.framework in Frameworks */,
 				79784EE819A8C31C0035537B /* UIKit.framework in Frameworks */,
 				79784EE419A8C31C0035537B /* Foundation.framework in Frameworks */,
@@ -149,6 +157,16 @@
 			name = Category;
 			sourceTree = "<group>";
 		};
+		58C15F831B70D24700BBBC38 /* WKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				58C15F841B70D27800BBBC38 /* WKWebViewController.h */,
+				58C15F851B70D27800BBBC38 /* WKWebViewController.m */,
+				58C15F861B70D27800BBBC38 /* WKWebViewController.xib */,
+			);
+			name = WKWebView;
+			sourceTree = "<group>";
+		};
 		79784ED719A8C31C0035537B = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +190,7 @@
 		79784EE219A8C31C0035537B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				58C15F891B70D38700BBBC38 /* WebKit.framework */,
 				79784EE319A8C31C0035537B /* Foundation.framework */,
 				79784EE519A8C31C0035537B /* CoreGraphics.framework */,
 				79784EE719A8C31C0035537B /* UIKit.framework */,
@@ -183,6 +202,7 @@
 		79784EE919A8C31C0035537B /* UNWebViewController */ = {
 			isa = PBXGroup;
 			children = (
+				58C15F831B70D24700BBBC38 /* WKWebView */,
 				58B2B3721A8C94C300AE057F /* test1 */,
 				58B2B3731A8C94CD00AE057F /* test2 */,
 				79784EF219A8C31C0035537B /* AppDelegate.h */,
@@ -299,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58C15F881B70D27800BBBC38 /* WKWebViewController.xib in Resources */,
 				79784F1C19A8C3B60035537B /* UNWebViewController.xib in Resources */,
 				58B2B4FD1A8E1F3700AE057F /* tweenjs-0.5.1.min.js in Resources */,
 				58B2B4FA1A8E1F3700AE057F /* easeljs-0.7.1.min.js in Resources */,
@@ -328,6 +349,7 @@
 				79784EF419A8C31C0035537B /* AppDelegate.m in Sources */,
 				79784EF019A8C31C0035537B /* main.m in Sources */,
 				58B2B3EC1A8DEDCC00AE057F /* UNTitleImageView.m in Sources */,
+				58C15F871B70D27800BBBC38 /* WKWebViewController.m in Sources */,
 				79784F1B19A8C3B60035537B /* UNWebViewController.m in Sources */,
 				58B2B3E91A8DD83E00AE057F /* UNTutorialWebView.m in Sources */,
 				58B2B3771A8C94F200AE057F /* UNWebViewController2.m in Sources */,

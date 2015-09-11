@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UNWebViewController : UIViewController <UIWebViewDelegate>
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
-
+@property (strong, nonatomic) UIWebView *webView;
+@property (strong, nonatomic) UIButton *button1;
 @end

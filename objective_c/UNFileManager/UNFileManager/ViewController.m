@@ -41,8 +41,9 @@
 
 
 NSString *fileDir = @"Documents/MyDir";
-NSString *cacheDir = @"Library/Caches";
-NSString *saveFileName = @"hoge.txt";
+NSString *cacheDir = @"Library/Caches/imstorage-prod-1001398345/images/82";
+NSString *saveFileName = @"c453b085746746ac398a147358ea29d3.jpg";
+//NSString *saveFileName = @"mig?src=http\%3A\%2F\%2Fblogs.c.yimg.jp\%2Fres\%2Fblog-d7-68\%2Farauma77\%2Ffolder\%2F1868789\%2F88\%2F69344188\%2Fimg_0\%3F1399553071&twidth=110&theight=110&qlt=80&res_format=jpg&op=sc";
 
 @implementation ViewController
 

@@ -8,7 +8,7 @@
 
 #import "UNWebViewController.h"
 
-#define kLoadURL   @"http://stg.ameba-oogiri.jp/sp/boke"
+#define kLoadURL   @"http://staging:z1w6arMC@dev-branch08.astrum.amsg2.com:8000/"
 
 @interface UNWebViewController ()
 
@@ -19,23 +19,21 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-        [self initUserAgent];
-    }
+//    if (self) {
+//        // Custom initialization
+//        [self initUserAgent];
+//    }
     return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
-    // Webページの大きさを自動的に画面にフィットさせる
-    _webView.scalesPageToFit = YES;
-    // ページをロードする
-    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:kLoadURL]]];
-    _webView.delegate = self;
+    [self addWebView];
+    [self addButton1];
+    
+    //[self setupUserAgent];
     
 }
 
@@ -87,18 +85,64 @@
     }
 }
 
+#pragma mark - Action method
+- (void)button1DidTap:(id)sender
+{
+    [self.webView removeFromSuperview];
+    [self addWebView];
+    
+    [self.button1 removeFromSuperview];
+    [self addButton1];
+}
+
+
 
 #pragma mark - Private method
-- (void)initUserAgent
+
+- (void)addWebView
 {
-    UIWebView *wv = [[UIWebView alloc] initWithFrame:CGRectZero];
-    NSString *ua = [wv stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
-    NSString *currentVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
-    ua = [NSString stringWithFormat:@"%@ CaWebApp/1.0(ameba-oogiri;%@;ja;)", ua, currentVersion];
-    //バージョンを整数で取得
+    // webView
+    self.webView = [[UIWebView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UserAgent":ua}];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    // Webページの大きさを自動的に画面にフィットさせる
+    _webView.scalesPageToFit = YES;
+    [self.view addSubview:self.webView];
+    // ページをロードする
+    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:kLoadURL]]];
+    _webView.delegate = self;
+}
+
+- (void)addButton1
+{
+    // ボタン
+    self.button1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 50, 100, 40)];
+    [self.button1.titleLabel setFont:[UIFont systemFontOfSize:15]];
+    [self.view addSubview:self.button1];
+    
+    [self.button1 setTitle:@"refresh" forState:UIControlStateNormal];
+    [self.button1 addTarget:self action:@selector(button1DidTap:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+/**
+ * プリコネのUAを設定
+ */
+- (void)setupUserAgent
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        //デフォルトのUserAgentを取得するために、サイズゼロのUIWebViewのインスタンスを生成
+        UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectZero];
+        
+        //デフォルトのUserAgentを取得
+        NSString *userAgent = [webView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+        
+        //デフォルトのUserAgentに独自の文字列を追加
+        NSString *customUserAgent = [userAgent stringByAppendingString:@" CaBaseApp/1.0(jp.co.cyberagent.paris;1.1.1;ja) CaWebApp/1.0(jp.co.cyberagent.paris;1.1.1;ja)"];
+        
+        //UserAgent再設定
+        NSDictionary *dictionary = @{@"UserAgent":customUserAgent};
+        [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
+    });
 }
 
 

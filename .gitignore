@@ -28,6 +28,9 @@ objective_c/ViewTest/ViewTest.xcodeproj/xcuserdata/unnoshusuke.xcuserdatad
 /sample/
 /PRTween
 
+*.xcuserdata
+*.xcuserdatad
+
 /swift/SwiftViewController/SwiftViewController.xcodeproj/xcuserdata/
 /swift/SwiftViewController/SwiftViewController.xcodeproj/project.xcworkspace/xcshareddata/
 /swift/swift_test/swift_test.xcodeproj/project.xcworkspace/xcshareddata/

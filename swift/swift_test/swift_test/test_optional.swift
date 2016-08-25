@@ -2,8 +2,8 @@
 //  test_optional.swift
 //  swift_test
 //
-//  Created by B02681 on 2015/03/03.
-//  Copyright (c) 2015年 B02681. All rights reserved.
+//  Created by SunSunSoft on 2015/03/03.
+//  Copyright (c) 2015年 SunSunSoft. All rights reserved.
 //
 /*
     Optional型のサンプル
@@ -46,18 +46,18 @@ class UNTestOptional {
         optInt = nil        // OK!
         optStr = nil        // OK!
         
-        println("1:\(optStr) \(optInt)")
+        print("1:\(optStr) \(optInt)")
         
         optInt = 100
         optStr = "hello"
         
-        println("2:\(optStr) \(optInt)")
+        print("2:\(optStr) \(optInt)")
     }
     
     // アンラップのあれこれ
     func test2() {
         var a: Int = 1
-        println(a + 2) // -> 3
+        print(a + 2) // -> 3
         
         // Optional型をそのまま使用しようとしてエラーになる例
         var b: Int? = 1
@@ -66,7 +66,8 @@ class UNTestOptional {
         // Optional型はアンラップすれば使用できる
         // !でアンラップしてみる
         var c : String? = "100"
-        println("23: \(c!.toInt())")     // OK
+        c = "hoge"
+        print("23: \(Int(c!))")     // OK
         
         // でもnilが入ったOptional変数を !でアンラップすると実行時エラーになる
         var d : String? = nil
@@ -74,10 +75,10 @@ class UNTestOptional {
         
         // nilが入った変数は?でアンラップするといい感じ
         // ?でアンラップすることをoptional Chainingという
-        var e : String? = nil
-        println("24: \(e?.toInt())")     // OK nilが返る
+        var e : String? = nil;
+        print("24: \(Int(e!))")     // OK nilが返る
         e = "123"
-        println("25: \(e?.uppercaseString)")
+        print("25: \(e?.uppercaseString)")
         
         /*
             e?.uppercaseString は 内部でこんな動き(optional chaining)をしている
@@ -89,25 +90,25 @@ class UNTestOptional {
         */
         var f : String? = nil
         var f2 : String? = f?.uppercaseString       // ?を使用すると出力(String)をOptional型にラップしてから返す
-        println("26: \(f2)")
+        print("26: \(f2)")
     }
     
     func test3() {
         // implicitly unwrapped optional 型のテスト
         // implicitly unwrapped optional型は自動的にアンラップされる
         var str1 : String! = "hoge"
-        println("31: \(str1.uppercaseString)")
+        print("31: \(str1.uppercaseString)")
         
         // でも nilの場合はエラーになってしまう
         str1 = nil
-        //println("32: \(str1.uppercaseString)")      // ランタイムエラー
+        //print("32: \(str1.uppercaseString)")      // ランタイムエラー
         
         // implicity unwrapped optional型はnilのときエラーになるじゃん、だめじゃん
         // ってときは ?? 演算子を使うと nilのときに別の値を返すようにできるYO
         var str2 : String! = "1"
-        println((str2 ?? "2").toInt())      // str2はnilでないので 1が出力される
+        print(Int((str2 ?? "2")))      // str2はnilでないので 1が出力される
         str2 = nil
-        println((str2 ?? "2").toInt())        // str2はnilなので 2が出力される
+        print(Int((str2 ?? "2")))        // str2はnilなので 2が出力される
         
     }
     
@@ -115,29 +116,31 @@ class UNTestOptional {
      * オプショナル変数を簡単に使用する方法です
      */
     func test4() {
-        println("UNTextOptional:test4")
+        print("UNTextOptional:test4")
 
         // 宣言時に?をつけて、参照時も?をつける。これが一番簡単
         // 参照時に?をつけるとnilのときとnil以外のときでエラーにならずに値が取り出せる
-        var str : String? = nil
-        println(str?.toInt())       // nilでも大丈夫
+        var str : String? = "hoge"//nil
+        str = "hoge"
+        // print(Int(str?))       // エラー。理由は strがnilのときに print(nil)になるから
+        var str12 : String? = str?.uppercaseString      // これはOK。str?がnilのときに uppercaseStringがよばれずにnilをかえすだけ
         str = "100"
-        println(str?.toInt())       // nil以外でも大丈夫
-        println(str!.toInt())       // 強制的にアンラップする
+        //print(Int(str?))       // nil以外でも大丈夫
+        print(Int(str!))       // 強制的にアンラップする
         
         // ?を使用せずに値を参照したい場合は自分でnilチェックする
         var str2 : String? = nil
         if str2 != nil {
-            println("str2:\(str2)")
+            print("str2:\(str2)")
         } else {
-            println("str2 is nil")
+            print("str2 is nil")
         }
         
         str2 = "hello"
         if str2 != nil {
-            println("str2:\(str2)")
+            print("str2:\(str2)")
         } else {
-            println("str2 is nil")
+            print("str2 is nil")
         }
     }
     
@@ -156,24 +159,25 @@ class UNTestOptional {
             Str1 = str
         }
     }
-    func test5() {
-        println("UNTextOptional:test5")
-        var connect2 : optionalConnect2 = optionalConnect2(str:nil)
-        print("test1")
-        connect2.connect1 = nil
-        if let Str1 = connect2.connect1?.Str? {
-            println("connect2.connect1.Str \(Str1)")
-        } else {
-            println("connect2.connect1.Str doesn't exist")
-        }
-        
-        print("test2")
-        connect2.connect1 = optionalConnect1(str: "hoge")
-        if let Str1 = connect2.connect1?.Str? {
-            println("connect2.connect1.Str \(Str1)")
-        } else {
-            println("connect2.connect1.Str don't exist")
-        }
-        
-    }
+    
+//    func test5() {
+//        print("UNTextOptional:test5")
+//        let connect2 : optionalConnect2 = optionalConnect2(str:nil)
+//        print("test1", terminator: "")
+//        connect2.connect1 = nil
+//        if let Str1 = connect2.connect1?.Str? {
+//            print("connect2.connect1.Str \(Str1)")
+//        } else {
+//            print("connect2.connect1.Str doesn't exist")
+//        }
+//        
+//        print("test2", terminator: "")
+//        connect2.connect1 = optionalConnect1(str: "hoge")
+//        if let Str1 = connect2.connect1?.Str? {
+//            print("connect2.connect1.Str \(Str1)")
+//        } else {
+//            print("connect2.connect1.Str don't exist")
+//        }
+//        
+//    }
 }

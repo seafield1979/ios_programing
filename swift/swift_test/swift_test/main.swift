@@ -2,44 +2,60 @@
 //  main.swift
 //  swift_test
 //
-//  Created by B02681 on 2015/01/23.
-//  Copyright (c) 2015年 B02681. All rights reserved.
+//  Created by sunsunsoft on 2015/01/23.
+//  Copyright (c) 2015年 SunSunSoft. All rights reserved.
 //
 
 import Foundation
 import Darwin
 
 func test_print() {
-    println("hello:")
+    print("hello:")
     
     // 変数を埋め込む
     let str1:String = "syutaro"
-    println("str1:\(str1)")
+    print("str1:\(str1)")
     
     // カンマ区切りで変数のリストを渡す
     let hoge:String = "syutaro"
-    println("aaa", "bbb", hoge)
+    print("aaa", "bbb", hoge)
 }
 
 func test_basis() {
-    println("test_basis")
-    var basis1 : UNTestBasis = UNTestBasis()
-    
+    print("test_basis")
+    let basis1 : UNTestBasis = UNTestBasis()
+    basis1.test_str()
 //    basis1.test_switch()
 //    basis1.test_tuple()
-    basis1.test_for()
+//    basis1.test_for()
 //    basis1.test_tuple2()
 }
 
 func test_class() {
-    println("test_class")
-    var class1 : UNClassTest = UNClassTest(str1: "ok", str2: "ng")
-    println (class1.test1())
+    print("test_class")
+    let class1 : UNClassTest = UNClassTest(str1: "ok", str2: "ng")
+    print (class1.test1())
 
+    // オブジェクトからクラス名を取得
+    print("dynamicType")
+    print( NSStringFromClass(class1.dynamicType))
+    
+    // クラスの配列
+    var classes : [UNClassTest] = [];
+    for index in 1...10 {
+        let class1 : UNClassTest = UNClassTest(str1: "hoge \(index)", str2: "hage")
+        classes.append(class1)
+    }
+    
+    var cnt : Int = 0
+    for class1 in classes {
+        print("classess[\(cnt)] is " + class1.str1)
+        cnt += 1
+    }
 }
 
 func test_class2(mode:Int) {
-    var class1 : UNTestClassAdvance = UNTestClassAdvance()
+    let class1 : UNTestClassAdvance = UNTestClassAdvance()
     
     switch mode {
     case 1:
@@ -54,9 +70,9 @@ func test_class2(mode:Int) {
 }
 
 func test_func(mode:Int) {
-    println("test_func mode:\(mode)")
+    print("test_func mode:\(mode)")
     
-    var func1 : UNTestFunc = UNTestFunc()
+    let func1 : UNTestFunc = UNTestFunc()
     switch mode {
     case 1:
         func1.test1()
@@ -74,30 +90,30 @@ func test_func(mode:Int) {
 }
 
 func test_array(mode : Int) {
-    println("test_array")
-    var array1 : UNTestArray = UNTestArray()
+    print("test_array")
+    let array1 : UNTestArray = UNTestArray()
     
     switch mode {
     case 1:
-        var ret = array1.test1()
+        let ret = array1.test1()
     case 2:
-        var ret = array1.test2()
+        let ret = array1.test2()
     case 3:
         array1.test3()
     default:
-        println()
+        print("")
     }
 }
 
 func test_dictionary(mode: Int) {
-    var dictionary1 : UNTestDictionary = UNTestDictionary()
+    let dictionary1 : UNTestDictionary = UNTestDictionary()
     
-    var ret = dictionary1.test1()
-    println("\(ret)")
+    let ret = dictionary1.test1()
+    print("\(ret)")
 }
 
 func test_optional(mode: Int){
-    var optional1 : UNTestOptional = UNTestOptional()
+    let optional1 : UNTestOptional = UNTestOptional()
     
     switch mode {
     case 1:
@@ -108,8 +124,8 @@ func test_optional(mode: Int){
         optional1.test3()
     case 4:
         optional1.test4()
-    case 5:
-        optional1.test5()
+//    case 5:
+        //optional1.test5()
     default:
         break
     }
@@ -127,7 +143,7 @@ func test_enum(mode : Int) {
 }
 
 func test_struct(mode:Int) {
-    var struct1 : UNTestStruct = UNTestStruct()
+    let struct1 : UNTestStruct = UNTestStruct()
     
     switch mode {
     case 1:
@@ -140,7 +156,7 @@ func test_struct(mode:Int) {
 }
 
 func test_property(mode:Int) {
-    var property : UNTestProperty = UNTestProperty()
+    let property : UNTestProperty = UNTestProperty()
     
     switch mode {
     case 1:
@@ -153,18 +169,18 @@ func test_property(mode:Int) {
 }
 
 func test_ARC(){
-    var arc : UNTestARC = UNTestARC()
+    let arc : UNTestARC = UNTestARC()
     arc.test1()
 }
 
 
 func test_extension() {
-    var ext1 : UNTestExtension = UNTestExtension()
+    let ext1 : UNTestExtension = UNTestExtension()
     ext1.test1()
 }
 
 func test_protocol(mode:Int) {
-    var prot1 : UNTestProtocol = UNTestProtocol()
+    let prot1 : UNTestProtocol = UNTestProtocol()
     switch mode {
     case 1:
         prot1.test1()
@@ -178,13 +194,13 @@ func test_protocol(mode:Int) {
 }
 
 func test_nested() {
-    var nest : UNTestNested = UNTestNested()
+    let nest : UNTestNested = UNTestNested()
     
     nest.test1()
 }
 
 func test_generics(mode: Int) {
-    var generics : UNTestGenerics = UNTestGenerics()
+    let generics : UNTestGenerics = UNTestGenerics()
     
     switch mode {
     case 1:
@@ -197,23 +213,52 @@ func test_generics(mode: Int) {
 }
 
 func test_overload(mode:Int) {
-    var overload : UNTestOverloadOperator = UNTestOverloadOperator()
+    let overload : UNTestOverloadOperator = UNTestOverloadOperator()
     overload.test1()
+}
+
+func test_subscript(mode:Int) {
+    
+    if mode == 1 {
+        let sample = SubscriptSample()
+        sample[0] = "happy_ryo"
+        sample[1] = "crazy_ryo"
+        print(sample[0])
+        print(sample[1])
+
+        let test1 = UNTestSubscript()
+        test1[0] = "hoge"
+        test1[0] = "hage"
+        print(test1[0])
+        print(test1[1])
+    }
+    else if mode == 2 {
+        print("kuku")
+        let kuku = UNTestSubscript2()
+        for i:Int in 1...9 {
+            for j:Int in 1...9 {
+                print(kuku[i,j].description + " ", terminator: "")
+            }
+            print("")   // 改行
+        }
+    }
 }
 
 /*
  * コンソールでユーザーの入力を取得する
  */
 func input() -> String {
-    println("\nplease input test name! ")
+    print("\nplease input test name! ")
 
-    var keyboard = NSFileHandle.fileHandleWithStandardInput()
-    var inputData = keyboard.availableData
-    var strData = NSString(data: inputData, encoding: NSUTF8StringEncoding)!
+    let keyboard = NSFileHandle.fileHandleWithStandardInput()
+    let inputData = keyboard.availableData
+    let strData = NSString(data: inputData, encoding: NSUTF8StringEncoding)!
     
     return strData.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
 }
 
+// プリプロセッサーテスト
+hoge1()
 
 var breakWhile = false
 while !breakWhile {
@@ -225,11 +270,11 @@ while !breakWhile {
             break
         case "class":
             test_class()
-        case "classa1":
+        case "class1":
             test_class2(1)
-        case "classa2":
+        case "class2":
             test_class2(2)
-        case "classa3":
+        case "class3":
             test_class2(3)
         case "func":
             test_func(1)
@@ -249,6 +294,8 @@ while !breakWhile {
             test_array(3)
         case "dic":
             test_dictionary(1)
+        case "enum":
+            fallthrough
         case "enum1":
             test_enum(1)
         case "enum2":
@@ -287,6 +334,12 @@ while !breakWhile {
             fallthrough
         case "prot3":
             test_protocol(3)
+        case "subscript1":
+            test_subscript(1)
+            break
+        case "subscript2":
+            test_subscript(2)
+            break
         case "arc":
             test_ARC()
         case "nest":
@@ -300,6 +353,6 @@ while !breakWhile {
         case "exit":
             breakWhile = true
         default:
-            println("\(command) isn't test name")
+            print("\(command) isn't test name")
     }
 }

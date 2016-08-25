@@ -2,8 +2,8 @@
 //  optional_test.swift
 //  swift_test
 //
-//  Created by B02681 on 2015/01/23.
-//  Copyright (c) 2015年 B02681. All rights reserved.
+//  Created by sunsunsoft on 2015/01/23.
+//  Copyright (c) 2015年 sunsunsoft. All rights reserved.
 //
 
 import Foundation

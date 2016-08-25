@@ -2,8 +2,8 @@
 //  test_overload_operator.swift
 //  swift_test
 //
-//  Created by B02681 on 2015/04/21.
-//  Copyright (c) 2015年 B02681. All rights reserved.
+//  Created by SunSunSoft on 2015/04/21.
+//  Copyright (c) 2015年 SunSunSoft. All rights reserved.
 //
 /*
     演算子のオーバーロード
@@ -94,37 +94,37 @@ class UNTestOverloadOperator
         
     }
     func test1() {
-        println("UNTestOverloadOperation:test1")
+        print("UNTestOverloadOperation:test1")
         
         var a : Vector3D = Vector3D(x:1.0, y:2.0, z:3.0)
-        var b : Vector3D = Vector3D(x:10.0, y:20.0, z:30.0)
+        let b : Vector3D = Vector3D(x:10.0, y:20.0, z:30.0)
         
         // 足し算
-        println((a + b).description)
+        print((a + b).description)
         
         // 引き算
-        println((a - b).description)
+        print((a - b).description)
         
         // 単項演算子
-        println((-a).description)
-        println((a++).description)
+        print((-a).description)
+        print((a++).description)
         
         // 複合代入演算子
         a += b
-        println(a.description)
+        print(a.description)
         
         a -= b
-        println(a.description)
+        print(a.description)
         
         // 等価演算子
-        var c1 : Vector3D = Vector3D(x:0, y:0, z:0)
-        var c2 : Vector3D = Vector3D(x:0, y:1, z:0)
-        var c3 : Vector3D = Vector3D(x:0, y:0, z:0)
-        println(c1 == c2)
-        println(c1 == c3)
-        println(c1 != c2)
+        let c1 : Vector3D = Vector3D(x:0, y:0, z:0)
+        let c2 : Vector3D = Vector3D(x:0, y:1, z:0)
+        let c3 : Vector3D = Vector3D(x:0, y:0, z:0)
+        print(c1 == c2)
+        print(c1 == c3)
+        print(c1 != c2)
         
         // 独自の演算子
-        println((~a).description)
+        print((~a).description)
     }
 }

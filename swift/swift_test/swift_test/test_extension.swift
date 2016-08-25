@@ -2,8 +2,8 @@
 //  test_extension.swift
 //  swift_test
 //
-//  Created by B02681 on 2015/04/17.
-//  Copyright (c) 2015年 B02681. All rights reserved.
+//  Created by SunSunSoft on 2015/04/17.
+//  Copyright (c) 2015年 SunSunSoft. All rights reserved.
 //
 /*
     既存のクラスを拡張できる。Objective-Cのカテゴリーのようなもの。
@@ -31,11 +31,16 @@ extension Int {
     var bin: String {
         return String(self, radix: 2)
     }
+    
+    // メソッド
+    func hoge() -> Int {
+        return self * 100
+    }
 }
 
 extension String {
     var dao: String {
-        return self + "dao"
+        return self + " dao!"
     }
 }
 
@@ -51,7 +56,7 @@ extension Person2 {
         self.init(name:name, email:"", age:18)
     }
     func description(){
-        println("name:\(self.name) email:\(self.email) age:\(self.age)")
+        print("name:\(self.name) email:\(self.email) age:\(self.age)")
     }
     var description2:String {
         return "name:" + self.name + "email:" + self.email + "age:" + self.age.description
@@ -90,22 +95,23 @@ class UNTestExtension {
     }
     
     func test1() {
-        println("UNTestExtension:test1")
+        print("UNTestExtension:test1")
         
         
-        println("---- 1 ----")
-        println(256.hex)
-        println(256.oct)
-        println(256.bin)
-        println("syutaro".dao)
+        print("---- 1 ----")
+        print("hex:" + 256.hex)
+        print("oct:" + 256.oct)
+        print("bin:" + 256.bin)
+        print("hoge:" + 256.hoge().description)
+        print("syutaro".dao)
         
-        println("---- 2 ----")
+        print("---- 2 ----")
         var person : Person2 = Person2(name: "syutaro")
-        println(person.description())
-        println(person.description2)
+        print(person.description())
+        print(person.description2)
         
-        println("---- 3 ----")
+        print("---- 3 ----")
         person.age = 40
-        println(person.type.japanese())
+        print(person.type.japanese())
     }
 }

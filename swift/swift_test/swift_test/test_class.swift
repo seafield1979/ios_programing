@@ -3,7 +3,7 @@
 //  swift_test
 //
 //  Created by UnnoShusuke on 2015/01/29.
-//  Copyright (c) 2015年 B02681. All rights reserved.
+//  Copyright (c) 2015年 SunSunSoft. All rights reserved.
 //
 /*
 基本的なクラス
@@ -36,6 +36,16 @@ user.hello()
 
 import Foundation
 
+class Hoge {
+    var name : String
+    var age : Int
+    init(){
+        self.name = "nanashi"
+        self.age = 0
+    }
+}
+
+
 class UNClassTest {
     // property
     var _str1 : String = ""
@@ -45,21 +55,21 @@ class UNClassTest {
     // getter/setter
     var str1 : String {
         get {
-            println("str1:get")
+            print("str1:get")
             return _str1        // この_str1はstr1とは直接関係ないので、プロパティならなんでもOKだYO
         }
         set(str1){
-            println("str1:set")
+            print("str1:set")
             _str1 = str1
         }
     }
     var str2 : String {
         get {
-            println("str2:get")
+            print("str2:get")
             return _str2
         }
         set(str2) {
-            println("str2:set")
+            print("str2:set")
             _str2 = str2
         }
     }
@@ -85,7 +95,7 @@ class UNClassTest {
     // デイニシャライザ
     deinit {
         // オブジェクト解放時の処理
-        println("UNTestClass:deinit")
+        print("UNTestClass:deinit")
     }
     
     // method
@@ -96,7 +106,7 @@ class UNClassTest {
     // クラスメソッド
     class func classMethod() {
         // type method implementation goes here
-        println("class method!")
+        print("class method!")
     }
     
     // クラス変数（の代用）
@@ -107,14 +117,18 @@ class UNClassTest {
     }
     
     func test1() {
-        println("----- class1 -----")
+        print("----- class1 -----")
         str1 = "1"
         str2 = "2"
-        println("str1:\(str1) str2:\(str2) str3:\(str3)")
+        print("str1:\(str1) str2:\(str2) str3:\(str3)")
         
-        println("----- class2 -----")
-        println(UNClassTest.classMethod())
-        println(UNClassTest.classVar)
+        print("----- class2 -----")
+        print(UNClassTest.classMethod())
+        print(UNClassTest.classVar)
+        
+        let hoge : Hoge = Hoge()
+        hoge.name = "taro"
+        hoge.age = 100
     }
 }
 

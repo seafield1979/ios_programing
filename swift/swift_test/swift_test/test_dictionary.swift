@@ -2,8 +2,8 @@
 //  test_dictionary.swift
 //  swift_test
 //
-//  Created by B02681 on 2015/03/10.
-//  Copyright (c) 2015年 B02681. All rights reserved.
+//  Created by SunSunSoft on 2015/03/10.
+//  Copyright (c) 2015年 SunSunSoft. All rights reserved.
 //
 /*
     辞書型 Dictionary
@@ -25,51 +25,51 @@ class UNTestDictionary
     
     func test1() -> String {
         // 宣言 キーと値の型を宣言できる
-        var d1 : [String : Int] = ["Apple" : 100, "Orange": 200, "Banana" : 50]
-        println(d1)
+        let d1 : [String : Int] = ["Apple" : 100, "Orange": 200, "Banana" : 50]
+        print(d1)
         
         // 宣言2 型を指定しないでも宣言できる
-        var d2 = ["Apple2" : 10000, "Orange2" : 20000, "Banana2" : 5000]
-        println(d2)
+        let d2 = ["Apple2" : 10000, "Orange2" : 20000, "Banana2" : 5000]
+        print(d2)
         
         // 宣言3 型が混在
         var d3 = ["Apple" : 1000, "Orange" : "2000", 100 : 100]
-        println( d3["Apple"] )
-        println( d3["Orange"] )
-        println( d3[100] )          // インデックスでも参照できる。これが出来るのはすごい
-        println(d3)
+        print( d3["Apple"] )
+        print( d3["Orange"] )
+        print( d3[100] )          // インデックスでも参照できる。これが出来るのはすごい
+        print(d3)
         
         // 値の変更 キーを指定して値を代入する
         var d4 = ["Apple" : 100, "Orange" : 200]
         d4["Apple"] = 120
         d4["Orange"] = 240
-        println(d4)
+        print(d4)
         
         // 要素の削除  nilを代入
         var d5 = ["Apple" : 100, "Orange" : 200]
         d5["Orange"] = nil      // Orangeの要素は消える
-        println(d5)
+        print(d5)
         
         // 辞書型のコピー
-        var d6 = ["Apple" : 100, "Orange" : 200]
+        let d6 = ["Apple" : 100, "Orange" : 200]
         var d62 = d6        // d62はd6をコピーしてできた新しいDictionary
         d62["Apple"] = 130  // これで変わるのはd62だけ
-        println("d6" + d6.description)
-        println("d62" + d62.description)
+        print("d6" + d6.description)
+        print("d62" + d62.description)
         
         // キーだけ取得 Array型
         var d7 = ["Apple" : 100, "Orange" : 200]
-        println("d7'keys: " + d7.keys.array.description)
+        print("d7'keys: " + Array(d7.keys).description);
         
         // イテレーションでループを回す
-        println("d7'values: " + Array(d7.values).description)
+        print("d7'values: " + Array(d7.values).description)
         for key in d7.keys {
-            println("d7_2 \(key):\(d7[key])")
+            print("d7_2 \(key):\(d7[key])")
         }
         
         // イテレーションでループを回す(キーと値を取得)
         for (key, value) in d7 {
-            println("d7_3 \(key):\(value)")
+            print("d7_3 \(key):\(value)")
         }
         
         return ""

@@ -2,8 +2,8 @@
 //  test_protocol.swift
 //  swift_test
 //
-//  Created by B02681 on 2015/04/17.
-//  Copyright (c) 2015年 B02681. All rights reserved.
+//  Created by SunSunSoft on 2015/04/17.
+//  Copyright (c) 2015年 SunSunSoft. All rights reserved.
 //
 /*
     プロトコルはそのクラスで実装されるメソッドのセットを定義したもの
@@ -22,7 +22,7 @@ protocol UNProtocol1 {
     var name : String? {get}
     var middleName : String? {get set}
     // 型メソッド
-    class func classFunc1() -> String
+    static func classFunc1() -> String
 }
 
 class UNMovingObject : UNProtocol1 {
@@ -34,20 +34,20 @@ class UNMovingObject : UNProtocol1 {
     
     //MARK: UNProtocol1を実装
     func goForward() {
-        println("UNMovingObject:goForward")
+        print("UNMovingObject:goForward")
     }
     func goBack() {
-        println("UNMovingObject:goBack")
+        print("UNMovingObject:goBack")
     }
     func yeah() -> String {
         return "Yeah"
     }
     var name : String? {
-        return self._name?
+        return self._name
     }
     var middleName : String? {
         get {
-            return self._middleName?
+            return self._middleName
         }
         set(_name) {
             self._middleName = _name
@@ -130,23 +130,23 @@ class UNTestProtocol {
     init() {
     }
     func test1() {
-        println("UNTestProtocol:test1")
+        print("UNTestProtocol:test1")
         prot1 = UNMovingObject()
         prot1?.goForward()
         prot1?.goBack()
-        println(prot1?.description)
+        print(prot1?.description)
     }
     
     // プロトコルの配列にそのプロトコルを実装しているインスタンスを代入する
     func test2() {
-        println("UNTestProtocol:test2")
-        var book1 : Jump = Jump(title: "とらごんぼーる", author: "鳥山あらき")
-        var book2 : Jump = Jump(title: "じゃんがーじゃんがー", author: "冨樫よしたけ")
-        var book3 : Magazine = Magazine(title: "銀田一中年の事件簿", author: "ごんべえ")
-        var bookList : [BookInfo] = [book1, book2, book3]
+        print("UNTestProtocol:test2")
+        let book1 : Jump = Jump(title: "とらごんぼーる", author: "鳥山あらき")
+        let book2 : Jump = Jump(title: "じゃんがーじゃんがー", author: "冨樫よしたけ")
+        let book3 : Magazine = Magazine(title: "銀田一中年の事件簿", author: "ごんべえ")
+        let bookList : [BookInfo] = [book1, book2, book3]
         
         for book in bookList {
-            println(book.description)
+            print(book.description)
         }
     }
     
@@ -164,9 +164,9 @@ class UNTestProtocol {
         }
     }
     func test3() {
-        var gameBoard : testGP = testGP()
+        let gameBoard : testGP = testGP()
         gameBoard[2,2] = 100
         gameBoard[3,3] = 200
-        println(gameBoard.board)
+        print(gameBoard.board)
     }
 }

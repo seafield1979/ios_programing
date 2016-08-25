@@ -3,7 +3,7 @@
 //  swift_test
 //
 //  Created by UnnoShusuke on 2015/01/31.
-//  Copyright (c) 2015年 B02681. All rights reserved.
+//  Copyright (c) 2015年 SunSunSoft. All rights reserved.
 //
 /*
     C言語のenumのようなもの
@@ -25,6 +25,11 @@
         case Blue       // 青
         case Yellow     // 黄
         case Red        // 赤
+    }
+    enum SignalS : String {
+        case Blue = "青"
+        case Yellow = "黄"
+        case Red = "赤"
     }
 
     // メソッドを定義できる
@@ -68,6 +73,13 @@ class UNTestEnum {
         case Red        // 赤
     }
     
+    // 文字列型
+    enum String1 : String {
+        case Hoge = "hoge"
+        case Mage = "mage"
+        case Kage = "kage"
+    }
+    
     // メソッドを定義できる
     enum SignalF {
         case Blue
@@ -90,13 +102,14 @@ class UNTestEnum {
     }
     
     func test1() {
-        println("UNTestEnum.test1")
+        print("UNTestEnum.test1")
         // 参照
-        println(Signal3.Blue)
+        print(Signal3.Blue)
+        print(String1.Kage)
         
         // 関数呼び出し
         let s = SignalF.Yellow
-        println("meaning:" + s.meaning())
+        print("meaning:" + s.meaning())
         
     }
     
@@ -120,19 +133,19 @@ class UNTestEnum {
         
         switch vehicle {
         case .Bicycle:
-            println("自転車")
+            print("自転車")
         case .Motorbike(let engine) where engine <= 50:
-            println("オートバイ:原付")
+            print("オートバイ:原付")
         case .Motorbike(let engine) where engine <= 125:
-            println("オートバイ:小型")
+            print("オートバイ:小型")
         case .Motorbike(let engine) where engine <= 400:
-            println("オートバイ:中型")
+            print("オートバイ:中型")
         case .Motorbike(let engine):
-            println("オートバイ:大型")
+            print("オートバイ:大型")
         case .Car(let engine, let automatic) where engine <= 660:
-            println("軽自動車:" + (automatic ? "オートマ" : "マニュアル"))
+            print("軽自動車:" + (automatic ? "オートマ" : "マニュアル"))
         case .Car(let engine, let automatic):
-            println("普通車 \(engine)cc:" + (automatic ? "オートマ" : "マニュアル"))
+            print("普通車 \(engine)cc:" + (automatic ? "オートマ" : "マニュアル"))
         }
     }
     

@@ -3,7 +3,7 @@
 //  swift_test
 //
 //  Created by UnnoShusuke on 2015/01/31.
-//  Copyright (c) 2015年 B02681. All rights reserved.
+//  Copyright (c) 2015年 SunSunSoft. All rights reserved.
 //
 /*
 Swiftのメソッドの特徴
@@ -23,7 +23,7 @@ class UNTestFunc {
     func test1() {
         //①引数なし・戻り値なし
         func hello(){
-            print("Hello!")
+            print("Hello!", terminator: "")
         }
         hello()
         
@@ -38,32 +38,32 @@ class UNTestFunc {
             return num
         }
         
-        println("hoge3: \(hoge3(100))")
+        print("hoge3: \(hoge3(100))")
         
         //④引数あり（複数）
         func hoge4(a: Int, b: String){
-            println(a)
-            println(b)
+            print(a)
+            print(b)
         }
         
-        hoge4(100, "テスト")
+        hoge4(100, b: "テスト")
         
         //⑤引数あり（複数かつ数を指定しない）
         //引数の値は配列として格納される。
         func hoge5(a: Int...){
-            println(a[0])
-            println(a[1])
+            print(a[0])
+            print(a[1])
         }
         hoge5(100, 200)
         
         //⑥引数あり（初期値を設定）
         func hoge6(a: Int = 100){
-            print(a)
+            print(a, terminator: "")
         }
         
-        println("hoge6")
+        print("hoge6")
         hoge6() // => 100
-        hoge6(a: 200) // => 200 ※引数にデフォルト値を指定した場合は、引数のラベル名が必要になる！
+        hoge6(200) // => 200 ※引数にデフォルト値を指定した場合は、引数のラベル名が必要になる！
         
         //⑥引数を使って変数宣言
         //引数のパラメータは、通常定数(let)として扱われるので、値を代入することはできない。
@@ -71,25 +71,25 @@ class UNTestFunc {
             //a = 200 // エラー
         }
         
-        println("hoge62 : \(hoge62(100))")
+        print("hoge62 : \(hoge62(100))")
         
         //ただし、引数でvar宣言をしてあげるとエラーにならない。
         func hoge63(var a: Int) -> Int{
             a = 200 // OK
             return a
         }
-        println("hoge63 : \(hoge63(100))")
+        print("hoge63 : \(hoge63(100))")
         
         //⑦キーワード引数（外部引数）を使う
         //引数の変数名の前に#をつける。これで、呼び出し時に引数の名前を指定できるようになる
-        func hoge7(#a: Int, #b: Int, #c: Int){
-            println(a, b)
-        }
-        hoge7(a: 100, b: 200, c:300)
+//        func hoge7(#a: Int, #b: Int, #c: Int){
+//            print(a, b)
+//        }
+//        hoge7(a: 100, b: 200, c:300)
         
         //あまりないと思うが、引数名とは別名で指定したい場合は、以下のように書ける。
         func hoge(num a: Int){
-            println(a)
+            print(a)
         }
         
         hoge(num: 100)
@@ -97,22 +97,22 @@ class UNTestFunc {
         //⑧戻り値が複数
         //タプルを使用する。
         func compareNumber(arr: [Int]) -> (min: Int, max: Int) {
-            var min = minElement(arr)
-            var max = maxElement(arr)
+            let min = arr.minElement()!
+            let max = arr.maxElement()!
             
             return (min, max)
         }
         let ret = compareNumber([1,2,3,4,5])
-        println("min: \(ret.min) max:\(ret.max)")
+        print("min: \(ret.min) max:\(ret.max)")
     }
 
     // MARK: test2
     // text内にcharactersのリストの文字が含まれていたらtrueを返す
     func containsCharacter(text:String, characters:Character ...) -> Bool {
         for ch in characters {
-            for t in text {
+            for t in text.characters {
                 if ch == t {
-                    println("\(ch) is in the \(text)")
+                    print("\(ch) is in the \(text)")
                     return true
                 }
             }
@@ -122,7 +122,7 @@ class UNTestFunc {
 
     // 可変引数のテスト
     func test2() {
-        println("UNTestFunction:test2()")
+        print("UNTestFunction:test2()")
         
         containsCharacter("abcdefg", characters: "i") // false
         containsCharacter("abcdefg", characters:"z", "o", "g") // true
@@ -146,8 +146,8 @@ class UNTestFunc {
         return a / b
     }
     func test3() {
-        println("UNTestFunction:test3()")
-        var mode : Int = 3
+        print("UNTestFunction:test3()")
+        let mode : Int = 3
         
         var func1 : ((Int, Int) -> Int)? = nil
         switch mode {
@@ -163,15 +163,15 @@ class UNTestFunc {
             break
         }
         
-        var ff1 : Int? = nil
+        let ff1 : Int? = nil
         if ff1 != nil {
-            println(ff1!)
+            print(ff1!)
         }
         
         if let f = func1 {
         //if func1 != nil {
             let ret = f(20,10)
-            println("ret:\(ret)")
+            print("ret:\(ret)")
         }
     }
     
@@ -181,11 +181,11 @@ class UNTestFunc {
     typealias FuncType = (Int, Int)->Int
     
     func calc1(a : Int, function:FuncType) {
-        println(function(a, a))
+        print(function(a, a))
     }
 
     func test4() {
-        println("UNTestFunction:test4()")
+        print("UNTestFunction:test4()")
         
         // calc1 に無名関数を渡す
         self.calc1(100, function: {
@@ -194,7 +194,7 @@ class UNTestFunc {
         })
         
         // ちなみに無名関数を渡さない場合は事前に関数型変数に代入しておく
-        var add1 : FuncType = {(a : Int, b : Int) in
+        let add1 : FuncType = {(a : Int, b : Int) in
             return a + b
         }
         self.calc1(33, function: add1)
@@ -203,12 +203,12 @@ class UNTestFunc {
     // MARK:test5 クロージャ
     // スコープ内で宣言され、使用できる範囲が制限された関数。関数の中で関数を宣言できたりする
     func test5() {
-        println("UNTestFunction:test5()")
+        print("UNTestFunction:test5()")
         
         func hello1(a:Int, b:Int) -> Int{
             return a + b * (a + b)
         }
-        println("hello1:" + hello1(1,2).description)
+        print("hello1:" + hello1(1,b: 2).description)
         
         let c : Int = 3
         func hello2(a:Int, b:Int) -> Int{
@@ -216,6 +216,6 @@ class UNTestFunc {
             return a + b * (a + b + c)
         }
         
-        println("hello2:" + hello2(1,2).description)
+        print("hello2:" + hello2(1,b: 2).description)
     }
 }

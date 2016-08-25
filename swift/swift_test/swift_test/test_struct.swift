@@ -2,8 +2,8 @@
 //  test_struct.swift
 //  swift_test
 //
-//  Created by B02681 on 2015/04/07.
-//  Copyright (c) 2015年 B02681. All rights reserved.
+//  Created by SunSunSoft on 2015/04/07.
+//  Copyright (c) 2015年 SunSunSoft. All rights reserved.
 //
 /*
     構造体
@@ -29,7 +29,7 @@ class UNTestStruct {
             birth = nil
         }
         func description() {
-            println("x:\(x) y:\(y) name:\(name) birth:\(birth)")
+            print("x:\(x) y:\(y) name:\(name) birth:\(birth)")
         }
     }
     var enemy : Enemy = Enemy()
@@ -42,8 +42,8 @@ class UNTestStruct {
     }
     
     func test1(){
-        println("----- struct1 -----")
-        println(enemy)
+        print("----- struct1 -----")
+        print(enemy)
         enemy.description()
     }
     
@@ -54,7 +54,7 @@ class UNTestStruct {
         var name : String
         var birth : NSDate?     // オプショナル
         func description() {
-            println("x:\(x) y:\(y) name:\(name) birth:\(birth)")
+            print("x:\(x) y:\(y) name:\(name) birth:\(birth)")
         }
         mutating func goUp() {
             y += 10
@@ -66,9 +66,13 @@ class UNTestStruct {
     }
     
     func test2() {
-        println("----- struct2 -----")
-        var enemy2 : Enemy2 = Enemy2(x:12, y:34, name:"donky", birth:NSDate())
+        print("----- struct2 -----")
+        let enemy2 : Enemy2 = Enemy2(x:12, y:34, name:"donky", birth:NSDate())
+        enemy2.x
+        enemy2.y
         enemy2.description()
+        let bd : NSDate = enemy2.birth!
+        print(bd.description)
     }
     
  }

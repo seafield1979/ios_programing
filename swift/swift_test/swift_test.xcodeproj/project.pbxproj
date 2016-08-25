@@ -28,6 +28,8 @@
 		7947EC411A7D18220038B8BD /* test_array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7947EC401A7D18220038B8BD /* test_array.swift */; };
 		7947EC431A7D182A0038B8BD /* test_enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7947EC421A7D182A0038B8BD /* test_enum.swift */; };
 		7947EC451A7D1DBB0038B8BD /* test_basis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7947EC441A7D1DBB0038B8BD /* test_basis.swift */; };
+		8A5C4D081D6E9DD400FB8621 /* test_subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5C4D071D6E9DD400FB8621 /* test_subscript.swift */; };
+		8A6A92071D6EC61900BF84E2 /* test_preprocesser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A92061D6EC61900BF84E2 /* test_preprocesser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,6 +67,8 @@
 		7947EC401A7D18220038B8BD /* test_array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test_array.swift; sourceTree = "<group>"; };
 		7947EC421A7D182A0038B8BD /* test_enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test_enum.swift; sourceTree = "<group>"; };
 		7947EC441A7D1DBB0038B8BD /* test_basis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test_basis.swift; sourceTree = "<group>"; };
+		8A5C4D071D6E9DD400FB8621 /* test_subscript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test_subscript.swift; sourceTree = "<group>"; };
+		8A6A92061D6EC61900BF84E2 /* test_preprocesser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test_preprocesser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,26 +110,28 @@
 		5872A90F1A71E7B200FF66B5 /* swift_test */ = {
 			isa = PBXGroup;
 			children = (
+				582802581A9DFA8B00246C41 /* Array+Display.swift */,
 				589388A31AE61E84009E0A2A /* test_accessLevel.swift */,
 				589388A51AE6263A009E0A2A /* test_accessLevel2.swift */,
+				58EED4601AD7D35B008799BE /* test_ARC.swift */,
 				7947EC401A7D18220038B8BD /* test_array.swift */,
 				7947EC441A7D1DBB0038B8BD /* test_basis.swift */,
 				793762571A7A626400196768 /* test_class.swift */,
 				580F88621AA882CA0047FDFA /* test_class_advance.swift */,
-				7947EC3E1A7D0CD10038B8BD /* test_function.swift */,
 				5872284D1AAF0F9400F2C430 /* test_dictionary.swift */,
 				7947EC421A7D182A0038B8BD /* test_enum.swift */,
-				580F88541AA5D2AC0047FDFA /* test_optional.swift */,
-				58EED4591AD3C4B3008799BE /* test_struct.swift */,
-				5872A9171A72008800FF66B5 /* optional_test.swift */,
-				582802581A9DFA8B00246C41 /* Array+Display.swift */,
-				58EED45B1AD3D292008799BE /* test_property.swift */,
-				58EED4601AD7D35B008799BE /* test_ARC.swift */,
 				58B02F261AE0D56E00024032 /* test_extension.swift */,
-				58AF37031AE0EBD300F6F687 /* test_protocol.swift */,
-				5893889F1AE5DF9A009E0A2A /* test_nested.swift */,
+				7947EC3E1A7D0CD10038B8BD /* test_function.swift */,
 				589388A11AE5E4F8009E0A2A /* test_generics.swift */,
+				5893889F1AE5DF9A009E0A2A /* test_nested.swift */,
+				580F88541AA5D2AC0047FDFA /* test_optional.swift */,
 				589388A71AE63040009E0A2A /* test_overload_operator.swift */,
+				58AF37031AE0EBD300F6F687 /* test_protocol.swift */,
+				8A6A92061D6EC61900BF84E2 /* test_preprocesser.swift */,
+				58EED4591AD3C4B3008799BE /* test_struct.swift */,
+				8A5C4D071D6E9DD400FB8621 /* test_subscript.swift */,
+				5872A9171A72008800FF66B5 /* optional_test.swift */,
+				58EED45B1AD3D292008799BE /* test_property.swift */,
 			);
 			path = swift_test;
 			sourceTree = "<group>";
@@ -156,8 +162,10 @@
 		5872A9051A71E7B200FF66B5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0730;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = B02681;
+				ORGANIZATIONNAME = sunsunsoft;
 				TargetAttributes = {
 					5872A90C1A71E7B200FF66B5 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -187,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				793762581A7A626400196768 /* test_class.swift in Sources */,
+				8A5C4D081D6E9DD400FB8621 /* test_subscript.swift in Sources */,
 				589388A41AE61E84009E0A2A /* test_accessLevel.swift in Sources */,
 				580F88631AA882CA0047FDFA /* test_class_advance.swift in Sources */,
 				5872284E1AAF0F9400F2C430 /* test_dictionary.swift in Sources */,
@@ -196,6 +205,7 @@
 				589388A01AE5DF9A009E0A2A /* test_nested.swift in Sources */,
 				7947EC431A7D182A0038B8BD /* test_enum.swift in Sources */,
 				589388A61AE6263A009E0A2A /* test_accessLevel2.swift in Sources */,
+				8A6A92071D6EC61900BF84E2 /* test_preprocesser.swift in Sources */,
 				58EED45C1AD3D292008799BE /* test_property.swift in Sources */,
 				589388A21AE5E4F8009E0A2A /* test_generics.swift in Sources */,
 				580F88551AA5D2AC0047FDFA /* test_optional.swift in Sources */,
@@ -293,6 +303,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DEBUG -D HOGE1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";

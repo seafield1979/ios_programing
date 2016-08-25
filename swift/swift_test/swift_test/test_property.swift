@@ -2,8 +2,8 @@
 //  test_property.swift
 //  swift_test
 //
-//  Created by B02681 on 2015/04/07.
-//  Copyright (c) 2015年 B02681. All rights reserved.
+//  Created by SunSunSoft on 2015/04/07.
+//  Copyright (c) 2015年 SunSunSoft. All rights reserved.
 //
 /*
     プロパティのサンプル
@@ -48,27 +48,35 @@ class UNTestProperty {
     // プロパティの監視
     // プロパティの値が変更前、変更後にメソッドが呼ばれる
     // ※値が変わらない場合でも呼ばれる
-    var age2 : Int = 0 {
+    var _age2 : Int = 0 {
         willSet {
-            println("willSet \(self.age2) -> \(newValue)")
+            print("willSet \(self.age2) -> \(newValue)")
         }
         didSet {
-            println("didSet \(oldValue) -> \(self.age2)")
+            print("didSet \(oldValue) -> \(self.age2)")
+        }
+    }
+    var age2 : Int {
+        get {
+            return _age2;
+        }
+        set(value) {
+            _age2 = value
         }
     }
     
     var static_int1 : Int = 0
     
     func test1() {
-        println("----- property1 -----")
+        print("----- property1 -----")
         age = 100
         name = "syutaro"
-        println("age:\(age) name:\(name)")
+        print("age:\(age) name:\(name)")
         
-        println("----- property2 -----")
-        println("int1:\(int1)")
+        print("----- property2 -----")
+        print("int1:\(int1)")
         
-        println("----- property3 -----")
+        print("----- property3 -----")
         age2 = 100
         age2 = 101
         age2 = 101
@@ -85,8 +93,8 @@ class UNTestProperty {
     var singleStr : String = "Single Tong!"
 
     func test2() {
-        println("----- property4 -----")
-        println("Singlenton: \(UNTestProperty.sharedInstance.singleStr)")
+        print("----- property4 -----")
+        print("Singlenton: \(UNTestProperty.sharedInstance.singleStr)")
     }
 }
 

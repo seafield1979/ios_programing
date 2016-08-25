@@ -2,8 +2,8 @@
 //  test_accessLevel2.swift
 //  swift_test
 //
-//  Created by B02681 on 2015/04/21.
-//  Copyright (c) 2015年 B02681. All rights reserved.
+//  Created by SunSunSoft on 2015/04/21.
+//  Copyright (c) 2015年 SunSunSoft. All rights reserved.
 //
 
 import Foundation

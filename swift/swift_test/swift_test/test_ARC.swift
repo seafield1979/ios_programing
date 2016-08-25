@@ -2,8 +2,8 @@
 //  test_ARC.swift
 //  swift_test
 //
-//  Created by B02681 on 2015/04/10.
-//  Copyright (c) 2015年 B02681. All rights reserved.
+//  Created by SunSunSoft on 2015/04/10.
+//  Copyright (c) 2015年 SunSunSoft. All rights reserved.
 //
 /*
  ARCのテスト
@@ -21,8 +21,8 @@ class UNTestARC {
     }
     
     func test1() {
-        println("----- ACR1 -----")
-        println("license:\(man!.drivingLicence)")
+        print("----- ACR1 -----")
+        print("license:\(man!.drivingLicence)")
     }
 }
 
@@ -34,7 +34,7 @@ class Person {
         self.name = name
     }
     deinit {
-        println("バーソン（\(self.name)）の破棄")
+        print("バーソン（\(self.name)）の破棄")
     }
 }
 
@@ -47,6 +47,6 @@ class DrivingLicense {
         self.holder = holder
     }
     deinit {
-        println("運転免許証（\(self.number)）の破棄")
+        print("運転免許証（\(self.number)）の破棄")
     }
 }

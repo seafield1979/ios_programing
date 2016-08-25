@@ -2,8 +2,8 @@
 //  test_nested.swift
 //  swift_test
 //
-//  Created by B02681 on 2015/04/21.
-//  Copyright (c) 2015年 B02681. All rights reserved.
+//  Created by SunSunSoft on 2015/04/21.
+//  Copyright (c) 2015年 SunSunSoft. All rights reserved.
 //
 /*
     ネストした型
@@ -23,19 +23,19 @@ class UNTestNested {
         class CNest2 {
             class CNest3 {
                 func test1() {
-                    println("CNest3:test1")
+                    print("CNest3:test1")
                 }
             }
             var nest3 : CNest3 = CNest3()
             func test1() {
                 nest3.test1()
-                println("CNest2:test1")
+                print("CNest2:test1")
             }
         }
         var nest2 : CNest2 = CNest2()
         func test1() {
             nest2.test1()
-            println("CNest1:test1")
+            print("CNest1:test1")
         }
     }
     

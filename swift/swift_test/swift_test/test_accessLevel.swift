@@ -2,8 +2,8 @@
 //  test_accessLevel.swift
 //  swift_test
 //
-//  Created by B02681 on 2015/04/21.
-//  Copyright (c) 2015年 B02681. All rights reserved.
+//  Created by sunsunsoft on 2015/04/21.
+//  Copyright (c) 2015年 sunsunsoft. All rights reserved.
 //
 /*
     クラス、クラスのプロパティ、クラスのメソッド、構造体、列挙型に外部からのアクセスを制限するためのレベルを設定できる
@@ -26,10 +26,10 @@ public class CParent {
         
     }
     private func test(){
-        println("CParent:test()")
+        print("CParent:test()")
     }
     public func test2(){
-        println("CParent:test2()")
+        print("CParent:test2()")
     }
 }
 
@@ -52,7 +52,7 @@ public class UNTestAccessLevel {
         
     }
     public func test1() {
-        println("UNTestAccessLevel:")
+        print("UNTestAccessLevel:")
         // 同じクラスのメソッドからはprivateメソッドも呼び出し可能
         test_private1()
         

@@ -2,8 +2,8 @@
 //  test_class_advance.swift
 //  swift_test
 //
-//  Created by B02681 on 2015/03/05.
-//  Copyright (c) 2015年 B02681. All rights reserved.
+//  Created by SunSunSoft on 2015/03/05.
+//  Copyright (c) 2015年 SunSunSoft. All rights reserved.
 //
 /*
     更に進んだクラスの使い方
@@ -47,7 +47,7 @@ class Parent1{
         self.position = CGRectMake(1, 2, 3, 4)
     }
     func hoge() {
-        println("Parent1:hoge")
+        print("Parent1:hoge")
     }
 }
 
@@ -62,7 +62,7 @@ class Child1 : Parent1{
     func test1() {
         // 親クラスのメンバの参照、メソッドの呼び出し
         self.hoge()
-        println("position: \(position)")
+        print("position: \(position)")
     }
 }
 
@@ -72,21 +72,21 @@ class Child1 : Parent1{
  */
 class Parent2{
     init(){
-        println("Parent2:init")
+        print("Parent2:init")
     }
     func hoge(){
-        println("Parent2:hoge")
+        print("Parent2:hoge")
     }
 }
 
 class Child2 : Parent2 {
     override init(){
         super.init()
-        println("Child2:init")
+        print("Child2:init")
     }
     override func hoge(){
         super.hoge()    // 親クラスのメソッドを呼び出す
-        println("Child2:hoge")
+        print("Child2:hoge")
     }
     func test1() {
         self.hoge()
@@ -114,41 +114,41 @@ class UNTestClassAdvance
     
     func test1() {
         // 継承
-        println("test_class2")
-        var class2 : Child1 = Child1()
+        print("test_class2")
+        let class2 : Child1 = Child1()
         class2.test1()
         
         // オーバーライド
-        var class22 : Child2 = Child2()
+        let class22 : Child2 = Child2()
         class22.test1()
     }
     
     
     func test2() {
         // あるクラスを継承しているかを判定
-        println("\nInherit check")
-        var array = [Child1(), Parent1(), Parent3()];
+        print("\nInherit check")
+        let array = [Child1(), Parent1(), Parent3()];
         
         for obj in array {
-            println("----")
+            print("----")
             if obj is Child1 {
-                println("obj is Child1")
+                print("obj is Child1")
             }
             if obj is Parent1 {
-                println("obj is Parent1")
+                print("obj is Parent1")
             }
             if obj is Parent3 {
-                println("obj is Parent3")
+                print("obj is Parent3")
             }
         }
         
         // 同一インスタンスのチェック
-        println("Instance same check")
-        var obj1 : AnyObject = array[1];
+        print("Instance same check")
+        let obj1 : AnyObject = array[1];
         for obj in array {
-            println("----")
+            print("----")
             if obj1 === obj {
-                println("obj1 is instance of \(NSStringFromClass(obj.dynamicType))")
+                print("obj1 is instance of \(NSStringFromClass(obj.dynamicType))")
             }
         }
     }
@@ -161,7 +161,7 @@ class UNTestClassAdvance
                 
             }
             func goStraight() {
-                print("P1:goStraight ")
+                print("P1:goStraight ", terminator: "")
             }
         }
         // 子クラス
@@ -171,10 +171,10 @@ class UNTestClassAdvance
             }
             override func goStraight() {
                 super.goStraight()
-                print("C1:goStraight ")
+                print("C1:goStraight ", terminator: "")
             }
             func goBack(){
-                print("C1:goBack ")
+                print("C1:goBack ", terminator: "")
             }
         }
         // 孫クラス
@@ -184,36 +184,36 @@ class UNTestClassAdvance
             }
             override func goStraight() {
                 super.goStraight()
-                print("G1:goStraight ")
+                print("G1:goStraight ", terminator: "")
             }
             override func goBack() {
                 super.goBack()
-                print("G1:goBack ")
+                print("G1:goBack ", terminator: "")
             }
             func goThrough(){
-                print("G1:goThrough ")
+                print("G1:goThrough ", terminator: "")
             }
         }
         
-        println("---- test3 ----")
+        print("---- test3 ----")
         var p1 : Test3P1 = Test3P1()
-        var c1 : Test3C1 = Test3C1()
-        var g1 : Test3G1 = Test3G1()
+        let c1 : Test3C1 = Test3C1()
+        let g1 : Test3G1 = Test3G1()
         
-        println("---- 1 ----")
-        var p2 : Test3P1 = c1       // p2はインスタンスはc1だけど、Test3P1のインターフェイスに制限される
+        print("---- 1 ----")
+        let p2 : Test3P1 = c1       // p2はインスタンスはc1だけど、Test3P1のインターフェイスに制限される
         p2.goStraight()
 //        p2.goBack()       // Test3P1にgoBack()は実装されていないのでエラーになる
         
-        println("\n---- 2 ----")
-        var p3 : Test3P1 = g1
+        print("\n---- 2 ----")
+        let p3 : Test3P1 = g1
         p3.goStraight()
 //        p3.goBack()         // Test3P1にgoBack()は実装されていないのでエラーになる
         
-        println("\n---- 3 ----")
-        var c2 : Test3C1 = g1
+        print("\n---- 3 ----")
+        let c2 : Test3C1 = g1
         c2.goStraight()
-        println()
+        print("")
         c2.goBack()
 //        c2.goThrought()       // Test3C1にgoThrough()は実装されていないのでエラーになる
         

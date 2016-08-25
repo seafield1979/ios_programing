@@ -2,8 +2,8 @@
 //  test_generics.swift
 //  swift_test
 //
-//  Created by B02681 on 2015/04/21.
-//  Copyright (c) 2015年 B02681. All rights reserved.
+//  Created by SunSunSoft on 2015/04/21.
+//  Copyright (c) 2015年 SunSunSoft. All rights reserved.
 //
 /*
     C++のテンプレートのようなもの
@@ -33,14 +33,14 @@ struct Set<T: Equatable> {      // Equatable は２つの引数が == で比較�
     
     // 要素の削除
     mutating func remove(item:T) {
-        if let idx = find(items, item) {
+        if let idx = items.indexOf(item) {
             items.removeAtIndex(idx)
         }
     }
     
     // 要素の存在確認
     func contains(item: T) -> Bool {
-        return Swift.contains(items, item)
+        return items.contains(item)
     }
 }
 
@@ -54,23 +54,23 @@ class UNTestGenerics {
     }
     
     func test1() {
-        println("UNTestGenerics:test1")
-        println("----- 1 -----")
-        var i1 = 10
-        var i2 = 20
-        println(bigger(i1, val2:i2))
+        print("UNTestGenerics:test1")
+        print("----- 1 -----")
+        let i1 = 10
+        let i2 = 20
+        print(bigger(i1, val2:i2))
         
-        var f1 : Float = 10.0
-        var f2 : Float = 20.0
-        println(bigger(f1,val2:f2))
+        let f1 : Float = 10.0
+        let f2 : Float = 20.0
+        print(bigger(f1,val2:f2))
         
-        var d1 : Double = 10.0
-        var d2 : Double = 20.0
-        println(bigger(d1, val2:d2))
+        let d1 : Double = 10.0
+        let d2 : Double = 20.0
+        print(bigger(d1, val2:d2))
         
-        var s1 : String = "Mickey"
-        var s2 : String = "Miffy"
-        println(bigger(s1,val2:s2))
+        let s1 : String = "Mickey"
+        let s2 : String = "Miffy"
+        print(bigger(s1,val2:s2))
     }
     
     /*
@@ -83,13 +83,13 @@ class UNTestGenerics {
         party.append("ゾロ")
         party.append("ナミ")
         party.append("ゾロ")
-        println(party.items)
+        print(party.items)
         
         var numbers = Set<Int>()
         numbers.append(10)
         numbers.append(20)
-        println(numbers.contains(10))   // true
-        println(numbers.items)
+        print(numbers.contains(10))   // true
+        print(numbers.items)
     }
     
 }

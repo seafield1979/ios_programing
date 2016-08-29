@@ -23,9 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 最初に表示されるViewControllerを生成
         let viewController = UIViewController()
+        viewController.view.backgroundColor = UIColor.whiteColor()
         
-        // Viewの色を変える
-        viewController.view.backgroundColor = UIColor.yellowColor()
+        // なにも表示されないのはあれなので Hello World ラベルを表示
+        let label1 : UILabel = UILabel(frame: CGRect(x:50, y:100, width:100, height: 50))
+        label1.text = "Hello World!!"
+        viewController.view.addSubview(label1)
         
         window!.rootViewController = viewController
         window!.makeKeyAndVisible();

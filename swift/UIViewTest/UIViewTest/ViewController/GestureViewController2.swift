@@ -153,6 +153,16 @@ class GestureViewController2: UIViewController {
     }
     
 // MARK: 長押しジェスチャー
+    /*
+     UILongPressGestureRecognizer
+
+     state : UIGestureRecognizerState  状態
+     numberOfTapsRequired   最小何本指のタップで反応するか
+     numberOfTouchesRequired  最小何本指のタッチで反応するか(move時)
+     minimumPressDuration   長押しの反応時間(デフォルトは 0.5秒)
+     allowableMovement   長押し中の指のズレを許容する範囲
+ 
+     */
     // 長押し時に呼ばれるメソッド
     // 注意点として長押し開始、長押し時にカーソル移動、長押し完了時にそれぞれ呼ばれる
     func longPressGesture(gesture: UIGestureRecognizer) {

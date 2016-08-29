@@ -36,15 +36,25 @@ class ViewController: UIViewController {
         self.view1 = UIView(frame: CGRect(x:0, y:20, width:100, height:100))
         view1!.backgroundColor = UIColor.redColor()
         self.view.addSubview(view1!)
+        
+        //self.view1!.frame.origin = CGPoint(x:0, y:0)
+        
+        // Viewのレイヤーの座標を設定する
+        self.view1!.layer.position = CGPointMake(100, 120)
+        self.view1!.layer.backgroundColor = UIColor.greenColor().CGColor
+        
     }
     
     func moveView(view : UIView?) {
         let frame = view?.frame
  
-        view1?.frame = CGRectMake(frame!.origin.x + 50.0,
-                              frame!.origin.y,
-                              frame!.size.width,
-                              frame!.size.height)
+//        view1?.frame = CGRectMake(frame!.origin.x + 50.0,
+//                              frame!.origin.y,
+//                              frame!.size.width,
+//                              frame!.size.height)
+        // レイヤーを使って移動
+        let pos = view1?.layer.position
+        view1?.layer.position = CGPoint(x: pos!.x+50, y: pos!.y)
     }
     
     func changeSizeView(view : UIView?) {

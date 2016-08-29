@@ -13,6 +13,8 @@
 		8A3D362A1D7169CF003528A0 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3D36281D7169CF003528A0 /* ViewController.xib */; };
 		8A3D362D1D7184AA003528A0 /* GestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D362B1D7184AA003528A0 /* GestureViewController.swift */; };
 		8A3D362E1D7184AA003528A0 /* GestureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3D362C1D7184AA003528A0 /* GestureViewController.xib */; };
+		8A3D36331D73DA5A003528A0 /* GestureViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D36311D73DA5A003528A0 /* GestureViewController2.swift */; };
+		8A3D36341D73DA5A003528A0 /* GestureViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3D36321D73DA5A003528A0 /* GestureViewController2.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		8A3D36281D7169CF003528A0 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = ViewController/ViewController.xib; sourceTree = "<group>"; };
 		8A3D362B1D7184AA003528A0 /* GestureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GestureViewController.swift; path = ViewController/GestureViewController.swift; sourceTree = "<group>"; };
 		8A3D362C1D7184AA003528A0 /* GestureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GestureViewController.xib; path = ViewController/GestureViewController.xib; sourceTree = "<group>"; };
+		8A3D36311D73DA5A003528A0 /* GestureViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GestureViewController2.swift; path = ViewController/GestureViewController2.swift; sourceTree = "<group>"; };
+		8A3D36321D73DA5A003528A0 /* GestureViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GestureViewController2.xib; path = ViewController/GestureViewController2.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 				8A3D36281D7169CF003528A0 /* ViewController.xib */,
 				8A3D362B1D7184AA003528A0 /* GestureViewController.swift */,
 				8A3D362C1D7184AA003528A0 /* GestureViewController.xib */,
+				8A3D36311D73DA5A003528A0 /* GestureViewController2.swift */,
+				8A3D36321D73DA5A003528A0 /* GestureViewController2.xib */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -136,6 +142,7 @@
 				8A3D362E1D7184AA003528A0 /* GestureViewController.xib in Resources */,
 				8A3D362A1D7169CF003528A0 /* ViewController.xib in Resources */,
 				8A3D361C1D71694D003528A0 /* Assets.xcassets in Resources */,
+				8A3D36341D73DA5A003528A0 /* GestureViewController2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +156,7 @@
 				8A3D362D1D7184AA003528A0 /* GestureViewController.swift in Sources */,
 				8A3D36291D7169CF003528A0 /* ViewController.swift in Sources */,
 				8A3D36151D71694D003528A0 /* AppDelegate.swift in Sources */,
+				8A3D36331D73DA5A003528A0 /* GestureViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

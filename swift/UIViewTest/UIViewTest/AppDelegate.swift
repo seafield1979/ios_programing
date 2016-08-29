@@ -14,25 +14,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var viewController : ViewController?
     var gestureViewController : GestureViewController?
+    var gestureViewController2 : GestureViewController2?
  
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         window = UIWindow(frame:UIScreen.mainScreen().bounds)
         
+        let mode = 3
+        
+        
         // 最初に表示されるViewControllerを生成
-        if (false) {
+        switch (mode) {
+        case 1:
             self.viewController = ViewController(nibName: "ViewController", bundle: nil)
             
             // Viewの色を変える
             self.viewController!.view.backgroundColor = UIColor.yellowColor()
             window!.rootViewController = viewController
-        }
-        else {
+        case 2:
             self.gestureViewController = GestureViewController(nibName: "GestureViewController", bundle: nil)
             
             // Viewの色を変える
             self.gestureViewController!.view.backgroundColor = UIColor.yellowColor()
             window!.rootViewController = self.gestureViewController
+        case 3:
+            self.gestureViewController2 = GestureViewController2(nibName: "GestureViewController2", bundle: nil)
+            
+            // Viewの色を変える
+            self.gestureViewController2!.view.backgroundColor = UIColor.yellowColor()
+            window!.rootViewController = self.gestureViewController2
         }
 
         window!.makeKeyAndVisible();

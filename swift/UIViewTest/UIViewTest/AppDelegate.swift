@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.buttonViewController = ButtonViewController(nibName: "ButtonViewController", bundle: nil)
             
             // Viewの色を変える
-            self.buttonViewController!.view.backgroundColor = UIColor.blackColor()
+            self.buttonViewController!.view.backgroundColor = UIColor.whiteColor()
             window!.rootViewController = self.buttonViewController
         }
 

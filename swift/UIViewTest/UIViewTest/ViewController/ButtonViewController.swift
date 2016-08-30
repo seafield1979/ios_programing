@@ -6,12 +6,12 @@
 //  Copyright © 2016年 Shusuke Unno. All rights reserved.
 //
 /*
-    UIButtonをいろいろ試してみる
+    UIButtonでできること
         ボタンの文字を変更
-        ボタンのデザインを変更
-        ボタンを自前の画像に変更
-        ボタンの状態を変更
-        ボタンが押された時の処理
+        ボタンのデザインを変更（文字の色、背景色、枠の色）
+        ボタンを自前の画像に変更（setBackgroundImage)
+        ボタンの状態を変更(.enabled, .selected)
+        ボタンが押された時の処理(addTarget())
  */
 
 import UIKit
@@ -21,7 +21,8 @@ class ButtonViewController: UIViewController {
     var button1 : UIButton?
     var button2 : UIButton?
     var button3 : UIButton?
-    
+    var buttonTypes : [UIButton]?
+    var buttonImg : UIButton?
     
     func tappedButton(sender: AnyObject) {
 //        if let button = sender as? UIButton {
@@ -95,7 +96,37 @@ class ButtonViewController: UIViewController {
     {
         let button = UIButton(frame: CGRectMake(pos.x, pos.y, 100, 30))
         button.setTitle(title, forState: UIControlState.Normal)
-        button.setTitleColor( UIColor.grayColor(), forState: UIControlState.Highlighted)
+        button.setTitleColor( UIColor.blackColor(), forState: UIControlState.Normal)
+//        button.setTitleColor( UIColor.grayColor(), forState: UIControlState.Highlighted)
+        button.addTarget(self,action: #selector(self.tappedButton(_:)), forControlEvents:.TouchUpInside)
+        return button
+    }
+    
+    // Typeを指定して作成
+    // UIButton(type: UIButtonType.[ボタンのタイプ])
+    //      System
+    //      DetailDisclosure
+    //      InfoLight
+    //      InfoDark
+    //      ContactAdd
+    func createButtonType(pos : CGPoint, type : UIButtonType) -> UIButton
+    {
+        let button = UIButton(type: type)
+        button.frame = CGRectMake(pos.x, pos.y, 50, 50)
+        button.addTarget(self,action: #selector(self.tappedButton(_:)), forControlEvents:.TouchUpInside)
+        
+        return button
+    }
+    
+    // 画像つき
+    func createButtonImage(pos: CGPoint, filename : String, filename_hl : String) -> UIButton
+    {
+        let button = UIButton(frame: CGRectMake(pos.x, pos.y, 100, 50))
+        
+        button.setBackgroundImage( UIImage(named: filename), forState: .Normal)
+        button.setBackgroundImage( UIImage(named: filename_hl), forState: .Highlighted)
+        
+        button.addTarget(self,action: #selector(self.tappedButton(_:)), forControlEvents:.TouchUpInside)
         return button
     }
     
@@ -103,8 +134,9 @@ class ButtonViewController: UIViewController {
     {
         super.viewDidLoad()
         
+        var pos_y : Float = 100.0
         // ボタンを生成
-        self.button1 = createButton(CGPointMake(0.0, 100.0))
+        self.button1 = createButton(CGPointMake(0.0, pos_y))
         self.view.addSubview(button1!)
         
         // ボタンを生成
@@ -113,9 +145,33 @@ class ButtonViewController: UIViewController {
         
         // ボタンを生成
         self.button3 = createButton2(CGPointMake(0.0, 300.0), title : "hoge")
-        self.button3!.addTarget(self,action: #selector(self.tappedButton(_:)), forControlEvents:.TouchUpInside)
         self.view.addSubview(button3!)
         
-
+        // タイプ指定でボタンを生成
+        self.buttonTypes = []
+        
+        for index in 1...4 {
+            let type : UIButtonType
+            switch index {
+            case 1:
+                type = .ContactAdd
+            case 2:
+                type = .DetailDisclosure
+            case 3:
+                type = .InfoLight
+            case 4:
+                fallthrough
+            default:
+                type = .InfoDark
+            }
+                
+            let button = createButtonType(CGPointMake(CGFloat(index) * 50.0, 350.0), type:type)
+            self.view.addSubview(button)
+            self.buttonTypes?.append(button)
+        }
+        
+        // 画像ボタンを生成
+        self.buttonImg = createButtonImage(CGPointMake(50.0, 400.0), filename: "image/hoge.png", filename_hl: "image/hoge_hl.png")
+        self.view.addSubview(self.buttonImg!)
     }
 }

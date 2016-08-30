@@ -17,6 +17,7 @@
 		8A3D36341D73DA5A003528A0 /* GestureViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3D36321D73DA5A003528A0 /* GestureViewController2.xib */; };
 		8A3D36371D741B82003528A0 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D36351D741B82003528A0 /* ButtonViewController.swift */; };
 		8A3D36381D741B82003528A0 /* ButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3D36361D741B82003528A0 /* ButtonViewController.xib */; };
+		8A3D363C1D757225003528A0 /* image in Resources */ = {isa = PBXBuildFile; fileRef = 8A3D363B1D757225003528A0 /* image */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8A3D36321D73DA5A003528A0 /* GestureViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GestureViewController2.xib; path = ViewController/GestureViewController2.xib; sourceTree = "<group>"; };
 		8A3D36351D741B82003528A0 /* ButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonViewController.swift; path = ViewController/ButtonViewController.swift; sourceTree = "<group>"; };
 		8A3D36361D741B82003528A0 /* ButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ButtonViewController.xib; path = ViewController/ButtonViewController.xib; sourceTree = "<group>"; };
+		8A3D363B1D757225003528A0 /* image */ = {isa = PBXFileReference; lastKnownFileType = folder; path = image; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		8A3D36131D71694D003528A0 /* UIViewTest */ = {
 			isa = PBXGroup;
 			children = (
+				8A3D363B1D757225003528A0 /* image */,
 				8A3D36261D716973003528A0 /* ViewController */,
 				8A3D36141D71694D003528A0 /* AppDelegate.swift */,
 				8A3D361B1D71694D003528A0 /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A3D363C1D757225003528A0 /* image in Resources */,
 				8A3D362E1D7184AA003528A0 /* GestureViewController.xib in Resources */,
 				8A3D36381D741B82003528A0 /* ButtonViewController.xib in Resources */,
 				8A3D362A1D7169CF003528A0 /* ViewController.xib in Resources */,

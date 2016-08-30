@@ -83,10 +83,10 @@ class UNTestBasis {
     func test_for() {
         //・基本
         //C言語のforループ
-        print("----- for1 -----")
-        for var cnt = 0; cnt < 10; cnt++ {
-            print("cnt:\(cnt)")
-        }
+//        print("----- for1 -----")
+//        for var cnt = 0; cnt < 10; cnt++ {
+//            print("cnt:\(cnt)")
+//        }
         
         //・範囲指定 (tupleを使用)
         print("----- for2 -----")

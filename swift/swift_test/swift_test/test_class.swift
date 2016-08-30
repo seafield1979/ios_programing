@@ -50,6 +50,7 @@ class UNClassTest {
     // property
     var _str1 : String = ""
     var _str2 : String = ""
+    var hoges : [Hoge]?
     
    
     // getter/setter
@@ -85,6 +86,7 @@ class UNClassTest {
     init () {
         _str1 = ""
         _str2 = ""
+        hoges = Array(count:10, repeatedValue:Hoge())
     }
     // 引数あり
     init (str1: String, str2: String) {

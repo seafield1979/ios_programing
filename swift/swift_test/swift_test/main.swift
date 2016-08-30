@@ -9,19 +9,24 @@
 import Foundation
 import Darwin
 
-func test_print() {
+func testPrint() {
     print("hello:")
     
     // 変数を埋め込む
-    let str1:String = "syutaro"
+    let str1 = "syutaro"
     print("str1:\(str1)")
     
     // カンマ区切りで変数のリストを渡す
-    let hoge:String = "syutaro"
+    let hoge = "syutaro"
     print("aaa", "bbb", hoge)
+    
+    // フォーマットする
+    let posX : Float = 1.123456789
+    let posY : Float = 2.123456789
+    print( String(format: "%.4f %.4f", posX, posY))
 }
 
-func test_basis() {
+func testBasis() {
     print("test_basis")
     let basis1 : UNTestBasis = UNTestBasis()
     basis1.test_str()
@@ -31,7 +36,7 @@ func test_basis() {
 //    basis1.test_tuple2()
 }
 
-func test_class() {
+func testClass() {
     print("test_class")
     let class1 : UNClassTest = UNClassTest(str1: "ok", str2: "ng")
     print (class1.test1())
@@ -54,7 +59,7 @@ func test_class() {
     }
 }
 
-func test_class2(mode:Int) {
+func testClass2(mode:Int) {
     let class1 : UNTestClassAdvance = UNTestClassAdvance()
     
     switch mode {
@@ -69,7 +74,7 @@ func test_class2(mode:Int) {
     }
 }
 
-func test_func(mode:Int) {
+func testFunc(mode:Int) {
     print("test_func mode:\(mode)")
     
     let func1 : UNTestFunc = UNTestFunc()
@@ -89,7 +94,7 @@ func test_func(mode:Int) {
     }
 }
 
-func test_array(mode : Int) {
+func testArray(mode : Int) {
     print("test_array")
     let array1 : UNTestArray = UNTestArray()
     
@@ -105,14 +110,29 @@ func test_array(mode : Int) {
     }
 }
 
-func test_dictionary(mode: Int) {
+func testDictionary(mode: Int) {
     let dictionary1 : UNTestDictionary = UNTestDictionary()
     
     let ret = dictionary1.test1()
     print("\(ret)")
 }
 
-func test_optional(mode: Int){
+func testString(mode : Int) {
+    let string1 = UNTestString()
+    
+    switch mode {
+    case 1:
+        string1.test1()
+    case 2:
+        string1.testRegEx()
+    case 3:
+        string1.testReplace()
+    default:
+        break
+    }
+}
+
+func testOptional(mode: Int){
     let optional1 : UNTestOptional = UNTestOptional()
     
     switch mode {
@@ -131,7 +151,7 @@ func test_optional(mode: Int){
     }
 }
 
-func test_enum(mode : Int) {
+func testEnum(mode : Int) {
     let enum1 = UNTestEnum()
     
     switch mode {
@@ -142,7 +162,7 @@ func test_enum(mode : Int) {
     }
 }
 
-func test_struct(mode:Int) {
+func testStruct(mode:Int) {
     let struct1 : UNTestStruct = UNTestStruct()
     
     switch mode {
@@ -155,7 +175,7 @@ func test_struct(mode:Int) {
     }
 }
 
-func test_property(mode:Int) {
+func testProperty(mode:Int) {
     let property : UNTestProperty = UNTestProperty()
     
     switch mode {
@@ -168,18 +188,18 @@ func test_property(mode:Int) {
     }
 }
 
-func test_ARC(){
+func testARC(){
     let arc : UNTestARC = UNTestARC()
     arc.test1()
 }
 
 
-func test_extension() {
+func testExtension() {
     let ext1 : UNTestExtension = UNTestExtension()
     ext1.test1()
 }
 
-func test_protocol(mode:Int) {
+func testProtocol(mode:Int) {
     let prot1 : UNTestProtocol = UNTestProtocol()
     switch mode {
     case 1:
@@ -193,13 +213,13 @@ func test_protocol(mode:Int) {
     }
 }
 
-func test_nested() {
+func testNested() {
     let nest : UNTestNested = UNTestNested()
     
     nest.test1()
 }
 
-func test_generics(mode: Int) {
+func testGenerics(mode: Int) {
     let generics : UNTestGenerics = UNTestGenerics()
     
     switch mode {
@@ -212,12 +232,15 @@ func test_generics(mode: Int) {
     }
 }
 
-func test_overload(mode:Int) {
+func testOverload(mode:Int) {
     let overload : UNTestOverloadOperator = UNTestOverloadOperator()
     overload.test1()
 }
 
-func test_subscript(mode:Int) {
+//
+// subscriptのテスト
+// hoge[1] のような書き方をした時に自前の処理を行うことができる
+func testSubscript(mode:Int) {
     
     if mode == 1 {
         let sample = SubscriptSample()
@@ -244,10 +267,24 @@ func test_subscript(mode:Int) {
     }
 }
 
+func testMap() {
+    let map = UNTestMap()
+    map.test1()
+}
+
+func testFilter() {
+    let filter1 = UNTestFilter()
+    filter1.test1()
+}
+
+func testReduce() {
+    
+}
+
 /*
  * コンソールでユーザーの入力を取得する
  */
-func input() -> String {
+func getInput() -> String {
     print("\nplease input test name! ")
 
     let keyboard = NSFileHandle.fileHandleWithStandardInput()
@@ -262,94 +299,104 @@ hoge1()
 
 var breakWhile = false
 while !breakWhile {
-    let command = input()
+    let command = getInput()
 
     switch command {
         case "basis":
-            test_basis()
+            testBasis()
             break
         case "class":
-            test_class()
+            testClass()
         case "class1":
-            test_class2(1)
+            testClass2(1)
         case "class2":
-            test_class2(2)
+            testClass2(2)
         case "class3":
-            test_class2(3)
+            testClass2(3)
         case "func":
-            test_func(1)
+            testFunc(1)
         case "func2":
-            test_func(2)
+            testFunc(2)
         case "func3":
-            test_func(3)
+            testFunc(3)
         case "func4":
-            test_func(4)
+            testFunc(4)
         case "func5":
-            test_func(5)
+            testFunc(5)
         case "array1":
-            test_array(1)
+            testArray(1)
         case "array2":
-            test_array(2)
+            testArray(2)
         case "array3":
-            test_array(3)
+            testArray(3)
         case "dic":
-            test_dictionary(1)
+            testDictionary(1)
         case "enum":
             fallthrough
         case "enum1":
-            test_enum(1)
+            testEnum(1)
         case "enum2":
-            test_enum(2)
+            testEnum(2)
         case "extension":
             fallthrough
         case "ext":
-            test_extension()
+            testExtension()
+        case "filter":
+            testFilter()
+        case "map":
+            testMap()
         case "opt1":
-            test_optional(1)
+            testOptional(1)
         case "opt2":
-            test_optional(2)
+            testOptional(2)
         case "opt3":
-            test_optional(3)
+            testOptional(3)
         case "opt4":
-            test_optional(4)
+            testOptional(4)
         case "opt5":
-            test_optional(5)
+            testOptional(5)
+        case "string1":
+            testString(1)
+        case "string2":
+            testString(2)
+        case "string3":
+            testString(3)
         case "struct":
-            test_struct(1)
+            testStruct(1)
         case "struct2":
-            test_struct(2)
+            testStruct(2)
         case "property":
-            test_property(1)
+            testProperty(1)
         case "property2":
-            test_property(2)
+            testProperty(2)
         case "protocol1":
             fallthrough
         case "prot1":
-            test_protocol(1)
+            testProtocol(1)
         case "protocol2":
             fallthrough
         case "prot2":
-            test_protocol(2)
+            testProtocol(2)
         case "protocol3":
             fallthrough
         case "prot3":
-            test_protocol(3)
+            testProtocol(3)
         case "subscript1":
-            test_subscript(1)
+            testSubscript(1)
             break
         case "subscript2":
-            test_subscript(2)
+            testSubscript(2)
             break
         case "arc":
-            test_ARC()
+            testARC()
         case "nest":
-            test_nested()
+            testNested()
         case "generics":
-            test_generics(1)
+            testGenerics(1)
         case "generics2":
-            test_generics(2)
+            testGenerics(2)
         case "overload":
-            test_overload(1)
+            testOverload(1)
         case "exit":
             breakWhile = true
         default:

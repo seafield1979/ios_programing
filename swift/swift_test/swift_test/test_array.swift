@@ -19,19 +19,23 @@ import Foundation
 
 class UNTestArray{
     // プロパティ
-    var array1 : [Int]   // もしくは Array<Int>
-    var array2 : [String]  // もしくは Array<String>
+    var array1 : [Int]   // 空 もしくは Array<Int>
+    var array2 : [String]  // 空 もしくは Array<String>
     let array3 : [Int] = [1,2,3]
     let array4 : [String] = ["a","b","c","d","e"];
     let array5 : Array<Any> = [1,2,"aaa"]            // 型を混ぜてもOK
     let array6 : [[Int]] = [[1,2],[3,4]]        // 多次元配列
-    let array7 : [Int]          // 空の配列
+    //var array7 : [Int] = []  // 要素が0だけど空ではない
+    var array7 = [Int]()
+    var array8 : [String] = []  // 要素が0だけど空ではない
+    var array_empty1 : [String]
     
     //メソッド
     init() {
         self.array1 = [1,2,3,4,5]
         self.array2 = ["1","2","3","4","5"]
-        self.array7 = Array(count:10, repeatedValue: 0)
+        self.array7.append(1)
+        array_empty1 = Array(count:10, repeatedValue: "hoge")
     }
     
     func test1() -> String {
@@ -48,6 +52,13 @@ class UNTestArray{
                 print(array6[i][j])
             }
         }
+        
+        var array1 : [String]
+        array1 = []
+        array1.append("hoge")
+        
+        var array2 = [String]()
+        array2.append("hoge")
         
         return retStr
     }

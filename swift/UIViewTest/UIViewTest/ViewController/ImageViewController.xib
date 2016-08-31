@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageViewController" customModule="UIViewTest" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -13,7 +14,86 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UIImageViewテスト" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXO-f4-2G2">
+                    <rect key="frame" x="0.0" y="27" width="600" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Beh-y2-ij5">
+                    <rect key="frame" x="275" y="524" width="51" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="39" id="Qoi-Ct-jB0"/>
+                    </constraints>
+                    <state key="normal" title="Image2"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Qoi-Ct-jB0"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="button2Tapped:" destination="-1" eventType="touchUpInside" id="xdZ-qT-Pxf"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8e-Or-dWM">
+                    <rect key="frame" x="280" y="562" width="38" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="38" id="u3L-qC-BVi"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="39" id="wVx-bf-yAE"/>
+                    </constraints>
+                    <state key="normal" title="Small"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="wVx-bf-yAE"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="button3Tapped:" destination="-1" eventType="touchUpInside" id="Ei2-e8-vB2"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axo-yc-dyd">
+                    <rect key="frame" x="276" y="486" width="49" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="49" id="BXL-6b-Yi2"/>
+                    </constraints>
+                    <state key="normal" title="Image1"/>
+                    <connections>
+                        <action selector="button1Tapped:" destination="-1" eventType="touchUpInside" id="PfP-yK-oDR"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Beh-y2-ij5" firstAttribute="leading" secondItem="v8e-Or-dWM" secondAttribute="leading" constant="2" id="6SV-uB-VZm"/>
+                <constraint firstItem="v8e-Or-dWM" firstAttribute="top" secondItem="Beh-y2-ij5" secondAttribute="bottom" constant="8" id="8M3-eL-NHz"/>
+                <constraint firstItem="v8e-Or-dWM" firstAttribute="top" secondItem="Beh-y2-ij5" secondAttribute="bottom" constant="8" symbolic="YES" id="ALb-hg-07k"/>
+                <constraint firstAttribute="bottom" secondItem="v8e-Or-dWM" secondAttribute="bottom" constant="8" id="I4e-pU-F4S"/>
+                <constraint firstAttribute="trailing" secondItem="PXO-f4-2G2" secondAttribute="trailing" id="JJ8-Zn-23E"/>
+                <constraint firstAttribute="trailing" secondItem="Beh-y2-ij5" secondAttribute="trailing" constant="280" id="MG3-b9-YeI"/>
+                <constraint firstItem="Beh-y2-ij5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MPx-xv-Nqu"/>
+                <constraint firstItem="PXO-f4-2G2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Nsp-eO-G0e"/>
+                <constraint firstItem="Beh-y2-ij5" firstAttribute="top" secondItem="Axo-yc-dyd" secondAttribute="bottom" constant="8" id="Oko-z1-fLC"/>
+                <constraint firstAttribute="bottom" secondItem="v8e-Or-dWM" secondAttribute="bottom" constant="8" id="Rll-8B-Lgw"/>
+                <constraint firstItem="PXO-f4-2G2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="27" id="cwY-36-dnf"/>
+                <constraint firstItem="v8e-Or-dWM" firstAttribute="top" secondItem="Beh-y2-ij5" secondAttribute="bottom" constant="8" id="f4o-b8-Ve9"/>
+                <constraint firstItem="Axo-yc-dyd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pHC-8a-hIb"/>
+                <constraint firstAttribute="bottom" secondItem="Beh-y2-ij5" secondAttribute="bottom" constant="46" id="pvF-Be-slB"/>
+                <constraint firstItem="v8e-Or-dWM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-1.5" id="tQz-7c-SnI"/>
+                <constraint firstItem="Beh-y2-ij5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yi2-UA-YxI"/>
+                <constraint firstItem="Beh-y2-ij5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zgT-d5-W9f"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="6SV-uB-VZm"/>
+                    <exclude reference="MG3-b9-YeI"/>
+                    <exclude reference="MPx-xv-Nqu"/>
+                    <exclude reference="yi2-UA-YxI"/>
+                    <exclude reference="8M3-eL-NHz"/>
+                    <exclude reference="I4e-pU-F4S"/>
+                    <exclude reference="f4o-b8-Ve9"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

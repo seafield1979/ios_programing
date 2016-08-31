@@ -16,19 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var gestureViewController : GestureViewController?
     var gestureViewController2 : GestureViewController2?
     var buttonViewController : ButtonViewController?
+    var imageViewController : ImageViewController?
  
     enum testMode {
         case VC
         case Gesture
         case Gesture2
         case Button
+        case ImageView
     }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         window = UIWindow(frame:UIScreen.mainScreen().bounds)
         
-        let mode = testMode.Button
+        let mode = testMode.ImageView
         
         
         // 最初に表示されるViewControllerを生成
@@ -57,6 +59,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Viewの色を変える
             self.buttonViewController!.view.backgroundColor = UIColor.whiteColor()
             window!.rootViewController = self.buttonViewController
+        case .ImageView:
+            self.imageViewController = ImageViewController(nibName: "ImageViewController", bundle: nil)
+            // Viewの色を変える
+            self.imageViewController!.view.backgroundColor = UIColor.whiteColor()
+            window!.rootViewController = self.imageViewController
         }
 
         window!.makeKeyAndVisible();

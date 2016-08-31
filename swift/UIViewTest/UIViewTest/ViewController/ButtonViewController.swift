@@ -134,19 +134,22 @@ class ButtonViewController: UIViewController {
     {
         super.viewDidLoad()
         
-        var pos_y : Float = 100.0
+        var posY : CGFloat = 100.0
         // ボタンを生成
-        self.button1 = createButton(CGPointMake(0.0, pos_y))
+        self.button1 = createButton(CGPointMake(0.0, posY))
         self.view.addSubview(button1!)
         
+        posY += 70.0
         // ボタンを生成
-        self.button2 = createButton(CGPointMake(0.0, 200.0))
+        self.button2 = createButton(CGPointMake(0.0, posY))
         self.view.addSubview(button2!)
         
+        posY += 70.0
         // ボタンを生成
-        self.button3 = createButton2(CGPointMake(0.0, 300.0), title : "hoge")
+        self.button3 = createButton2(CGPointMake(0.0, posY), title : "hoge")
         self.view.addSubview(button3!)
         
+        posY += 70.0
         // タイプ指定でボタンを生成
         self.buttonTypes = []
         
@@ -165,13 +168,14 @@ class ButtonViewController: UIViewController {
                 type = .InfoDark
             }
                 
-            let button = createButtonType(CGPointMake(CGFloat(index) * 50.0, 350.0), type:type)
+            let button = createButtonType(CGPointMake(CGFloat(index) * 50.0, posY), type:type)
             self.view.addSubview(button)
             self.buttonTypes?.append(button)
         }
         
+        posY += 70.0
         // 画像ボタンを生成
-        self.buttonImg = createButtonImage(CGPointMake(50.0, 400.0), filename: "image/hoge.png", filename_hl: "image/hoge_hl.png")
+        self.buttonImg = createButtonImage(CGPointMake(50.0, posY), filename: "image/hoge.png", filename_hl: "image/hoge_hl.png")
         self.view.addSubview(self.buttonImg!)
     }
 }

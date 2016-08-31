@@ -29,11 +29,21 @@ func testPrint() {
 func testBasis() {
     print("test_basis")
     let basis1 : UNTestBasis = UNTestBasis()
-    basis1.test_str()
-//    basis1.test_switch()
-//    basis1.test_tuple()
-//    basis1.test_for()
-//    basis1.test_tuple2()
+    
+    let mode = 4
+    
+    switch mode {
+    case 1:
+        basis1.test_str()
+    case 2:
+        basis1.test_switch()
+    case 3:
+        basis1.test_tuple()
+    case 4:
+        basis1.test_for()
+    case 5:
+        basis1.test_tuple2()
+    }
 }
 
 func testClass() {
@@ -100,13 +110,21 @@ func testArray(mode : Int) {
     
     switch mode {
     case 1:
-        let ret = array1.test1()
+        array1.test1()
     case 2:
-        let ret = array1.test2()
+        array1.test2()
     case 3:
         array1.test3()
+    case 4:
+        array1.testMap()
+    case 5:
+        array1.testFilter()
+    case 6:
+        array1.testSort()
+    case 7:
+        array1.testReverse()
     default:
-        print("")
+        break
     }
 }
 
@@ -267,20 +285,6 @@ func testSubscript(mode:Int) {
     }
 }
 
-func testMap() {
-    let map = UNTestMap()
-    map.test1()
-}
-
-func testFilter() {
-    let filter1 = UNTestFilter()
-    filter1.test1()
-}
-
-func testReduce() {
-    
-}
-
 /*
  * コンソールでユーザーの入力を取得する
  */
@@ -342,9 +346,9 @@ while !breakWhile {
         case "ext":
             testExtension()
         case "filter":
-            testFilter()
+            testArray(5)
         case "map":
-            testMap()
+            testArray(4)
         case "opt1":
             testOptional(1)
         case "opt2":
@@ -355,6 +359,8 @@ while !breakWhile {
             testOptional(4)
         case "opt5":
             testOptional(5)
+        case "sort":
+            testArray(6)
         case "string1":
             testString(1)
         case "string2":
@@ -381,6 +387,8 @@ while !breakWhile {
             fallthrough
         case "prot3":
             testProtocol(3)
+        case "reverse":
+            testArray(7)
         case "subscript1":
             testSubscript(1)
             break

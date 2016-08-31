@@ -38,7 +38,7 @@ class UNTestArray{
         array_empty1 = Array(count:10, repeatedValue: "hoge")
     }
     
-    func test1() -> String {
+    func test1() {
         var retStr : String = ""
         // 全要素を参照 高速列挙
         for i : Int in self.array1 {
@@ -53,17 +53,27 @@ class UNTestArray{
             }
         }
         
+        // 空の配列を宣言、初期化、要素追加
         var array1 : [String]
         array1 = []
         array1.append("hoge")
         
+        // 初期化、要素追加
         var array2 = [String]()
         array2.append("hoge")
         
-        return retStr
+        // for ~ in を使って全要素にアクセス
+        let array4 = [1,2,3,4,5]
+        for i in array4 {
+            print(i)
+        }
+        
+        // enumerateを使って全要素にアクセス
+        let array3 = [10,20,30,40,50]
+        array3.enumerate().forEach { print("index:\($0.0) value:\($0.1)") }
     }
     
-    func test2() -> String {
+    func test2() {
         // 出力
         self.array1.display()
         self.array2.display()
@@ -89,8 +99,6 @@ class UNTestArray{
         for i in [1,2,3] {
             print("for:%d", i)
         }
-        
-        return ""
     }
     
     func test3() {
@@ -126,5 +134,97 @@ class UNTestArray{
         print("test3_3: \(repeated)")
     }
     
+    // mapのテスト
+    func testMap(){
+        // 全要素を10倍した新しい配列を取得
+        let array1 = [1,2,3,4,5]
+        let newArray = array1.map{ $0 * 10 }
+        newArray.forEach{ print($0) }
+        
+        // 結果をもともとの配列で受け取る
+        var array2 = [1,2,3,4,5]
+        array2 = array2.map{ $0 * 100 }
+        array2.forEach{ print($0) }
+        
+        // 文字列の配列を処理する
+        var array3 = ["hoge1", "hoge2", "hoge3"]
+        array3 = array3.map{ $0 + " is good!" }
+        array3.forEach { print($0) }
+    }
+    
+    // filterのテスト
+    func testFilter() {
+        // 指定の値以上の値のみ残す
+        let array1 = [1,2,3,4,5,6,7,8,9,10]
+        let array2 = array1.filter { $0 > 5 }
+        array2.forEach { print($0) }
+        
+        // 指定のフォーマットにあった文字列のみ残す
+        let arrayS1 = ["hoge", "123", "hoge123", "hoge55"]
+        let arrayS2 = arrayS1.filter { Regexp("hoge\\d+").isMatch($0) }
+        arrayS2.forEach { print($0) }
+    }
 
+    // sort
+    // 配列の要素を並び替える
+    func testSort() {
+        let array1 = [50,30,21,35,55,1]
+        let array2 = ["hoge", "abc", "123", "ddd", "a123"]
+        
+        // sort ソート済みの新しい配列を返す
+        // sortで並べ替え(整数)
+        print("-- sort int --")
+        array1.sort().forEach { print($0) }
+        
+        // sortで並べ替え(文字列)
+        print("-- sort str --")
+        array2.sort().forEach { print($0) }
+        
+        // 昇順(小さい順)に並び替え
+        print("-- sort ascending --")
+        //let newArray = array1.sort {$0 < $1}
+        let newArray = array1.sort(<)
+        newArray.forEach {print($0)}
+        
+        // 降順(大きい順)に並び替え
+        print("-- sort descending --")
+        //let newArray2 = array1.sort {$0 > $1}
+        let newArray2 = array1.sort(>)
+        newArray2.forEach {print($0)}
+        
+        // for文で使用する
+        print("-- sort for --")
+        for i in array1.sort(>) {
+            print(i)
+        }
+        
+        // sortInPlace 元の配列を書き換える
+        print("-- sortInPlace 1 --")
+        var arrayIP1 = [50,30,21,35,55,1]
+        var arrayIP2 = ["hoge", "abc", "123", "ddd", "a123"]
+        arrayIP1.sortInPlace()
+        arrayIP1.forEach { print($0) }
+        
+        print("-- sortInPlace 2 --")
+        arrayIP2.sortInPlace()
+        arrayIP2.forEach { print($0) }
+        
+        // 昇順
+        print("-- sortInPlace 3 --")
+        arrayIP1.sortInPlace(<)
+        arrayIP1.forEach { print($0) }
+        
+        // 降順
+        print("-- sortInPlace 4 --")
+        arrayIP1.sortInPlace(>)
+        arrayIP1.forEach { print($0) }
+    }
+    
+    // reverse
+    // 配列の要素を逆順にする
+    func testReverse() {
+        let array1 = ["a1", "hoge", "b3", "hage"]
+        let newArray = array1.reverse()
+        newArray.forEach { print($0) }
+    }
 }

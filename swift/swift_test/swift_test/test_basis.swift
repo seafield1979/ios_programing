@@ -108,6 +108,11 @@ class UNTestBasis {
             print("hogehoge")
         }
         
+        let array = [10,20,30,40,50]
+        for (index, value) in array.enumerate() {
+            print("\(index) : \(value)")
+        }
+        
         // 多重ループを一気に抜ける
         print("----- for5 -----")
         for_i: for i in 1...5 {

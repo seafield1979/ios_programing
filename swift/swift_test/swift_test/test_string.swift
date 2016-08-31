@@ -13,29 +13,36 @@ import Foundation
 // http://qiita.com/coa00@github/items/ae9c38dc92f3626dcd19
 //
 class Regexp {
-    let internalRegexp: NSRegularExpression
+    let regexp: NSRegularExpression
     let pattern: String
     
     init(_ pattern: String) {
         self.pattern = pattern
         do {
-            self.internalRegexp = try NSRegularExpression(pattern: pattern, options: [.CaseInsensitive])
+            self.regexp = try NSRegularExpression(pattern: pattern, options: [.CaseInsensitive])
         } catch let error as NSError {
             print(error.localizedDescription)
-            self.internalRegexp = NSRegularExpression()
+            self.regexp = NSRegularExpression()
         }
     }
     
+    // 正規表現を利用した一致判定
+    // 使用例 bool = Regexp(正規表現パターン).isMatch(対象文字列)
+    // 例: if Regexp("hoge\\d+").isMatch("hoge123") {}
     func isMatch(input: String) -> Bool {
-        let matches = self.internalRegexp.matchesInString( input, options: [], range:NSMakeRange(0, input.characters.count) )
+        let matches = self.regexp.matchesInString( input, options: [], range:NSMakeRange(0, input.characters.count) )
         return matches.count > 0
     }
 
+    // 正規表現を使用したマッチング パターンの中の()でマッチした文字列を取得する
+    // 使用方法: let [String] = Regexp(正規表現パターン).matches(マッチング対象の文字列)
+    // 例: let matches:[String] = Regexp("hoge(\\d+) (\\d+)").matches("hoge100 200")
+    //     matches は配列 ["hoge100 200", "100", "200"] となる
     func matches(input: String) -> [String]? {
         let nsInput = input as NSString
         if self.isMatch(input) {
             var results = [String]()
-            if let matches = internalRegexp.firstMatchInString(nsInput as String, options: NSMatchingOptions(), range: NSMakeRange(0, input.characters.count))
+            if let matches = self.regexp.firstMatchInString(nsInput as String, options: NSMatchingOptions(), range: NSMakeRange(0, input.characters.count))
             {
                 for i in 0...matches.numberOfRanges - 1 {
                     results.append(nsInput.substringWithRange(matches.rangeAtIndex(i)))
@@ -44,6 +51,17 @@ class Regexp {
             return results
         }
         return nil
+    }
+    
+    // 文字列を置換する
+    // 使用方法: Regexp(正規表現パターン).replace(置換対象の文字列, 置換パターン)
+    // 例: Regexp("hoge(\\d+).(\\d+)").replace("hoge1.2", "hage$1.$2")
+    func replace(input: String, replace: String) -> String {
+        return input.stringByReplacingOccurrencesOfString(
+            pattern,
+            withString: replace,
+            options: NSStringCompareOptions.RegularExpressionSearch,
+            range: nil)
     }
 }
 
@@ -62,21 +80,14 @@ class UNTestString
         
         let ret:[String] = Regexp(pattern).matches(str)! //http以下を取得
         print ("--- matches ---")
-        for str in ret {
-            print(str)
-        }
+        ret.forEach { print($0) }
     }
     
     // 正規表現を使った文字列の置換
     func testReplace() {
-        let pattern = "\\[test\\|([a-z0-9]+)\\|([a-z0-9]+)\\]"
-        let content2 = "[test|hoge|hoge123] [test|huge|huge456]"
-        let replace = "found : $1 : $2"
-        let replaceString = content2.stringByReplacingOccurrencesOfString(
-            pattern,
-            withString: replace,
-            options: NSStringCompareOptions.RegularExpressionSearch,
-            range: nil)
+        let replaceString = Regexp("\\[test\\|([a-z0-9]+)\\|([a-z0-9]+)\\]").replace(
+            "[test|hoge|hoge123] [test|huge|huge456]",
+            replace:"found : $1 : $2")
         print(replaceString)
     }
 }

@@ -42,6 +42,10 @@ extension String {
     var dao: String {
         return self + " dao!"
     }
+    
+    var description2 : String {
+        return self + " dao!"
+    }
 }
 
 // イニシャライザを拡張
@@ -104,6 +108,7 @@ class UNTestExtension {
         print("bin:" + 256.bin)
         print("hoge:" + 256.hoge().description)
         print("syutaro".dao)
+        print("syutaro".description2)
         
         print("---- 2 ----")
         var person : Person2 = Person2(name: "syutaro")

@@ -32,6 +32,12 @@ class UNTestBasis {
         let hoge2:String = "hello" + hoge1
         let int2:Int = 100 + int1
         print("hoge2 \(hoge2) int2:\(int2)")
+        
+        // CGFloatの計算 CGFloat * Int の計算はできない
+        let posX : CGFloat = 10.0
+        let num : Int = 3
+        //let posX2 : CGFloat = posX * num
+        let posX2 : CGFloat = posX * CGFloat(num)
     }
     
     // MAKR: 文字列

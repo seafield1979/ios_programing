@@ -5,6 +5,24 @@
 //  Created by Shusuke Unno on 2016/08/31.
 //  Copyright © 2016年 Shusuke Unno. All rights reserved.
 //
+/* UIPickerView のサンプル
+    UIPickerViewを生成後、delegateにself(ViewController)を設定して
+    selfのUIViewController内に以下のdeleteメソッドを実装する
+ 
+    UIPickerViewDataSource
+        pickerに表示する列数を返すデータソースメソッド
+        func numberOfComponentsInPickerView(pickerView: UIPickerView)
+ 
+        pickerに表示する行数を返すデータソースメソッド.
+        func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+     
+    UIPickerViewDelegate
+        pickerに表示する値を返すデリゲートメソッド.
+        func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+ 
+        pickerが選択された際に呼ばれるデリゲートメソッド.
+        func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+ */
 
 import UIKit
 
@@ -53,7 +71,7 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     
-// MARK: numberOfComponentsInPickerView
+// MARK: UIPickerViewDataSource
     /*
      pickerに表示する列数を返すデータソースメソッド.
      (実装必須)
@@ -85,7 +103,6 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
 // MARK: UIPickerViewDelegate
-
     /*
      pickerに表示する値を返すデリゲートメソッド.
      */

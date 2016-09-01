@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case Progress
         case PageControl
         case Picker
-        case Segment
+        case Segmented
         case Slider
         case Stepper
         case Text
@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         window = UIWindow(frame:UIScreen.mainScreen().bounds)
         
-        let mode = testMode.Picker
+        let mode = testMode.Slider
         
         
         // 最初に表示されるViewControllerを生成
@@ -97,7 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case .Picker:
             self.pickerViewController = PickerViewController(nibName: "PickerViewController", bundle: nil)
             window!.rootViewController = self.pickerViewController
-        case .Segment:
+        case .Segmented:
             self.segmentedViewController = SegmentedViewController(nibName: "SegmentedViewController", bundle: nil)
             window!.rootViewController = self.segmentedViewController
         case .Slider:

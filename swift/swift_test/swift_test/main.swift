@@ -5,6 +5,11 @@
 //  Created by sunsunsoft on 2015/01/23.
 //  Copyright (c) 2015年 SunSunSoft. All rights reserved.
 //
+//  使用方法:
+//    [コマンド名].[モード番号]
+//  例:
+//    array.3
+//    enum.1
 
 import Foundation
 import Darwin
@@ -28,9 +33,9 @@ func testPrint() {
 
 func testBasis() {
     print("test_basis")
-    let basis1 : UNTestBasis = UNTestBasis()
+    let basis1 = UNTestBasis()
     
-    let mode = 4
+    let mode = 6
     
     switch mode {
     case 1:
@@ -38,17 +43,19 @@ func testBasis() {
     case 2:
         basis1.test_switch()
     case 3:
-        basis1.test_tuple()
-    case 4:
         basis1.test_for()
+    case 4:
+        basis1.testIs()
     case 5:
-        basis1.test_tuple2()
+        basis1.testAs()
+    default:
+        break
     }
 }
 
 func testClass() {
     print("test_class")
-    let class1 : UNClassTest = UNClassTest(str1: "ok", str2: "ng")
+    let class1 = UNClassTest(str1: "ok", str2: "ng")
     print (class1.test1())
 
     // オブジェクトからクラス名を取得
@@ -70,7 +77,7 @@ func testClass() {
 }
 
 func testClass2(mode:Int) {
-    let class1 : UNTestClassAdvance = UNTestClassAdvance()
+    let class1 = UNTestClassAdvance()
     
     switch mode {
     case 1:
@@ -87,7 +94,7 @@ func testClass2(mode:Int) {
 func testFunc(mode:Int) {
     print("test_func mode:\(mode)")
     
-    let func1 : UNTestFunc = UNTestFunc()
+    let func1 = UNTestFunc()
     switch mode {
     case 1:
         func1.test1()
@@ -106,7 +113,7 @@ func testFunc(mode:Int) {
 
 func testArray(mode : Int) {
     print("test_array")
-    let array1 : UNTestArray = UNTestArray()
+    let array1 = UNTestArray()
     
     switch mode {
     case 1:
@@ -129,7 +136,7 @@ func testArray(mode : Int) {
 }
 
 func testDictionary(mode: Int) {
-    let dictionary1 : UNTestDictionary = UNTestDictionary()
+    let dictionary1 = UNTestDictionary()
     
     let ret = dictionary1.test1()
     print("\(ret)")
@@ -151,7 +158,7 @@ func testString(mode : Int) {
 }
 
 func testOptional(mode: Int){
-    let optional1 : UNTestOptional = UNTestOptional()
+    let optional1 = UNTestOptional()
     
     switch mode {
     case 1:
@@ -181,7 +188,7 @@ func testEnum(mode : Int) {
 }
 
 func testStruct(mode:Int) {
-    let struct1 : UNTestStruct = UNTestStruct()
+    let struct1 = UNTestStruct()
     
     switch mode {
     case 1:
@@ -193,8 +200,23 @@ func testStruct(mode:Int) {
     }
 }
 
+func testTuple(mode:Int) {
+    let tuple1 = UNTestTuple()
+    
+    switch mode {
+    case 1:
+        tuple1.test1()
+    case 2:
+        tuple1.test2()
+    case 3:
+        tuple1.test3()
+    default:
+        break
+    }
+}
+
 func testProperty(mode:Int) {
-    let property : UNTestProperty = UNTestProperty()
+    let property = UNTestProperty()
     
     switch mode {
     case 1:
@@ -207,18 +229,18 @@ func testProperty(mode:Int) {
 }
 
 func testARC(){
-    let arc : UNTestARC = UNTestARC()
+    let arc = UNTestARC()
     arc.test1()
 }
 
 
 func testExtension() {
-    let ext1 : UNTestExtension = UNTestExtension()
+    let ext1 = UNTestExtension()
     ext1.test1()
 }
 
 func testProtocol(mode:Int) {
-    let prot1 : UNTestProtocol = UNTestProtocol()
+    let prot1 = UNTestProtocol()
     switch mode {
     case 1:
         prot1.test1()
@@ -232,13 +254,13 @@ func testProtocol(mode:Int) {
 }
 
 func testNested() {
-    let nest : UNTestNested = UNTestNested()
+    let nest = UNTestNested()
     
     nest.test1()
 }
 
 func testGenerics(mode: Int) {
-    let generics : UNTestGenerics = UNTestGenerics()
+    let generics = UNTestGenerics()
     
     switch mode {
     case 1:
@@ -251,7 +273,7 @@ func testGenerics(mode: Int) {
 }
 
 func testOverload(mode:Int) {
-    let overload : UNTestOverloadOperator = UNTestOverloadOperator()
+    let overload = UNTestOverloadOperator()
     overload.test1()
 }
 
@@ -287,15 +309,23 @@ func testSubscript(mode:Int) {
 
 /*
  * コンソールでユーザーの入力を取得する
+ *
+ *  hoge.1 みたいに [コマンド名].[モード番号] で返す
  */
-func getInput() -> String {
+func getInput() -> (name:String, mode:Int) {
     print("\nplease input test name! ")
 
     let keyboard = NSFileHandle.fileHandleWithStandardInput()
     let inputData = keyboard.availableData
     let strData = NSString(data: inputData, encoding: NSUTF8StringEncoding)!
+    let command = strData.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
     
-    return strData.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
+    let splited = command.componentsSeparatedByString(".")
+    if splited.count >= 2 {
+        return (splited[0], Int(splited[1])!)
+    }
+    
+    return (command, 1)
 }
 
 // プリプロセッサーテスト
@@ -305,42 +335,22 @@ var breakWhile = false
 while !breakWhile {
     let command = getInput()
 
-    switch command {
+    switch command.name {
         case "basis":
             testBasis()
             break
         case "class":
             testClass()
-        case "class1":
-            testClass2(1)
         case "class2":
-            testClass2(2)
-        case "class3":
-            testClass2(3)
+            testClass2(command.mode)
         case "func":
-            testFunc(1)
-        case "func2":
-            testFunc(2)
-        case "func3":
-            testFunc(3)
-        case "func4":
-            testFunc(4)
-        case "func5":
-            testFunc(5)
-        case "array1":
-            testArray(1)
-        case "array2":
-            testArray(2)
-        case "array3":
-            testArray(3)
+            testFunc(command.mode)
+        case "array":
+            testArray(command.mode)
         case "dic":
             testDictionary(1)
         case "enum":
-            fallthrough
-        case "enum1":
-            testEnum(1)
-        case "enum2":
-            testEnum(2)
+            testEnum(command.mode)
         case "extension":
             fallthrough
         case "ext":
@@ -349,60 +359,32 @@ while !breakWhile {
             testArray(5)
         case "map":
             testArray(4)
-        case "opt1":
-            testOptional(1)
-        case "opt2":
-            testOptional(2)
-        case "opt3":
-            testOptional(3)
-        case "opt4":
-            testOptional(4)
-        case "opt5":
-            testOptional(5)
-        case "sort":
-            testArray(6)
-        case "string1":
-            testString(1)
-        case "string2":
-            testString(2)
-        case "string3":
-            testString(3)
-        case "struct":
-            testStruct(1)
-        case "struct2":
-            testStruct(2)
+        case "opt":
+            testOptional(command.mode)
         case "property":
-            testProperty(1)
-        case "property2":
-            testProperty(2)
-        case "protocol1":
-            fallthrough
-        case "prot1":
-            testProtocol(1)
-        case "protocol2":
-            fallthrough
-        case "prot2":
-            testProtocol(2)
-        case "protocol3":
-            fallthrough
-        case "prot3":
-            testProtocol(3)
+            testProperty(command.mode)
+        case "protocol":
+            testProtocol(command.mode)
+        case "prot":
+            testProtocol(command.mode)
         case "reverse":
             testArray(7)
-        case "subscript1":
-            testSubscript(1)
-            break
-        case "subscript2":
-            testSubscript(2)
-            break
+        case "subscript":
+            testSubscript(command.mode)
+        case "sort":
+            testArray(6)
+        case "string":
+            testString(command.mode)
+        case "struct":
+            testStruct(command.mode)
+        case "tuple":
+            testTuple(command.mode)
         case "arc":
             testARC()
         case "nest":
             testNested()
         case "generics":
-            testGenerics(1)
-        case "generics2":
-            testGenerics(2)
+            testGenerics(command.mode)
         case "overload":
             testOverload(1)
         case "exit":

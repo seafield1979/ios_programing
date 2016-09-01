@@ -124,7 +124,6 @@
 			children = (
 				8A3D363B1D757225003528A0 /* image */,
 				8A3D36261D716973003528A0 /* ViewController */,
-				8A3D36141D71694D003528A0 /* AppDelegate.swift */,
 				8A3D361B1D71694D003528A0 /* Assets.xcassets */,
 				8A3D36201D71694D003528A0 /* Info.plist */,
 			);
@@ -134,6 +133,7 @@
 		8A3D36261D716973003528A0 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8A3D36141D71694D003528A0 /* AppDelegate.swift */,
 				8A3D365B1D76977B003528A0 /* UIView */,
 				8A3D364F1D7696E1003528A0 /* ScrollViewController.swift */,
 				8A3D36501D7696E1003528A0 /* ScrollViewController.xib */,

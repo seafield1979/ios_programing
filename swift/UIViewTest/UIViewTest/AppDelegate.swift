@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var gestureViewController2 : GestureViewController2?
     var buttonViewController : ButtonViewController?
     var imageViewController : ImageViewController?
+    var labelViewController : LabelViewController?
+    var progressViewController : ProgressViewController?
  
     enum testMode {
         case VC
@@ -24,13 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case Gesture2
         case Button
         case ImageView
+        case Label
+        case Progress
     }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         window = UIWindow(frame:UIScreen.mainScreen().bounds)
         
-        let mode = testMode.ImageView
+        let mode = testMode.Progress
         
         
         // 最初に表示されるViewControllerを生成
@@ -64,6 +68,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Viewの色を変える
             self.imageViewController!.view.backgroundColor = UIColor.whiteColor()
             window!.rootViewController = self.imageViewController
+        case .Label:
+            self.labelViewController = LabelViewController(nibName: "LabelViewController", bundle: nil)
+            window!.rootViewController = self.labelViewController
+
+        case .Progress:
+            self.progressViewController = ProgressViewController(nibName: "ProgressViewController", bundle: nil)
+            window!.rootViewController = self.progressViewController
         }
 
         window!.makeKeyAndVisible();

@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var pickerViewController : PickerViewController?
     var segmentedViewController : SegmentedViewController?
     var sliderViewController : SliderViewController?
+    var switchViewController : SwitchViewController?
     var stepperViewController : StepperViewController?
     var textViewController : TextViewController?
     var textFieldViewController : TextFieldViewController?
@@ -40,6 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case Picker
         case Segmented
         case Slider
+        case Switch
         case Stepper
         case Text
         case TextField
@@ -50,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         window = UIWindow(frame:UIScreen.mainScreen().bounds)
         
-        let mode = testMode.Slider
+        let mode = testMode.Stepper
         
         
         // 最初に表示されるViewControllerを生成
@@ -103,6 +105,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case .Slider:
             self.sliderViewController = SliderViewController(nibName: "SliderViewController", bundle: nil)
             window!.rootViewController = self.sliderViewController
+        case .Switch:
+            self.switchViewController = SwitchViewController(nibName: "SwitchViewController", bundle: nil)
+            window!.rootViewController = self.switchViewController
+            
         case .Stepper:
             self.stepperViewController = StepperViewController(nibName: "StepperViewController", bundle: nil)
             window!.rootViewController = self.stepperViewController

@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var switchViewController : SwitchViewController?
     var stepperViewController : StepperViewController?
     var textViewController : TextViewController?
-    var textFieldViewController : TextFieldViewController?
     var webViewController : WebViewController?
  
     enum testMode {
@@ -43,7 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case Slider
         case Switch
         case Stepper
-        case Text
         case TextField
         case Webview
     }
@@ -52,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         window = UIWindow(frame:UIScreen.mainScreen().bounds)
         
-        let mode = testMode.Stepper
+        let mode = testMode.Webview
         
         
         // 最初に表示されるViewControllerを生成
@@ -112,17 +110,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case .Stepper:
             self.stepperViewController = StepperViewController(nibName: "StepperViewController", bundle: nil)
             window!.rootViewController = self.stepperViewController
-        case .Text:
+        case .TextField:
             self.textViewController = TextViewController(nibName: "TextViewController", bundle: nil)
             window!.rootViewController = self.textViewController
-        case .TextField:
-            self.textFieldViewController = TextFieldViewController(nibName: "TextFieldViewController", bundle: nil)
-            window!.rootViewController = self.textFieldViewController
         case .Webview:
             self.webViewController = WebViewController(nibName: "WebViewController", bundle: nil)
             window!.rootViewController = self.webViewController
         }
-
+        
         window!.makeKeyAndVisible();
         return true
     }

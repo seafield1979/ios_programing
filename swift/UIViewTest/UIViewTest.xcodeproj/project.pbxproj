@@ -41,8 +41,6 @@
 		8A3D366F1D769844003528A0 /* StepperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3D366D1D769844003528A0 /* StepperViewController.xib */; };
 		8A3D36721D76986D003528A0 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D36701D76986D003528A0 /* TextViewController.swift */; };
 		8A3D36731D76986D003528A0 /* TextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3D36711D76986D003528A0 /* TextViewController.xib */; };
-		8A3D36761D769884003528A0 /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D36741D769884003528A0 /* TextFieldViewController.swift */; };
-		8A3D36771D769884003528A0 /* TextFieldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3D36751D769884003528A0 /* TextFieldViewController.xib */; };
 		8A3D367A1D7698B6003528A0 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D36781D7698B6003528A0 /* PickerViewController.swift */; };
 		8A3D367B1D7698B6003528A0 /* PickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3D36791D7698B6003528A0 /* PickerViewController.xib */; };
 		8A3D367E1D7698FA003528A0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D367C1D7698FA003528A0 /* WebViewController.swift */; };
@@ -86,8 +84,6 @@
 		8A3D366D1D769844003528A0 /* StepperViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StepperViewController.xib; path = ViewController/StepperViewController.xib; sourceTree = "<group>"; };
 		8A3D36701D76986D003528A0 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewController.swift; path = ViewController/TextViewController.swift; sourceTree = "<group>"; };
 		8A3D36711D76986D003528A0 /* TextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextViewController.xib; path = ViewController/TextViewController.xib; sourceTree = "<group>"; };
-		8A3D36741D769884003528A0 /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldViewController.swift; path = ViewController/TextFieldViewController.swift; sourceTree = "<group>"; };
-		8A3D36751D769884003528A0 /* TextFieldViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextFieldViewController.xib; path = ViewController/TextFieldViewController.xib; sourceTree = "<group>"; };
 		8A3D36781D7698B6003528A0 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerViewController.swift; path = ViewController/PickerViewController.swift; sourceTree = "<group>"; };
 		8A3D36791D7698B6003528A0 /* PickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PickerViewController.xib; path = ViewController/PickerViewController.xib; sourceTree = "<group>"; };
 		8A3D367C1D7698FA003528A0 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = ViewController/WebViewController.swift; sourceTree = "<group>"; };
@@ -175,8 +171,6 @@
 				8A3D366D1D769844003528A0 /* StepperViewController.xib */,
 				8A3D36701D76986D003528A0 /* TextViewController.swift */,
 				8A3D36711D76986D003528A0 /* TextViewController.xib */,
-				8A3D36741D769884003528A0 /* TextFieldViewController.swift */,
-				8A3D36751D769884003528A0 /* TextFieldViewController.xib */,
 				8A3D36271D7169CF003528A0 /* ViewController.swift */,
 				8A3D36281D7169CF003528A0 /* ViewController.xib */,
 				8A3D367C1D7698FA003528A0 /* WebViewController.swift */,
@@ -258,7 +252,6 @@
 				8A3D36461D769522003528A0 /* ImageViewController.xib in Resources */,
 				8A3D364E1D76959A003528A0 /* ProgressViewController.xib in Resources */,
 				8A3D361C1D71694D003528A0 /* Assets.xcassets in Resources */,
-				8A3D36771D769884003528A0 /* TextFieldViewController.xib in Resources */,
 				8A3D367B1D7698B6003528A0 /* PickerViewController.xib in Resources */,
 				8A3D36521D7696E1003528A0 /* ScrollViewController.xib in Resources */,
 				8A3D36341D73DA5A003528A0 /* GestureViewController2.xib in Resources */,
@@ -291,7 +284,6 @@
 				8A3D36721D76986D003528A0 /* TextViewController.swift in Sources */,
 				8A3D36331D73DA5A003528A0 /* GestureViewController2.swift in Sources */,
 				8A1C16761D786AA1004824CB /* UIColor+hex.swift in Sources */,
-				8A3D36761D769884003528A0 /* TextFieldViewController.swift in Sources */,
 				8A3D36591D769775003528A0 /* SegmentedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

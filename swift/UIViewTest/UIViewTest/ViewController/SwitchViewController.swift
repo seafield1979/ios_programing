@@ -23,7 +23,7 @@ class SwitchViewController: UIViewController {
             
         }
     }
-    
+
     func createSwitch(pos : CGPoint) -> UISwitch
     {
         let _switch = UISwitch(frame: CGRectMake(pos.x,pos.y,100,30))

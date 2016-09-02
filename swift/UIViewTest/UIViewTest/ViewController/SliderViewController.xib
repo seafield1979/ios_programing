@@ -62,6 +62,7 @@
                 <constraint firstItem="XPo-OV-QLM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="n7N-iW-phb"/>
                 <constraint firstItem="YVM-ed-Pcf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="z8n-uV-GXk"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="kAu-h8-xyR"/>

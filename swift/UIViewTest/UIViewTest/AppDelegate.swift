@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var progressViewController : ProgressViewController?
     var pageControlViewController : PageControlViewController?
     var pickerViewController : PickerViewController?
+    var scrollViewController : ScrollViewController?
     var segmentedViewController : SegmentedViewController?
     var sliderViewController : SliderViewController?
     var switchViewController : SwitchViewController?
@@ -35,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case Button
         case ImageView
         case Label
+        case ScrollView
         case Progress
         case PageControl
         case Picker
@@ -50,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         window = UIWindow(frame:UIScreen.mainScreen().bounds)
         
-        let mode = testMode.Webview
+        let mode = testMode.ScrollView
         
         
         // 最初に表示されるViewControllerを生成
@@ -73,17 +75,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Viewの色を変える
             self.gestureViewController2!.view.backgroundColor = UIColor.yellowColor()
             window!.rootViewController = self.gestureViewController2
+            
         case .Button:
             self.buttonViewController = ButtonViewController(nibName: "ButtonViewController", bundle: nil)
             
             // Viewの色を変える
             self.buttonViewController!.view.backgroundColor = UIColor.whiteColor()
             window!.rootViewController = self.buttonViewController
+            
         case .ImageView:
             self.imageViewController = ImageViewController(nibName: "ImageViewController", bundle: nil)
             // Viewの色を変える
             self.imageViewController!.view.backgroundColor = UIColor.whiteColor()
             window!.rootViewController = self.imageViewController
+            
         case .Label:
             self.labelViewController = LabelViewController(nibName: "LabelViewController", bundle: nil)
             window!.rootViewController = self.labelViewController
@@ -91,18 +96,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case .Progress:
             self.progressViewController = ProgressViewController(nibName: "ProgressViewController", bundle: nil)
             window!.rootViewController = self.progressViewController
+            
         case .PageControl:
             self.pageControlViewController = PageControlViewController(nibName: "PageControlViewController", bundle: nil)
             window!.rootViewController = self.pageControlViewController
+            
         case .Picker:
             self.pickerViewController = PickerViewController(nibName: "PickerViewController", bundle: nil)
             window!.rootViewController = self.pickerViewController
+            
+        case .ScrollView:
+            self.scrollViewController = ScrollViewController(nibName: "ScrollViewController", bundle: nil)
+            window!.rootViewController = self.scrollViewController
+            
         case .Segmented:
             self.segmentedViewController = SegmentedViewController(nibName: "SegmentedViewController", bundle: nil)
             window!.rootViewController = self.segmentedViewController
+            
         case .Slider:
             self.sliderViewController = SliderViewController(nibName: "SliderViewController", bundle: nil)
             window!.rootViewController = self.sliderViewController
+            
         case .Switch:
             self.switchViewController = SwitchViewController(nibName: "SwitchViewController", bundle: nil)
             window!.rootViewController = self.switchViewController
@@ -110,9 +124,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case .Stepper:
             self.stepperViewController = StepperViewController(nibName: "StepperViewController", bundle: nil)
             window!.rootViewController = self.stepperViewController
+            
         case .TextField:
             self.textViewController = TextViewController(nibName: "TextViewController", bundle: nil)
             window!.rootViewController = self.textViewController
+            
         case .Webview:
             self.webViewController = WebViewController(nibName: "WebViewController", bundle: nil)
             window!.rootViewController = self.webViewController

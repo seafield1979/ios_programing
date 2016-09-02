@@ -134,8 +134,6 @@
 				8A3D36141D71694D003528A0 /* AppDelegate.swift */,
 				8A1C16751D786AA1004824CB /* UIColor+hex.swift */,
 				8A3D365B1D76977B003528A0 /* UIView */,
-				8A3D364F1D7696E1003528A0 /* ScrollViewController.swift */,
-				8A3D36501D7696E1003528A0 /* ScrollViewController.xib */,
 				8A3D36531D7696FA003528A0 /* TableViewController.swift */,
 				8A3D36541D7696FA003528A0 /* TableViewController.xib */,
 			);
@@ -161,6 +159,8 @@
 				8A1C16701D77BE85004824CB /* PageControlViewController.xib */,
 				8A3D36781D7698B6003528A0 /* PickerViewController.swift */,
 				8A3D36791D7698B6003528A0 /* PickerViewController.xib */,
+				8A3D364F1D7696E1003528A0 /* ScrollViewController.swift */,
+				8A3D36501D7696E1003528A0 /* ScrollViewController.xib */,
 				8A3D36571D769775003528A0 /* SegmentedViewController.swift */,
 				8A3D36581D769775003528A0 /* SegmentedViewController.xib */,
 				8A3D36601D7697DB003528A0 /* SliderViewController.swift */,

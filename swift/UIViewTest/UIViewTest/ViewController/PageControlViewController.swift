@@ -122,12 +122,12 @@ class PageControlViewController: UIViewController, UIScrollViewDelegate{
         self.view.addSubview(pageControl)
     }
     
-    // MARK: UIScrollViewDelegate
-    /**
-     * ページングスクロールビュー変更時処理(UIScrollViewのdelegateメソッド)
-     */
+// MARK: UIScrollViewDelegate
+    // スクロール時の処理（スクロール中に毎フレーム呼ばれる）
     func scrollViewDidScroll( scrollView: UIScrollView) {
         // 現在のページ数を UIPageControl に設定
         pageCtrl1.currentPage = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
+        
+        print("\(scrollView.contentOffset.x) :  \(scrollView.contentOffset.y)")
     }
 }

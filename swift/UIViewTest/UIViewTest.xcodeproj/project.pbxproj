@@ -10,6 +10,8 @@
 		8A1C16711D77BE85004824CB /* PageControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1C166F1D77BE85004824CB /* PageControlViewController.swift */; };
 		8A1C16721D77BE85004824CB /* PageControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1C16701D77BE85004824CB /* PageControlViewController.xib */; };
 		8A1C16761D786AA1004824CB /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1C16751D786AA1004824CB /* UIColor+hex.swift */; };
+		8A1C167A1D796536004824CB /* AutolayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1C16781D796536004824CB /* AutolayoutViewController.swift */; };
+		8A1C167B1D796536004824CB /* AutolayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1C16791D796536004824CB /* AutolayoutViewController.xib */; };
 		8A3D36151D71694D003528A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D36141D71694D003528A0 /* AppDelegate.swift */; };
 		8A3D361C1D71694D003528A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A3D361B1D71694D003528A0 /* Assets.xcassets */; };
 		8A3D36291D7169CF003528A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D36271D7169CF003528A0 /* ViewController.swift */; };
@@ -29,8 +31,6 @@
 		8A3D364E1D76959A003528A0 /* ProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3D364C1D76959A003528A0 /* ProgressViewController.xib */; };
 		8A3D36511D7696E1003528A0 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D364F1D7696E1003528A0 /* ScrollViewController.swift */; };
 		8A3D36521D7696E1003528A0 /* ScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3D36501D7696E1003528A0 /* ScrollViewController.xib */; };
-		8A3D36551D7696FA003528A0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D36531D7696FA003528A0 /* TableViewController.swift */; };
-		8A3D36561D7696FA003528A0 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3D36541D7696FA003528A0 /* TableViewController.xib */; };
 		8A3D36591D769775003528A0 /* SegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D36571D769775003528A0 /* SegmentedViewController.swift */; };
 		8A3D365A1D769775003528A0 /* SegmentedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3D36581D769775003528A0 /* SegmentedViewController.xib */; };
 		8A3D36621D7697DB003528A0 /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D36601D7697DB003528A0 /* SliderViewController.swift */; };
@@ -45,12 +45,15 @@
 		8A3D367B1D7698B6003528A0 /* PickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3D36791D7698B6003528A0 /* PickerViewController.xib */; };
 		8A3D367E1D7698FA003528A0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D367C1D7698FA003528A0 /* WebViewController.swift */; };
 		8A3D367F1D7698FA003528A0 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3D367D1D7698FA003528A0 /* WebViewController.xib */; };
+		8A54CC511D7A87AC009BBB38 /* Autolayout2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54CC501D7A87AC009BBB38 /* Autolayout2ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8A1C166F1D77BE85004824CB /* PageControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageControlViewController.swift; path = ViewController/PageControlViewController.swift; sourceTree = "<group>"; };
 		8A1C16701D77BE85004824CB /* PageControlViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PageControlViewController.xib; path = ViewController/PageControlViewController.xib; sourceTree = "<group>"; };
 		8A1C16751D786AA1004824CB /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		8A1C16781D796536004824CB /* AutolayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutolayoutViewController.swift; path = Autolayout/AutolayoutViewController.swift; sourceTree = "<group>"; };
+		8A1C16791D796536004824CB /* AutolayoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AutolayoutViewController.xib; path = Autolayout/AutolayoutViewController.xib; sourceTree = "<group>"; };
 		8A3D36111D71694D003528A0 /* UIViewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIViewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A3D36141D71694D003528A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A3D361B1D71694D003528A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,8 +75,6 @@
 		8A3D364C1D76959A003528A0 /* ProgressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProgressViewController.xib; path = ViewController/ProgressViewController.xib; sourceTree = "<group>"; };
 		8A3D364F1D7696E1003528A0 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScrollViewController.swift; path = ViewController/ScrollViewController.swift; sourceTree = "<group>"; };
 		8A3D36501D7696E1003528A0 /* ScrollViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScrollViewController.xib; path = ViewController/ScrollViewController.xib; sourceTree = "<group>"; };
-		8A3D36531D7696FA003528A0 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ViewController/TableViewController.swift; sourceTree = "<group>"; };
-		8A3D36541D7696FA003528A0 /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TableViewController.xib; path = ViewController/TableViewController.xib; sourceTree = "<group>"; };
 		8A3D36571D769775003528A0 /* SegmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegmentedViewController.swift; path = ViewController/SegmentedViewController.swift; sourceTree = "<group>"; };
 		8A3D36581D769775003528A0 /* SegmentedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SegmentedViewController.xib; path = ViewController/SegmentedViewController.xib; sourceTree = "<group>"; };
 		8A3D36601D7697DB003528A0 /* SliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SliderViewController.swift; path = ViewController/SliderViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +89,7 @@
 		8A3D36791D7698B6003528A0 /* PickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PickerViewController.xib; path = ViewController/PickerViewController.xib; sourceTree = "<group>"; };
 		8A3D367C1D7698FA003528A0 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = ViewController/WebViewController.swift; sourceTree = "<group>"; };
 		8A3D367D1D7698FA003528A0 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WebViewController.xib; path = ViewController/WebViewController.xib; sourceTree = "<group>"; };
+		8A54CC501D7A87AC009BBB38 /* Autolayout2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Autolayout2ViewController.swift; path = Autolayout/Autolayout2ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A1C16771D7964FF004824CB /* Autolayout */ = {
+			isa = PBXGroup;
+			children = (
+				8A1C16781D796536004824CB /* AutolayoutViewController.swift */,
+				8A1C16791D796536004824CB /* AutolayoutViewController.xib */,
+				8A54CC501D7A87AC009BBB38 /* Autolayout2ViewController.swift */,
+			);
+			name = Autolayout;
+			sourceTree = "<group>";
+		};
 		8A3D36081D71694D003528A0 = {
 			isa = PBXGroup;
 			children = (
@@ -131,11 +143,10 @@
 		8A3D36261D716973003528A0 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8A1C16771D7964FF004824CB /* Autolayout */,
 				8A3D36141D71694D003528A0 /* AppDelegate.swift */,
 				8A1C16751D786AA1004824CB /* UIColor+hex.swift */,
 				8A3D365B1D76977B003528A0 /* UIView */,
-				8A3D36531D7696FA003528A0 /* TableViewController.swift */,
-				8A3D36541D7696FA003528A0 /* TableViewController.xib */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -247,7 +258,7 @@
 				8A3D365A1D769775003528A0 /* SegmentedViewController.xib in Resources */,
 				8A3D362A1D7169CF003528A0 /* ViewController.xib in Resources */,
 				8A3D36631D7697DB003528A0 /* SliderViewController.xib in Resources */,
-				8A3D36561D7696FA003528A0 /* TableViewController.xib in Resources */,
+				8A1C167B1D796536004824CB /* AutolayoutViewController.xib in Resources */,
 				8A3D36731D76986D003528A0 /* TextViewController.xib in Resources */,
 				8A3D36461D769522003528A0 /* ImageViewController.xib in Resources */,
 				8A3D364E1D76959A003528A0 /* ProgressViewController.xib in Resources */,
@@ -271,7 +282,6 @@
 				8A3D36291D7169CF003528A0 /* ViewController.swift in Sources */,
 				8A3D36621D7697DB003528A0 /* SliderViewController.swift in Sources */,
 				8A3D36151D71694D003528A0 /* AppDelegate.swift in Sources */,
-				8A3D36551D7696FA003528A0 /* TableViewController.swift in Sources */,
 				8A3D36661D7697F5003528A0 /* SwitchViewController.swift in Sources */,
 				8A1C16711D77BE85004824CB /* PageControlViewController.swift in Sources */,
 				8A3D364D1D76959A003528A0 /* ProgressViewController.swift in Sources */,
@@ -281,10 +291,12 @@
 				8A3D36491D76954D003528A0 /* LabelViewController.swift in Sources */,
 				8A3D367A1D7698B6003528A0 /* PickerViewController.swift in Sources */,
 				8A3D36451D769522003528A0 /* ImageViewController.swift in Sources */,
+				8A54CC511D7A87AC009BBB38 /* Autolayout2ViewController.swift in Sources */,
 				8A3D36721D76986D003528A0 /* TextViewController.swift in Sources */,
 				8A3D36331D73DA5A003528A0 /* GestureViewController2.swift in Sources */,
 				8A1C16761D786AA1004824CB /* UIColor+hex.swift in Sources */,
 				8A3D36591D769775003528A0 /* SegmentedViewController.swift in Sources */,
+				8A1C167A1D796536004824CB /* AutolayoutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

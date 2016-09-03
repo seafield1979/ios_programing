@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var stepperViewController : StepperViewController?
     var textViewController : TextViewController?
     var webViewController : WebViewController?
+    var autoLayoutViewController : AutolayoutViewController?
+    var autoLayout2ViewController : Autolayout2ViewController?
  
     enum testMode {
         case VC
@@ -46,23 +48,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case Stepper
         case TextField
         case Webview
+        case Autolayout
+        case Autolayout2
     }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         window = UIWindow(frame:UIScreen.mainScreen().bounds)
         
-        let mode = testMode.ScrollView
+        let mode = testMode.Autolayout2
         
         
         // 最初に表示されるViewControllerを生成
         switch (mode) {
+        case .Autolayout:
+            self.autoLayoutViewController = AutolayoutViewController(nibName: "AutolayoutViewController", bundle: nil)
+            window!.rootViewController = autoLayoutViewController
+        
+        case .Autolayout2:
+            self.autoLayout2ViewController = Autolayout2ViewController()
+            window!.rootViewController = autoLayout2ViewController
+        
         case .VC:
             self.viewController = ViewController(nibName: "ViewController", bundle: nil)
             
             // Viewの色を変える
             self.viewController!.view.backgroundColor = UIColor.yellowColor()
             window!.rootViewController = viewController
+            
         case .Gesture:
             self.gestureViewController = GestureViewController(nibName: "GestureViewController", bundle: nil)
             

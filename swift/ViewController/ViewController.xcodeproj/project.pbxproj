@@ -15,6 +15,8 @@
 		585015241BA156B800D91177 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585015231BA156B800D91177 /* ViewController.xib */; };
 		585015291BA1690A00D91177 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585015271BA1690A00D91177 /* ViewController2.swift */; };
 		5850152A1BA1690A00D91177 /* ViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585015281BA1690A00D91177 /* ViewController2.xib */; };
+		8A54CC541D7ABCF7009BBB38 /* NavigationController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54CC521D7ABCF7009BBB38 /* NavigationController1.swift */; };
+		8A54CC551D7ABCF7009BBB38 /* NavigationController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A54CC531D7ABCF7009BBB38 /* NavigationController1.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		585015231BA156B800D91177 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		585015271BA1690A00D91177 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		585015281BA1690A00D91177 /* ViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController2.xib; sourceTree = "<group>"; };
+		8A54CC521D7ABCF7009BBB38 /* NavigationController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController1.swift; sourceTree = "<group>"; };
+		8A54CC531D7ABCF7009BBB38 /* NavigationController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationController1.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 				585015231BA156B800D91177 /* ViewController.xib */,
 				585015271BA1690A00D91177 /* ViewController2.swift */,
 				585015281BA1690A00D91177 /* ViewController2.xib */,
+				8A54CC521D7ABCF7009BBB38 /* NavigationController1.swift */,
+				8A54CC531D7ABCF7009BBB38 /* NavigationController1.xib */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -207,6 +213,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A54CC551D7ABCF7009BBB38 /* NavigationController1.xib in Resources */,
 				5850150E1BA152EC00D91177 /* LaunchScreen.xib in Resources */,
 				5850152A1BA1690A00D91177 /* ViewController2.xib in Resources */,
 				585015241BA156B800D91177 /* ViewController.xib in Resources */,
@@ -231,6 +238,7 @@
 				585015061BA152EC00D91177 /* ViewController.swift in Sources */,
 				585015041BA152EC00D91177 /* AppDelegate.swift in Sources */,
 				585015291BA1690A00D91177 /* ViewController2.swift in Sources */,
+				8A54CC541D7ABCF7009BBB38 /* NavigationController1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

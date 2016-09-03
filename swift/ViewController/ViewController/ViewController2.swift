@@ -10,36 +10,23 @@ import UIKit
 
 class ViewController2: UIViewController {
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        self.title = "page " + navigationController!.viewControllers.count.description
     }
     
     /**
      * ページ1ViewControllerに遷移する
      */
-    @IBAction func page1ButtonDidTap(sender: AnyObject) {
-        let app = UIApplication.sharedApplication().delegate as! AppDelegate;
-        if  app.viewController1 == nil  {
-            app.viewController1 = ViewController(nibName: "ViewController", bundle: nil);
-        }
-        app.window?.rootViewController = app.viewController1;
-
+    @IBAction func page1ButtonDidTap(sender: AnyObject)
+    {
+        let viewController = ViewController(nibName: "ViewController", bundle: nil)
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

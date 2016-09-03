@@ -10,20 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.title = "page " + navigationController!.viewControllers.count.description
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
     @IBAction func button1DidTap(sender: AnyObject)
     {
         view.backgroundColor = UIColor.greenColor();
+
     }
     
     /*
@@ -31,11 +28,55 @@ class ViewController: UIViewController {
      */
     @IBAction func page2ButtonDidTap(sender: AnyObject)
     {
-        let app = UIApplication.sharedApplication().delegate as! AppDelegate;
-        if  app.viewController2 == nil {
-            app.viewController2 = ViewController2(nibName: "ViewController2", bundle: nil);
-        }
-        app.window?.rootViewController = app.viewController2;
+        let viewController2 = ViewController2(nibName: "ViewController2", bundle: nil)
+        self.navigationController?.pushViewController(viewController2, animated: true)
+    }
+    
+// MARK: UIViewControllerの基本メソッド
+ 
+    // 画面が表示される前に呼ばれる
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("viewWillAppear")
+    }
+    
+    // 画面が表示された後に呼ばれる
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        print("viewDidAppear")
+    }
+    
+    // 画面が閉じる前に呼ばれる
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        print("viewWillDisappear")
+    }
+    
+    // 画面が閉じた後に呼ばれる
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        print("viewDidDisappear")
+    }
+    
+    // メモリ不足時に呼ばれる
+    override func didReceiveMemoryWarning() {
+        
+        print("didReceiveMemoryWarning")
+    }
+    
+    // 自動回転前に呼ばれる
+    override func shouldAutorotate() -> Bool {
+    
+        return true
+    }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        //return UIInterfaceOrientationMask.All
+        return UIInterfaceOrientationMask.Portrait
     }
 }
 

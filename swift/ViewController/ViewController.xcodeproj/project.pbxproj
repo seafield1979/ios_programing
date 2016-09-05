@@ -25,6 +25,7 @@
 		8A54CC8D1D7D377D009BBB38 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54CC891D7D377D009BBB38 /* ViewController2.swift */; };
 		8A54CC8E1D7D377D009BBB38 /* ViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A54CC8A1D7D377D009BBB38 /* ViewController2.xib */; };
 		8A54CC911D7D39B1009BBB38 /* EditableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54CC8F1D7D39B1009BBB38 /* EditableTableViewController.swift */; };
+		8A54CCA31D7D96C3009BBB38 /* image in Resources */ = {isa = PBXBuildFile; fileRef = 8A54CCA21D7D96C3009BBB38 /* image */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		8A54CC891D7D377D009BBB38 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		8A54CC8A1D7D377D009BBB38 /* ViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController2.xib; sourceTree = "<group>"; };
 		8A54CC8F1D7D39B1009BBB38 /* EditableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditableTableViewController.swift; path = TableView/EditableTableViewController.swift; sourceTree = "<group>"; };
+		8A54CCA21D7D96C3009BBB38 /* image */ = {isa = PBXFileReference; lastKnownFileType = folder; path = image; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		585015001BA152EC00D91177 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8A54CCA21D7D96C3009BBB38 /* image */,
 				8A54CC561D7ACBC0009BBB38 /* TableView */,
 				5850152B1BA1691800D91177 /* NavigationController */,
 				585015031BA152EC00D91177 /* AppDelegate.swift */,
@@ -253,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A54CCA31D7D96C3009BBB38 /* image in Resources */,
 				8A54CC8C1D7D377D009BBB38 /* ViewController.xib in Resources */,
 				8A54CC551D7ABCF7009BBB38 /* NavigationController1.xib in Resources */,
 				8A54CC861D7D2E1A009BBB38 /* MyTableViewSection.xib in Resources */,

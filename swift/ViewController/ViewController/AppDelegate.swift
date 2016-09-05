@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
-        let mode = Mode.SimpleTableView2
+        let mode = Mode.NavigationController
 
         window = UIWindow(frame:UIScreen.mainScreen().bounds);
 
@@ -43,11 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         case .NavigationController:
             viewController1 = ViewController(nibName: "ViewController", bundle: nil)
-            
             navigationController = NavigationController1(rootViewController: viewController1!)
-            
-            navigationController?.setNavigationBarHidden(false, animated: true)
-            
             window!.rootViewController = navigationController
             
         case .TableView:

@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var simpleTableViewController : SimpleTableViewController?
     var simpleTableViewController2 : SimpleTableViewController2?
     var tableViewController : TableViewController?
+    var editableTableVC : EditableTableViewController?
     
     enum Mode {
         case ViewController
@@ -26,18 +27,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case SimpleTableView
         case SimpleTableView2
         case TableView
+        case EditableTableView
     }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
-        let mode = Mode.TableView
+        let mode = Mode.EditableTableView
 
         window = UIWindow(frame:UIScreen.mainScreen().bounds);
 
         switch mode {
         case .ViewController:
             viewController1 = ViewController(nibName: "ViewController", bundle: nil)
-            window!.rootViewController = viewController1;
+            window!.rootViewController = viewController1
             
         case .NavigationController:
             viewController1 = ViewController(nibName: "ViewController", bundle: nil)
@@ -46,23 +48,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             navigationController?.setNavigationBarHidden(false, animated: true)
             
-            window!.rootViewController = navigationController;
+            window!.rootViewController = navigationController
             
         case .TableView:
             tableViewController = TableViewController(nibName: "TableViewController", bundle: nil)
             
-            window!.rootViewController = tableViewController;
+            window!.rootViewController = tableViewController
             
         case .SimpleTableView:
             simpleTableViewController = SimpleTableViewController(nibName: "SimpleTableViewController", bundle: nil)
             
-            window!.rootViewController = simpleTableViewController;
+            window!.rootViewController = simpleTableViewController
             
             
         case .SimpleTableView2:
             simpleTableViewController2 = SimpleTableViewController2(nibName: "SimpleTableViewController2", bundle: nil)
             
-            window!.rootViewController = simpleTableViewController2;
+            window!.rootViewController = simpleTableViewController2
+            
+        case .EditableTableView:
+            
+            editableTableVC = EditableTableViewController(nibName: "EditableTableViewController", bundle: nil)
+            
+            navigationController = NavigationController1(rootViewController: editableTableVC!)
+            navigationController?.setNavigationBarHidden(false, animated: true)
+            
+            window!.rootViewController = navigationController
         }
 
         

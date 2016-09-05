@@ -27,6 +27,8 @@
 		8A54CC8C1D7D377D009BBB38 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A54CC881D7D377D009BBB38 /* ViewController.xib */; };
 		8A54CC8D1D7D377D009BBB38 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54CC891D7D377D009BBB38 /* ViewController2.swift */; };
 		8A54CC8E1D7D377D009BBB38 /* ViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A54CC8A1D7D377D009BBB38 /* ViewController2.xib */; };
+		8A54CC911D7D39B1009BBB38 /* EditableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54CC8F1D7D39B1009BBB38 /* EditableTableViewController.swift */; };
+		8A54CC921D7D39B1009BBB38 /* EditableTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A54CC901D7D39B1009BBB38 /* EditableTableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		8A54CC881D7D377D009BBB38 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		8A54CC891D7D377D009BBB38 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		8A54CC8A1D7D377D009BBB38 /* ViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController2.xib; sourceTree = "<group>"; };
+		8A54CC8F1D7D39B1009BBB38 /* EditableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditableTableViewController.swift; path = TableView/EditableTableViewController.swift; sourceTree = "<group>"; };
+		8A54CC901D7D39B1009BBB38 /* EditableTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EditableTableViewController.xib; path = TableView/EditableTableViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,18 +160,28 @@
 		8A54CC561D7ACBC0009BBB38 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				8A54CC931D7D39CA009BBB38 /* Cell */,
 				8A54CC691D7D11BF009BBB38 /* SimpleTableViewController.swift */,
 				8A54CC6A1D7D11BF009BBB38 /* SimpleTableViewController.xib */,
 				8A54CC7F1D7D1B19009BBB38 /* SimpleTableViewController2.swift */,
 				8A54CC801D7D1B19009BBB38 /* SimpleTableViewController2.xib */,
 				8A54CC6D1D7D1221009BBB38 /* TableViewController.swift */,
 				8A54CC6F1D7D1233009BBB38 /* TableViewController.xib */,
+				8A54CC8F1D7D39B1009BBB38 /* EditableTableViewController.swift */,
+				8A54CC901D7D39B1009BBB38 /* EditableTableViewController.xib */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
+		8A54CC931D7D39CA009BBB38 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
 				8A54CC711D7D1241009BBB38 /* MyTableViewCell.swift */,
 				8A54CC731D7D124F009BBB38 /* MyTableViewCell.xib */,
 				8A54CC831D7D2E1A009BBB38 /* MyTableViewSection.swift */,
 				8A54CC841D7D2E1A009BBB38 /* MyTableViewSection.xib */,
 			);
-			name = TableView;
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,7 +229,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = B02681;
 				TargetAttributes = {
 					585014FD1BA152EC00D91177 = {
@@ -256,6 +270,7 @@
 				8A54CC551D7ABCF7009BBB38 /* NavigationController1.xib in Resources */,
 				8A54CC701D7D1233009BBB38 /* TableViewController.xib in Resources */,
 				8A54CC861D7D2E1A009BBB38 /* MyTableViewSection.xib in Resources */,
+				8A54CC921D7D39B1009BBB38 /* EditableTableViewController.xib in Resources */,
 				8A54CC8E1D7D377D009BBB38 /* ViewController2.xib in Resources */,
 				5850150E1BA152EC00D91177 /* LaunchScreen.xib in Resources */,
 				8A54CC741D7D124F009BBB38 /* MyTableViewCell.xib in Resources */,
@@ -283,6 +298,7 @@
 				8A54CC8D1D7D377D009BBB38 /* ViewController2.swift in Sources */,
 				585015041BA152EC00D91177 /* AppDelegate.swift in Sources */,
 				8A54CC811D7D1B19009BBB38 /* SimpleTableViewController2.swift in Sources */,
+				8A54CC911D7D39B1009BBB38 /* EditableTableViewController.swift in Sources */,
 				8A54CC6E1D7D1221009BBB38 /* TableViewController.swift in Sources */,
 				8A54CC851D7D2E1A009BBB38 /* MyTableViewSection.swift in Sources */,
 				8A54CC8B1D7D377D009BBB38 /* ViewController.swift in Sources */,
@@ -341,6 +357,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -407,7 +424,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Shusuke Unno (B6QB2T3FJS)";
 				INFOPLIST_FILE = ViewController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "test.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "3d264f77-7acb-46f0-95b5-ea6f76edd7d6";
 			};
@@ -418,7 +437,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ViewController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "test.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -437,6 +458,7 @@
 				);
 				INFOPLIST_FILE = ViewControllerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "test.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ViewController.app/ViewController";
 			};
@@ -452,6 +474,7 @@
 				);
 				INFOPLIST_FILE = ViewControllerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "test.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ViewController.app/ViewController";
 			};

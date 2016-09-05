@@ -16,11 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var viewController1: ViewController?
     var viewController2: ViewController2?
     var navigationController : NavigationController1?
+    var simpleTableViewController : SimpleTableViewController?
+    var simpleTableViewController2 : SimpleTableViewController2?
     var tableViewController : TableViewController?
     
     enum Mode {
         case ViewController
         case NavigationController
+        case SimpleTableView
+        case SimpleTableView2
         case TableView
     }
 
@@ -48,6 +52,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tableViewController = TableViewController(nibName: "TableViewController", bundle: nil)
             
             window!.rootViewController = tableViewController;
+            
+        case .SimpleTableView:
+            simpleTableViewController = SimpleTableViewController(nibName: "SimpleTableViewController", bundle: nil)
+            
+            window!.rootViewController = simpleTableViewController;
+            
+            
+        case .SimpleTableView2:
+            simpleTableViewController2 = SimpleTableViewController2(nibName: "SimpleTableViewController2", bundle: nil)
+            
+            window!.rootViewController = simpleTableViewController2;
         }
 
         

@@ -17,6 +17,14 @@
 		5850152A1BA1690A00D91177 /* ViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585015281BA1690A00D91177 /* ViewController2.xib */; };
 		8A54CC541D7ABCF7009BBB38 /* NavigationController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54CC521D7ABCF7009BBB38 /* NavigationController1.swift */; };
 		8A54CC551D7ABCF7009BBB38 /* NavigationController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A54CC531D7ABCF7009BBB38 /* NavigationController1.xib */; };
+		8A54CC6B1D7D11BF009BBB38 /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54CC691D7D11BF009BBB38 /* SimpleTableViewController.swift */; };
+		8A54CC6C1D7D11BF009BBB38 /* SimpleTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A54CC6A1D7D11BF009BBB38 /* SimpleTableViewController.xib */; };
+		8A54CC6E1D7D1221009BBB38 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54CC6D1D7D1221009BBB38 /* TableViewController.swift */; };
+		8A54CC701D7D1233009BBB38 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A54CC6F1D7D1233009BBB38 /* TableViewController.xib */; };
+		8A54CC721D7D1241009BBB38 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54CC711D7D1241009BBB38 /* MyTableViewCell.swift */; };
+		8A54CC741D7D124F009BBB38 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A54CC731D7D124F009BBB38 /* MyTableViewCell.xib */; };
+		8A54CC761D7D125B009BBB38 /* HogeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54CC751D7D125B009BBB38 /* HogeCell.swift */; };
+		8A54CC781D7D126A009BBB38 /* HogeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A54CC771D7D126A009BBB38 /* HogeCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,14 @@
 		585015281BA1690A00D91177 /* ViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController2.xib; sourceTree = "<group>"; };
 		8A54CC521D7ABCF7009BBB38 /* NavigationController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController1.swift; sourceTree = "<group>"; };
 		8A54CC531D7ABCF7009BBB38 /* NavigationController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationController1.xib; sourceTree = "<group>"; };
+		8A54CC691D7D11BF009BBB38 /* SimpleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimpleTableViewController.swift; path = TableView/SimpleTableViewController.swift; sourceTree = "<group>"; };
+		8A54CC6A1D7D11BF009BBB38 /* SimpleTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SimpleTableViewController.xib; path = TableView/SimpleTableViewController.xib; sourceTree = "<group>"; };
+		8A54CC6D1D7D1221009BBB38 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = TableView/TableViewController.swift; sourceTree = "<group>"; };
+		8A54CC6F1D7D1233009BBB38 /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TableViewController.xib; path = TableView/TableViewController.xib; sourceTree = "<group>"; };
+		8A54CC711D7D1241009BBB38 /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyTableViewCell.swift; path = TableView/MyTableViewCell.swift; sourceTree = "<group>"; };
+		8A54CC731D7D124F009BBB38 /* MyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyTableViewCell.xib; path = TableView/MyTableViewCell.xib; sourceTree = "<group>"; };
+		8A54CC751D7D125B009BBB38 /* HogeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HogeCell.swift; path = TableView/HogeCell.swift; sourceTree = "<group>"; };
+		8A54CC771D7D126A009BBB38 /* HogeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HogeCell.xib; path = TableView/HogeCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +101,8 @@
 		585015001BA152EC00D91177 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				5850152B1BA1691800D91177 /* UI */,
+				8A54CC561D7ACBC0009BBB38 /* TableView */,
+				5850152B1BA1691800D91177 /* NavigationController */,
 				585015031BA152EC00D91177 /* AppDelegate.swift */,
 				5850150A1BA152EC00D91177 /* Images.xcassets */,
 				5850150C1BA152EC00D91177 /* LaunchScreen.xib */,
@@ -119,7 +136,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5850152B1BA1691800D91177 /* UI */ = {
+		5850152B1BA1691800D91177 /* NavigationController */ = {
 			isa = PBXGroup;
 			children = (
 				585015051BA152EC00D91177 /* ViewController.swift */,
@@ -129,7 +146,22 @@
 				8A54CC521D7ABCF7009BBB38 /* NavigationController1.swift */,
 				8A54CC531D7ABCF7009BBB38 /* NavigationController1.xib */,
 			);
-			name = UI;
+			name = NavigationController;
+			sourceTree = "<group>";
+		};
+		8A54CC561D7ACBC0009BBB38 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				8A54CC6D1D7D1221009BBB38 /* TableViewController.swift */,
+				8A54CC6F1D7D1233009BBB38 /* TableViewController.xib */,
+				8A54CC711D7D1241009BBB38 /* MyTableViewCell.swift */,
+				8A54CC731D7D124F009BBB38 /* MyTableViewCell.xib */,
+				8A54CC751D7D125B009BBB38 /* HogeCell.swift */,
+				8A54CC771D7D126A009BBB38 /* HogeCell.xib */,
+				8A54CC691D7D11BF009BBB38 /* SimpleTableViewController.swift */,
+				8A54CC6A1D7D11BF009BBB38 /* SimpleTableViewController.xib */,
+			);
+			name = TableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,9 +245,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A54CC6C1D7D11BF009BBB38 /* SimpleTableViewController.xib in Resources */,
 				8A54CC551D7ABCF7009BBB38 /* NavigationController1.xib in Resources */,
+				8A54CC701D7D1233009BBB38 /* TableViewController.xib in Resources */,
+				8A54CC781D7D126A009BBB38 /* HogeCell.xib in Resources */,
 				5850150E1BA152EC00D91177 /* LaunchScreen.xib in Resources */,
 				5850152A1BA1690A00D91177 /* ViewController2.xib in Resources */,
+				8A54CC741D7D124F009BBB38 /* MyTableViewCell.xib in Resources */,
 				585015241BA156B800D91177 /* ViewController.xib in Resources */,
 				5850150B1BA152EC00D91177 /* Images.xcassets in Resources */,
 			);
@@ -236,8 +272,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				585015061BA152EC00D91177 /* ViewController.swift in Sources */,
+				8A54CC721D7D1241009BBB38 /* MyTableViewCell.swift in Sources */,
+				8A54CC6B1D7D11BF009BBB38 /* SimpleTableViewController.swift in Sources */,
+				8A54CC761D7D125B009BBB38 /* HogeCell.swift in Sources */,
 				585015041BA152EC00D91177 /* AppDelegate.swift in Sources */,
 				585015291BA1690A00D91177 /* ViewController2.swift in Sources */,
+				8A54CC6E1D7D1221009BBB38 /* TableViewController.swift in Sources */,
 				8A54CC541D7ABCF7009BBB38 /* NavigationController1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

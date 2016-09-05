@@ -16,15 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var viewController1: ViewController?
     var viewController2: ViewController2?
     var navigationController : NavigationController1?
+    var tableViewController : TableViewController?
     
     enum Mode {
         case ViewController
         case NavigationController
+        case TableView
     }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
-        let mode = Mode.NavigationController
+        let mode = Mode.TableView
 
         window = UIWindow(frame:UIScreen.mainScreen().bounds);
 
@@ -42,6 +44,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             window!.rootViewController = navigationController;
             
+        case .TableView:
+            tableViewController = TableViewController(nibName: "TableViewController", bundle: nil)
+            
+            window!.rootViewController = tableViewController;
         }
 
         

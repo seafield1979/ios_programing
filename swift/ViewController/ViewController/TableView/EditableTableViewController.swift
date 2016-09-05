@@ -28,10 +28,6 @@ class EditableTableViewController: UITableViewController {
             tableData1.append("hoge\(index)")
         }
         
-        // ステータスバーの上にUITableViewが表示されないように位置をずらす
-        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
-        self.tableView.contentInset.top = statusBarHeight
-        
         // ナビゲーションの右側に編集ボタンを追加
         self.navigationItem.rightBarButtonItem = editButtonItem()
         

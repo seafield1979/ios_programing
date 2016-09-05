@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
-        let mode = Mode.EditableTableView
+        let mode = Mode.SimpleTableView2
 
         window = UIWindow(frame:UIScreen.mainScreen().bounds);
 
@@ -51,24 +51,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window!.rootViewController = navigationController
             
         case .TableView:
-            tableViewController = TableViewController(nibName: "TableViewController", bundle: nil)
-            
+            tableViewController = TableViewController()
             window!.rootViewController = tableViewController
             
         case .SimpleTableView:
-            simpleTableViewController = SimpleTableViewController(nibName: "SimpleTableViewController", bundle: nil)
-            
+            simpleTableViewController = SimpleTableViewController()
             window!.rootViewController = simpleTableViewController
             
-            
         case .SimpleTableView2:
-            simpleTableViewController2 = SimpleTableViewController2(nibName: "SimpleTableViewController2", bundle: nil)
-            
+            simpleTableViewController2 = SimpleTableViewController2()
             window!.rootViewController = simpleTableViewController2
             
         case .EditableTableView:
-            
-            editableTableVC = EditableTableViewController(nibName: "EditableTableViewController", bundle: nil)
+            editableTableVC = EditableTableViewController()
             
             navigationController = NavigationController1(rootViewController: editableTableVC!)
             navigationController?.setNavigationBarHidden(false, animated: true)

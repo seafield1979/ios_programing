@@ -307,6 +307,36 @@ func testSubscript(mode:Int) {
     }
 }
 
+// NSクラスのテスト
+func testNSClass(mode:Int) {
+    let nsclass = UNTestNSClass()
+    
+    switch mode {
+    case 1:
+        nsclass.test1()    
+    case 2:
+        fallthrough
+    default:
+        nsclass.test2()
+    }
+}
+
+// エラークラスのテスト
+func testException(mode:Int) {
+    let exception = UNTestException()
+    
+    switch mode {
+    case 1:
+        exception.test1()
+    case 2:
+        exception.test2()
+    case 3:
+        exception.test3()
+    default:
+        break
+    }
+}
+
 /*
  * コンソールでユーザーの入力を取得する
  *
@@ -351,12 +381,16 @@ while !breakWhile {
             testDictionary(1)
         case "enum":
             testEnum(command.mode)
+        case "exception":
+            testException(command.mode)
         case "extension":
             fallthrough
         case "ext":
             testExtension()
         case "filter":
             testArray(5)
+        case "nsclass":
+            testNSClass(command.mode)
         case "map":
             testArray(4)
         case "opt":

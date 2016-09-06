@@ -111,6 +111,9 @@ class UNTestEnum {
         let s = SignalF.Yellow
         print("meaning:" + s.meaning())
         
+        var sig3 : Signal3 = .Yellow
+        sig3 = Signal3.init(rawValue:1)!
+        
     }
     
     func test2(mode : Int) {

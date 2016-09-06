@@ -46,12 +46,9 @@ class UserDefaultViewController: UIViewController {
     
     // key = value のデータを作成 or 更新する
     func setData(key : String, value : String) {
-        // 「ud」というインスタンスをつくる。
         let ud = NSUserDefaults.standardUserDefaults()
-        
-        // キーidに「taro」という値を格納。（idは任意の文字列でok）
         ud.setObject(value, forKey: key)
-        
+        // すぐにシステムに反映(ストレージに保存)
         ud.synchronize()
     }
     
@@ -90,7 +87,45 @@ class UserDefaultViewController: UIViewController {
         
         // 設定値すべてを取得　※ システムで用意された設定値も出力されます
         let dictionary : NSDictionary =  ud.dictionaryRepresentation()
-        print(dictionary)
+//        print(dictionary)
+        
+
+        
+        let obj = dictionary["AppleKeyboards"]
+        if let array1 = obj as? NSArray {
+            for value in array1 {
+                print(value)
+                print(value.dynamicType)
+            }
+        }
+        
+        // dictionaryには様々な型のデータが入っている
+        for obj in dictionary {
+            let value = obj.value
+            //print(obj.key.dynamicType)
+            
+            if value is NSString {
+                print(obj.key.description + "(NSString)")
+                print("    " + value.description)
+            }
+            else if value is NSArray {
+                print(obj.key.description + "(NSArray)")
+                let objv  = obj.value as? NSArray
+                print("{")
+                for obj2 in objv! {
+                    print("    " + obj2.description)
+                }
+                print("}")
+            }
+            else if value is Int {
+                print(obj.key.description + "(Int)")
+                print("    " + value.description)
+            }
+            else {
+                print(obj.key)
+                print(obj.value.dynamicType)
+            }
+        }
     }
    
    

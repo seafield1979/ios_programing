@@ -24,15 +24,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         window = UIWindow(frame:UIScreen.mainScreen().bounds);
         
-        let mode = AppMode.UserDefault
+        let mode = AppMode.FileManager
         
         switch (mode) {
         case .UserDefault:
             let viewController = UserDefaultViewController(nibName: "UserDefaultViewController", bundle: nil)
             window!.rootViewController = viewController
-            viewController.view.backgroundColor = .greenColor()
             
         case .FileManager:
+            let viewController = FileManagerViewController(nibName:"FileManagerViewController", bundle: nil)
+            window!.rootViewController = viewController
+            
             break
             
         case .CoreData:

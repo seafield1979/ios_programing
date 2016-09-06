@@ -14,14 +14,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    enum AppMode {
+        case UserDefault
+        case FileManager
+        case CoreData
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         window = UIWindow(frame:UIScreen.mainScreen().bounds);
         
-        let viewController1 = ViewController()//nibName: "ViewController", bundle: nil)
-        window!.rootViewController = viewController1
-        viewController1.view.backgroundColor = .greenColor()
+        let mode = AppMode.UserDefault
+        
+        switch (mode) {
+        case .UserDefault:
+            let viewController = UserDefaultViewController(nibName: "UserDefaultViewController", bundle: nil)
+            window!.rootViewController = viewController
+            viewController.view.backgroundColor = .greenColor()
+            
+        case .FileManager:
+            break
+            
+        case .CoreData:
+            break
+        }
+        
+        
         window!.makeKeyAndVisible();
         
         return true

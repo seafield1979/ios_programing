@@ -50,17 +50,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case Webview
         case Autolayout
         case Autolayout2
+        case AlertView
     }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         window = UIWindow(frame:UIScreen.mainScreen().bounds)
         
-        let mode = testMode.Autolayout2
+        let mode = testMode.AlertView
         
         
         // 最初に表示されるViewControllerを生成
         switch (mode) {
+        case .AlertView:
+            let viewController = AlertViewController(nibName: "AlertViewController", bundle: nil)
+            window!.rootViewController = viewController
+            
         case .Autolayout:
             self.autoLayoutViewController = AutolayoutViewController(nibName: "AutolayoutViewController", bundle: nil)
             window!.rootViewController = autoLayoutViewController

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		585015041BA152EC00D91177 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585015031BA152EC00D91177 /* AppDelegate.swift */; };
 		5850150B1BA152EC00D91177 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5850150A1BA152EC00D91177 /* Images.xcassets */; };
-		5850150E1BA152EC00D91177 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5850150C1BA152EC00D91177 /* LaunchScreen.xib */; };
 		5850151A1BA152EC00D91177 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585015191BA152EC00D91177 /* ViewControllerTests.swift */; };
 		8A54CC541D7ABCF7009BBB38 /* NavigationController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54CC521D7ABCF7009BBB38 /* NavigationController1.swift */; };
 		8A54CC551D7ABCF7009BBB38 /* NavigationController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A54CC531D7ABCF7009BBB38 /* NavigationController1.xib */; };
@@ -26,6 +25,13 @@
 		8A54CC8E1D7D377D009BBB38 /* ViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A54CC8A1D7D377D009BBB38 /* ViewController2.xib */; };
 		8A54CC911D7D39B1009BBB38 /* EditableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54CC8F1D7D39B1009BBB38 /* EditableTableViewController.swift */; };
 		8A54CCA31D7D96C3009BBB38 /* image in Resources */ = {isa = PBXBuildFile; fileRef = 8A54CCA21D7D96C3009BBB38 /* image */; };
+		8A63EEA31D7FFC8C006266C5 /* Tab1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A63EEA11D7FFC8C006266C5 /* Tab1ViewController.swift */; };
+		8A63EEA41D7FFC8C006266C5 /* Tab1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A63EEA21D7FFC8C006266C5 /* Tab1ViewController.xib */; };
+		8A63EEA71D7FFC9C006266C5 /* Tab2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A63EEA51D7FFC9C006266C5 /* Tab2ViewController.swift */; };
+		8A63EEA81D7FFC9C006266C5 /* Tab2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A63EEA61D7FFC9C006266C5 /* Tab2ViewController.xib */; };
+		8A63EEAB1D7FFCD1006266C5 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A63EEA91D7FFCD1006266C5 /* MyTabBarController.swift */; };
+		8A63EEAC1D7FFCD1006266C5 /* MyTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A63EEAA1D7FFCD1006266C5 /* MyTabBarController.xib */; };
+		8A63EEDC1D805CD8006266C5 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A63EEDB1D805CD8006266C5 /* CustomView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +49,6 @@
 		585015021BA152EC00D91177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		585015031BA152EC00D91177 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5850150A1BA152EC00D91177 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5850150D1BA152EC00D91177 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		585015131BA152EC00D91177 /* ViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		585015181BA152EC00D91177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		585015191BA152EC00D91177 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
@@ -62,6 +67,13 @@
 		8A54CC8A1D7D377D009BBB38 /* ViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController2.xib; sourceTree = "<group>"; };
 		8A54CC8F1D7D39B1009BBB38 /* EditableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditableTableViewController.swift; path = TableView/EditableTableViewController.swift; sourceTree = "<group>"; };
 		8A54CCA21D7D96C3009BBB38 /* image */ = {isa = PBXFileReference; lastKnownFileType = folder; path = image; sourceTree = "<group>"; };
+		8A63EEA11D7FFC8C006266C5 /* Tab1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tab1ViewController.swift; path = TabBarView/Tab1ViewController.swift; sourceTree = "<group>"; };
+		8A63EEA21D7FFC8C006266C5 /* Tab1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Tab1ViewController.xib; path = TabBarView/Tab1ViewController.xib; sourceTree = "<group>"; };
+		8A63EEA51D7FFC9C006266C5 /* Tab2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab2ViewController.swift; sourceTree = "<group>"; };
+		8A63EEA61D7FFC9C006266C5 /* Tab2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tab2ViewController.xib; sourceTree = "<group>"; };
+		8A63EEA91D7FFCD1006266C5 /* MyTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
+		8A63EEAA1D7FFCD1006266C5 /* MyTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTabBarController.xib; sourceTree = "<group>"; };
+		8A63EEDB1D805CD8006266C5 /* CustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomView.xib; path = TabBarView/CustomView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +116,11 @@
 			isa = PBXGroup;
 			children = (
 				8A54CCA21D7D96C3009BBB38 /* image */,
+				8A63EEA01D7FFBB3006266C5 /* TabBarController */,
 				8A54CC561D7ACBC0009BBB38 /* TableView */,
 				5850152B1BA1691800D91177 /* NavigationController */,
 				585015031BA152EC00D91177 /* AppDelegate.swift */,
 				5850150A1BA152EC00D91177 /* Images.xcassets */,
-				5850150C1BA152EC00D91177 /* LaunchScreen.xib */,
 				585015011BA152EC00D91177 /* Supporting Files */,
 			);
 			path = ViewController;
@@ -173,6 +185,20 @@
 				8A54CC841D7D2E1A009BBB38 /* MyTableViewSection.xib */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		8A63EEA01D7FFBB3006266C5 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				8A63EEA11D7FFC8C006266C5 /* Tab1ViewController.swift */,
+				8A63EEA21D7FFC8C006266C5 /* Tab1ViewController.xib */,
+				8A63EEA51D7FFC9C006266C5 /* Tab2ViewController.swift */,
+				8A63EEA61D7FFC9C006266C5 /* Tab2ViewController.xib */,
+				8A63EEA91D7FFCD1006266C5 /* MyTabBarController.swift */,
+				8A63EEAA1D7FFCD1006266C5 /* MyTabBarController.xib */,
+				8A63EEDB1D805CD8006266C5 /* CustomView.xib */,
+			);
+			name = TabBarController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,9 +287,12 @@
 				8A54CC551D7ABCF7009BBB38 /* NavigationController1.xib in Resources */,
 				8A54CC861D7D2E1A009BBB38 /* MyTableViewSection.xib in Resources */,
 				8A54CC8E1D7D377D009BBB38 /* ViewController2.xib in Resources */,
-				5850150E1BA152EC00D91177 /* LaunchScreen.xib in Resources */,
+				8A63EEDC1D805CD8006266C5 /* CustomView.xib in Resources */,
+				8A63EEAC1D7FFCD1006266C5 /* MyTabBarController.xib in Resources */,
 				8A54CC741D7D124F009BBB38 /* MyTableViewCell.xib in Resources */,
 				5850150B1BA152EC00D91177 /* Images.xcassets in Resources */,
+				8A63EEA41D7FFC8C006266C5 /* Tab1ViewController.xib in Resources */,
+				8A63EEA81D7FFC9C006266C5 /* Tab2ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,11 +315,14 @@
 				8A54CC8D1D7D377D009BBB38 /* ViewController2.swift in Sources */,
 				585015041BA152EC00D91177 /* AppDelegate.swift in Sources */,
 				8A54CC811D7D1B19009BBB38 /* SimpleTableViewController2.swift in Sources */,
+				8A63EEAB1D7FFCD1006266C5 /* MyTabBarController.swift in Sources */,
 				8A54CC911D7D39B1009BBB38 /* EditableTableViewController.swift in Sources */,
 				8A54CC6E1D7D1221009BBB38 /* TableViewController.swift in Sources */,
 				8A54CC851D7D2E1A009BBB38 /* MyTableViewSection.swift in Sources */,
 				8A54CC8B1D7D377D009BBB38 /* ViewController.swift in Sources */,
+				8A63EEA31D7FFC8C006266C5 /* Tab1ViewController.swift in Sources */,
 				8A54CC541D7ABCF7009BBB38 /* NavigationController1.swift in Sources */,
+				8A63EEA71D7FFC9C006266C5 /* Tab2ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,17 +343,6 @@
 			targetProxy = 585015141BA152EC00D91177 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		5850150C1BA152EC00D91177 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5850150D1BA152EC00D91177 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5850151B1BA152EC00D91177 /* Debug */ = {

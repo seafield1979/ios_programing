@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var simpleTableViewController2 : SimpleTableViewController2?
     var tableViewController : TableViewController?
     var editableTableVC : EditableTableViewController?
+    var tabBarController : MyTabBarController?
     
     enum Mode {
         case ViewController
@@ -28,11 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case SimpleTableView2
         case TableView
         case EditableTableView
+        case TabBar
     }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
-        let mode = Mode.NavigationController
+        let mode = Mode.TabBar
 
         window = UIWindow(frame:UIScreen.mainScreen().bounds);
 
@@ -65,6 +67,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navigationController?.setNavigationBarHidden(false, animated: true)
             
             window!.rootViewController = navigationController
+            
+        case .TabBar:
+            tabBarController = MyTabBarController()
+            window!.rootViewController = tabBarController
         }
 
         window?.makeKeyAndVisible();

@@ -11,15 +11,19 @@ import UIKit
 class MyTabBarController: UITabBarController {
     var firstView: Tab1ViewController!
     var secondView: Tab2ViewController!
+    //@IBOutlet var tabBarButtons : [UIButton]!
     
+    @IBOutlet var button1: UIButton!
+    @IBOutlet var tabBarButtons: [UIButton]!
     @IBOutlet var tabBarView: UIView!
     
     @IBAction func tabButtonTapped(button : UIButton) {
         switch button.tag {
         case 1:
-            print("button1")
+            self.selectedIndex = 0
         case 2:
             print("button2")
+            self.selectedIndex = 1
         case 3:
             print("button3")
         case 4:
@@ -49,17 +53,37 @@ class MyTabBarController: UITabBarController {
         
         // 配列をTabにセット
         self.setViewControllers(myTabs, animated: false)
-        
-        let view1 = UINib(nibName: "MyTabBarController", bundle: nil).instantiateWithOwner(self, options: nil)[0] as! UIView
-        
-//        NSBundle.mainBundle().loadNibNamed("MyTabBarController", owner: self, options: nil)
-        
-        
-                let view2 = UIView(frame: CGRectMake(0,0,320,40))
-                view2.backgroundColor = .yellowColor()
-                self.tabBar.addSubview(view2)
 
-        self.tabBar.addSubview(view1)
+        // TabBarにボタンを追加する
+        // ※xibを使う方法はうまくいかないので諦めた。
+        createTabBarView()
+    }
+    
+    func createTabBarView() {
+        // bg
+        let bgView = UIView(frame: CGRectMake(0,0,tabBar.frame.size.width, tabBar.frame.size.height))
+        bgView.backgroundColor = .blackColor()
+        self.tabBar.addSubview(bgView)
         
+        // buttons
+        let width = tabBar.frame.size.width / 4
+        
+        for index in 0...3 {
+            let button = UIButton(frame: CGRectMake(width * CGFloat(index), 0, width, 49))
+            button.setTitle("button\(index)", forState: .Normal)
+            button.setTitleColor(.blackColor(), forState: .Highlighted)
+            button.addTarget(self, action: #selector(self.tabButtonTapped(_:)), forControlEvents: .TouchUpInside)
+            button.tag = index + 1
+            self.tabBar.addSubview(button)
+        }
+    }
+    
+    func addView1(){
+        let _view = UIView()
+        _view.frame = CGRectMake(0,0,100,100)
+        _view.backgroundColor = .blackColor()
+        self.tabBar.addSubview(_view)
     }
 }
+
+

@@ -17,14 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     enum AppMode {
         case UserDefault
         case FileManager
-        case CoreData
+        case MemoStore
+        case PersonStore
     }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         window = UIWindow(frame:UIScreen.mainScreen().bounds);
         
-        let mode = AppMode.FileManager
+        let mode = AppMode.MemoStore
         
         switch (mode) {
         case .UserDefault:
@@ -35,10 +36,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let viewController = FileManagerViewController(nibName:"FileManagerViewController", bundle: nil)
             window!.rootViewController = viewController
             
-            break
-            
-        case .CoreData:
-            break
+        case .MemoStore:
+            let viewController = MemoStoreViewController(nibName:"MemoStoreViewController", bundle: nil)
+            window!.rootViewController = viewController
+
+        case .PersonStore:
+            let viewController = PersonStoreViewController(nibName:"PersonStoreViewController", bundle: nil)
+            window!.rootViewController = viewController
         }
         
         

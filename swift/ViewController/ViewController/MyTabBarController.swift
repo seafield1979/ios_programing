@@ -12,6 +12,8 @@ class MyTabBarController: UITabBarController {
     var firstView: Tab1ViewController!
     var secondView: Tab2ViewController!
     
+    @IBOutlet var tabBarView: UIView!
+    
     @IBAction func tabButtonTapped(button : UIButton) {
         switch button.tag {
         case 1:
@@ -28,12 +30,7 @@ class MyTabBarController: UITabBarController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        let views = UINib(nibName: "MyTabBarController", bundle: nil).instantiateWithOwner(self, options: nil) //[0] as UIView
-//        let mainView = views[0] as! UIView
-//        self.tabBar.addSubview(mainView)
-
-        
+      
         firstView = Tab1ViewController()
         secondView = Tab2ViewController()
         
@@ -53,7 +50,16 @@ class MyTabBarController: UITabBarController {
         // 配列をTabにセット
         self.setViewControllers(myTabs, animated: false)
         
-    
+        let view1 = UINib(nibName: "MyTabBarController", bundle: nil).instantiateWithOwner(self, options: nil)[0] as! UIView
+        
+//        NSBundle.mainBundle().loadNibNamed("MyTabBarController", owner: self, options: nil)
+        
+        
+                let view2 = UIView(frame: CGRectMake(0,0,320,40))
+                view2.backgroundColor = .yellowColor()
+                self.tabBar.addSubview(view2)
+
+        self.tabBar.addSubview(view1)
         
     }
 }

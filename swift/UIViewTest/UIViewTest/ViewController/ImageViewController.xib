@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageViewController" customModule="UIViewTest" customModuleProvider="target">
             <connections>
+                <outlet property="label1" destination="tIa-Lc-Osu" id="y9u-NY-0SM"/>
+                <outlet property="stepper1" destination="ZkY-om-caH" id="enX-OC-Y33"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,79 +23,52 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Beh-y2-ij5">
-                    <rect key="frame" x="275" y="524" width="51" height="30"/>
+                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="ZkY-om-caH">
+                    <rect key="frame" x="183" y="519" width="94" height="29"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="39" id="Qoi-Ct-jB0"/>
+                        <constraint firstAttribute="width" constant="94" id="LBp-fD-0Yi"/>
+                        <constraint firstAttribute="height" constant="29" id="hFU-cZ-WGZ"/>
                     </constraints>
-                    <state key="normal" title="Image2"/>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="Qoi-Ct-jB0"/>
-                        </mask>
-                    </variation>
                     <connections>
-                        <action selector="button2Tapped:" destination="-1" eventType="touchUpInside" id="xdZ-qT-Pxf"/>
+                        <action selector="valueChanged:" destination="-1" eventType="valueChanged" id="IAd-7E-p2Y"/>
                     </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8e-Or-dWM">
-                    <rect key="frame" x="280" y="562" width="38" height="30"/>
+                </stepper>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIa-Lc-Osu">
+                    <rect key="frame" x="292.5" y="523" width="215" height="21"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="38" id="u3L-qC-BVi"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="39" id="wVx-bf-yAE"/>
+                        <constraint firstAttribute="width" constant="215" id="B73-bL-WHY"/>
+                        <constraint firstAttribute="height" constant="21" id="dZZ-Rs-vlg"/>
                     </constraints>
-                    <state key="normal" title="Small"/>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="wVx-bf-yAE"/>
-                        </mask>
-                    </variation>
-                    <connections>
-                        <action selector="button3Tapped:" destination="-1" eventType="touchUpInside" id="Ei2-e8-vB2"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axo-yc-dyd">
-                    <rect key="frame" x="276" y="486" width="49" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1v2-Ca-wNK">
+                    <rect key="frame" x="69" y="562" width="438.5" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.94949494950000002" blue="0.94949494950000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="49" id="BXL-6b-Yi2"/>
+                        <constraint firstAttribute="width" constant="438.5" id="AB8-Bz-aor"/>
+                        <constraint firstAttribute="height" constant="30" id="NUs-lz-LKB"/>
                     </constraints>
-                    <state key="normal" title="Image1"/>
+                    <state key="normal" title="Start"/>
                     <connections>
-                        <action selector="button1Tapped:" destination="-1" eventType="touchUpInside" id="PfP-yK-oDR"/>
+                        <action selector="startButtonTapped:" destination="-1" eventType="touchUpInside" id="lAT-Kj-IXF"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Beh-y2-ij5" firstAttribute="leading" secondItem="v8e-Or-dWM" secondAttribute="leading" constant="2" id="6SV-uB-VZm"/>
-                <constraint firstItem="v8e-Or-dWM" firstAttribute="top" secondItem="Beh-y2-ij5" secondAttribute="bottom" constant="8" id="8M3-eL-NHz"/>
-                <constraint firstItem="v8e-Or-dWM" firstAttribute="top" secondItem="Beh-y2-ij5" secondAttribute="bottom" constant="8" symbolic="YES" id="ALb-hg-07k"/>
-                <constraint firstAttribute="bottom" secondItem="v8e-Or-dWM" secondAttribute="bottom" constant="8" id="I4e-pU-F4S"/>
+                <constraint firstItem="1v2-Ca-wNK" firstAttribute="top" secondItem="ZkY-om-caH" secondAttribute="bottom" constant="14" id="0IT-cZ-soL"/>
                 <constraint firstAttribute="trailing" secondItem="PXO-f4-2G2" secondAttribute="trailing" id="JJ8-Zn-23E"/>
-                <constraint firstAttribute="trailing" secondItem="Beh-y2-ij5" secondAttribute="trailing" constant="280" id="MG3-b9-YeI"/>
-                <constraint firstItem="Beh-y2-ij5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MPx-xv-Nqu"/>
                 <constraint firstItem="PXO-f4-2G2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Nsp-eO-G0e"/>
-                <constraint firstItem="Beh-y2-ij5" firstAttribute="top" secondItem="Axo-yc-dyd" secondAttribute="bottom" constant="8" id="Oko-z1-fLC"/>
-                <constraint firstAttribute="bottom" secondItem="v8e-Or-dWM" secondAttribute="bottom" constant="8" id="Rll-8B-Lgw"/>
                 <constraint firstItem="PXO-f4-2G2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="27" id="cwY-36-dnf"/>
-                <constraint firstItem="v8e-Or-dWM" firstAttribute="top" secondItem="Beh-y2-ij5" secondAttribute="bottom" constant="8" id="f4o-b8-Ve9"/>
-                <constraint firstItem="Axo-yc-dyd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pHC-8a-hIb"/>
-                <constraint firstAttribute="bottom" secondItem="Beh-y2-ij5" secondAttribute="bottom" constant="46" id="pvF-Be-slB"/>
-                <constraint firstItem="v8e-Or-dWM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-1.5" id="tQz-7c-SnI"/>
-                <constraint firstItem="Beh-y2-ij5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yi2-UA-YxI"/>
-                <constraint firstItem="Beh-y2-ij5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zgT-d5-W9f"/>
+                <constraint firstItem="tIa-Lc-Osu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="100" id="dKj-kN-O94"/>
+                <constraint firstAttribute="bottom" secondItem="1v2-Ca-wNK" secondAttribute="bottom" constant="8" id="dv6-oa-ung"/>
+                <constraint firstItem="1v2-Ca-wNK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-11.75" id="h8b-t0-rmy"/>
+                <constraint firstItem="1v2-Ca-wNK" firstAttribute="top" secondItem="tIa-Lc-Osu" secondAttribute="bottom" constant="18" id="mZW-L7-kYu"/>
+                <constraint firstItem="ZkY-om-caH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-70" id="rYS-jU-7qf"/>
             </constraints>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="6SV-uB-VZm"/>
-                    <exclude reference="MG3-b9-YeI"/>
-                    <exclude reference="MPx-xv-Nqu"/>
-                    <exclude reference="yi2-UA-YxI"/>
-                    <exclude reference="8M3-eL-NHz"/>
-                    <exclude reference="I4e-pU-F4S"/>
-                    <exclude reference="f4o-b8-Ve9"/>
-                </mask>
-            </variation>
+            <point key="canvasLocation" x="126" y="402"/>
         </view>
     </objects>
 </document>

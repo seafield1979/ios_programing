@@ -12,6 +12,8 @@
 		8A63EEC51D8047B2006266C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A63EEC41D8047B2006266C5 /* Assets.xcassets */; };
 		8A63EED01D8048BC006266C5 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A63EECF1D8048BC006266C5 /* ViewController.xib */; };
 		8A63EED31D8049FA006266C5 /* MyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A63EED21D8049FA006266C5 /* MyView.xib */; };
+		8A63EEDE1D80EE1E006266C5 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A63EEDD1D80EE1E006266C5 /* CustomView.xib */; };
+		8A63EEE01D80EE60006266C5 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A63EEDF1D80EE60006266C5 /* CustomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		8A63EEC91D8047B2006266C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A63EECF1D8048BC006266C5 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		8A63EED21D8049FA006266C5 /* MyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyView.xib; sourceTree = "<group>"; };
+		8A63EEDD1D80EE1E006266C5 /* CustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
+		8A63EEDF1D80EE60006266C5 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 			isa = PBXGroup;
 			children = (
 				8A63EED21D8049FA006266C5 /* MyView.xib */,
+				8A63EEDF1D80EE60006266C5 /* CustomView.swift */,
+				8A63EEDD1D80EE1E006266C5 /* CustomView.xib */,
 			);
 			name = UIView;
 			sourceTree = "<group>";
@@ -131,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A63EED31D8049FA006266C5 /* MyView.xib in Resources */,
+				8A63EEDE1D80EE1E006266C5 /* CustomView.xib in Resources */,
 				8A63EED01D8048BC006266C5 /* ViewController.xib in Resources */,
 				8A63EEC51D8047B2006266C5 /* Assets.xcassets in Resources */,
 			);
@@ -143,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A63EEE01D80EE60006266C5 /* CustomView.swift in Sources */,
 				8A63EEC01D8047B2006266C5 /* ViewController.swift in Sources */,
 				8A63EEBE1D8047B2006266C5 /* AppDelegate.swift in Sources */,
 			);
@@ -277,6 +285,7 @@
 				8A63EECE1D8047B2006266C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

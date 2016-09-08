@@ -16,10 +16,6 @@ class MyTabBarController: UITabBarController {
     
     var tabButtonBGView : [UIView]?
     
-    @IBOutlet var button1: UIButton!
-    @IBOutlet var tabBarButtons: [UIButton]!
-    @IBOutlet var tabBarView: UIView!
-    
     @IBAction func tabButtonTapped(button : UIButton) {
         selectTabForId(button.tag - 1)
     }
@@ -40,7 +36,7 @@ class MyTabBarController: UITabBarController {
         // 配列をTabにセット
         self.setViewControllers(myTabs, animated: false)
 
-        let mode = 2
+        let mode = 1
         // TabBarにボタンを追加する
         // ※xibを使う方法はうまくいかないので諦めた
         if mode == 1 {

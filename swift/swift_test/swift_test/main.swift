@@ -313,11 +313,20 @@ func testNSClass(mode:Int) {
     
     switch mode {
     case 1:
-        nsclass.test1()    
+        nsclass.testNSArray()
     case 2:
-        fallthrough
+        nsclass.testNSData1()
+    case 3:
+        nsclass.testNSData2()
+    case 4:
+        nsclass.testNSData3()
+    case 5:
+        nsclass.testNSData4()
+    case 6:
+        nsclass.testNSString()
     default:
-        nsclass.test2()
+        print("\(mode) is not suport")
+        break
     }
 }
 
@@ -352,7 +361,9 @@ func getInput() -> (name:String, mode:Int) {
     
     let splited = command.componentsSeparatedByString(".")
     if splited.count >= 2 {
-        return (splited[0], Int(splited[1])!)
+        if let testNo = Int(splited[1]) {
+            return (splited[0], testNo)
+        }
     }
     
     return (command, 1)
@@ -390,6 +401,8 @@ while !breakWhile {
         case "filter":
             testArray(5)
         case "nsclass":
+            fallthrough
+        case "ns":
             testNSClass(command.mode)
         case "map":
             testArray(4)

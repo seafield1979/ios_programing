@@ -31,7 +31,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         case 1:
             test2()
         case 2:
-            print("")
+            test3()
         case 3:
             print("")
         default:
@@ -107,6 +107,23 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             // ファイルに書き込む
             data.writeToFile( filePath, atomically: false )
         }
+    }
+    
+    // GETでプレーンテキストを取得
+    func test3() {
+        
+        let manager = AFHTTPRequestOperationManager()
+        manager.responseSerializer = AFHTTPResponseSerializer()
+        manager.GET(testURL, parameters: nil,
+                    success: {(operation, responseObject) in
+                        let str : NSString = NSString(data:responseObject as! NSData, encoding:NSUTF8StringEncoding)!
+                        print("response: \(str)")
+        },
+            
+                    failure: { (operation, error) in
+                        print("error: \(error)")
+        }
+        )
     }
     
     func initViews() {

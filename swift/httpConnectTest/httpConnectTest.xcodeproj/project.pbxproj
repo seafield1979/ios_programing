@@ -16,6 +16,7 @@
 		8A283B261D845CA40017D090 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A283B1B1D845CA40017D090 /* AFURLRequestSerialization.m */; };
 		8A283B271D845CA40017D090 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A283B1D1D845CA40017D090 /* AFURLResponseSerialization.m */; };
 		8A283B281D845CA40017D090 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A283B1F1D845CA40017D090 /* AFURLSessionManager.m */; };
+		8A283B2B1D862F7A0017D090 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A283B2A1D862F7A0017D090 /* SwiftyJSON.swift */; };
 		8A63EF2C1D83953A006266C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A63EF2B1D83953A006266C5 /* AppDelegate.swift */; };
 		8A63EF2E1D83953A006266C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A63EF2D1D83953A006266C5 /* ViewController.swift */; };
 		8A63EF331D83953A006266C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A63EF321D83953A006266C5 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		8A283B1D1D845CA40017D090 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		8A283B1E1D845CA40017D090 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		8A283B1F1D845CA40017D090 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		8A283B2A1D862F7A0017D090 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		8A63EF281D83953A006266C5 /* httpConnectTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = httpConnectTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A63EF2B1D83953A006266C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A63EF2D1D83953A006266C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 		8A283A8F1D84589C0017D090 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				8A283B291D862F7A0017D090 /* SwiftyJSON */,
 				8A283B0C1D845CA40017D090 /* AFNetworking */,
 			);
 			path = Library;
@@ -95,6 +98,15 @@
 			);
 			path = AFNetworking;
 			sourceTree = "<group>";
+		};
+		8A283B291D862F7A0017D090 /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				8A283B2A1D862F7A0017D090 /* SwiftyJSON.swift */,
+			);
+			name = SwiftyJSON;
+			path = Library/SwiftyJSON;
+			sourceTree = SOURCE_ROOT;
 		};
 		8A63EF1F1D83953A006266C5 = {
 			isa = PBXGroup;
@@ -199,6 +211,7 @@
 				8A283B261D845CA40017D090 /* AFURLRequestSerialization.m in Sources */,
 				8A283B251D845CA40017D090 /* AFURLConnectionOperation.m in Sources */,
 				8A283B241D845CA40017D090 /* AFSecurityPolicy.m in Sources */,
+				8A283B2B1D862F7A0017D090 /* SwiftyJSON.swift in Sources */,
 				8A283B201D845CA40017D090 /* AFHTTPRequestOperation.m in Sources */,
 				8A283B281D845CA40017D090 /* AFURLSessionManager.m in Sources */,
 				8A283B271D845CA40017D090 /* AFURLResponseSerialization.m in Sources */,

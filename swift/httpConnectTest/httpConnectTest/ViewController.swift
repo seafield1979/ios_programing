@@ -24,6 +24,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         "AFNetwork JSON3"
     ]
     
+    let testURL = "http://sunsunsoft.com/test/ios/hello.php"
     let testGetURL = "http://sunsunsoft.com/test/ios/test_get.php"
     let testPostURL = "http://sunsunsoft.com/test/ios/test_post.php"
     let testJsonURL = "http://sunsunsoft.com/test/ios/test.json"
@@ -60,7 +61,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     // 必要なタイミングでdelegateメソッドが呼ばれれる
     func testSynchronous() {
         // 送信したいURLを作成し、Requestを作成します。
-        let url = NSURL(string:testGetURL)
+        let url = NSURL(string:testURL)
         let request = NSURLRequest(URL: url!)
         
         // NSURLSessionConfigurationでhttp通信を接続
@@ -75,7 +76,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     // 通信が終わるまで関数から出てこない
     func testAsynchronous() {
         // create the url-request
-        let urlString = testGetURL
+        let urlString = testURL
         let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
         
         // set the method(HTTP-GET)

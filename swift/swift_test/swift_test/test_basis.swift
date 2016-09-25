@@ -132,6 +132,15 @@ class UNTestBasis {
         }
     }
     
+    // forEachのテスト
+    func test_forEach() {
+        // forEachを使うと簡単に配列の要素のループを行うことができる
+        let array = [1,2,3,4,5];
+        array.forEach {
+            print($0)
+        }
+    }
+    
     // MARK: SWITCH ~ CASE
     /*
         switch~caseのテスト

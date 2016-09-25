@@ -147,9 +147,10 @@ class UNTestClassAdvance
         let obj1 : AnyObject = array[1] as AnyObject;
         for obj in array {
             print("----")
-            if obj1 === obj {
-                print("obj1 is instance of \(NSStringFromClass(type(of: (obj) as AnyObject)))")
-            }
+            // todo
+//            if obj1 === obj {
+//                print("obj1 is instance of \(NSStringFromClass(type(of: (obj) as AnyObject)))")
+//            }
         }
     }
     

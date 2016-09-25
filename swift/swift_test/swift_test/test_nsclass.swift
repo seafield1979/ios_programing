@@ -50,7 +50,7 @@ class UNTestNSClass {
         data2.append("hoge".data(using: String.Encoding.utf8)!)
         
         var int1: NSInteger = 2525
-        data2.append( Data(bytes: UnsafePointer<UInt8>(&int1), count: sizeof(NSInteger)))
+        data2.append( Data(bytes: &int1, count: MemoryLayout<NSInteger>.size))
         
         // ファイルに書き込んでみる
         if let dir : NSString = NSSearchPathForDirectoriesInDomains( FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true ).first as NSString?
@@ -72,12 +72,12 @@ class UNTestNSClass {
         print(string1)
         
         // NSInteger -> NSData
-        var int1 : NSInteger = 1234
-        let intData1 = Data(bytes: UnsafePointer<UInt8>(&int1), count: sizeof(NSInteger))
+        var int12 : NSInteger = 1234
+        let intData1 = Data(bytes: &int12, count: MemoryLayout<NSInteger>.size)
         
         // NSData -> NSInteger
         var int2 : NSInteger = 0
-        (intData1 as NSData).getBytes(&int2, length: sizeof(NSInteger))
+        (intData1 as NSData).getBytes(&int2, length: MemoryLayout<NSInteger>.size)
         print(int2) // 1234
     }
     

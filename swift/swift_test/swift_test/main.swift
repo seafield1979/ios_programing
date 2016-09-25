@@ -31,11 +31,9 @@ func testPrint() {
     print( String(format: "%.4f %.4f", posX, posY))
 }
 
-func testBasis() {
+func testBasis(_ mode:Int) {
     print("test_basis")
     let basis1 = UNTestBasis()
-    
-    let mode = 6
     
     switch mode {
     case 1:
@@ -44,6 +42,8 @@ func testBasis() {
         basis1.test_switch()
     case 3:
         basis1.test_for()
+    case 31:
+        basis1.test_forEach();
     case 4:
         basis1.testIs()
     case 5:
@@ -354,9 +354,9 @@ func testException(_ mode:Int) {
 func getInput() -> (name:String, mode:Int) {
     print("\nplease input test name! ")
 
-    let keyboard = FileHandle.withStandardInput
+    let keyboard = FileHandle.standardInput
     let inputData = keyboard.availableData
-    let strData = NSString(data: inputData, encoding: String.Encoding.utf8)!
+    let strData = NSString(data: inputData, encoding: 4)!  // 4->NSUTF8StringEncoding
     let command = strData.trimmingCharacters(in: CharacterSet.newlines)
     
     let splited = command.components(separatedBy: ".")
@@ -378,8 +378,7 @@ while !breakWhile {
 
     switch command.name {
         case "basis":
-            testBasis()
-            break
+            testBasis(command.mode)
         case "class":
             testClass()
         case "class2":

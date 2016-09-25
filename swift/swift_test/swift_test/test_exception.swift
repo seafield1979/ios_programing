@@ -12,10 +12,10 @@ class UNTestException
 {
     // エラーをenumで定義する
     // ErrorTypeを継承する必要がある
-    enum MyError : ErrorType {
-        case HogeError1
-        case HogeError2
-        case HogeError3 (count : Int)
+    enum MyError : Error {
+        case hogeError1
+        case hogeError2
+        case hogeError3 (count : Int)
     }
     
     func test1()
@@ -27,13 +27,13 @@ class UNTestException
             try hogeFunc(-1)
             try hogeFunc(101)
         }
-        catch MyError.HogeError1 {
+        catch MyError.hogeError1 {
             print("HogeError1 value is too low")
         }
-        catch MyError.HogeError2 {
+        catch MyError.hogeError2 {
             print("HogeError2 value is too large")
         }
-        catch MyError.HogeError3(let count) {
+        catch MyError.hogeError3(let count) {
             print("error \(count)")
         }
         catch {
@@ -72,16 +72,16 @@ class UNTestException
     
     // エラーを投げる可能性があるメソッド
     // 関数名定義の最後に throws をつける
-    func hogeFunc(num : Int) throws {
+    func hogeFunc(_ num : Int) throws {
         
         if num < 0 {
-            throw MyError.HogeError1
+            throw MyError.hogeError1
         }
         else if num > 100 {
-            throw MyError.HogeError2
+            throw MyError.hogeError2
         }
         else if num == 50 {
-            throw MyError.HogeError3(count:100)
+            throw MyError.hogeError3(count:100)
         }
         print(num)
     }

@@ -34,14 +34,14 @@ class UNTestFunc {
         hoge2()
         
         //③引数あり・戻り値あり
-        func hoge3(num: Int) -> Int{
+        func hoge3(_ num: Int) -> Int{
             return num
         }
         
         print("hoge3: \(hoge3(100))")
         
         //④引数あり（複数）
-        func hoge4(a: Int, b: String){
+        func hoge4(_ a: Int, b: String){
             print(a)
             print(b)
         }
@@ -50,14 +50,14 @@ class UNTestFunc {
         
         //⑤引数あり（複数かつ数を指定しない）
         //引数の値は配列として格納される。
-        func hoge5(a: Int...){
+        func hoge5(_ a: Int...){
             print(a[0])
             print(a[1])
         }
         hoge5(100, 200)
         
         //⑥引数あり（初期値を設定）
-        func hoge6(a: Int = 100){
+        func hoge6(_ a: Int = 100){
             print(a, terminator: "")
         }
         
@@ -67,14 +67,15 @@ class UNTestFunc {
         
         //⑥引数を使って変数宣言
         //引数のパラメータは、通常定数(let)として扱われるので、値を代入することはできない。
-        func hoge62(a: Int){
+        func hoge62(_ a: Int){
             //a = 200 // エラー
         }
         
         print("hoge62 : \(hoge62(100))")
         
         //ただし、引数でvar宣言をしてあげるとエラーにならない。
-        func hoge63(var a: Int) -> Int{
+        func hoge63(_ a: Int) -> Int{
+            var a = a
             a = 200 // OK
             return a
         }
@@ -96,9 +97,9 @@ class UNTestFunc {
         
         //⑧戻り値が複数
         //タプルを使用する。
-        func compareNumber(arr: [Int]) -> (min: Int, max: Int) {
-            let min = arr.minElement()!
-            let max = arr.maxElement()!
+        func compareNumber(_ arr: [Int]) -> (min: Int, max: Int) {
+            let min = arr.min()!
+            let max = arr.max()!
             
             return (min, max)
         }
@@ -108,7 +109,7 @@ class UNTestFunc {
 
     // MARK: test2
     // text内にcharactersのリストの文字が含まれていたらtrueを返す
-    func containsCharacter(text:String, characters:Character ...) -> Bool {
+    func containsCharacter(_ text:String, characters:Character ...) -> Bool {
         for ch in characters {
             for t in text.characters {
                 if ch == t {
@@ -130,16 +131,16 @@ class UNTestFunc {
 
     // MARK: test3
     // 関数の型と関数変数
-    func add(a : Int, b : Int) -> Int {
+    func add(_ a : Int, b : Int) -> Int {
         return a + b
     }
-    func sub(a : Int, b : Int) -> Int {
+    func sub(_ a : Int, b : Int) -> Int {
         return a - b
     }
-    func mul(a : Int, b : Int) -> Int {
+    func mul(_ a : Int, b : Int) -> Int {
         return a * b;
     }
-    func div(a : Int, b : Int) -> Int {
+    func div(_ a : Int, b : Int) -> Int {
         if b == 0 {
             return 0
         }
@@ -180,7 +181,7 @@ class UNTestFunc {
     // 関数型の引数を受け取るメソッド
     typealias FuncType = (Int, Int)->Int
     
-    func calc1(a : Int, function:FuncType) {
+    func calc1(_ a : Int, function:FuncType) {
         print(function(a, a))
     }
 
@@ -205,13 +206,13 @@ class UNTestFunc {
     func test5() {
         print("UNTestFunction:test5()")
         
-        func hello1(a:Int, b:Int) -> Int{
+        func hello1(_ a:Int, b:Int) -> Int{
             return a + b * (a + b)
         }
         print("hello1:" + hello1(1,b: 2).description)
         
         let c : Int = 3
-        func hello2(a:Int, b:Int) -> Int{
+        func hello2(_ a:Int, b:Int) -> Int{
             // 呼び出し元のスコープの変数 (c) を参照できる
             return a + b * (a + b + c)
         }

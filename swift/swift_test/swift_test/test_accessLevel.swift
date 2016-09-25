@@ -21,37 +21,37 @@
 import Foundation
 
 
-public class CParent {
+open class CParent {
     init() {
         
     }
-    private func test(){
+    fileprivate func test(){
         print("CParent:test()")
     }
-    public func test2(){
+    open func test2(){
         print("CParent:test2()")
     }
 }
 
-public class CChild1 : CParent {
+open class CChild1 : CParent {
     override init() {
         
     }
-    override public func test(){
+    override open func test(){
         // CParent:testは privateだが同じソース内なのでアクセス可能
         super.test()
     }
 }
 
-public class CProperty {
-    private(set) var getOnly = 0    // setterがprivateなので、クラス外から値の設定が出来ない
+open class CProperty {
+    fileprivate(set) var getOnly = 0    // setterがprivateなので、クラス外から値の設定が出来ない
 }
 
-public class UNTestAccessLevel {
+open class UNTestAccessLevel {
     init() {
         
     }
-    public func test1() {
+    open func test1() {
         print("UNTestAccessLevel:")
         // 同じクラスのメソッドからはprivateメソッドも呼び出し可能
         test_private1()
@@ -59,7 +59,7 @@ public class UNTestAccessLevel {
         
     }
     
-    private func test_private1() -> String{
+    fileprivate func test_private1() -> String{
         return "hello private"
     }
     

@@ -25,21 +25,21 @@ struct Set<T: Equatable> {      // Equatable は２つの引数が == で比較�
     }
     
     // 要素の追加
-    mutating func append(item:T) {
+    mutating func append(_ item:T) {
         if !self.contains(item) {
             items.append(item)
         }
     }
     
     // 要素の削除
-    mutating func remove(item:T) {
-        if let idx = items.indexOf(item) {
-            items.removeAtIndex(idx)
+    mutating func remove(_ item:T) {
+        if let idx = items.index(of: item) {
+            items.remove(at: idx)
         }
     }
     
     // 要素の存在確認
-    func contains(item: T) -> Bool {
+    func contains(_ item: T) -> Bool {
         return items.contains(item)
     }
 }
@@ -49,7 +49,7 @@ class UNTestGenerics {
         
     }
     
-    func bigger<T:Comparable>(val1: T, val2: T) -> T {
+    func bigger<T:Comparable>(_ val1: T, val2: T) -> T {
         return val1 > val2 ? val1 : val2
     }
     

@@ -56,7 +56,7 @@ class UNTestOptional {
     
     // アンラップのあれこれ
     func test2() {
-        var a: Int = 1
+        let a: Int = 1
         print(a + 2) // -> 3
         
         // Optional型をそのまま使用しようとしてエラーになる例
@@ -78,7 +78,7 @@ class UNTestOptional {
         var e : String? = nil;
         print("24: \(Int(e!))")     // OK nilが返る
         e = "123"
-        print("25: \(e?.uppercaseString)")
+        print("25: \(e?.uppercased())")
         
         /*
             e?.uppercaseString は 内部でこんな動き(optional chaining)をしている
@@ -88,8 +88,8 @@ class UNTestOptional {
             String 型を optional 型にラップする
             Optional<String> 型を返す
         */
-        var f : String? = nil
-        var f2 : String? = f?.uppercaseString       // ?を使用すると出力(String)をOptional型にラップしてから返す
+        let f : String? = nil
+        let f2 : String? = f?.uppercased()       // ?を使用すると出力(String)をOptional型にラップしてから返す
         print("26: \(f2)")
     }
     
@@ -97,7 +97,7 @@ class UNTestOptional {
         // implicitly unwrapped optional 型のテスト
         // implicitly unwrapped optional型は自動的にアンラップされる
         var str1 : String! = "hoge"
-        print("31: \(str1.uppercaseString)")
+        print("31: \(str1.uppercased())")
         
         // でも nilの場合はエラーになってしまう
         str1 = nil
@@ -123,7 +123,7 @@ class UNTestOptional {
         var str : String? = "hoge"//nil
         str = "hoge"
         // print(Int(str?))       // エラー。理由は strがnilのときに print(nil)になるから
-        var str12 : String? = str?.uppercaseString      // これはOK。str?がnilのときに uppercaseStringがよばれずにnilをかえすだけ
+        var str12 : String? = str?.uppercased()      // これはOK。str?がnilのときに uppercaseStringがよばれずにnilをかえすだけ
         str = "100"
         //print(Int(str?))       // nil以外でも大丈夫
         print(Int(str!))       // 強制的にアンラップする

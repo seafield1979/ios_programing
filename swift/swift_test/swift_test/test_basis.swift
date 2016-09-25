@@ -115,7 +115,7 @@ class UNTestBasis {
         }
         
         let array = [10,20,30,40,50]
-        for (index, value) in array.enumerate() {
+        for (index, value) in array.enumerated() {
             print("\(index) : \(value)")
         }
         

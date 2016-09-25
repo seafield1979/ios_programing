@@ -33,7 +33,7 @@ class UNTestDictionary
         print(d2)
         
         // 宣言3 型が混在
-        var d3 = ["Apple" : 1000, "Orange" : "2000", 100 : 100]
+        var d3 = ["Apple" : 1000, "Orange" : "2000", 100 : 100] as [AnyHashable : Any]
         print( d3["Apple"] )
         print( d3["Orange"] )
         print( d3[100] )          // インデックスでも参照できる。これが出来るのはすごい

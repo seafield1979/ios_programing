@@ -21,7 +21,7 @@ class UNTestStruct {
         var x : Float
         var y : Float
         var name : String
-        var birth : NSDate?     // オプショナル
+        var birth : Date?     // オプショナル
         init(){
             x = 0
             y = 0
@@ -38,7 +38,7 @@ class UNTestStruct {
         enemy.x = 10
         enemy.y = 20
         enemy.name = "angry bird"
-        enemy.birth = NSDate()
+        enemy.birth = Date()
     }
     
     func test1(){
@@ -52,7 +52,7 @@ class UNTestStruct {
         var x : Float
         var y : Float
         var name : String
-        var birth : NSDate?     // オプショナル
+        var birth : Date?     // オプショナル
         func description() {
             print("x:\(x) y:\(y) name:\(name) birth:\(birth)")
         }
@@ -67,11 +67,11 @@ class UNTestStruct {
     
     func test2() {
         print("----- struct2 -----")
-        let enemy2 : Enemy2 = Enemy2(x:12, y:34, name:"donky", birth:NSDate())
+        let enemy2 : Enemy2 = Enemy2(x:12, y:34, name:"donky", birth:Date())
         enemy2.x
         enemy2.y
         enemy2.description()
-        let bd : NSDate = enemy2.birth!
+        let bd : Date = enemy2.birth!
         print(bd.description)
     }
     

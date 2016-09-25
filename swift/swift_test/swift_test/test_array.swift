@@ -35,7 +35,7 @@ class UNTestArray{
         self.array1 = [1,2,3,4,5]
         self.array2 = ["1","2","3","4","5"]
         self.array7.append(1)
-        array_empty1 = Array(count:10, repeatedValue: "hoge")
+        array_empty1 = Array(repeating: "hoge", count: 10)
     }
     
     func test1() {
@@ -70,7 +70,7 @@ class UNTestArray{
         
         // enumerateを使って全要素にアクセス
         let array3 = [10,20,30,40,50]
-        array3.enumerate().forEach { print("index:\($0.0) value:\($0.1)") }
+        array3.enumerated().forEach { print("index:\($0.0) value:\($0.1)") }
     }
     
     func test2() {
@@ -87,11 +87,11 @@ class UNTestArray{
         // 要素を追加
         self.array1.append(1)       // １つだけ追加
         self.array1 += [5,6,7]      // まとめて追加
-        self.array1.insert(100, atIndex: 3)     // 途中に挿入
+        self.array1.insert(100, at: 3)     // 途中に挿入
         self.array1.display()
         
         // 要素の削除
-        self.array1.removeAtIndex(0)
+        self.array1.remove(at: 0)
         self.array1.removeLast()
         self.array1.display()
         
@@ -105,17 +105,17 @@ class UNTestArray{
         // 混合型の配列から指定の方の値だけを抜き出す
         var ks : [AnyObject] = []
         var ki : [AnyObject] = []
-        let array: [AnyObject] = ["abc", 1, "def", 2, "ghi", 3]
+        let array: [AnyObject] = ["abc" as AnyObject, 1 as AnyObject, "def" as AnyObject, 2 as AnyObject, "ghi" as AnyObject, 3 as AnyObject]
         
         //for var i = 0; i < array.count; i+=1 {
         for value in array {
             // String
             if let string = value as? String {
-                ks.append(string)
+                ks.append(string as AnyObject)
             }
             // Int
             if let int1 = value as? Int {
-                ki.append(int1)
+                ki.append(int1 as AnyObject)
             }
         }
         print("test3_1: \(ks)")
@@ -128,8 +128,8 @@ class UNTestArray{
         print("test3_2: \(k2)")
         
         // その３ 配列の要素を指定の値で初期化
-        let count = Array(count: 100, repeatedValue: 100)
-        let repeated : [AnyObject] = Array(count: 10, repeatedValue : "hoge")
+        let count = Array(repeating: 100, count: 100)
+        let repeated : [AnyObject] = Array(repeating: "hoge", count: 10) as [AnyObject]
         print("test3_3: \(count)")
         print("test3_3: \(repeated)")
     }
@@ -174,27 +174,27 @@ class UNTestArray{
         // sort ソート済みの新しい配列を返す
         // sortで並べ替え(整数)
         print("-- sort int --")
-        array1.sort().forEach { print($0) }
+        array1.sorted().forEach { print($0) }
         
         // sortで並べ替え(文字列)
         print("-- sort str --")
-        array2.sort().forEach { print($0) }
+        array2.sorted().forEach { print($0) }
         
         // 昇順(小さい順)に並び替え
         print("-- sort ascending --")
         //let newArray = array1.sort {$0 < $1}
-        let newArray = array1.sort(<)
+        let newArray = array1.sorted(by: <)
         newArray.forEach {print($0)}
         
         // 降順(大きい順)に並び替え
         print("-- sort descending --")
         //let newArray2 = array1.sort {$0 > $1}
-        let newArray2 = array1.sort(>)
+        let newArray2 = array1.sorted(by: >)
         newArray2.forEach {print($0)}
         
         // for文で使用する
         print("-- sort for --")
-        for i in array1.sort(>) {
+        for i in array1.sorted(by: >) {
             print(i)
         }
         
@@ -202,21 +202,21 @@ class UNTestArray{
         print("-- sortInPlace 1 --")
         var arrayIP1 = [50,30,21,35,55,1]
         var arrayIP2 = ["hoge", "abc", "123", "ddd", "a123"]
-        arrayIP1.sortInPlace()
+        arrayIP1.sort()
         arrayIP1.forEach { print($0) }
         
         print("-- sortInPlace 2 --")
-        arrayIP2.sortInPlace()
+        arrayIP2.sort()
         arrayIP2.forEach { print($0) }
         
         // 昇順
         print("-- sortInPlace 3 --")
-        arrayIP1.sortInPlace(<)
+        arrayIP1.sort(by: <)
         arrayIP1.forEach { print($0) }
         
         // 降順
         print("-- sortInPlace 4 --")
-        arrayIP1.sortInPlace(>)
+        arrayIP1.sort(by: >)
         arrayIP1.forEach { print($0) }
     }
     
@@ -224,7 +224,7 @@ class UNTestArray{
     // 配列の要素を逆順にする
     func testReverse() {
         let array1 = ["a1", "hoge", "b3", "hage"]
-        let newArray = array1.reverse()
+        let newArray = array1.reversed()
         newArray.forEach { print($0) }
     }
 }

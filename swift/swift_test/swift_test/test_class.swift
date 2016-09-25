@@ -86,7 +86,7 @@ class UNClassTest {
     init () {
         _str1 = ""
         _str2 = ""
-        hoges = Array(count:10, repeatedValue:Hoge())
+        hoges = Array(repeating: Hoge(), count: 10)
     }
     // 引数あり
     init (str1: String, str2: String) {

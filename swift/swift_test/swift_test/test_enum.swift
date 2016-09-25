@@ -56,21 +56,21 @@ import Foundation
 class UNTestEnum {
     // 信号機
     enum Signal {
-        case Blue       // 青
-        case Yellow     // 黄
-        case Red        // 赤
+        case blue       // 青
+        case yellow     // 黄
+        case red        // 赤
     }
     
     // １行に書く場合
     enum Signal2 {
-        case Blue, Yellow, Red
+        case blue, yellow, red
     }
     
     // 型を指定できる
     enum Signal3 : Int {
-        case Blue = 1   // 青
-        case Yellow     // 黄
-        case Red        // 赤
+        case blue = 1   // 青
+        case yellow     // 黄
+        case red        // 赤
     }
     
     // 文字列型
@@ -82,16 +82,16 @@ class UNTestEnum {
     
     // メソッドを定義できる
     enum SignalF {
-        case Blue
-        case Yellow
-        case Red
+        case blue
+        case yellow
+        case red
         func meaning() -> String {
             switch(self) {
-            case .Blue:
+            case .blue:
                 return "進め"
-            case .Yellow:
+            case .yellow:
                 return "注意"
-            case .Red:
+            case .red:
                 return "止れ"
             }
         }
@@ -104,50 +104,50 @@ class UNTestEnum {
     func test1() {
         print("UNTestEnum.test1")
         // 参照
-        print(Signal3.Blue)
+        print(Signal3.blue)
         print(String1.Kage)
         
         // 関数呼び出し
-        let s = SignalF.Yellow
+        let s = SignalF.yellow
         print("meaning:" + s.meaning())
         
-        var sig3 : Signal3 = .Yellow
+        var sig3 : Signal3 = .yellow
         sig3 = Signal3.init(rawValue:1)!
         
     }
     
-    func test2(mode : Int) {
+    func test2(_ mode : Int) {
         // 関連値
         
         /* 乗り物 */
         enum Vehicle {
-            case Bicycle         // 自転車
-            case Motorbike(Int)  // バイク（排気量）
-            case Car(Int, Bool)  // 車（排気量, オートマ）
+            case bicycle         // 自転車
+            case motorbike(Int)  // バイク（排気量）
+            case car(Int, Bool)  // 車（排気量, オートマ）
         }
         
-        var vehicle = Vehicle.Bicycle
+        var vehicle = Vehicle.bicycle
         if mode == 1 {
-            vehicle = .Motorbike(750)
+            vehicle = .motorbike(750)
         } else {
-            vehicle = .Car(1600, true)
+            vehicle = .car(1600, true)
         }
         
         
         switch vehicle {
-        case .Bicycle:
+        case .bicycle:
             print("自転車")
-        case .Motorbike(let engine) where engine <= 50:
+        case .motorbike(let engine) where engine <= 50:
             print("オートバイ:原付")
-        case .Motorbike(let engine) where engine <= 125:
+        case .motorbike(let engine) where engine <= 125:
             print("オートバイ:小型")
-        case .Motorbike(let engine) where engine <= 400:
+        case .motorbike(let engine) where engine <= 400:
             print("オートバイ:中型")
-        case .Motorbike(let engine):
+        case .motorbike(let engine):
             print("オートバイ:大型")
-        case .Car(let engine, let automatic) where engine <= 660:
+        case .car(let engine, let automatic) where engine <= 660:
             print("軽自動車:" + (automatic ? "オートマ" : "マニュアル"))
-        case .Car(let engine, let automatic):
+        case .car(let engine, let automatic):
             print("普通車 \(engine)cc:" + (automatic ? "オートマ" : "マニュアル"))
         }
     }

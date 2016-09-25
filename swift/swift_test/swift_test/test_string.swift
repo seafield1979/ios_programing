@@ -19,7 +19,7 @@ class Regexp {
     init(_ pattern: String) {
         self.pattern = pattern
         do {
-            self.regexp = try NSRegularExpression(pattern: pattern, options: [.CaseInsensitive])
+            self.regexp = try NSRegularExpression(pattern: pattern, options: [.caseInsensitive])
         } catch let error as NSError {
             print(error.localizedDescription)
             self.regexp = NSRegularExpression()
@@ -29,8 +29,8 @@ class Regexp {
     // 正規表現を利用した一致判定
     // 使用例 bool = Regexp(正規表現パターン).isMatch(対象文字列)
     // 例: if Regexp("hoge\\d+").isMatch("hoge123") {}
-    func isMatch(input: String) -> Bool {
-        let matches = self.regexp.matchesInString( input, options: [], range:NSMakeRange(0, input.characters.count) )
+    func isMatch(_ input: String) -> Bool {
+        let matches = self.regexp.matches( in: input, options: [], range:NSMakeRange(0, input.characters.count) )
         return matches.count > 0
     }
 
@@ -38,14 +38,14 @@ class Regexp {
     // 使用方法: let [String] = Regexp(正規表現パターン).matches(マッチング対象の文字列)
     // 例: let matches:[String] = Regexp("hoge(\\d+) (\\d+)").matches("hoge100 200")
     //     matches は配列 ["hoge100 200", "100", "200"] となる
-    func matches(input: String) -> [String]? {
+    func matches(_ input: String) -> [String]? {
         let nsInput = input as NSString
         if self.isMatch(input) {
             var results = [String]()
-            if let matches = self.regexp.firstMatchInString(nsInput as String, options: NSMatchingOptions(), range: NSMakeRange(0, input.characters.count))
+            if let matches = self.regexp.firstMatch(in: nsInput as String, options: NSRegularExpression.MatchingOptions(), range: NSMakeRange(0, input.characters.count))
             {
                 for i in 0...matches.numberOfRanges - 1 {
-                    results.append(nsInput.substringWithRange(matches.rangeAtIndex(i)))
+                    results.append(nsInput.substring(with: matches.rangeAt(i)))
                 }
             }
             return results
@@ -56,11 +56,11 @@ class Regexp {
     // 文字列を置換する
     // 使用方法: Regexp(正規表現パターン).replace(置換対象の文字列, 置換パターン)
     // 例: Regexp("hoge(\\d+).(\\d+)").replace("hoge1.2", "hage$1.$2")
-    func replace(input: String, replace: String) -> String {
-        return input.stringByReplacingOccurrencesOfString(
-            pattern,
-            withString: replace,
-            options: NSStringCompareOptions.RegularExpressionSearch,
+    func replace(_ input: String, replace: String) -> String {
+        return input.replacingOccurrences(
+            of: pattern,
+            with: replace,
+            options: NSString.CompareOptions.regularExpression,
             range: nil)
     }
 }

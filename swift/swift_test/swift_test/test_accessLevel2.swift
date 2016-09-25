@@ -8,11 +8,11 @@
 
 import Foundation
 
-public class CChild2 : CParent {
+open class CChild2 : CParent {
     override init() {
         
     }
-    public func test(){
+    open func test(){
         // CParent:testは privateなので別のソースからはアクセス不可
         // super.test()     CParent:testはprivateなのでエラー
         

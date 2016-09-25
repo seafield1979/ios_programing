@@ -30,7 +30,7 @@ class UNTestSubscript
             if index < 0 || index > names.count {
                 return
             }
-            names.insert(name, atIndex: index)
+            names.insert(name, at: index)
         }
     }
 }
@@ -41,7 +41,7 @@ class UNTestSubscript2
     var kuku : [Int]    // 内部では１次元配列
     
     init() {
-        self.kuku = Array(count:81, repeatedValue:0)
+        self.kuku = Array(repeating: 0, count: 81)
         //九九を作成
         for i in 0...8 {
             for j in 0...8 {
@@ -75,7 +75,7 @@ class SubscriptSample {
         }
         set(name) {
             assert(0 > index || userNames.count >= index, "index out of range")
-            userNames.insert(name, atIndex: index)
+            userNames.insert(name, at: index)
         }
     }
 }

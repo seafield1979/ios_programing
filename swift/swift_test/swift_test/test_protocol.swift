@@ -125,7 +125,7 @@ protocol GameBoard {
 }
 
 class UNTestProtocol {
-    private var prot1 : UNMovingObject?
+    fileprivate var prot1 : UNMovingObject?
     
     init() {
     }
@@ -153,7 +153,7 @@ class UNTestProtocol {
     
     // MARK: test3 subscipt 配列のアクセス方法を定義する
     class testGP : GameBoard {
-        var board : [Int] = Array(count:8*8, repeatedValue:0)
+        var board : [Int] = Array(repeating: 0, count: 8*8)
         subscript(row: Int, column: Int) -> Int {
             get {
                 return board[row * 8 + column]

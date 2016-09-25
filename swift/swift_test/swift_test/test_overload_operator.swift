@@ -62,12 +62,12 @@ postfix func ++ (vector : Vector3D) -> Vector3D{
 }
 
 //複合代入演算子 A += B
-func += (inout left : Vector3D, right : Vector3D){
+func += (left : inout Vector3D, right : Vector3D){
     left = left + right
 }
 
 //複合代入演算子 A -= B
-func -= (inout left : Vector3D, right : Vector3D){
+func -= (left : inout Vector3D, right : Vector3D){
     left = left - right
 }
 

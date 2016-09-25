@@ -68,14 +68,14 @@ extension Person2 {
     
     // enumを追加してみる
     enum Type {
-        case Hoge, Hage, Mage
+        case hoge, hage, mage
         func japanese() -> String {
             switch(self) {
-            case .Hoge:
+            case .hoge:
                 return "ほげ"
-            case .Hage:
+            case .hage:
                 return "ハゲ"
-            case .Mage:
+            case .mage:
                 return "まげ"
             }
         }
@@ -83,11 +83,11 @@ extension Person2 {
     // ageの値によって分類する算出プロパティ
     var type : Type {
         if (age < 20) {
-            return Type.Hoge
+            return Type.hoge
         } else if (age < 40) {
-            return Type.Mage
+            return Type.mage
         } else {
-            return Type.Hage
+            return Type.hage
         }
     }
 }

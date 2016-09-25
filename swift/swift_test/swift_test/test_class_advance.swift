@@ -44,7 +44,7 @@ import Foundation
 class Parent1{
     var position : CGRect
     init() {
-        self.position = CGRectMake(1, 2, 3, 4)
+        self.position = CGRect(x: 1, y: 2, width: 3, height: 4)
     }
     func hoge() {
         print("Parent1:hoge")
@@ -127,7 +127,7 @@ class UNTestClassAdvance
     func test2() {
         // あるクラスを継承しているかを判定
         print("\nInherit check")
-        let array = [Child1(), Parent1(), Parent3()];
+        let array = [Child1(), Parent1(), Parent3()] as [Any];
         
         for obj in array {
             print("----")
@@ -144,11 +144,11 @@ class UNTestClassAdvance
         
         // 同一インスタンスのチェック
         print("Instance same check")
-        let obj1 : AnyObject = array[1];
+        let obj1 : AnyObject = array[1] as AnyObject;
         for obj in array {
             print("----")
             if obj1 === obj {
-                print("obj1 is instance of \(NSStringFromClass(obj.dynamicType))")
+                print("obj1 is instance of \(NSStringFromClass(type(of: (obj) as AnyObject)))")
             }
         }
     }

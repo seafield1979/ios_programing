@@ -60,7 +60,7 @@ func testClass() {
 
     // オブジェクトからクラス名を取得
     print("dynamicType")
-    print( NSStringFromClass(class1.dynamicType))
+    print( NSStringFromClass(type(of: class1)))
     
     // クラスの配列
     var classes : [UNClassTest] = [];
@@ -76,7 +76,7 @@ func testClass() {
     }
 }
 
-func testClass2(mode:Int) {
+func testClass2(_ mode:Int) {
     let class1 = UNTestClassAdvance()
     
     switch mode {
@@ -91,7 +91,7 @@ func testClass2(mode:Int) {
     }
 }
 
-func testFunc(mode:Int) {
+func testFunc(_ mode:Int) {
     print("test_func mode:\(mode)")
     
     let func1 = UNTestFunc()
@@ -111,7 +111,7 @@ func testFunc(mode:Int) {
     }
 }
 
-func testArray(mode : Int) {
+func testArray(_ mode : Int) {
     print("test_array")
     let array1 = UNTestArray()
     
@@ -135,14 +135,14 @@ func testArray(mode : Int) {
     }
 }
 
-func testDictionary(mode: Int) {
+func testDictionary(_ mode: Int) {
     let dictionary1 = UNTestDictionary()
     
     let ret = dictionary1.test1()
     print("\(ret)")
 }
 
-func testString(mode : Int) {
+func testString(_ mode : Int) {
     let string1 = UNTestString()
     
     switch mode {
@@ -157,7 +157,7 @@ func testString(mode : Int) {
     }
 }
 
-func testOptional(mode: Int){
+func testOptional(_ mode: Int){
     let optional1 = UNTestOptional()
     
     switch mode {
@@ -176,7 +176,7 @@ func testOptional(mode: Int){
     }
 }
 
-func testEnum(mode : Int) {
+func testEnum(_ mode : Int) {
     let enum1 = UNTestEnum()
     
     switch mode {
@@ -187,7 +187,7 @@ func testEnum(mode : Int) {
     }
 }
 
-func testStruct(mode:Int) {
+func testStruct(_ mode:Int) {
     let struct1 = UNTestStruct()
     
     switch mode {
@@ -200,7 +200,7 @@ func testStruct(mode:Int) {
     }
 }
 
-func testTuple(mode:Int) {
+func testTuple(_ mode:Int) {
     let tuple1 = UNTestTuple()
     
     switch mode {
@@ -215,7 +215,7 @@ func testTuple(mode:Int) {
     }
 }
 
-func testProperty(mode:Int) {
+func testProperty(_ mode:Int) {
     let property = UNTestProperty()
     
     switch mode {
@@ -239,7 +239,7 @@ func testExtension() {
     ext1.test1()
 }
 
-func testProtocol(mode:Int) {
+func testProtocol(_ mode:Int) {
     let prot1 = UNTestProtocol()
     switch mode {
     case 1:
@@ -259,7 +259,7 @@ func testNested() {
     nest.test1()
 }
 
-func testGenerics(mode: Int) {
+func testGenerics(_ mode: Int) {
     let generics = UNTestGenerics()
     
     switch mode {
@@ -272,7 +272,7 @@ func testGenerics(mode: Int) {
     }
 }
 
-func testOverload(mode:Int) {
+func testOverload(_ mode:Int) {
     let overload = UNTestOverloadOperator()
     overload.test1()
 }
@@ -280,7 +280,7 @@ func testOverload(mode:Int) {
 //
 // subscriptのテスト
 // hoge[1] のような書き方をした時に自前の処理を行うことができる
-func testSubscript(mode:Int) {
+func testSubscript(_ mode:Int) {
     
     if mode == 1 {
         let sample = SubscriptSample()
@@ -308,7 +308,7 @@ func testSubscript(mode:Int) {
 }
 
 // NSクラスのテスト
-func testNSClass(mode:Int) {
+func testNSClass(_ mode:Int) {
     let nsclass = UNTestNSClass()
     
     switch mode {
@@ -331,7 +331,7 @@ func testNSClass(mode:Int) {
 }
 
 // エラークラスのテスト
-func testException(mode:Int) {
+func testException(_ mode:Int) {
     let exception = UNTestException()
     
     switch mode {
@@ -354,12 +354,12 @@ func testException(mode:Int) {
 func getInput() -> (name:String, mode:Int) {
     print("\nplease input test name! ")
 
-    let keyboard = NSFileHandle.fileHandleWithStandardInput()
+    let keyboard = FileHandle.withStandardInput
     let inputData = keyboard.availableData
-    let strData = NSString(data: inputData, encoding: NSUTF8StringEncoding)!
-    let command = strData.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
+    let strData = NSString(data: inputData, encoding: String.Encoding.utf8)!
+    let command = strData.trimmingCharacters(in: CharacterSet.newlines)
     
-    let splited = command.componentsSeparatedByString(".")
+    let splited = command.components(separatedBy: ".")
     if splited.count >= 2 {
         if let testNo = Int(splited[1]) {
             return (splited[0], testNo)

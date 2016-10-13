@@ -139,6 +139,12 @@ class UNTestBasis {
         array.forEach {
             print($0)
         }
+        
+        // 辞書型をforEachで表示してみる
+        let d1 : [String : Int] = ["Apple" : 100, "Orange": 200, "Banana" : 50]
+        d1.forEach {
+            print(String(format:"key=%@, value=%d",$0.0, $0.1))
+        }
     }
     
     // MARK: SWITCH ~ CASE

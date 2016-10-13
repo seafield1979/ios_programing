@@ -170,6 +170,7 @@
 				TargetAttributes = {
 					8A63EF271D83953A006266C5 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -321,6 +322,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = sunsunsoft.httpConnectTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/shutaro/github/ios_programing/swift/httpConnectTest/httpConnectTest/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -334,6 +336,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = sunsunsoft.httpConnectTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/shutaro/github/ios_programing/swift/httpConnectTest/httpConnectTest/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

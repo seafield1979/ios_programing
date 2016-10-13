@@ -24,6 +24,10 @@ class UNTestDictionary
     }
     
     func test1() -> String {
+        // 宣言 Dictionary型
+        let d0 : Dictionary<String, Int> = ["Apple1" : 1001, "Orange2": 2001, "Banana3" : 501]
+        print(d0)
+        
         // 宣言 キーと値の型を宣言できる
         let d1 : [String : Int] = ["Apple" : 100, "Orange": 200, "Banana" : 50]
         print(d1)

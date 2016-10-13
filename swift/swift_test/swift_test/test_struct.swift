@@ -68,9 +68,7 @@ class UNTestStruct {
     func test2() {
         print("----- struct2 -----")
         let enemy2 : Enemy2 = Enemy2(x:12, y:34, name:"donky", birth:Date())
-        enemy2.x
-        enemy2.y
-        enemy2.description()
+        print(enemy2)
         let bd : Date = enemy2.birth!
         print(bd.description)
     }

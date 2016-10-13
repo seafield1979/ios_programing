@@ -111,9 +111,9 @@ class UNTestEnum {
         let s = SignalF.yellow
         print("meaning:" + s.meaning())
         
-        var sig3 : Signal3 = .yellow
-        sig3 = Signal3.init(rawValue:1)!
-        
+        let sig3 : Signal3 = Signal3.init(rawValue:1)!
+        print("sig3:" + sig3.rawValue.description)
+        let sigVal : Int = sig3.rawValue
     }
     
     func test2(_ mode : Int) {
